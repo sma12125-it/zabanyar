@@ -5,9 +5,10 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"], LVNAME = { A1: "مبتدی", A2: 
 const DEFAULT_MODEL = "gemini-3.8-flash";
 const DEF = { v: 3, xp: 0, streak: 0, last: null, level: null, done: {}, steps: {}, cards: {}, days: {}, chats: {}, reviewsToday: {}, lastLesson: null,
   provider: "gemini", gkey: "", gmodel: DEFAULT_MODEL, proxy: "", key: "", api: "https://api.openai.com/v1", model: "gpt-4o-mini",
-  dark: null, accent: "en-US", rate: 1, engine: "auto", program: { start: null, tasks: {} }, micOk: false };
+  dark: null, accent: "en-US", rate: 1, engine: "record", program: { start: null, tasks: {} }, micOk: false };
 const S = (() => { let s = null; try { s = JSON.parse(localStorage.getItem("zy3")); } catch (e) {}
   if (!s) { s = {}; try { const o = JSON.parse(localStorage.getItem("zy2") || "null"); if (o) for (const k of ["xp", "streak", "last", "level", "gkey", "gmodel", "key", "api", "model", "dark", "accent"]) if (o[k] != null) s[k] = o[k]; if (o && o.provider) s.provider = o.provider; } catch (e) {} }
+  if (s.engine === "auto" || s.engine === "gemini") s.engine = "record"; // v3 defaulted to Google-backed recognition, which fails in Iran
   return Object.assign(structuredClone(DEF), s); })();
 let saveT; const save = () => { try { localStorage.setItem("zy3", JSON.stringify(S)); } catch (e) { toast("ذخیره‌سازی ناموفق بود (فضای مرورگر پر است؟)", true); } stats(); };
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -53,79 +54,165 @@ function speak(t, rate = 1, onend) {
 function speakSeq(lines, rate = 1, i = 0, done) { const tok = ttsToken + 1; if (i >= lines.length) return done && done(); speak(lines[i], rate, () => { if (ttsToken === tok + i) setTimeout(() => speakSeq(lines, rate, i + 1, done), 300); }); }
 document.addEventListener("pointerdown", function unlock() { try { if (window.speechSynthesis) { const u = new SpeechSynthesisUtterance(" "); u.volume = 0; speechSynthesis.speak(u); } } catch (e) {} document.removeEventListener("pointerdown", unlock); }, { once: true });
 
-/* ---------------- Speech: recognition with fallbacks ---------------- */
+
+/* ---------------- Speech: record + Gemini by default, native/Web Speech as optional fast mode ---------------- */
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+const IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 const canRecord = () => !!(navigator.mediaDevices?.getUserMedia && window.MediaRecorder);
 const aiReady = () => S.provider === "gemini" ? !!S.gkey : S.provider === "proxy" ? !!S.proxy : !!S.key;
 const canTranscribe = () => canRecord() && aiReady() && S.provider !== "openai";
+const hasFast = () => !!(Cap.SpeechRecognition || SR);
 function sttMode() {
-  if (S.engine === "gemini" && canTranscribe()) return "gemini";
-  if (Cap.SpeechRecognition) return "native";
-  if (SR && S.engine !== "gemini") return "web";
-  if (canTranscribe()) return "gemini";
-  return "none";
+  if (S.engine === "fast" && hasFast()) return "fast";
+  if (canTranscribe()) return "record";
+  if (hasFast()) return "fast";
+  return canRecord() ? "nokey" : "none";
 }
-const sttLabel = () => ({ web: "تشخیص گفتار مرورگر", native: "تشخیص گفتار گوشی (اندروید)", gemini: "ضبط صدا + تبدیل به متن با Gemini", none: "در دسترس نیست — حالت تایپی" })[sttMode()];
+const sttLabel = () => ({ record: "ضبط صدا + تبدیل به متن با Gemini (پایدار)", fast: (Cap.SpeechRecognition ? "تشخیص سریع گوشی" : "تشخیص سریع مرورگر") + (canTranscribe() ? " — در صورت خطا خودکار: ضبط + Gemini" : " (به سرورهای Google وابسته است؛ برای پایداری کلید Gemini/سرور واسط وارد کنید)"), nokey: "نیاز به کلید Gemini یا سرور واسط", none: "در دسترس نیست — حالت تایپی" })[sttMode()];
+const WHY = {
+  denied: "اجازه‌ی میکروفون داده نشد. از تنظیمات گوشی/مرورگر دسترسی میکروفون را برای زبان‌یار فعال کنید.",
+  silent: "میکروفون روشن بود ولی هیچ صدایی ضبط نشد (سطح صدا تقریباً صفر). میکروفون درست را انتخاب کنید، هدفون/بلوتوث را قطع کنید، برنامه‌ی دیگری که میکروفون را گرفته ببندید و نزدیک‌تر صحبت کنید. از «آزمایش میکروفون» در تنظیمات کمک بگیرید.",
+  nospeech: "صدا ضبط شد ولی جمله‌ی قابل تشخیصی در آن نبود؛ واضح‌تر و کمی بلندتر دوباره بگویید.",
+  network: "اتصال به سرویس تشخیص گفتار برقرار نشد. سرورهای Google (و Gemini) از ایران مسدود یا ناپایدارند: VPN را روشن کنید یا در تنظیمات «سرور واسط (پروکسی)» را وارد کنید.",
+  timeout: "پاسخی از سرویس تشخیص گفتار نرسید (احتمالاً مسدود بودن Google). VPN یا سرور واسط را امتحان کنید.",
+  nokey: "برای تبدیل صدا به متن، کلید Gemini یا آدرس سرور واسط را در تنظیمات وارد کنید.",
+  unsupported: "ضبط صدا در این مرورگر/دستگاه پشتیبانی نمی‌شود؛ از حالت تایپی استفاده کنید.",
+  error: "خطا در تبدیل صدا به متن؛ دوباره تلاش کنید."
+};
+const whyMsg = (why, detail) => detail || WHY[why] || WHY.error;
 async function ensureMic() {
-  if (S.micOk) return true;
-  const ok = await new Promise(res => { modal(`<h3>🎤 اجازه‌ی میکروفون</h3><p>برای تمرین گفتار، زبان‌یار به میکروفون نیاز دارد. صدای شما فقط برای تبدیل به متن استفاده می‌شود${sttMode() === "gemini" ? " (به سرویس Gemini فرستاده می‌شود)" : ""} و ذخیره نمی‌شود.</p><p class=muted>در پنجره‌ی بعدی مرورگر/گوشی «Allow / اجازه» را بزنید.</p><button class="btn p" id=mOk>ادامه</button><button class=btn id=mNo>فعلاً نه</button>`); $("#mOk").onclick = () => { closeModal(); res(true); }; $("#mNo").onclick = () => { closeModal(); res(false); }; });
-  if (!ok) return false;
+  if (!S.micOk) {
+    const ok = await new Promise(res => { modal(`<h3>🎤 اجازه‌ی میکروفون</h3><p>برای تمرین گفتار، زبان‌یار به میکروفون نیاز دارد. صدای شما فقط برای تبدیل به متن استفاده می‌شود${sttMode() === "record" ? " (به سرویس Gemini فرستاده می‌شود)" : ""} و ذخیره نمی‌شود.</p><p class=muted>در پنجره‌ی بعدی مرورگر/گوشی «Allow / اجازه» را بزنید.</p><button class="btn p" id=mOk>ادامه</button><button class=btn id=mNo>فعلاً نه</button>`); $("#mOk").onclick = () => { closeModal(); res(true); }; $("#mNo").onclick = () => { closeModal(); res(false); }; });
+    if (!ok) return false;
+  }
   try {
-    if (Cap.SpeechRecognition && sttMode() === "native") { const p = await Cap.SpeechRecognition.requestPermissions(); if (p.speechRecognition !== "granted") throw Object.assign(new Error(), { name: "NotAllowedError" }); }
-    else if (navigator.mediaDevices?.getUserMedia) { const st = await navigator.mediaDevices.getUserMedia({ audio: true }); st.getTracks().forEach(t => t.stop()); }
+    // Always probe getUserMedia: in the APK this makes Capacitor's WebChromeClient request RECORD_AUDIO and grant AUDIO_CAPTURE.
+    if (navigator.mediaDevices?.getUserMedia) { const st = await navigator.mediaDevices.getUserMedia({ audio: true }); st.getTracks().forEach(t => t.stop()); }
+    if (Cap.SpeechRecognition && sttMode() === "fast") { try { const p = await Cap.SpeechRecognition.requestPermissions(); if (p.speechRecognition !== "granted") throw 0; } catch (e) { if (!canRecord()) throw Object.assign(new Error(), { name: "NotAllowedError" }); } }
     S.micOk = true; save(); return true;
   } catch (e) { micError(e); return false; }
 }
 function micError(e) {
-  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
   const msg = e?.name === "NotAllowedError" || e?.name === "SecurityError"
-    ? (location.protocol !== "https:" && !/localhost|127\.0\.0\.1/.test(location.hostname) ? "میکروفون فقط روی HTTPS کار می‌کند. سایت را با https باز کنید." : ios ? "دسترسی میکروفون رد شد. در آیفون: Settings ← Safari ← Microphone ← Allow (یا برای اپ نصب‌شده، آن را حذف و دوباره اضافه کنید)." : "دسترسی میکروفون رد شد. از تنظیمات مرورگر/گوشی اجازه‌ی میکروفون را برای این سایت/اپ فعال کنید.")
-    : e?.name === "NotFoundError" ? "میکروفونی پیدا نشد." : "خطای میکروفون: " + (e?.message || e?.name);
+    ? (location.protocol !== "https:" && !/localhost|127\.0\.0\.1/.test(location.hostname) && !window.Capacitor ? "میکروفون فقط روی HTTPS کار می‌کند. سایت را با https باز کنید." : IOS ? "دسترسی میکروفون رد شد. در آیفون: Settings ← Safari ← Microphone ← Allow (یا برای اپ نصب‌شده، آن را حذف و دوباره اضافه کنید)." : window.Capacitor ? "دسترسی میکروفون رد شد. Settings ← Apps ← زبان‌یار ← Permissions ← Microphone ← Allow." : "دسترسی میکروفون رد شد. از تنظیمات مرورگر (آیکون قفل کنار آدرس) اجازه‌ی میکروفون را برای این سایت فعال کنید.")
+    : e?.name === "NotFoundError" ? "میکروفونی پیدا نشد." : e?.name === "NotReadableError" ? "میکروفون در اختیار برنامه‌ی دیگری است (تماس، ضبط صدا…). آن را ببندید و دوباره تلاش کنید." : "خطای میکروفون: " + (e?.message || e?.name);
   S.micOk = false; save(); modal(`<h3>🎤 مشکل میکروفون</h3><p>${esc(msg)}</p><button class="btn p" onclick="closeModal()">باشه</button>`);
 }
 let activeRec = null;
 function stopListening() { try { activeRec?.stop(); } catch (e) {} }
-/** listen(cb, {onState}) -> cb(text|null, reason) */
+/* Floating recording bar with a live level meter, visible on every screen while recording. */
+function recBar(show, level = 0) {
+  let b = $("#recbar");
+  if (!b) { b = document.createElement("div"); b.id = "recbar"; b.className = "recbar hidden"; b.setAttribute("role", "status"); b.innerHTML = `<span class=recdot></span><span id=rbt>در حال ضبط… صحبت کنید</span><div class=meter aria-hidden=true><i></i></div><button class="btn sm" id=rbs>⏹ پایان</button>`; document.body.appendChild(b); b.querySelector("#rbs").onclick = () => stopListening(); }
+  b.classList.toggle("hidden", !show); b.querySelector(".meter i").style.width = Math.min(100, Math.round(level * 100)) + "%";
+  b.querySelector("#rbt").textContent = level > 0.08 ? "🔊 صدا دریافت می‌شود…" : "در حال ضبط… صحبت کنید";
+}
+function pickMime() {
+  const order = IOS ? ["audio/mp4;codecs=mp4a.40.2", "audio/mp4", "audio/aac", "audio/webm;codecs=opus", "audio/webm"] : ["audio/webm;codecs=opus", "audio/webm", "audio/ogg;codecs=opus", "audio/mp4", "audio/aac"];
+  return order.find(m => { try { return MediaRecorder.isTypeSupported?.(m); } catch (e) { return false; } }) || "";
+}
+/** recordClip -> {blob, peak, spoke, ms, label}. Live level via onLevel(0..1); silence detection auto-stops. */
+async function recordClip({ onLevel, maxMs = 25000, noSpeechMs = 8000, silenceMs = 1500, vad = true, bar = true } = {}) {
+  let stream;
+  try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } }); }
+  catch (e) { if (e?.name === "OverconstrainedError") stream = await navigator.mediaDevices.getUserMedia({ audio: true }); else throw e; }
+  const label = stream.getAudioTracks()[0]?.label || "";
+  if (!S.micOk) { S.micOk = true; save(); }
+  const mime = pickMime(); const rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined); const chunks = []; activeRec = rec;
+  let ac, raf, iv, spoke = false, silentSince = 0, peak = 0, floor = null; const t0 = Date.now();
+  const stop = () => { if (rec.state === "recording") try { rec.stop(); } catch (e) {} };
+  try {
+    ac = new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === "suspended") await ac.resume().catch(() => {});
+    const an = ac.createAnalyser(); an.fftSize = 1024; ac.createMediaStreamSource(stream).connect(an); const buf = new Uint8Array(an.fftSize);
+    const tick = () => { an.getByteTimeDomainData(buf); let s = 0; for (const v of buf) s += (v - 128) ** 2; const rms = Math.sqrt(s / buf.length); peak = Math.max(peak, rms);
+      const el = Date.now() - t0; if (el < 400) floor = floor == null ? rms : Math.min(floor, rms) * .5 + rms * .5;
+      const th = Math.max(3.5, Math.min(12, (floor || 0) * 2.5 + 1.5)), lvl = Math.min(1, rms / 40); onLevel?.(lvl, rms); if (bar) recBar(true, lvl);
+      if (vad) { if (rms > th) { spoke = true; silentSince = 0; } else if (spoke) { silentSince ||= Date.now(); if (Date.now() - silentSince > silenceMs) return stop(); }
+        if (!spoke && el > noSpeechMs) return stop(); }
+      if (el > maxMs) return stop(); };
+    iv = setInterval(tick, 50); // setInterval (not rAF) so detection keeps working when the tab/WebView is backgrounded
+  } catch (e) { setTimeout(stop, Math.min(maxMs, 8000)); }
+  const blob = await new Promise((res, rej) => {
+    rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+    rec.onerror = e => rej(e.error || new Error("MediaRecorder error"));
+    rec.onstop = () => { clearInterval(iv); cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); try { ac?.close(); } catch (e) {} activeRec = null; if (bar) recBar(false);
+      res(new Blob(chunks, { type: rec.mimeType || mime || "audio/webm" })); };
+    rec.start(250);
+  });
+  return { blob, peak, spoke, ms: Date.now() - t0, label, mime: blob.type };
+}
+const SILENT_PEAK = 1.5; // RMS on 0..128 scale; real mics in a quiet room give ~2+, a dead/muted input gives ~0
+async function recordListen(cb, opt = {}) {
+  const st = opt.onState || (() => {});
+  let clip; st("listen");
+  try { clip = await recordClip({ onLevel: opt.onLevel }); }
+  catch (e) { st("idle"); recBar(false); if (/NotAllowed|Security|NotFound|NotReadable/.test(e?.name)) { micError(e); return cb(null, "denied"); } return cb(null, "error", "ضبط صدا ناموفق بود: " + (e?.message || e?.name)); }
+  if (clip.peak < SILENT_PEAK) { st("idle"); return cb(null, "silent"); }
+  if (clip.blob.size < 1200) { st("idle"); return cb(null, "nospeech"); }
+  st("think");
+  try { const t = await transcribe(clip.blob); st("idle"); cb(t || null, t ? "" : "nospeech"); }
+  catch (e) { st("idle"); cb(null, e.why || "error", e.why === "nokey" || e.why === "network" ? "" : e.message); }
+}
+/** Fast mode (native plugin / Web Speech). Resolves {text, why}; never hangs (watchdog). */
+function fastListen(st) {
+  return new Promise(resolve => {
+    let fin = false; const end = (text, why) => { if (fin) return; fin = true; clearTimeout(wd); activeRec = null; st("idle"); resolve({ text: text || null, why: text ? "" : why }); };
+    const wd = setTimeout(() => { try { activeRec?.abort?.() ?? activeRec?.stop?.(); } catch (e) {} end(null, "timeout"); }, 12000);
+    st("listen");
+    if (Cap.SpeechRecognition) {
+      const P = Cap.SpeechRecognition; activeRec = { stop: () => P.stop().catch(() => {}) };
+      P.start({ language: S.accent || "en-US", maxResults: 1, partialResults: false, popup: false, prompt: "Speak now" })
+        .then(r => end(r?.matches?.[0], "nospeech"))
+        .catch(e => { const m = String(e?.message || e).toLowerCase(); end(null, /permission|denied|not allowed/.test(m) ? "denied" : /network|server|connect|timeout/.test(m) ? "network" : /no match|no speech|didn't|speech timeout/.test(m) ? "nospeech" : "error"); });
+      return;
+    }
+    try {
+      const r = new SR(); r.lang = S.accent || "en-US"; r.interimResults = false; r.continuous = false; r.maxAlternatives = 1; activeRec = r; let got = false;
+      r.onresult = e => { const t = e.results?.[0]?.[0]?.transcript; if (t) { got = true; end(t, ""); } };
+      r.onerror = e => end(null, e.error === "not-allowed" ? "denied" : e.error === "no-speech" ? "nospeech" : /network|service-not-allowed|language-not-supported/.test(e.error) ? "network" : e.error === "audio-capture" ? "capture" : "error");
+      r.onend = () => end(null, got ? "" : "nospeech"); r.start();
+    } catch (e) { end(null, "error"); }
+  });
+}
+/** listen(cb, {onState, onLevel}) -> cb(text|null, reason, detail) */
 async function listen(cb, opt = {}) {
   const mode = sttMode(); const st = opt.onState || (() => {});
   if (mode === "none") return cb(null, "unsupported");
+  if (mode === "nokey") return cb(null, "nokey");
   if (!(await ensureMic())) return cb(null, "denied");
   stopTTS();
-  if (mode === "native") {
-    st("listen");
-    try { const r = await Cap.SpeechRecognition.start({ language: S.accent, maxResults: 1, partialResults: false, popup: false }); st("idle"); cb(r?.matches?.[0] || null, r?.matches?.[0] ? "" : "nospeech"); }
-    catch (e) { st("idle"); cb(null, "error"); } return;
+  if (mode === "fast") {
+    const r = await fastListen(st);
+    if (r.text) { S.fastFails = 0; save(); return cb(r.text, ""); }
+    if (r.why === "denied") { micError({ name: "NotAllowedError" }); return cb(null, "denied"); }
+    if (canTranscribe()) {
+      S.fastFails = (S.fastFails || 0) + 1;
+      if (S.fastFails >= 2) { S.engine = "record"; S.fastFails = 0; toast("تشخیص سریع دو بار جواب نداد؛ موتور گفتار به «ضبط + Gemini» تغییر کرد.", true); }
+      save(); toast("تشخیص سریع جواب نداد — دوباره بگویید (این بار ضبط + Gemini)");
+      return recordListen(cb, opt);
+    }
+    const base = r.why === "nospeech" ? WHY.nospeech : r.why === "capture" ? "تشخیص سریع نتوانست از میکروفون صدا بگیرد." : r.why === "network" || r.why === "timeout" ? WHY.network : WHY.error;
+    return cb(null, r.why === "capture" ? "error" : r.why, base + (canRecord() ? " پیشنهاد: کلید Gemini یا سرور واسط را وارد کنید تا ضبط پایدار فعال شود." : ""));
   }
-  if (mode === "web") {
-    let got = false, fin = false; const end = (t, why) => { if (fin) return; fin = true; activeRec = null; st("idle"); cb(t, why); };
-    try { const r = new SR(); r.lang = S.accent; r.interimResults = false; r.maxAlternatives = 1; activeRec = r;
-      r.onresult = e => { got = true; end(e.results[0][0].transcript, ""); };
-      r.onerror = e => { if (e.error === "not-allowed") { micError({ name: "NotAllowedError" }); end(null, "denied"); } else end(null, e.error); };
-      r.onend = () => end(null, got ? "" : "nospeech"); st("listen"); r.start();
-    } catch (e) { end(null, "error"); } return;
-  }
-  // gemini: MediaRecorder + VAD, then transcription
-  let stream; try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } }); } catch (e) { micError(e); return cb(null, "denied"); }
-  const mime = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4", "audio/aac", "audio/ogg;codecs=opus"].find(m => MediaRecorder.isTypeSupported?.(m)) || "";
-  const rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined); const chunks = []; activeRec = rec;
-  let ac, raf, spoke = false, silentSince = 0; const t0 = Date.now();
-  try { ac = new (window.AudioContext || window.webkitAudioContext)(); const an = ac.createAnalyser(); an.fftSize = 1024; ac.createMediaStreamSource(stream).connect(an); const buf = new Uint8Array(an.fftSize);
-    const tick = () => { an.getByteTimeDomainData(buf); let s = 0; for (const v of buf) s += (v - 128) ** 2; const rms = Math.sqrt(s / buf.length);
-      if (rms > 6) { spoke = true; silentSince = 0; } else if (spoke) { silentSince ||= Date.now(); if (Date.now() - silentSince > 1300) return rec.state === "recording" && rec.stop(); }
-      if (!spoke && Date.now() - t0 > 7000) return rec.state === "recording" && rec.stop();
-      if (Date.now() - t0 > 20000) return rec.state === "recording" && rec.stop(); raf = requestAnimationFrame(tick); }; tick();
-  } catch (e) { setTimeout(() => rec.state === "recording" && rec.stop(), 8000); }
-  rec.ondataavailable = e => e.data.size && chunks.push(e.data);
-  rec.onstop = async () => { cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); try { ac?.close(); } catch (e) {} activeRec = null;
-    const blob = new Blob(chunks, { type: rec.mimeType || mime || "audio/webm" });
-    if (blob.size < 1500) { st("idle"); return cb(null, "nospeech"); }
-    st("think"); try { const t = await transcribe(blob); st("idle"); cb(t || null, t ? "" : "nospeech"); } catch (e) { st("idle"); toast(e.message, true); cb(null, "error"); } };
-  st("listen"); rec.start(250);
+  return recordListen(cb, opt);
 }
 async function blobToB64(b) { const buf = new Uint8Array(await b.arrayBuffer()); let s = ""; for (let i = 0; i < buf.length; i += 0x8000) s += String.fromCharCode.apply(null, buf.subarray(i, i + 0x8000)); return btoa(s); }
+/** Decode whatever MediaRecorder produced (webm/opus, mp4/aac) and re-encode as 16 kHz mono WAV — a format Gemini officially accepts. */
+async function toWav(blob) {
+  const AC = window.AudioContext || window.webkitAudioContext, OAC = window.OfflineAudioContext || window.webkitOfflineAudioContext; if (!AC || !OAC) return null;
+  const ac = new AC(); let src;
+  try { src = await ac.decodeAudioData(await blob.arrayBuffer()); } catch (e) { try { ac.close(); } catch (_) {} return null; } try { ac.close(); } catch (e) {}
+  const rate = 16000, len = Math.max(1, Math.ceil(src.duration * rate)); const off = new OAC(1, len, rate); const n = off.createBufferSource(); n.buffer = src; n.connect(off.destination); n.start();
+  const out = (await off.startRendering()).getChannelData(0); const dv = new DataView(new ArrayBuffer(44 + out.length * 2)); const w = (o, s) => [...s].forEach((c, i) => dv.setUint8(o + i, c.charCodeAt(0)));
+  w(0, "RIFF"); dv.setUint32(4, 36 + out.length * 2, true); w(8, "WAVE"); w(12, "fmt "); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true); dv.setUint16(22, 1, true); dv.setUint32(24, rate, true); dv.setUint32(28, rate * 2, true); dv.setUint16(32, 2, true); dv.setUint16(34, 16, true); w(36, "data"); dv.setUint32(40, out.length * 2, true);
+  for (let i = 0; i < out.length; i++) { const v = Math.max(-1, Math.min(1, out[i])); dv.setInt16(44 + i * 2, v < 0 ? v * 0x8000 : v * 0x7fff, true); }
+  return new Blob([dv], { type: "audio/wav" });
+}
+const geminiMime = t => { t = (t || "").split(";")[0]; return t === "audio/mp4" || t === "audio/x-m4a" ? "audio/aac" : t || "audio/webm"; };
 async function transcribe(blob) {
-  const data = await blobToB64(blob), mimeType = (blob.type || "audio/webm").split(";")[0];
-  const t = await gemini({ systemInstruction: { parts: [{ text: "You are a speech-to-text engine. Transcribe exactly what the speaker says, in English, with natural punctuation. If there is no intelligible speech, output an empty string. Output ONLY the transcript." }] },
+  const wav = await toWav(blob).catch(() => null); const use = wav || blob;
+  const data = await blobToB64(use), mimeType = wav ? "audio/wav" : geminiMime(blob.type);
+  const t = await gemini({ systemInstruction: { parts: [{ text: "You are a speech-to-text engine. The speaker is a Persian-speaking learner of English. Transcribe exactly what they say, in English, with natural punctuation; keep their mistakes. If there is no intelligible speech, output an empty string. Output ONLY the transcript." }] },
     contents: [{ role: "user", parts: [{ inlineData: { mimeType, data } }, { text: "Transcribe this audio." }] }], generationConfig: { temperature: 0, maxOutputTokens: 300 } });
   return t.replace(/^["'\s]+|["'\s]+$/g, "");
 }
@@ -140,6 +227,32 @@ function grade(id, q) { const c = S.cards[id]; if (!c) return; if (q < 3) { c.n 
 const dueCards = () => Object.entries(S.cards).filter(([, c]) => c.due <= Date.now()).map(([id, c]) => ({ id, ...c }));
 const weakCards = (n = 15) => Object.values(S.cards).filter(c => c.lapses || c.ef < 2.3).sort((a, b) => (b.lapses || 0) - (a.lapses || 0) || a.ef - b.ef).slice(0, n);
 
+/* Mic test: live level meter, playback of the recording, optional transcription and fast-mode check. */
+function micTest() {
+  modal(`<h3>🎤 آزمایش میکروفون</h3><p class=muted>«ضبط» را بزنید و یک جمله‌ی انگلیسی بگویید. نوار سبز باید با صدای شما بالا و پایین برود.</p>
+  <div class="meter big" aria-label="سطح صدا"><i id=mtl></i></div><p id=mts aria-live=polite class=muted>آماده</p>
+  <button class="btn p" id=mtr>⏺ ضبط (حداکثر ۶ ثانیه)</button><button class=btn id=mtx disabled>⏹ توقف</button>
+  <audio id=mta controls class=hidden style="width:100%;margin-top:8px"></audio>
+  <div style="margin-top:8px"><button class=btn id=mtt disabled>📝 تبدیل به متن با Gemini</button>${hasFast() ? `<button class=btn id=mtf>⚡ آزمایش تشخیص سریع</button>` : ""}</div><div id=mto aria-live=polite></div>
+  <button class=btn onclick="closeModal()">بستن</button>`);
+  let last = null; const out = h => $("#mto") && ($("#mto").innerHTML = h);
+  $("#mtx").onclick = () => stopListening();
+  $("#mtr").onclick = async () => {
+    if (!canRecord()) return out(`<b class=bad>${WHY.unsupported}</b>`);
+    $("#mtr").disabled = true; $("#mtx").disabled = false; $("#mtt").disabled = true; $("#mta").classList.add("hidden"); out(""); $("#mts").textContent = "⏺ در حال ضبط… صحبت کنید";
+    try {
+      last = await recordClip({ vad: false, maxMs: 6000, bar: false, onLevel: (l, rms) => { if ($("#mtl")) { $("#mtl").style.width = Math.round(l * 100) + "%"; $("#mts").textContent = `⏺ سطح صدا: ${fa(Math.round(rms * 10) / 10)}`; } } });
+      if (!$("#mta")) return; const a = $("#mta"); a.src = URL.createObjectURL(last.blob); a.classList.remove("hidden");
+      const ok = last.peak >= SILENT_PEAK; $("#mts").innerHTML = `${ok ? "<b class=ok>✔ صدا ضبط شد</b>" : `<b class=bad>✘ ${WHY.silent}</b>`}<br><span dir=ltr style="font-size:.8em">peak ${last.peak.toFixed(1)} · ${esc(last.mime || "?")} · ${Math.round(last.blob.size / 1024)} KB${last.label ? " · " + esc(last.label) : ""}</span><br>با دکمه‌ی پخش، صدای ضبط‌شده را گوش دهید.`;
+      $("#mtt").disabled = !ok;
+    } catch (e) { if (/NotAllowed|Security|NotFound|NotReadable/.test(e?.name)) { closeModal(); micError(e); return; } $("#mts").textContent = "خطا: " + (e?.message || e?.name); }
+    finally { if ($("#mtr")) { $("#mtr").disabled = false; $("#mtx").disabled = true; } }
+  };
+  $("#mtt").onclick = async () => { if (!last) return; if (!canTranscribe()) return out(`<b class=bad>${WHY.nokey}</b>`); out("⏳ تبدیل به متن…");
+    try { const t = await transcribe(last.blob); out(t ? `<b class=ok>✔ شنیده شد:</b> <span dir=ltr lang=en>${esc(t)}</span>` : `<b class=bad>${WHY.nospeech}</b>`); } catch (e) { out(`<b class=bad>${esc(e.why === "network" ? WHY.network : e.message)}</b>`); } };
+  if ($("#mtf")) $("#mtf").onclick = async () => { out("⚡ صحبت کنید…"); const r = await fastListen(() => {}); out(r.text ? `<b class=ok>✔ تشخیص سریع کار می‌کند:</b> <span dir=ltr lang=en>${esc(r.text)}</span>` : `<b class=bad>✘ تشخیص سریع جواب نداد (${esc(r.why)}). ${r.why === "network" || r.why === "timeout" ? WHY.network : ""} موتور «پایدار» را انتخاب کنید.</b>`); };
+}
+
 /* ---------------- AI providers ---------------- */
 function aiErr(status, msg) { msg = msg || ""; const m = msg.toLowerCase();
   if ((status == 400 && /api key|api_key/.test(m)) || status == 401 || (status == 403 && /key/.test(m))) return "کلید API نامعتبر است. کلید را از Google AI Studio دوباره کپی کنید.";
@@ -151,16 +264,16 @@ function aiErr(status, msg) { msg = msg || ""; const m = msg.toLowerCase();
   if (status >= 500) return "سرور هوش مصنوعی موقتاً در دسترس نیست. دوباره تلاش کنید.";
   return "خطا (" + status + "): " + msg; }
 async function gemini(body, { json = false } = {}) {
-  if (!aiReady() || S.provider === "openai") throw new Error("ابتدا Gemini یا آدرس سرور واسط را در تنظیمات وارد کنید.");
+  if (!aiReady() || S.provider === "openai") throw Object.assign(new Error("ابتدا Gemini یا آدرس سرور واسط را در تنظیمات وارد کنید."), { why: "nokey" });
   const model = encodeURIComponent(S.gmodel || DEFAULT_MODEL);
   const url = S.provider === "proxy" ? `${S.proxy.replace(/\/$/, "")}/v1beta/models/${model}:generateContent` : `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
   const headers = { "Content-Type": "application/json" }; if (S.provider === "gemini") headers["x-goog-api-key"] = S.gkey;
   if (json) body.generationConfig = { ...(body.generationConfig || {}), responseMimeType: "application/json" };
   let r, j; const ctl = new AbortController(); const to = setTimeout(() => ctl.abort(), 45000);
   try { r = await fetch(url, { method: "POST", headers, body: JSON.stringify(body), signal: ctl.signal }); j = await r.json().catch(() => ({})); }
-  catch (e) { throw new Error(e.name === "AbortError" ? "پاسخ هوش مصنوعی خیلی طول کشید. دوباره تلاش کنید." : "اتصال به سرور برقرار نشد. اینترنت را بررسی کنید؛ Gemini از ایران بدون VPN یا سرور واسط در دسترس نیست."); }
+  catch (e) { throw Object.assign(new Error(e.name === "AbortError" ? "پاسخ هوش مصنوعی خیلی طول کشید. دوباره تلاش کنید." : "اتصال به سرور برقرار نشد. اینترنت را بررسی کنید؛ Gemini از ایران بدون VPN یا سرور واسط در دسترس نیست."), { why: e.name === "AbortError" ? "timeout" : "network" }); }
   finally { clearTimeout(to); }
-  if (!r.ok) throw new Error(aiErr(r.status, j.error?.message || j.error?.status || j.error));
+  if (!r.ok) { const m = aiErr(r.status, j.error?.message || j.error?.status || j.error); throw Object.assign(new Error(m), { why: /منطقه|مسدود/.test(m) ? "blocked" : "api" }); }
   const c = j.candidates?.[0]; if (!c) throw new Error(j.promptFeedback?.blockReason ? "پیام به دلیل سیاست‌های ایمنی مسدود شد." : "پاسخ خالی از Gemini.");
   const t = (c.content?.parts || []).filter(p => !p.thought).map(p => p.text || "").join("").trim();
   if (!t && c.finishReason === "SAFETY") throw new Error("پاسخ به دلیل سیاست‌های ایمنی مسدود شد."); return t;
@@ -253,7 +366,7 @@ const P = {
       <button class="btn p" id=mic ${sttMode() == "none" ? "disabled" : ""}>🎤 بگویید</button><button class=btn id=hb>💡 نمایش جمله</button><div class=row><input id=typ dir=ltr lang=en placeholder="یا تایپ کنید…" aria-label="جمله‌ی خود را تایپ کنید"><button class=btn id=ok>✓</button></div><div id=fb aria-live=polite></div>`;
       const done = said => { const s = sim(said, d.en); tot += s; n++; if (s >= .7) addXP(2); log.push(`<div class="bubble me"><div class=who>شما · <b class=${s >= .7 ? "ok" : "bad"}>${fa(Math.round(s * 100))}٪</b></div><div dir=ltr lang=en>${esc(said)}</div>${s < 1 ? `<div class=fa dir=ltr lang=en>✅ ${esc(d.en)}</div>` : ""}</div>`); i++; r(); };
       $("#hb").onclick = () => { $("#hint").classList.toggle("hidden"); speak(d.en, .8); }; $("#ok").onclick = () => { const t = $("#typ").value.trim(); if (t) done(t); }; $("#typ").onkeydown = e => { if (e.key == "Enter") $("#ok").click(); };
-      $("#mic").onclick = () => listen((t, why) => { if (t) done(t); else if ($("#fb")) $("#fb").textContent = why === "denied" ? "اجازه‌ی میکروفون داده نشد؛ تایپ کنید." : "صدایی دریافت نشد؛ دوباره امتحان کنید یا تایپ کنید."; }, { onState: s => { if ($("#fb")) $("#fb").textContent = s == "listen" ? "⏺ در حال گوش دادن… (پس از مکث خودکار تمام می‌شود)" : s == "think" ? "⏳ در حال تبدیل صدا به متن…" : ""; } }); };
+      $("#mic").onclick = () => listen((t, why, d) => { if (t) done(t); else if ($("#fb")) $("#fb").textContent = whyMsg(why, d) + " (می‌توانید تایپ هم کنید.)"; }, { onState: s => { if ($("#fb")) $("#fb").textContent = s == "listen" ? "⏺ در حال گوش دادن… (پس از مکث خودکار تمام می‌شود)" : s == "think" ? "⏳ در حال تبدیل صدا به متن…" : ""; } }); };
     r(); },
   listen(l, el) { el.innerHTML = `<div class=card><h3>🎧 درک شنیداری</h3><p class=muted>متن پنهان است. گفتگو را گوش دهید (چند بار هم اشکال ندارد) و جواب دهید.</p><button class="btn p" id=p1>▶ پخش عادی</button><button class=btn id=p2>🐢 پخش آهسته</button>
     <div>${l.quiz.map((q, i) => `<div style="margin-top:12px"><b>${fa(i + 1)}. <span ${q.en ? "" : ""}>${esc(q.q)}</span></b><div>${q.o.map((o, j) => `<button class=btn data-q=${i} data-j=${j}>${esc(o)}</button>`).join("")}</div><div id=f${i} aria-live=polite></div></div>`).join("")}</div>
@@ -263,8 +376,8 @@ const P = {
     $$("[data-q]").forEach(b => b.onclick = () => { const q = l.quiz[b.dataset.q], ok = +b.dataset.j == q.a; $("#f" + b.dataset.q).innerHTML = ok ? "<b class=ok>✔ درست</b>" : `<b class=bad>✘ پاسخ: ${esc(q.o[q.a])}</b>`; if (ok) addXP(2); $$(`[data-q="${b.dataset.q}"]`).forEach(x => x.disabled = true); });
     const dl = l.dialogue.filter(d => d.me)[0].en; $("#dp").onclick = () => speak(dl, .85); $("#dk").onclick = () => { const s = sim($("#dc").value, dl); $("#df").innerHTML = `<b class=${s >= .8 ? "ok" : "bad"}>${fa(Math.round(s * 100))}٪</b> — <span dir=ltr lang=en>${esc(dl)}</span>`; if (s >= .8) addXP(2); }; }
 };
-function evalSpeech(target, fb) { if (sttMode() === "none") { fb.innerHTML = `<p class=muted>تشخیص گفتار در دسترس نیست. برای فعال شدن، از Chrome/Edge استفاده کنید یا در تنظیمات کلید Gemini وارد کنید. فعلاً بلند تکرار کنید و خودتان مقایسه کنید.</p>`; return; }
-  listen((t, why) => { if (!t) { fb.textContent = why === "denied" ? "اجازه‌ی میکروفون داده نشد." : "صدایی دریافت نشد."; return; } const s = sim(t, target), said = norm(t);
+function evalSpeech(target, fb) { if (["none", "nokey"].includes(sttMode())) { fb.innerHTML = `<p class=muted>تشخیص گفتار در دسترس نیست. برای فعال شدن، از Chrome/Edge استفاده کنید یا در تنظیمات کلید Gemini وارد کنید. فعلاً بلند تکرار کنید و خودتان مقایسه کنید.</p>`; return; }
+  listen((t, why, d) => { if (!t) { fb.textContent = whyMsg(why, d); return; } const s = sim(t, target), said = norm(t);
     fb.innerHTML = `<p>شنیده شد: <span dir=ltr lang=en>${esc(t)}</span></p><p dir=ltr lang=en>${norm(target).map(w => `<span class=${said.includes(w) ? "ok" : "bad"}>${esc(w)}</span>`).join(" ")}</p><b class=${s >= .7 ? "ok" : "bad"}>${fa(Math.round(s * 100))}٪ ${s >= .9 ? "عالی! 🌟" : s >= .7 ? "خوب 👍" : "دوباره امتحان کنید"}</b>`; if (s >= .7) addXP(2); },
     { onState: s => fb.textContent = s == "listen" ? "⏺ در حال گوش دادن…" : s == "think" ? "⏳ در حال تبدیل صدا به متن…" : fb.textContent }); }
 
@@ -360,10 +473,10 @@ V.tutor = async () => {
     catch (e) { m.push({ role: "assistant", content: "⚠️ " + e.message }); save(); draw(); setState(""); voiceOn && toggleVoice(false); }
     busy = false; };
   const send = t => { t = (t ?? $("#msg").value).trim(); if (!t || busy) return; chat().push({ role: "user", content: t }); $("#msg").value = ""; save(); draw(); ask(); };
-  const loopListen = () => listen((t, why) => { if (!voiceOn || !$("#log")) return; if (t) send(t); else if (why === "nospeech") loopListen(); else { toggleVoice(false); if (why === "unsupported") toast("گفتار در این دستگاه در دسترس نیست.", true); } }, { onState: setState });
+  let misses = 0; const loopListen = () => listen((t, why, d) => { if (!voiceOn || !$("#log")) return; if (t) { misses = 0; send(t); } else if (why === "nospeech" && ++misses < 4) loopListen(); else { toggleVoice(false); toast(whyMsg(why, d), true); } }, { onState: setState });
   const toggleVoice = on => { voiceOn = on ?? !voiceOn; const b = $("#voice"); if (b) { b.className = "btn " + (voiceOn ? "p" : ""); b.textContent = "🎧 حالت صوتی بدون دست: " + (voiceOn ? "روشن" : "خاموش"); } if (!voiceOn) { stopAll(); setState(""); } else if (!busy) loopListen(); };
   $("#send").onclick = () => send(); $("#msg").onkeydown = e => { if (e.key == "Enter") send(); };
-  $("#mic").onclick = () => listen(t => t && send(t), { onState: setState });
+  $("#mic").onclick = () => listen((t, why, d) => t ? send(t) : toast(whyMsg(why, d), true), { onState: setState });
   $("#voice").onclick = async () => { if (!voiceOn && !(await ensureMic())) return; toggleVoice(); };
   $$("[data-mode]").forEach(b => b.onclick = () => { stopAll(); voiceOn = false; T.mode = b.dataset.mode; V.tutor(); });
   $("#les").onchange = e => { T.lesson = e.target.value; V.tutor(); };
@@ -399,8 +512,8 @@ V.settings = async () => {
   <div id=gmod><label>مدل Gemini:<input id=gmodel dir=ltr list=gm value="${esc(S.gmodel)}"></label><datalist id=gm><option value=gemini-3.8-flash><option value=gemini-3.5-flash-lite><option value=gemini-flash-latest><option value=gemini-3.6-flash><option value=gemini-2.5-flash></datalist><p class=muted>gemini-3.8-flash: هوشمندتر (پیش‌فرض) · gemini-3.5-flash-lite: سریع‌تر و ارزان‌تر</p></div>
   <div id=oai><label>آدرس API:<input id=api dir=ltr value="${esc(S.api)}"></label><label>مدل:<input id=model dir=ltr value="${esc(S.model)}"></label><label>کلید API:<input id=key dir=ltr type=password autocomplete=off value="${esc(S.key)}"></label><p class=muted>در این حالت تبدیل صدا به متن با Gemini در دسترس نیست.</p></div>
   <p class=muted>کلیدها فقط در همین دستگاه ذخیره می‌شوند و مستقیم به سرویس انتخاب‌شده فرستاده می‌شوند.</p><button class="btn p" id=sv>ذخیره</button> <button class=btn id=tst>🧪 آزمایش اتصال</button><div id=tr aria-live=polite></div></div>
-  <div class=card><h3>🎤 گفتار</h3><label>موتور تشخیص گفتار:<select id=eng><option value=auto>خودکار (مرورگر/گوشی، در غیر این صورت Gemini)</option><option value=gemini>همیشه ضبط + Gemini (دقیق‌تر، مناسب آیفون)</option></select></label><p class=muted>وضعیت فعلی: ${sttLabel()}${SR ? "" : " · Web Speech در این مرورگر نیست"}${canRecord() ? "" : " · ضبط صدا پشتیبانی نمی‌شود"}${location.protocol === "https:" || /localhost|127\.0\.0\.1/.test(location.hostname) || window.Capacitor ? "" : " · ⚠️ برای میکروفون HTTPS لازم است"}</p>
-  <button class=btn id=mict>🎤 آزمایش میکروفون</button><div id=mr aria-live=polite></div>
+  <div class=card><h3>🎤 گفتار</h3><label>موتور تشخیص گفتار:<select id=eng><option value=record>پایدار: ضبط صدا + Gemini (پیشنهادی، به‌خصوص در ایران و آیفون)</option><option value=fast>سریع: تشخیص گفتار گوشی/مرورگر (نیازمند Google) + بازگشت خودکار به Gemini</option></select></label><p class=muted>وضعیت فعلی: ${sttLabel()}${hasFast() ? "" : " · تشخیص سریع در این دستگاه نیست"}${canRecord() ? "" : " · ضبط صدا پشتیبانی نمی‌شود"}${location.protocol === "https:" || /localhost|127\.0\.0\.1/.test(location.hostname) || window.Capacitor ? "" : " · ⚠️ برای میکروفون HTTPS لازم است"}</p>
+  <button class=btn id=mict>🎤 آزمایش میکروفون (سطح صدا + پخش)</button><div id=mr aria-live=polite></div>
   <label>لهجه‌ی صدا:<select id=acc><option value=en-US>آمریکایی (en-US)</option><option value=en-GB>بریتانیایی (en-GB)</option></select></label>
   <label>سرعت پخش: <input id=rate type=range min=.6 max=1.2 step=.1 value="${S.rate}" aria-label="سرعت پخش"></label></div>
   <div class=card><h3>💾 پشتیبان</h3><button class=btn id=ex>⬇️ دریافت فایل پشتیبان</button><label class=btn style="display:inline-block">⬆️ بازیابی از فایل<input id=im type=file accept="application/json,.json" class=hidden></label><label><input type=checkbox id=exk> کلیدهای API هم در پشتیبان باشد</label></div>
@@ -411,7 +524,7 @@ V.settings = async () => {
   $("#sv").onclick = () => { store(); $("#tr").innerHTML = "<b class=ok>✔ ذخیره شد</b>"; };
   $("#tst").onclick = async () => { store(); $("#tr").textContent = "در حال آزمایش…"; try { const r = await callAI("Reply with just: OK", [{ role: "user", content: "ping" }], { max: 20 }); $("#tr").innerHTML = `<b class=ok>✔ اتصال برقرار است:</b> <span dir=ltr>${esc(r.slice(0, 60))}</span>`; } catch (e) { $("#tr").innerHTML = `<b class=bad>${esc(e.message)}</b>`; } };
   $("#eng").onchange = e => { S.engine = e.target.value; save(); V.settings(); }; $("#acc").onchange = e => { S.accent = e.target.value; save(); }; $("#rate").onchange = e => { S.rate = +e.target.value; save(); speak("This is how fast I'll speak."); };
-  $("#mict").onclick = () => { store(); listen((t, why) => { $("#mr").innerHTML = t ? `✔ شنیده شد: <span dir=ltr lang=en>${esc(t)}</span>` : `<span class=bad>${why === "unsupported" ? "تشخیص گفتار در دسترس نیست" : why === "denied" ? "اجازه داده نشد" : "صدایی دریافت نشد"}</span>`; }, { onState: s => $("#mr").textContent = s == "listen" ? "⏺ یک جمله‌ی انگلیسی بگویید…" : s == "think" ? "⏳ تبدیل به متن…" : "" }); };
+  $("#mict").onclick = () => { store(); micTest(); };
   $("#ex").onclick = () => { const data = { app: "zabanyar", exported: new Date().toISOString(), state: { ...S } }; if (!$("#exk").checked) { data.state.gkey = ""; data.state.key = ""; }
     const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(data)], { type: "application/json" })); a.download = `zabanyar-backup-${today()}.json`; document.body.appendChild(a); a.click(); a.remove(); };
   $("#im").onchange = async e => { const f = e.target.files[0]; if (!f) return; try { const j = JSON.parse(await f.text()); if (j.app !== "zabanyar" || !j.state || typeof j.state.cards !== "object") throw new Error("فایل پشتیبان معتبر نیست.");

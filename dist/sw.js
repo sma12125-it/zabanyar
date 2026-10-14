@@ -1,5 +1,5 @@
 /* Zabanyar service worker — version is injected at build time */
-const VERSION = "b5fbf9d191", CACHE = "zy-" + VERSION, PRECACHE = ["./","app.js","content/a1.json","content/a2.json","content/b1.json","content/b2.json","content/c1.json","content/program.json","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon.svg","icons/maskable-512.png","index.html","manifest.json","placement.js","styles.css","content/index.json"];
+const VERSION = "5293c8afff", CACHE = "zy-" + VERSION, PRECACHE = ["./","app.js","content/a1.json","content/a2.json","content/b1.json","content/b2.json","content/c1.json","content/program.json","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon.svg","icons/maskable-512.png","index.html","manifest.json","placement.js","styles.css","content/index.json"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE))); });
 self.addEventListener("activate", e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("zy-") && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener("message", e => { if (e.data === "skipWaiting") self.skipWaiting(); });

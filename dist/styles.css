@@ -47,3 +47,12 @@ body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 .row{display:flex;gap:6px;align-items:center}.row input{flex:1}
 .loading{text-align:center;color:var(--muted)}
 .modal.hidden,.hidden{display:none!important}
+/* v4: recording bar + level meter */
+.recbar{position:fixed;inset-inline:12px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:var(--card,#fff);box-shadow:0 6px 24px rgba(0,0,0,.18);border:1px solid rgba(220,38,38,.35)}
+.recdot{width:12px;height:12px;border-radius:50%;background:#dc2626;animation:recp 1s infinite}
+@keyframes recp{50%{opacity:.3}}
+.meter{flex:1;height:10px;border-radius:6px;background:rgba(127,127,127,.2);overflow:hidden;direction:ltr}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,#16a34a,#84cc16,#eab308);transition:width .06s}
+.meter.big{height:18px;margin:10px 0}
+@media (prefers-reduced-motion:reduce){.recdot{animation:none}.meter i{transition:none}}
+.recbar.hidden{display:none!important}
