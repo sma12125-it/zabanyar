@@ -29,3 +29,12 @@ GEMINI_API_KEY=AIza... ALLOWED_ORIGINS=https://zabanyar.example.com,https://loca
 - `ALLOWED_ORIGINS="*"` نگذارید؛ وگرنه هر کسی می‌تواند از سهمیه‌ی شما استفاده کند.
 - در Google AI Studio برای کلید محدودیت مصرف/بودجه تعیین کنید.
 - محدودیت نرخ داخلی ساده است؛ برای مقیاس بالا از Cloudflare Rate Limiting یا احراز هویت کاربر استفاده کنید.
+
+
+## نسخه ۶: صدای طبیعی و گفتگوی زنده
+هر دو نمونه (Cloudflare Worker و Node) حالا این مسیرها را هم دارند:
+- `POST /v1beta/interactions` — Gemini TTS (مدل داخل بدنه باید در فهرست مجاز باشد؛ حالت stream بسته است).
+- `WS /ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent` — Gemini Live؛ برنامه بدون کلید وصل می‌شود و سرور کلید را اضافه و داده‌ها را دوطرفه عبور می‌دهد. بررسی Origin انجام می‌شود.
+- `POST /live-token` — (اختیاری) ساخت توکن موقت یک‌بارمصرف ۳۰ دقیقه‌ای (`/v1beta/auth_tokens`) قفل‌شده روی مدل Live، برای اتصال مستقیم برنامه به Google (فقط وقتی Google در دسترس کاربر است؛ در ایران همان عبور WebSocket از سرور واسط بهتر است).
+- فهرست پیش‌فرض مدل‌های مجاز: `gemini-3.8-flash, gemini-3.5-flash-lite, gemini-flash-latest, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-3.8-live` (با `ALLOWED_MODELS` قابل تغییر). محدودیت پیش‌فرض: ۶۰ درخواست در دقیقه برای هر IP.
+- اگر پشت nginx هستید، برای WebSocket این‌ها را اضافه کنید: `proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection "upgrade"; proxy_read_timeout 3600s;`

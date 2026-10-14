@@ -3,5 +3,6 @@ main = "cloudflare-worker.js"
 compatibility_date = "2026-10-01"
 [vars]
 ALLOWED_ORIGINS = "https://zabanyar.example.com,https://localhost,capacitor://localhost"
-RATE_PER_MIN = "30"
+RATE_PER_MIN = "60"
+# ALLOWED_MODELS = "gemini-3.8-flash,gemini-3.5-flash-lite,gemini-flash-latest,gemini-3.8-flash-tts,gemini-3.8-flash-lite-tts,gemini-3.8-live"
 # secret: npx wrangler secret put GEMINI_API_KEY
