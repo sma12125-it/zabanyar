@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>زبان‌یار — انگلیسی محاوره‌ای واقعی</title>
+<meta name="description" content="یادگیری انگلیسی محاوره‌ای و واقعی با رابط فارسی: سناریوهای گفتگو، سایه‌روی، تکرار فاصله‌دار و معلم هوش مصنوعی.">
+<meta name="theme-color" content="#4338ca" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1020" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192">
+<!-- iOS PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="زبان‌یار">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="apple-touch-startup-image" href="splash/splash-1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="splash/splash-1179x2556.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="splash/splash-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="splash/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)">
+<link rel="apple-touch-startup-image" href="splash/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)">
+<link rel="apple-touch-startup-image" href="splash/splash-2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#app">پرش به محتوا</a>
+<header class="top" role="banner">
+  <div class="brand"><img src="icons/icon.svg" alt="" width="36" height="36"><div><b>زبان‌یار</b><small>انگلیسی واقعی، محاوره‌ای</small></div></div>
+  <div id="stats" aria-live="polite"></div>
+  <button id="theme" class="icon-btn" aria-label="تغییر حالت تاریک/روشن">🌙</button>
+</header>
+<div id="banner" class="banner hidden" role="status"></div>
+<main id="app" tabindex="-1"><div class="card loading">در حال بارگذاری…</div></main>
+<div id="live" class="sr-only" aria-live="assertive"></div>
+<nav class="tabs" aria-label="منوی اصلی">
+  <button data-v="home"><span aria-hidden="true">🏠</span>خانه</button>
+  <button data-v="program"><span aria-hidden="true">📅</span>۳۰ روزه</button>
+  <button data-v="map"><span aria-hidden="true">🗺️</span>سناریوها</button>
+  <button data-v="review"><span aria-hidden="true">🧠</span>مرور</button>
+  <button data-v="tutor"><span aria-hidden="true">🤖</span>معلم</button>
+  <button data-v="settings"><span aria-hidden="true">⚙️</span>تنظیمات</button>
+</nav>
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-box" id="modalBox"></div></div>
+<noscript><p style="padding:20px">برای استفاده از زبان‌یار، جاوااسکریپت را فعال کنید.</p></noscript>
+<script src="placement.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>

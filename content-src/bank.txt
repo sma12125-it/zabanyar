@@ -1,0 +1,570 @@
+@ 1|واکنش‌های فوری|Greet me casually and ask how my day is going.
+Yeah.|آره.
+Yep.|آره (خودمونی).
+Nope.|نه (خودمونی).
+Sure.|حتماً.
+Okay, cool.|باشه، خوبه.
+Really?|واقعاً؟
+No way!|نه بابا!
+Oh, nice!|اِ، چه خوب!
+That's awesome!|عالیه!
+Oh no!|ای وای!
+That sucks.|خیلی بده.
+For real?|جدی؟
+Exactly.|دقیقاً.
+Totally.|کاملاً.
+I know!|می‌دونم! (موافقت)
+Me too.|منم.
+Same here.|منم همین‌طور.
+Fair enough.|منطقیه.
+@ 2|احوال‌پرسی و خداحافظی|Pretend we just met at a coffee shop; do small talk.
+What's up?|چه خبر؟
+How's it going?|چطوری؟
+How've you been?|این مدت چطور بودی؟
+Not bad, you?|بد نیستم، تو؟
+Long time no see!|چه عجب! خیلی وقته ندیدمت!
+Good to see you.|خوشحالم می‌بینمت.
+Take care!|مواظب خودت باش!
+See you around.|می‌بینمت.
+Catch you later.|بعداً می‌بینمت.
+Gotta run.|باید برم.
+I'll let you go.|دیگه وقتتو نمی‌گیرم.
+Have a good one!|روز خوبی داشته باشی!
+Talk to you soon.|به زودی حرف می‌زنیم.
+Nice talking to you.|از صحبت باهات خوشحال شدم.
+Say hi to... for me.|سلام منو به ... برسون.
+Hey there!|سلام!
+Morning!|صبح بخیر!
+Night!|شب بخیر!
+@ 3|پرکننده‌ها و وقت خریدن|Ask me open questions so I practice using fillers naturally.
+you know|می‌دونی
+like|مثلاً، یه‌جورایی
+I mean|یعنی
+kind of / kinda|یه‌جورایی
+sort of|تقریباً
+actually|راستش، در واقع
+basically|خلاصه
+well...|خب...
+let me think...|بذار فکر کنم...
+how do I put this...|چطوری بگم...
+the thing is...|موضوع اینه که...
+anyway|به هر حال
+so yeah|خلاصه همین
+or something|یا یه چیزی تو همین مایه‌ها
+and stuff|و این‌جور چیزا
+whatever|هر چی، مهم نیست
+to be honest|راستش
+honestly|صادقانه بگم
+@ 4|درخواست‌های مؤدبانه|Roleplay a shop assistant; I make polite requests.
+Can I get...?|می‌شه ... بدید؟
+Could you...?|می‌شه لطفاً...؟
+Would you mind...?|اشکالی نداره اگه...؟
+Do you mind if I...?|اشکالی داره اگه من...؟
+Is it okay if...?|اوکیه اگه...؟
+I was wondering if...|می‌خواستم ببینم آیا...
+Any chance you could...?|احتمالش هست بتونی...؟
+Mind if I sit here?|اشکالی داره اینجا بشینم؟
+Can you give me a hand?|می‌تونی کمکم کنی؟
+Could you do me a favor?|می‌شه یه لطفی بکنی؟
+Sorry to bother you, but...|ببخشید مزاحم می‌شم، ولی...
+If it's not too much trouble...|اگه زحمتی نیست...
+Thanks a lot.|خیلی ممنون.
+I appreciate it.|ممنونم.
+Thanks anyway.|به هر حال ممنون.
+No problem.|مشکلی نیست.
+You're welcome.|خواهش می‌کنم.
+Don't mention it.|قابلی نداشت.
+@ 5|نظر دادن|Ask my opinion about movies, food and cities.
+I think...|فکر می‌کنم...
+I feel like...|احساس می‌کنم...
+In my opinion...|به نظر من...
+If you ask me...|اگه نظر منو بخوای...
+I'm pretty sure...|تقریباً مطمئنم...
+I'm not sure.|مطمئن نیستم.
+I guess...|فکر کنم...
+It depends.|بستگی داره.
+I'd say...|به نظرم...
+It's not my thing.|سلیقه‌ی من نیست.
+I'm a big fan of...|طرفدار پروپاقرص ... هستم.
+I can't stand...|نمی‌تونم ... رو تحمل کنم.
+It's okay, I guess.|بد نیست، فکر کنم.
+It's overrated.|بیش از حد ازش تعریف شده.
+It's underrated.|کمتر از حقش دیده شده.
+I love it!|عاشقشم!
+Not really.|نه زیاد.
+Kind of, yeah.|یه‌جورایی آره.
+@ 6|موافقت و مخالفت|Debate lightly with me whether city or village life is better.
+I agree.|موافقم.
+Absolutely.|کاملاً.
+You're right.|حق با توئه.
+Good point.|نکته‌ی خوبیه.
+That makes sense.|منطقیه.
+I see what you mean.|منظورت رو می‌فهمم.
+I'm not so sure.|زیاد مطمئن نیستم.
+I don't think so.|فکر نکنم.
+I see your point, but...|نکته‌ت رو می‌فهمم، ولی...
+That's true, but...|درسته، ولی...
+Not necessarily.|نه لزوماً.
+I'm with you on that.|در این مورد باهات موافقم.
+Let's agree to disagree.|قبول کنیم هم‌نظر نیستیم.
+You've got a point.|حق داری.
+No doubt.|شکی نیست.
+That's not what I meant.|منظورم این نبود.
+Fair point.|نکته‌ی منطقیه.
+Tell me about it.|نگو که! (کاملاً موافقم)
+@ 7|مرور هفته‌ی اول|Have a relaxed chat about my week using everything from days 1-6.
+What did you do today?|امروز چی کار کردی?
+Nothing much.|کار خاصی نکردم.
+It was a long day.|روز طولانی‌ای بود.
+I'm beat.|خیلی خسته‌ام.
+I'm starving.|خیلی گرسنمه.
+I'm stuffed.|خیلی سیرم.
+I'm so bored.|خیلی حوصله‌م سر رفته.
+I'm kinda busy.|یه‌کم سرم شلوغه.
+I'm free.|وقتم آزاده.
+I'm on my way.|تو راهم.
+I'll be there in five.|پنج دقیقه دیگه اونجام.
+I'm running late.|دارم دیر می‌کنم.
+Hang on a sec.|یه لحظه صبر کن.
+Never mind.|بی‌خیال.
+It's no big deal.|مهم نیست.
+Don't worry about it.|نگرانش نباش.
+My bad.|تقصیر من.
+Good for you!|آفرین بهت!
+@ 8|افعال دوکلمه‌ای روزمره ۱|Ask me about my daily routine and use phrasal verbs.
+wake up|بیدار شدن
+get up|از جا بلند شدن
+show up|پیدا شدن، حاضر شدن
+pick up|برداشتن / سوار کردن
+drop off|پیاده کردن / تحویل دادن
+hang out|وقت گذروندن
+chill out|آروم گرفتن
+figure out|فهمیدن، حل کردن
+find out|متوجه شدن
+check out|نگاه کردن، امتحان کردن
+look for|دنبال ... گشتن
+look forward to|مشتاق ... بودن
+run out of|تموم کردن (چیزی)
+come up with|به فکر چیزی رسیدن
+put off|عقب انداختن
+give up|تسلیم شدن، ول کردن
+turn on / turn off|روشن / خاموش کردن
+work out|ورزش کردن / جواب دادن
+@ 9|افعال دوکلمه‌ای روزمره ۲|Tell me a problem you have and I'll suggest solutions.
+get along with|کنار اومدن با
+catch up|عقب‌ماندگی رو جبران کردن / خبر گرفتن
+deal with|کنار اومدن با، رسیدگی به
+end up|آخرش ... شدن
+go over|مرور کردن
+hold on|صبر کردن
+keep up|هم‌پا بودن
+let down|ناامید کردن
+look after|مراقبت کردن
+make up|آشتی کردن / ساختن
+mess up|خراب کردن
+point out|اشاره کردن
+set up|راه‌اندازی کردن
+sort out|حل کردن
+take off|بلند شدن (هواپیما) / درآوردن
+throw away|دور انداختن
+calm down|آروم شدن
+cheer up|سرحال شدن
+@ 10|احساسات|Ask me how I feel about different situations.
+I'm so excited!|خیلی هیجان دارم!
+I'm stressed out.|خیلی استرس دارم.
+I'm freaking out.|حسابی هول کردم.
+I'm over the moon.|از خوشحالی رو ابرام.
+I'm fed up.|خسته و کلافه‌ام.
+I'm kinda nervous.|یه‌کم استرس دارم.
+I'm so embarrassed.|خیلی خجالت‌زده‌ام.
+I'm pissed off.|خیلی عصبانی‌ام (عامیانه).
+I'm upset.|ناراحتم.
+I'm relieved.|خیالم راحت شد.
+I'm proud of you.|بهت افتخار می‌کنم.
+It made my day.|روزم رو ساخت.
+It drives me crazy.|دیوونه‌م می‌کنه.
+I'm in a good mood.|حالم خوبه.
+I'm not in the mood.|حوصله ندارم.
+I feel bad.|احساس بدی دارم / عذاب وجدان دارم.
+I'm sick of it.|حالم ازش به هم می‌خوره.
+I can't wait!|بی‌صبرانه منتظرم!
+@ 11|کاهش‌های گفتاری (gonna, wanna...)|Chat casually and use reduced forms; ask me to repeat them.
+gonna (going to)|می‌خوام، قراره
+wanna (want to)|می‌خوام
+gotta (got to)|باید
+hafta (have to)|مجبورم
+kinda (kind of)|یه‌جورایی
+sorta (sort of)|تقریباً
+lemme (let me)|بذار
+gimme (give me)|بده بهم
+dunno (don't know)|نمی‌دونم
+y'know (you know)|می‌دونی
+whatcha (what are you)|چی داری...
+didja (did you)|آیا تو...
+gotcha (got you)|فهمیدم
+c'mon (come on)|بی‌خیال / بیا
+ya (you)|تو
+'cause (because)|چون
+outta (out of)|از ... بیرون
+lotta (lot of)|کلی
+@ 12|سؤال‌های پیگیری|Tell me about your weekend; I'll ask follow-up questions.
+How come?|چطور؟ چرا؟
+What happened?|چی شد؟
+And then what?|بعدش چی؟
+Like what?|مثلاً چی؟
+What do you mean?|منظورت چیه؟
+How was it?|چطور بود؟
+Who with?|با کی؟
+Since when?|از کی؟
+What for?|برای چی؟
+Is that right?|جدی؟
+How so?|چطور؟
+What's it like?|چه شکلیه؟
+How did it go?|چطور پیش رفت؟
+Did you have fun?|خوش گذشت؟
+What made you...?|چی باعث شد...؟
+Are you serious?|جدی می‌گی؟
+What's the plan?|برنامه چیه؟
+Then what?|بعد چی؟
+@ 13|قرار گذاشتن|Make weekend plans with me.
+Are you free on...?|... وقتت آزاده؟
+Wanna hang out?|بریم بیرون؟
+What are you up to tonight?|امشب چی کار می‌کنی؟
+Let's grab coffee.|بریم یه قهوه بخوریم.
+How about...?|... چطوره؟
+Does ... work for you?|... برات خوبه؟
+I'm down.|پایه‌ام.
+Count me in.|منم هستم.
+I can't make it.|نمی‌تونم بیام.
+Maybe next time.|شاید دفعه‌ی بعد.
+Let's play it by ear.|بذار ببینیم چی پیش میاد.
+Text me the address.|آدرس رو پیام کن.
+I'll pick you up.|میام دنبالت.
+See you there.|اونجا می‌بینمت.
+What time works?|چه ساعتی خوبه؟
+Let's do it!|بزن بریم!
+Rain check?|بذاریم برای بعد؟
+Sounds like a plan.|برنامه‌ی خوبیه.
+@ 14|مرور هفته‌ی دوم + قصه‌گویی|Ask me to tell a short story from my past and react naturally.
+So, get this...|خب، گوش کن...
+You won't believe this.|باورت نمی‌شه.
+So basically...|خلاصه...
+Out of nowhere...|یهو از ناکجا...
+All of a sudden...|ناگهان...
+Long story short...|خلاصه‌ش کنم...
+Turns out...|معلوم شد...
+I was like...|من این‌جوری بودم که...
+And he was like...|و اون این‌جوری بود که...
+Anyway, ...|به هر حال...
+The funny thing is...|نکته‌ی خنده‌دار اینه که...
+To make matters worse...|بدتر از همه...
+In the end...|در نهایت...
+Believe it or not...|باور کنی یا نه...
+I couldn't believe it.|باورم نمی‌شد.
+It was hilarious.|خیلی خنده‌دار بود.
+It was a nightmare.|کابوس بود.
+What a day!|چه روزی!
+@ 15|کار و جلسه|Roleplay a stand-up meeting where I give a status update.
+I'm working on...|دارم روی ... کار می‌کنم.
+I'm almost done.|تقریباً تمومه.
+I'm stuck on...|روی ... گیر کردم.
+I'll look into it.|بررسیش می‌کنم.
+I'll keep you posted.|در جریانت می‌ذارم.
+Let's touch base.|هماهنگ کنیم.
+Can we push it back?|می‌شه عقبش بندازیم؟
+I'm swamped.|خیلی سرم شلوغه.
+That's on my radar.|حواسم بهش هست.
+Let's circle back.|بعداً برمی‌گردیم بهش.
+Quick question...|یه سؤال سریع...
+Just to clarify...|فقط برای روشن شدن...
+Sounds good to me.|به نظرم خوبه.
+I'm on it.|دارم انجامش می‌دم.
+It's due Friday.|موعدش جمعه‌ست.
+Can you loop me in?|منو در جریان می‌ذاری؟
+Let's take it offline.|بعد از جلسه جدا صحبت کنیم.
+Good call.|تصمیم خوبیه.
+@ 16|پول و خرید|Roleplay a market seller; I try to bargain.
+How much is it?|چنده؟
+That's a rip-off.|گرون‌فروشیه.
+That's a steal!|خیلی ارزونه!
+It's a good deal.|معامله‌ی خوبیه.
+Can you do any better?|تخفیف بیشتر می‌دید؟
+It's on sale.|حراجه.
+I'm broke.|بی‌پولم.
+I can't afford it.|از پسش برنمیام.
+It costs an arm and a leg.|خیلی گرونه.
+I'll think about it.|روش فکر می‌کنم.
+I'm just browsing.|فقط نگاه می‌کنم.
+Do you take cards?|کارت قبول می‌کنید؟
+Keep the change.|بقیه‌ش مال خودتون.
+Split the bill?|دانگی حساب کنیم؟
+It's on me.|حساب با من.
+I'll get the next one.|دفعه‌ی بعد با من.
+Is tax included?|مالیات شامله؟
+Can I get a refund?|می‌تونم پولم رو پس بگیرم؟
+@ 17|تعریف و تشکر|Compliment my outfit and cooking; I respond naturally.
+You look great!|عالی به نظر میای!
+I love your...|عاشق ... تو هستم.
+That suits you.|بهت میاد.
+Nice job!|آفرین!
+Well done!|آفرین، عالی بود!
+You nailed it!|ترکوندی!
+That's so kind of you.|خیلی لطف داری.
+You made my day.|روزمو ساختی.
+I owe you one.|یکی طلبت.
+You're the best!|تو بهترینی!
+Thanks a million.|یه دنیا ممنون.
+You shouldn't have!|نباید زحمت می‌کشیدی!
+It was nothing.|کاری نکردم.
+Anytime.|هر وقت خواستی.
+Glad I could help.|خوشحالم تونستم کمک کنم.
+That means a lot.|خیلی برام ارزش داره.
+Way to go!|آفرین!
+Keep it up!|ادامه بده!
+@ 18|همدلی و دلداری|Tell me about a bad day; I comfort you.
+I'm so sorry.|خیلی متأسفم.
+That must be hard.|باید خیلی سخت باشه.
+I can't imagine.|نمی‌تونم تصورش کنم.
+Hang in there.|طاقت بیار.
+It'll be okay.|درست می‌شه.
+I'm here for you.|کنارتم.
+Do you wanna talk about it?|می‌خوای درباره‌ش حرف بزنی؟
+That's rough.|سخته.
+Poor thing.|طفلکی.
+Take it easy.|آروم باش، به خودت سخت نگیر.
+It's not your fault.|تقصیر تو نیست.
+Things happen.|پیش میاد.
+Look on the bright side.|به جنبه‌ی مثبتش نگاه کن.
+Better luck next time.|دفعه‌ی بعد شانس بیشتری داری.
+Let me know if you need anything.|اگه چیزی لازم داشتی بگو.
+I've been there.|منم تجربه‌ش کردم.
+Chin up!|سرت رو بالا بگیر!
+Sending hugs.|بغلت می‌کنم (در پیام).
+@ 19|اصطلاحات پرکاربرد ۱|Use one common idiom in each reply and ask me to guess the meaning.
+a piece of cake|خیلی آسون
+break the ice|یخ جمع رو شکستن
+hit the road|راه افتادن
+call it a day|کار رو برای امروز تموم کردن
+on the same page|هم‌نظر
+under the weather|کمی ناخوش
+cost an arm and a leg|خیلی گرون
+the last straw|تیر خلاص، قطره‌ی آخر
+once in a blue moon|خیلی به ندرت
+spill the beans|راز رو لو دادن
+hit the sack|رفتن به رختخواب
+in hot water|توی دردسر
+get the ball rolling|کار رو شروع کردن
+better late than never|دیر رسیدن بهتر از هرگز نرسیدنه
+sleep on it|روش فکر کردن تا فردا
+no-brainer|تصمیم بدیهی
+cut corners|سرسری انجام دادن
+go the extra mile|بیشتر از انتظار تلاش کردن
+@ 20|اصطلاحات پرکاربرد ۲|Talk about work-life balance using idioms.
+burn the midnight oil|تا دیروقت کار کردن
+burn out|فرسوده شدن
+take a rain check|به بعد موکول کردن
+play it by ear|بداهه تصمیم گرفتن
+up in the air|نامعلوم
+the ball is in your court|حالا نوبت توئه
+bite off more than you can chew|لقمه‌ی بزرگ‌تر از دهن برداشتن
+get your act together|خودت رو جمع و جور کن
+on thin ice|در وضعیت خطرناک
+a blessing in disguise|خیر پنهان
+it's not rocket science|کار سختی نیست
+when pigs fly|عمراً
+keep an eye on|حواس بودن به
+by the skin of your teeth|به زور، به سختی
+get out of hand|از کنترل خارج شدن
+in a nutshell|در یک کلام
+see eye to eye|هم‌نظر بودن
+back to square one|برگشت به خونه‌ی اول
+@ 21|مرور هفته‌ی سوم: مکالمه‌ی آزاد|Have a 10-minute free conversation about my goals; correct me gently.
+What's your goal?|هدفت چیه؟
+I'm trying to...|دارم سعی می‌کنم...
+I've been meaning to...|خیلی وقته می‌خوام...
+I'm thinking about...|دارم به ... فکر می‌کنم.
+I'm planning to...|برنامه دارم...
+Hopefully...|امیدوارم...
+Fingers crossed.|انشالله / امیدوارم.
+We'll see.|ببینیم چی می‌شه.
+Here's the thing...|موضوع اینه که...
+At the end of the day...|در نهایت...
+The point is...|نکته اینه که...
+What I'm trying to say is...|منظورم اینه که...
+It's worth it.|ارزشش رو داره.
+It's not worth it.|ارزشش رو نداره.
+I'm getting there.|دارم بهش نزدیک می‌شم.
+Step by step.|قدم به قدم.
+Practice makes perfect.|کار نیکو کردن از پر کردن است.
+I'm working on it.|دارم روش کار می‌کنم.
+@ 22|عامیانه‌ی رایج (با احتیاط)|Chat like a friendly young American and explain any slang you use.
+legit|واقعی، درجه‌یک
+lit|خیلی باحال
+chill|آروم، باحال
+sketchy|مشکوک
+salty|دلخور، کینه‌ای
+low-key|یه‌جورایی، بی‌سروصدا
+high-key|کاملاً، آشکارا
+no cap|بدون شوخی
+my bad|تقصیر من
+dude / bro|رفیق
+I'm dead (laughing)|مُردم از خنده
+That slaps.|این خیلی خوبه (موسیقی/غذا)
+It's a vibe.|حس‌وحالش خوبه.
+ghost someone|بی‌خبر غیب شدن
+flex|پز دادن
+binge|یه‌نفس دیدن/خوردن
+hangry|عصبانی از گرسنگی
+FOMO|ترس از جا ماندن
+@ 23|بریتانیایی در برابر آمریکایی|Speak British English; point out US equivalents.
+cheers (UK) = thanks|مرسی
+mate (UK) = buddy (US)|رفیق
+brilliant (UK) = awesome (US)|عالی
+knackered (UK) = exhausted|خیلی خسته
+queue (UK) = line (US)|صف
+flat (UK) = apartment (US)|آپارتمان
+lift (UK) = elevator (US)|آسانسور
+loo (UK) = restroom (US)|دستشویی
+chips (UK) = fries (US)|سیب‌زمینی سرخ‌کرده
+crisps (UK) = chips (US)|چیپس
+bill (UK) = check (US)|صورتحساب
+fancy (UK) = want / like|دوست داشتن، خواستن
+gutted (UK) = really disappointed|خیلی ناامید
+quid (UK) = pound|پوند (عامیانه)
+bloody (UK)|خیلی (تأکیدی، کمی بی‌ادبانه)
+sorted (UK) = done|حل شد، ردیف شد
+innit? (UK)|نه؟ مگه نه؟
+taking the mickey (UK)|سر به سر گذاشتن
+@ 24|تلفن و پیام صوتی|Roleplay a phone call where I book a table.
+Hi, this is ... calling.|سلام، ... هستم.
+Is this a good time?|الان وقت مناسبیه؟
+I'm calling about...|درباره‌ی ... زنگ می‌زنم.
+Could you speak up?|می‌شه بلندتر صحبت کنید؟
+You're breaking up.|صداتون قطع و وصل می‌شه.
+Sorry, I missed that.|ببخشید، نشنیدم.
+Could you spell that?|می‌شه هجی کنید؟
+Can I put you on hold?|می‌شه پشت خط بمونید؟
+I'll call you back.|بعداً زنگ می‌زنم.
+Sorry, wrong number.|ببخشید، اشتباه گرفتم.
+Leave a message.|پیام بذارید.
+Give me a call.|بهم زنگ بزن.
+I'll text you the details.|جزئیات رو پیام می‌دم.
+Thanks for calling.|ممنون از تماستون.
+Who's this?|شما؟
+Speaking.|خودم هستم (پشت تلفن).
+Hold on, let me grab a pen.|صبر کن، یه خودکار بردارم.
+It went to voicemail.|رفت روی پیغام‌گیر.
+@ 25|مذاکره و حل مسئله|Negotiate a deadline extension with me as your boss.
+What if we...?|اگه ... چی؟
+How about we...?|چطوره ما...؟
+Would you be open to...?|حاضری ... رو در نظر بگیری؟
+Let's meet halfway.|بیا وسط رو بگیریم.
+Is there any wiggle room?|جای انعطاف هست؟
+That's a deal-breaker.|این خط قرمزه.
+I can live with that.|می‌تونم باهاش کنار بیام.
+Let's sleep on it.|بذار روش فکر کنیم.
+Can we compromise?|می‌تونیم کوتاه بیایم؟
+Here's what I can do.|این کاریه که می‌تونم بکنم.
+It's a win-win.|برد-برده.
+Deal!|قبول!
+That works for me.|برای من خوبه.
+I'm afraid that won't work.|متأسفانه این جواب نمی‌ده.
+Let me run it by my team.|بذار با تیمم مطرحش کنم.
+Let's put it in writing.|کتبیش کنیم.
+The bottom line is...|حرف آخر اینه که...
+Take it or leave it.|می‌خوای بخواه، نمی‌خوای نخواه.
+@ 26|نرم کردن حرف (Hedging)|Discuss a sensitive topic and help me sound diplomatic.
+I might be wrong, but...|شاید اشتباه کنم، ولی...
+It seems like...|به نظر می‌رسه...
+I was just wondering...|فقط می‌خواستم بدونم...
+Maybe we could...|شاید بتونیم...
+I'm not sure if...|مطمئن نیستم که...
+It's a bit...|یه‌کم ... است.
+Not exactly.|نه دقیقاً.
+To some extent.|تا حدی.
+More or less.|کم و بیش.
+Correct me if I'm wrong...|اگه اشتباه می‌کنم اصلاحم کن...
+With all due respect...|با کمال احترام...
+I hate to say it, but...|خوشم نمیاد بگم، ولی...
+No offense, but...|بهت برنخوره، ولی...
+Just a thought.|فقط یه فکره.
+Feel free to say no.|راحت باش نه بگی.
+If you don't mind me saying...|اگه ناراحت نمی‌شی بگم...
+I could be wrong.|ممکنه اشتباه کنم.
+Food for thought.|موضوعی برای فکر کردن.
+@ 27|بحث و استدلال|Debate with me whether AI will replace teachers.
+I'd argue that...|استدلالم اینه که...
+On the one hand... on the other hand...|از یک طرف... از طرف دیگه...
+The way I see it...|از دید من...
+That's a valid point.|نکته‌ی معتبریه.
+I see where you're coming from.|منظورت رو می‌فهمم.
+Let me play devil's advocate.|بذار نقش مخالف رو بازی کنم.
+That's a slippery slope.|این سراشیبی خطرناکیه.
+It's not black and white.|سیاه و سفید نیست.
+For example...|مثلاً...
+What I mean is...|منظورم اینه که...
+Granted, but...|قبول، ولی...
+Even so...|با این حال...
+That said...|با این همه...
+The bottom line is...|نتیجه اینه که...
+I'm torn.|دو دلم.
+I've changed my mind.|نظرم عوض شد.
+You've convinced me.|قانعم کردی.
+Let's look at it another way.|بیا از زاویه‌ی دیگه نگاه کنیم.
+@ 28|طنز و شوخی|Joke around with me; use light sarcasm and teach me to respond.
+Just kidding!|شوخی کردم!
+I'm pulling your leg.|دارم سر به سرت می‌ذارم.
+Very funny.|خیلی بامزه (با طعنه).
+Oh, great. Just great.|عالی شد. واقعاً عالی (طعنه).
+Yeah, right.|آره جون خودت (طعنه).
+You're killing me!|منو کشتی (از خنده)!
+That's hilarious.|خیلی خنده‌داره.
+LOL, good one.|ها، خوب بود.
+Classic.|همیشگی (کنایه).
+Says who?|کی گفته؟
+Look who's talking!|ببین کی داره حرف می‌زنه!
+Don't quit your day job.|شغلت رو ول نکن (یعنی بامزه نبودی).
+You wish!|آرزو به دل!
+In your dreams.|تو خواب ببینی.
+Nice try.|تلاش خوبی بود (ولی نه).
+I'll let it slide.|این بار نادیده می‌گیرم.
+No pun intended.|بازی با کلمات قصدی نبود.
+Get out of here!|برو بابا! (باورم نمی‌شه)
+@ 29|مصاحبه و معرفی حرفه‌ای|Interview me for a job I want; give feedback in Persian.
+Tell me about yourself.|از خودت بگو.
+I've been working in ... for...|... ساله در ... کار می‌کنم.
+I'm passionate about...|به ... علاقه‌ی زیادی دارم.
+My main strength is...|نقطه‌ی قوت اصلیم ... است.
+I'm working on...|دارم روی ... کار می‌کنم (ضعف).
+I'm a quick learner.|سریع یاد می‌گیرم.
+I thrive under pressure.|زیر فشار بهتر کار می‌کنم.
+I'm a team player.|اهل کار تیمی‌ام.
+For instance...|برای نمونه...
+As a result...|در نتیجه...
+I'm looking for a new challenge.|دنبال چالش جدیدم.
+Where do you see yourself in five years?|پنج سال دیگه خودت رو کجا می‌بینی؟
+What does success look like in this role?|موفقیت در این نقش چه شکلیه؟
+That's a great question.|سؤال خوبیه.
+Let me give you an example.|بذار یه مثال بزنم.
+I'd love to be part of this team.|دوست دارم عضو این تیم باشم.
+When can I expect to hear back?|کی می‌تونم منتظر جواب باشم؟
+Thanks for your time.|ممنون از وقتتون.
+@ 30|جمع‌بندی: مکالمه‌ی آزاد ۱۵ دقیقه‌ای|Have a long free conversation covering everything; give a final Persian summary of my progress.
+I've come a long way.|خیلی پیشرفت کردم.
+I'm getting the hang of it.|داره دستم میاد.
+It's starting to click.|داره جا می‌افته.
+I still struggle with...|هنوز با ... مشکل دارم.
+Practice every day.|هر روز تمرین کن.
+Keep at it.|ادامه بده.
+Don't give up.|ول نکن.
+I'm proud of myself.|به خودم افتخار می‌کنم.
+That's a milestone.|یه نقطه‌ی عطفه.
+On to the next one!|بریم سراغ بعدی!
+Bring it on!|بیار ببینم! (آماده‌ام)
+Let's keep the momentum going.|بیا این شتاب رو حفظ کنیم.
+I can hold a conversation now.|الان می‌تونم یه گفتگو رو پیش ببرم.
+I'm way more confident.|خیلی بااعتمادبه‌نفس‌ترم.
+Mistakes are part of learning.|اشتباه بخشی از یادگیریه.
+Little by little.|کم‌کم.
+The sky's the limit.|حد و مرزی نداره.
+Here's to the next 30 days!|به سلامتی ۳۰ روز بعدی!

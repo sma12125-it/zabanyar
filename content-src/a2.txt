@@ -1,0 +1,305 @@
+# 💇|آرایشگاه|در آرایشگاه مدل موی دلخواهتان را توضیح می‌دهید.|Barber
+A|Hey, what are we doing today?|سلام، امروز چی کار کنیم؟
+B|Just a trim, please. Not too short.|فقط کوتاه کردن سرسری لطفاً. خیلی کوتاه نه.
+A|Gotcha. Short on the sides, a little longer on top?|فهمیدم. کنارها کوتاه، بالا یه‌کم بلندتر؟
+B|Exactly. And can you clean up the beard too?|دقیقاً. ریشم رو هم مرتب می‌کنی؟
+A|Sure thing. How's this length?|حتماً. این اندازه چطوره؟
+B|Maybe a little shorter on the sides.|شاید کنارها یه‌کم کوتاه‌تر.
+A|There you go. What do you think?|بفرما. نظرت چیه؟
+B|Looks great, thanks man!|عالی شد، مرسی داداش!
++ What are we doing today?|امروز چی کار کنیم؟
++ Just a trim.|فقط کوتاه کردن مختصر.
++ Not too short.|خیلی کوتاه نه.
++ Gotcha.|فهمیدم. (got you)
++ short on the sides|کنارها کوتاه
++ longer on top|بالا بلندتر
++ clean up the beard|مرتب کردن ریش
++ How's this length?|این اندازه چطوره؟
++ There you go.|بفرما، تموم شد.
++ What do you think?|نظرت چیه؟
++ a fade|مدل محو (فید)
+! Cut my hair a little.|Just a trim, please.|trim یعنی کوتاه کردن مختصر.
+! I understood.|Gotcha.|Gotcha = I got you، بسیار محاوره‌ای.
+~ Gotcha|گاچا|got + you = «گاچا».
+
+# 🏦|بانک و باز کردن حساب|در بانک حساب باز می‌کنید.|Bank teller
+B|Hi, I'd like to open a checking account.|سلام، می‌خواستم یه حساب جاری باز کنم.
+A|Great. Do you have a photo ID and proof of address?|عالیه. کارت شناسایی عکس‌دار و مدرک آدرس دارید؟
+B|I've got my passport and a utility bill. Will that work?|پاسپورت و یه قبض دارم. کافیه؟
+A|Perfect, that works.|عالیه، کافیه.
+B|Is there a minimum deposit?|حداقل سپرده‌ای داره؟
+A|Just twenty-five dollars to get started.|فقط بیست و پنج دلار برای شروع.
+B|Okay. And are there any monthly fees?|باشه. کارمزد ماهانه داره؟
+A|Not if you keep at least five hundred in the account.|نه، اگه حداقل پونصد دلار توی حساب نگه دارید.
++ open an account|حساب باز کردن
++ checking account|حساب جاری
++ savings account|حساب پس‌انداز
++ photo ID|کارت شناسایی عکس‌دار
++ proof of address|مدرک آدرس
++ Will that work?|کافیه؟ جواب می‌ده؟
++ minimum deposit|حداقل سپرده
++ monthly fees|کارمزد ماهانه
++ withdraw money|برداشت پول
++ transfer money|انتقال پول
++ My card got declined.|کارتم رد شد.
+! Is this enough?|Will that work?|Will that work طبیعی‌تر است.
+! The bank takes money every month?|Are there any monthly fees?|سؤال دقیق و کوتاه.
+
+# 🧳|پذیرش فرودگاه|در فرودگاه چک‌این می‌کنید.|Check-in agent
+A|Hi, where are you flying today?|سلام، امروز به کجا پرواز دارید؟
+B|To Istanbul. Here's my passport.|استانبول. این پاسپورتمه.
+A|Thanks. Are you checking any bags?|ممنون. چمدون تحویل می‌دید؟
+B|Just one. Is it overweight?|فقط یکی. اضافه‌وزن داره؟
+A|It's right at the limit, so you're fine. Window or aisle?|دقیقاً سر حده، پس مشکلی نیست. کنار پنجره یا راهرو؟
+B|Aisle, please. What time does boarding start?|راهرو لطفاً. سوار شدن کی شروع می‌شه؟
+A|Boarding starts at 9:15 at gate B12.|ساعت ۹:۱۵ از گیت B12.
+B|Great, thanks for your help!|عالیه، ممنون از کمکتون!
++ Where are you flying today?|امروز کجا پرواز دارید؟
++ checking any bags?|چمدون تحویل می‌دید؟
++ carry-on|ساک دستی
++ overweight|اضافه‌وزن
++ right at the limit|دقیقاً سر حد
++ window or aisle?|پنجره یا راهرو؟
++ boarding|سوار شدن به هواپیما
++ boarding pass|کارت پرواز
++ gate|گیت
++ The flight is delayed.|پرواز تأخیر داره.
+! I want to give my luggage.|I'm checking one bag.|check a bag یعنی تحویل چمدون.
+! Near the window please.|Window seat, please.|کوتاه و طبیعی.
+
+# 🔍|گم شدن وسیله|کیف پولتان را گم کرده‌اید.|Staff
+B|Hi, I think I left my wallet here earlier.|سلام، فکر کنم کیف پولم رو قبلاً اینجا جا گذاشتم.
+A|Oh no. What does it look like?|ای وای. چه شکلیه؟
+B|It's a small brown leather one. It's got my ID in it.|یه کیف چرمی قهوه‌ای کوچیکه. کارت شناساییم توشه.
+A|Let me check the lost and found.|بذارید قسمت اشیای گمشده رو ببینم.
+B|Thank you so much. I've been freaking out.|خیلی ممنون. حسابی هول کرده بودم.
+A|Is this it?|اینه؟
+B|Yes! Oh, thank god. You're a lifesaver!|آره! وای خدا رو شکر. نجاتم دادی!
++ I left my ... here.|... رو اینجا جا گذاشتم.
++ earlier|قبلاً، چند وقت پیش
++ What does it look like?|چه شکلیه؟
++ It's got my ID in it.|کارت شناساییم توشه.
++ lost and found|اشیای گمشده
++ I've been freaking out.|حسابی هول کرده بودم.
++ Is this it?|اینه؟
++ Thank god.|خدا رو شکر.
++ I can't find my...|... رو پیدا نمی‌کنم.
++ I lost my...|... رو گم کردم.
+! I forgot my wallet here.|I left my wallet here.|برای «جا گذاشتن» از leave استفاده کنید نه forget.
+! I was very stressed.|I've been freaking out.|freak out محاوره‌ای رایج.
+
+# 🥳|دعوت به مهمانی|دوستتان را به مهمانی دعوت می‌کنید.|Olivia
+B|Hey, I'm having a little get-together on Friday. You should come!|هی، جمعه یه دورهمی کوچیک دارم. باید بیای!
+A|Ooh, fun! What's the occasion?|اوه، چه خوب! به چه مناسبتی؟
+B|No occasion, just hanging out. Some food, some music.|مناسبتی نیست، فقط دورهم. یه‌کم غذا، یه‌کم موسیقی.
+A|I'm in! Should I bring something?|من هستم! چیزی بیارم؟
+B|Maybe some snacks? Whatever you like.|شاید یه‌کم خوراکی؟ هر چی دوست داری.
+A|Can I bring a friend?|می‌تونم یه دوست بیارم؟
+B|Of course! The more the merrier.|البته! هر چی بیشتر، بهتر.
++ get-together|دورهمی
++ You should come!|باید بیای!
++ What's the occasion?|به چه مناسبت؟
++ just hanging out|فقط دورهم بودن
++ I'm in!|من هستم!
++ Should I bring something?|چیزی بیارم؟
++ snacks|خوراکی، تنقلات
++ whatever you like|هر چی دوست داری
++ Can I bring a friend?|می‌تونم دوستمو بیارم؟
++ The more the merrier.|هر چی بیشتر، بهتر.
++ RSVP|اعلام حضور
+! I invite you to my party.|You should come!|«I invite you» رسمی و غیرطبیعی است.
+! Yes, I will come.|I'm in!|کوتاه و پرانرژی.
+
+# 🔊|همسایه‌ی پرسروصدا|با همسایه درباره‌ی سروصدا صحبت می‌کنید.|Neighbor
+B|Hey, sorry to bother you. Got a minute?|سلام، ببخشید مزاحم شدم. یه دقیقه وقت دارید؟
+A|Sure, what's up?|حتماً، چی شده؟
+B|The music's been kinda loud late at night.|موسیقی شب‌ها یه‌کم بلند بوده.
+A|Oh, I'm so sorry! I had no idea you could hear it.|وای خیلی ببخشید! اصلاً نمی‌دونستم صداش میاد.
+B|No worries. Could you maybe turn it down after ten?|اشکال نداره. می‌شه شاید بعد از ده کمش کنید؟
+A|Absolutely. Thanks for letting me know.|حتماً. ممنون که گفتید.
+B|Thanks for understanding!|ممنون که درک کردید!
++ Sorry to bother you.|ببخشید مزاحم شدم.
++ Got a minute?|یه دقیقه وقت داری؟
++ kinda loud|یه‌کم بلند
++ late at night|آخر شب
++ I had no idea.|اصلاً نمی‌دونستم.
++ turn it down|کمش کردن
++ Thanks for letting me know.|ممنون که خبر دادی.
++ Thanks for understanding.|ممنون که درک کردی.
++ It's been keeping me up.|نذاشته بخوابم.
++ I hate to ask, but...|نمی‌خوام زحمت بدم، ولی...
+! Your music is too loud, stop it.|The music's been kinda loud.|با kinda انتقاد را نرم کنید.
+! Thank you for your understanding.|Thanks for understanding!|محاوره‌ای و کوتاه.
+
+# 🍳|آشپزی با هم|با دوستتان شام درست می‌کنید.|Ryan
+A|Okay, can you chop the onions?|خب، می‌شه پیازها رو خرد کنی؟
+B|Sure. How small do you want them?|حتماً. چقدر ریز می‌خوای؟
+A|Pretty small. Then toss them in the pan.|نسبتاً ریز. بعد بریزشون توی تابه.
+B|Got it. Should I turn the heat up?|فهمیدم. شعله رو زیاد کنم؟
+A|Medium is fine. Don't let them burn.|متوسط خوبه. نذار بسوزن.
+B|Mmm, it smells amazing already.|ممم، از الان بوش فوق‌العاده‌ست.
+A|Right? Can you taste it and see if it needs salt?|نه؟ مزه‌ش کن ببین نمک لازم داره؟
+B|Just a pinch more, I think.|فکر کنم یه ذره دیگه.
++ chop the onions|پیاز خرد کردن
++ How small?|چقدر ریز؟
++ toss it in the pan|ریختن توی تابه
++ turn the heat up|شعله رو زیاد کردن
++ medium heat|شعله‌ی متوسط
++ Don't let it burn.|نذار بسوزه.
++ It smells amazing.|بوش فوق‌العاده‌ست.
++ taste it|مزه کردن
++ a pinch of salt|یه ذره نمک
++ boil / fry / bake|جوشاندن / سرخ کردن / پختن در فر
++ It's ready.|آماده‌ست.
+! Cut the onion in small pieces.|Chop the onions.|chop فعل دقیق است.
+! It has a good smell.|It smells amazing.|ساختار smell + صفت.
+
+# 🍿|انتخاب فیلم برای شب|با هم‌خانه‌تان دنبال فیلم می‌گردید.|Zoe
+A|What do you feel like watching?|حال چی دیدن داری؟
+B|I'm in the mood for something funny.|حال یه چیز خنده‌دار رو دارم.
+A|Have you seen that new comedy with Ryan Reynolds?|اون کمدی جدید رایان رینولدز رو دیدی؟
+B|Not yet. Is it any good?|هنوز نه. خوبه؟
+A|I heard it's hilarious.|شنیدم خیلی خنده‌داره.
+B|Let's do it. I'll make popcorn.|بزن بریم. من پاپ‌کورن درست می‌کنم.
+A|Deal. No spoilers if you've read anything!|قبول. اگه چیزی خوندی لو نده!
++ What do you feel like...?|حال چی رو داری؟
++ I'm in the mood for...|حال ... رو دارم.
++ Have you seen...?|... رو دیدی؟
++ Not yet.|هنوز نه.
++ Is it any good?|خوبه اصلاً؟
++ I heard it's...|شنیدم ... هست.
++ hilarious|خیلی خنده‌دار
++ Let's do it.|بزن بریم.
++ No spoilers!|لو نده!
++ binge it|یه‌نفس دیدن
++ It's boring.|خسته‌کننده‌ست.
+! What do you want to watch?|What do you feel like watching?|feel like + ing نرم‌تر است.
+! I want to watch a funny film.|I'm in the mood for something funny.|in the mood for اصطلاحی است.
+
+# 🚗|کرایه‌ی ماشین|در دفتر کرایه‌ی ماشین هستید.|Agent
+B|Hi, I've got a reservation for a compact car.|سلام، یه رزرو برای ماشین کوچیک دارم.
+A|Great. Can I see your driver's license and a credit card?|عالیه. گواهینامه و کارت اعتباری‌تون رو می‌بینم؟
+B|Here you go. Is insurance included?|بفرمایید. بیمه شامل می‌شه؟
+A|Basic coverage is. Full coverage is fifteen a day extra.|پوشش پایه آره. پوشش کامل روزی پونزده دلار اضافه‌ست.
+B|I'll go with basic. Does it need to come back with a full tank?|پایه رو می‌گیرم. باید با باک پر برگردونم؟
+A|Yes, or we'll charge you for the gas.|بله، وگرنه پول بنزین رو حساب می‌کنیم.
+B|Got it. Where do I pick it up?|فهمیدم. از کجا تحویلش بگیرم؟
++ driver's license|گواهینامه
++ Is insurance included?|بیمه شامل می‌شه؟
++ full coverage|پوشش کامل بیمه
++ I'll go with...|... رو انتخاب می‌کنم.
++ a full tank|باک پر
++ gas (US) / petrol (UK)|بنزین
++ charge you for|برای ... ازتون پول گرفتن
++ pick it up|تحویل گرفتن
++ drop it off|تحویل دادن
++ automatic or manual?|اتومات یا دنده‌ای؟
+! I want to rent car.|I'd like to rent a car.|فراموش نکنید: a car.
+! Benzin|gas / petrol|«بنزین» در انگلیسی gas (آمریکا) یا petrol (انگلیس) است.
+
+# 📦|اداره‌ی پست|یک بسته به خارج پست می‌کنید.|Postal clerk
+B|Hi, I'd like to send this package to Canada.|سلام، می‌خوام این بسته رو بفرستم کانادا.
+A|Sure. What's inside?|حتماً. توش چیه؟
+B|Just some clothes and a couple of books.|فقط چندتا لباس و دوتا کتاب.
+A|Okay. Regular or express?|باشه. عادی یا پیشتاز؟
+B|How long does regular take?|عادی چقدر طول می‌کشه؟
+A|About two weeks. Express is three to five days.|حدود دو هفته. پیشتاز سه تا پنج روز.
+B|Regular's fine. Can I get a tracking number?|عادی خوبه. کد رهگیری می‌گیرم؟
+A|Yep, it's on your receipt.|بله، روی رسیدتونه.
++ send a package|بسته فرستادن
++ What's inside?|توش چیه؟
++ a couple of|دوتا، چندتا
++ regular or express?|عادی یا پیشتاز؟
++ How long does it take?|چقدر طول می‌کشه؟
++ tracking number|کد رهگیری
++ fragile|شکستنی
++ fill out this form|این فرم رو پر کنید
++ customs|گمرک
++ It's on your receipt.|روی رسیدتونه.
+! How many days it arrives?|How long does it take?|ساختار درست سؤال.
+! Two books|a couple of books|a couple of در محاوره رایج است.
+
+# 👩‍💼|صحبت درباره‌ی شغل|در یک مهمانی درباره‌ی کارتان می‌پرسند.|Mark
+A|So what do you do?|خب، چی کاره‌ای؟
+B|I'm a nurse. I work at a hospital downtown.|پرستارم. توی یه بیمارستان مرکز شهر کار می‌کنم.
+A|Oh wow, that must be intense.|وای، باید خیلی سخت باشه.
+B|It can be, but I love it. What about you?|می‌تونه باشه، ولی دوستش دارم. تو چی؟
+A|I'm in marketing. Pretty boring compared to you!|من توی بازاریابی‌ام. در مقایسه با تو خیلی کسل‌کننده‌ست!
+B|Ha, I doubt that. How long have you been doing that?|ها، فکر نکنم. چند وقته این کار رو می‌کنی؟
+A|About five years now.|حدود پنج سال.
++ What do you do?|چی کاره‌ای؟
++ I work at...|توی ... کار می‌کنم.
++ That must be intense.|باید خیلی فشرده/سخت باشه.
++ It can be.|می‌تونه باشه.
++ I'm in marketing.|توی حوزه‌ی بازاریابی‌ام.
++ compared to|در مقایسه با
++ I doubt that.|فکر نکنم.
++ How long have you been...?|چند وقته ...؟
++ I'm self-employed.|کار آزاد دارم.
++ I'm between jobs.|فعلاً بیکارم. (مؤدبانه)
+! What is your job?|What do you do?|سؤال طبیعی و رایج.
+! I am working in hospital.|I work at a hospital.|برای شغل همیشگی، حال ساده + a.
+
+# 👥|توصیف ظاهر یک نفر|دنبال دوستتان در جمعیت می‌گردید.|Friend
+A|Your sister's meeting us here, right? What does she look like?|خواهرت قراره اینجا بیاد دیگه؟ چه شکلیه؟
+B|She's kinda tall, with long curly hair.|یه‌کم قدبلنده، با موهای بلند فرفری.
+A|Dark hair?|موی تیره؟
+B|Yeah, dark brown. She'll probably be wearing a red jacket.|آره، قهوه‌ای تیره. احتمالاً کاپشن قرمز پوشیده.
+A|Is that her by the door?|اون نیست کنار در؟
+B|Yep, that's her! She looks just like my mom.|آره، خودشه! خیلی شبیه مامانمه.
++ What does she look like?|چه شکلیه؟
++ kinda tall|یه‌کم قدبلند
++ long curly hair|موی بلند فرفری
++ straight hair|موی صاف
++ dark brown|قهوه‌ای تیره
++ She'll be wearing...|... پوشیده خواهد بود.
++ Is that her?|اونه؟
++ That's her!|خودشه!
++ She looks just like...|خیلی شبیه ... است.
++ in her twenties|بیست و چند ساله
+! How is she?|What does she look like?|How is she یعنی «حالش چطوره».
+! She has long and curly hairs.|She has long curly hair.|hair برای موی سر غیرقابل‌شمارش است.
+
+# 🚆|خرید بلیت قطار|بلیت قطار برای سفر آخر هفته می‌خرید.|Ticket agent
+B|Hi, can I get a round-trip ticket to Oxford for Saturday?|سلام، یه بلیت رفت و برگشت برای آکسفورد برای شنبه می‌دید؟
+A|Sure. Morning or afternoon?|حتماً. صبح یا بعدازظهر؟
+B|The earliest one, please. When does it leave?|زودترین لطفاً. کی حرکت می‌کنه؟
+A|7:10, platform four. Coming back the same day?|ساعت ۷:۱۰، سکوی چهار. همون روز برمی‌گردید؟
+B|No, Sunday evening. Is there a student discount?|نه، یکشنبه عصر. تخفیف دانشجویی داره؟
+A|There is, with a valid student card.|داره، با کارت دانشجویی معتبر.
+B|Here it is. Do I need to change trains?|بفرمایید. باید قطار عوض کنم؟
+A|Nope, it's a direct train.|نه، قطار مستقیمه.
++ round-trip (US) / return (UK)|رفت و برگشت
++ one-way (US) / single (UK)|یک‌طرفه
++ the earliest one|زودترین
++ When does it leave?|کی حرکت می‌کنه؟
++ platform|سکو
++ the same day|همون روز
++ student discount|تخفیف دانشجویی
++ change trains|قطار عوض کردن
++ direct train|قطار مستقیم
++ Is this seat free?|این صندلی آزاده؟
+! A ticket for going and coming.|A round-trip ticket.|round-trip آمریکایی، return بریتانیایی.
+! When it goes?|When does it leave?|سؤال با does.
+
+# 💻|تماس تصویری با خانواده|با خواهرتان تماس تصویری دارید و اینترنت ضعیف است.|Sister
+A|Hey! Can you hear me? You're kinda frozen.|سلام! صدامو داری؟ تصویرت یه‌کم ثابت مونده.
+B|Yeah, I can hear you, but you're breaking up a little.|آره، صداتو دارم، ولی یه‌کم قطع و وصل می‌شی.
+A|Hold on, let me move closer to the router. Better?|صبر کن، برم نزدیک روتر. بهتر شد؟
+B|Much better! So what's new with you?|خیلی بهتر! خب چه خبرا؟
+A|Not much. Mom says hi, by the way. She misses you.|خبر خاصی نیست. راستی مامان سلام می‌رسونه. دلش برات تنگ شده.
+B|Aw, tell her I miss her too. I'll call her this weekend.|آخی، بهش بگو منم دلم تنگ شده. این آخر هفته بهش زنگ می‌زنم.
+A|You're on mute! Oh wait, now I can hear you.|صدات قطعه! اِ صبر کن، الان می‌شنوم.
++ Can you hear me?|صدامو داری؟
++ You're frozen.|تصویرت ثابت مونده.
++ You're breaking up.|قطع و وصل می‌شی.
++ Hold on.|صبر کن.
++ Much better!|خیلی بهتر!
++ What's new with you?|چه خبرا؟
++ ... says hi.|... سلام می‌رسونه.
++ She misses you.|دلش برات تنگ شده.
++ You're on mute.|صدات قطعه (میوت هستی).
++ The connection is bad.|اتصال ضعیفه.
++ Let me call you back.|بذار دوباره بهت زنگ بزنم.
+! Mom sends you greetings.|Mom says hi.|عبارت رایج.
+! Your sound is closed.|You're on mute.|اصطلاح تماس آنلاین.

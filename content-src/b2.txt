@@ -1,0 +1,348 @@
+# ⚔️|اختلاف با همکار|همکارتان بخشی از کار شما را به نام خودش ارائه داده.|Josh
+B|Hey Josh, do you have a sec? I wanted to clear something up.|هی جاش، یه لحظه وقت داری؟ می‌خواستم یه چیزی رو روشن کنم.
+A|Sure, what's going on?|حتماً، چی شده؟
+B|In the meeting, it kinda sounded like the dashboard was all your work.|توی جلسه یه‌جورایی این‌طور به نظر رسید که داشبورد کلاً کار تو بوده.
+A|Oh. I didn't mean it that way. I guess I got carried away.|اوه. منظورم این نبود. فکر کنم زیادی جوگیر شدم.
+B|I get it, but I put a lot of hours into that, and it'd be nice to get some credit.|می‌فهمم، ولی کلی ساعت روش گذاشتم و خوب می‌شد اگه سهمم دیده می‌شد.
+A|That's fair. I'll mention it in the follow-up email.|منصفانه‌ست. توی ایمیل پیگیری بهش اشاره می‌کنم.
+B|I appreciate that. Let's make sure we're on the same page going forward.|ممنونم. از این به بعد مطمئن بشیم هماهنگیم.
++ clear something up|چیزی رو روشن کردن
++ What's going on?|چی شده؟
++ It sounded like...|این‌طور به نظر رسید که...
++ I didn't mean it that way.|منظورم این نبود.
++ get carried away|جوگیر شدن، زیاده‌روی کردن
++ put a lot of hours into|کلی وقت گذاشتن روی
++ get credit|دیده شدن سهم
++ That's fair.|منصفانه‌ست.
++ mention it|بهش اشاره کردن
++ going forward|از این به بعد
++ on the same page|هماهنگ، هم‌نظر
++ take credit for|سهم دیگری را به نام خود زدن
++ throw someone under the bus|کسی را قربانی کردن
+! You stole my work!|It kinda sounded like it was all your work.|توصیف رفتار به‌جای اتهام؛ گفتگو سازنده می‌ماند.
+! I want my name.|It'd be nice to get some credit.|درخواست غیرمستقیم ولی روشن.
+
+# 🎤|پرسش و پاسخ بعد از ارائه|بعد از ارائه به سؤال‌ها جواب می‌دهید.|Audience member
+A|Thanks for the talk. Quick question — how did you measure user engagement?|ممنون از ارائه. یه سؤال سریع — درگیری کاربر رو چطور اندازه گرفتید؟
+B|Great question. We mainly looked at daily active users and session length.|سؤال خوبیه. بیشتر کاربران فعال روزانه و مدت جلسه رو بررسی کردیم.
+A|Did you control for seasonal effects?|اثرات فصلی رو کنترل کردید؟
+B|To be honest, not fully. That's something we're looking into for the next phase.|راستش کامل نه. این چیزیه که برای فاز بعد داریم بررسی می‌کنیم.
+A|Makes sense. And would this scale to larger markets?|منطقیه. و این برای بازارهای بزرگ‌تر هم جواب می‌ده؟
+B|I'd say yes, with a few caveats. Happy to go into more detail after the session.|به نظرم بله، با چندتا قید و شرط. خوشحال می‌شم بعد از جلسه با جزئیات بیشتر توضیح بدم.
++ Quick question|یه سؤال سریع
++ Great question.|سؤال خوبیه.
++ We mainly looked at...|بیشتر ... رو بررسی کردیم.
++ control for|کنترل کردن (متغیر)
++ To be honest, not fully.|راستش کامل نه.
++ That's something we're looking into.|این چیزیه که داریم بررسیش می‌کنیم.
++ Makes sense.|منطقیه.
++ scale|مقیاس‌پذیر بودن
++ with a few caveats|با چند قید و شرط
++ go into more detail|با جزئیات بیشتر توضیح دادن
++ I don't have that number off the top of my head.|الان اون عدد تو ذهنم نیست.
++ Let me get back to you on that.|بعداً جوابت رو می‌دم.
+! I don't know.|That's something we're looking into.|اعتراف حرفه‌ای به ندانستن.
+! Your question is good.|Great question.|برای خریدن چند ثانیه وقت.
+
+# 🏚️|اختلاف ودیعه با صاحبخانه|صاحبخانه ودیعه را کامل پس نداده.|Landlord
+B|Hi, I noticed you kept two hundred dollars from my deposit. Can you walk me through why?|سلام، دیدم دویست دلار از ودیعه‌م رو نگه داشتید. می‌شه توضیح بدید چرا؟
+A|There was some damage to the wall in the bedroom.|دیوار اتاق خواب یه‌کم آسیب دیده بود.
+B|That was there when I moved in. I've got photos from day one.|اون از وقتی اومدم بود. از روز اول عکس دارم.
+A|Hmm, I don't remember that.|اوم، یادم نمیاد.
+B|I can send them over. They're timestamped.|می‌تونم بفرستم. تاریخ و ساعت دارن.
+A|Okay, if that's the case, I'll refund it.|باشه، اگه این‌طوره، پس می‌دم.
+B|Great. I'd really rather sort this out between us than go to small claims.|عالیه. واقعاً ترجیح می‌دم بین خودمون حلش کنیم تا اینکه کار به دادگاه بکشه.
++ walk me through|قدم به قدم توضیح دادن
++ deposit|ودیعه
++ damage|آسیب
++ when I moved in|وقتی اسباب‌کشی کردم
++ from day one|از روز اول
++ send them over|فرستادنشون
++ timestamped|دارای تاریخ و ساعت
++ if that's the case|اگه این‌طوره
++ refund|پس دادن پول
++ sort this out|حلش کردن
++ small claims court|دادگاه دعاوی کوچک
++ wear and tear|فرسودگی عادی
+! Why did you steal my money?|Can you walk me through why?|درخواست توضیح، نه اتهام.
+! I will complain to court.|I'd rather sort this out than go to small claims.|تهدید ضمنی و مؤدبانه.
+
+# 🚔|گزارش سرقت به پلیس|گوشی‌تان دزدیده شده.|Officer
+B|Hi, I need to report a stolen phone.|سلام، می‌خوام سرقت گوشی رو گزارش بدم.
+A|Okay. When and where did this happen?|باشه. کی و کجا اتفاق افتاد؟
+B|About an hour ago, on the subway. Someone snatched it right out of my hand.|حدود یه ساعت پیش، توی مترو. یکی از دستم قاپیدش.
+A|Did you get a look at the person?|قیافه‌ش رو دیدید؟
+B|Not really. It all happened so fast. Tall guy, gray hoodie.|نه زیاد. خیلی سریع اتفاق افتاد. یه مرد قدبلند، هودی خاکستری.
+A|Got it. Have you been able to track it?|فهمیدم. تونستید ردیابیش کنید؟
+B|I locked it remotely, but the location's off.|از راه دور قفلش کردم، ولی موقعیت خاموشه.
+A|I'll file a report and give you a case number for your insurance.|گزارش ثبت می‌کنم و یه شماره پرونده برای بیمه‌تون می‌دم.
++ report a stolen phone|گزارش سرقت گوشی
++ When and where did this happen?|کی و کجا اتفاق افتاد؟
++ snatch|قاپیدن
++ Did you get a look at...?|... رو دیدی؟
++ It all happened so fast.|همه چی خیلی سریع اتفاق افتاد.
++ hoodie|هودی
++ track it|ردیابی کردن
++ lock it remotely|از راه دور قفل کردن
++ file a report|گزارش ثبت کردن
++ case number|شماره پرونده
++ I was mugged.|بهم دستبرد زدن (با تهدید).
+! Somebody robbed my phone.|Someone stole my phone.|rob برای شخص/مکان، steal برای شیء.
+! I didn't see his face good.|I didn't really get a look at him.|اصطلاح طبیعی.
+
+# 🧓|درخواست مدیر در تماس پشتیبانی|برای بار سوم با پشتیبانی تماس گرفته‌اید.|Agent
+B|Hi, this is my third time calling about the same issue, and it still isn't resolved.|سلام، این سومین باره که درباره‌ی همین مشکل زنگ می‌زنم و هنوز حل نشده.
+A|I'm sorry for the inconvenience. Can I get your account number?|بابت ناراحتی عذرخواهی می‌کنم. شماره حسابتون رو می‌دید؟
+B|Sure. I was told it'd be fixed within forty-eight hours, and that was a week ago.|حتماً. بهم گفته بودن ظرف چهل و هشت ساعت درست می‌شه، و اون یه هفته پیش بود.
+A|I see the ticket here. It looks like it was escalated but never followed up on.|تیکت رو اینجا می‌بینم. انگار ارجاع داده شده ولی پیگیری نشده.
+B|Honestly, I'm at my wits' end. Could I speak to a supervisor?|راستش دیگه کلافه شدم. می‌تونم با سرپرست صحبت کنم؟
+A|Absolutely. And I'll add a credit to your account for the trouble.|حتماً. و بابت دردسر یه اعتبار به حسابتون اضافه می‌کنم.
+B|Thank you. I appreciate you taking ownership of this.|ممنون. ممنونم که مسئولیتش رو قبول کردی.
++ this is my third time calling|سومین باره زنگ می‌زنم
++ resolved|حل‌شده
++ sorry for the inconvenience|بابت ناراحتی عذر می‌خوام
++ I was told...|بهم گفته شده بود...
++ escalated|ارجاع‌داده‌شده به سطح بالاتر
++ follow up on|پیگیری کردن
++ at my wits' end|کلافه، کاسه‌ی صبرم لبریز
++ speak to a supervisor|صحبت با سرپرست
++ for the trouble|بابت دردسر
++ take ownership|مسئولیت قبول کردن
++ This is unacceptable.|این قابل قبول نیست.
++ I'd like this in writing.|کتبی می‌خوامش.
+! You are useless!|I'm at my wits' end. Could I speak to a supervisor?|محکم ولی مؤدب؛ نتیجه‌ی بهتر.
+! I called three times.|This is my third time calling about this.|طبیعی‌تر.
+
+# 👋|استعفا دادن|به مدیرتان خبر استعفا می‌دهید.|Manager
+B|Hey, thanks for meeting with me. This isn't easy to say, but I've decided to move on.|سلام، ممنون که وقت گذاشتید. گفتنش آسون نیست، ولی تصمیم گرفتم برم.
+A|Oh, wow. I'm sorry to hear that. Can I ask what's prompting it?|اوه، وای. متأسفم. می‌تونم بپرسم دلیلش چیه؟
+B|I got an offer that's a big step up, and it's an opportunity I can't pass up.|یه پیشنهاد گرفتم که یه پیشرفت بزرگه، و فرصتیه که نمی‌تونم از دستش بدم.
+A|Is there anything we could do to change your mind?|کاری هست که بتونیم نظرت رو عوض کنیم؟
+B|I appreciate that, but my mind's made up. I'm happy to help with the handover.|ممنونم، ولی تصمیمم رو گرفتم. با کمال میل توی تحویل کار کمک می‌کنم.
+A|That means a lot. When's your last day?|خیلی ارزشمنده. آخرین روزت کیه؟
+B|Two weeks from Friday. I've really learned a lot here.|دو هفته بعد از جمعه. واقعاً اینجا کلی یاد گرفتم.
++ This isn't easy to say.|گفتنش آسون نیست.
++ move on|رفتن (به مرحله‌ی بعد)
++ What's prompting it?|دلیلش چیه؟
++ a big step up|پیشرفت بزرگ
++ can't pass up|نمی‌تونم از دستش بدم
++ change your mind|نظرت رو عوض کردن
++ My mind's made up.|تصمیمم رو گرفتم.
++ handover|تحویل کار
++ That means a lot.|خیلی برام ارزش داره.
++ two weeks' notice|اطلاع دو هفته‌ای
++ counteroffer|پیشنهاد متقابل
++ leave on good terms|با روابط خوب رفتن
+! I want to resign because I found better job.|I've decided to move on.|شروع نرم و حرفه‌ای.
+! My decision is final.|My mind's made up.|محکم و طبیعی.
+
+# 💸|بودجه‌بندی با همسر|با همسرتان درباره‌ی خرج‌ها صحبت می‌کنید.|Partner
+A|Can we talk about money for a sec? We overspent again this month.|می‌شه یه لحظه درباره‌ی پول حرف بزنیم؟ این ماه هم بیشتر خرج کردیم.
+B|Yeah, I noticed. Takeout's really adding up.|آره، متوجه شدم. غذای بیرون واقعاً داره زیاد می‌شه.
+A|Maybe we should set a budget and actually stick to it.|شاید باید یه بودجه بذاریم و واقعاً بهش پایبند باشیم.
+B|Agreed. What if we cook at home on weekdays and treat ourselves on weekends?|موافقم. چطوره روزای هفته خونه بپزیم و آخر هفته‌ها به خودمون حال بدیم؟
+A|I like that. And we need to start putting money aside for the trip.|خوشم اومد. و باید شروع کنیم برای سفر پول کنار بذاریم.
+B|Let's set up an automatic transfer to savings. Out of sight, out of mind.|بیا یه انتقال خودکار به پس‌انداز تنظیم کنیم. از دل برود هر آنکه از دیده برفت.
++ overspend|بیش از حد خرج کردن
++ It's adding up.|داره زیاد می‌شه.
++ takeout|غذای بیرون‌بر
++ set a budget|بودجه تعیین کردن
++ stick to it|پایبند ماندن
++ treat ourselves|به خودمون حال دادن
++ put money aside|پول کنار گذاشتن
++ savings|پس‌انداز
++ Out of sight, out of mind.|از دل برود هر آنکه از دیده برفت.
++ live paycheck to paycheck|با حقوق ماه به ماه زندگی کردن
++ cut back on|کم کردن (مصرف)
++ We can't afford it.|از پسش برنمیایم.
+! We used more money than we have.|We overspent.|فعل دقیق.
+! Let's save money for travel.|Let's put money aside for the trip.|عبارت طبیعی.
+
+# 📱|بحث درباره‌ی شبکه‌های اجتماعی|درباره‌ی اثر شبکه‌های اجتماعی بحث می‌کنید.|Ethan
+A|I'm thinking about deleting Instagram. It's such a time suck.|دارم به پاک کردن اینستاگرام فکر می‌کنم. خیلی وقت آدم رو هدر می‌ده.
+B|I hear you, but it's also how I keep up with friends abroad.|می‌فهمم، ولی من این‌طوری از دوستام توی خارج باخبر می‌مونم.
+A|Sure, but do you actually feel better after scrolling for an hour?|درسته، ولی واقعاً بعد از یه ساعت اسکرول حالت بهتره؟
+B|Fair point. I usually feel worse, if I'm honest.|نکته‌ی درستیه. راستش رو بخوای معمولاً بدتر.
+A|Exactly. Everyone's posting their highlight reel.|دقیقاً. همه دارن بهترین لحظه‌هاشون رو پست می‌کنن.
+B|Maybe the answer is setting limits rather than quitting cold turkey.|شاید جوابش محدودیت گذاشتن باشه، نه یهو کامل ترک کردن.
+A|Yeah, a middle ground might be more realistic.|آره، راه میانه شاید واقع‌بینانه‌تر باشه.
++ a time suck|هدر دهنده‌ی وقت
++ I hear you, but...|می‌فهمم، ولی...
++ keep up with|باخبر ماندن از
++ abroad|خارج از کشور
++ scrolling|اسکرول کردن
++ if I'm honest|راستش رو بخوای
++ highlight reel|فقط لحظات خوب زندگی
++ set limits|محدودیت گذاشتن
++ quit cold turkey|یهو کامل ترک کردن
++ a middle ground|راه میانه
++ FOMO|ترس از جا ماندن
++ doomscrolling|اسکرول بی‌پایان اخبار بد
+! I understand but...|I hear you, but...|مخالفت نرم.
+! Stop suddenly.|Quit cold turkey.|اصطلاح رایج.
+
+# 💔|دلداری دادن به دوست|دوستتان تازه از رابطه‌اش جدا شده.|Mia
+A|So... Jake and I broke up.|خب... من و جیک جدا شدیم.
+B|Oh no, I'm so sorry. Are you okay?|ای وای، خیلی متأسفم. خوبی؟
+A|Not really. I kinda saw it coming, but it still hurts.|نه زیاد. یه‌جورایی انتظارش رو داشتم، ولی باز درد داره.
+B|Of course it does. You were together for, what, three years?|معلومه که داره. چند وقت با هم بودید، سه سال؟
+A|Almost four. I just feel so lost.|تقریباً چهار. فقط خیلی سردرگمم.
+B|That's totally normal. Give yourself time. And you know I'm always here for you.|کاملاً طبیعیه. به خودت زمان بده. و می‌دونی که همیشه کنارتم.
+A|Thanks. That means a lot.|مرسی. خیلی برام ارزش داره.
+B|Want me to come over tonight? We can order food and just hang out.|می‌خوای امشب بیام پیشت؟ غذا سفارش می‌دیم و فقط پیش همیم.
++ We broke up.|جدا شدیم.
++ Are you okay?|خوبی؟
++ I saw it coming.|انتظارش رو داشتم.
++ It still hurts.|باز هم درد داره.
++ I feel so lost.|خیلی سردرگمم.
++ That's totally normal.|کاملاً طبیعیه.
++ Give yourself time.|به خودت زمان بده.
++ I'm always here for you.|همیشه کنارتم.
++ come over|اومدن خونه‌ی کسی
++ It's their loss.|خودش ضرر کرد.
++ plenty of fish in the sea|آدم زیاده
++ move on|فراموش کردن و ادامه دادن
+! Don't be sad.|Give yourself time.|«Don't be sad» احساسات را نادیده می‌گیرد.
+! I am with you always.|I'm always here for you.|جمله‌ی استاندارد همدلی.
+
+# 🚑|اورژانس بیمارستان|با پرستار اورژانس صحبت می‌کنید.|Triage nurse
+A|What brings you in tonight?|امشب برای چی اومدید؟
+B|I fell off my bike and my wrist is really swollen. I can barely move it.|از دوچرخه افتادم و مچم خیلی ورم کرده. به سختی تکونش می‌دم.
+A|On a scale of one to ten, how bad is the pain?|از یک تا ده، دردتون چقدره؟
+B|Maybe a seven. It's throbbing.|شاید هفت. نبض می‌زنه.
+A|Okay. Did you hit your head at all?|باشه. سرتون هم ضربه خورد؟
+B|No, I was wearing a helmet.|نه، کلاه ایمنی داشتم.
+A|Good. We'll get you an X-ray to rule out a fracture.|خوبه. براتون عکس‌برداری می‌کنیم تا شکستگی رو رد کنیم.
+B|How long is the wait, roughly?|انتظار حدوداً چقدره؟
++ I fell off my bike.|از دوچرخه افتادم.
++ swollen|ورم‌کرده
++ I can barely move it.|به سختی تکونش می‌دم.
++ On a scale of one to ten|از یک تا ده
++ throbbing|نبض‌دار، تپنده
++ hit your head|سرت ضربه خوردن
++ rule out|رد کردن (احتمال)
++ fracture|شکستگی
++ sprain|رگ‌به‌رگ شدن
++ How long is the wait?|انتظار چقدره؟
++ roughly|حدوداً
++ I'm allergic to penicillin.|به پنی‌سیلین حساسیت دارم.
+! My hand is broken maybe.|I think I might've broken my wrist.|عبارت طبیعی برای احتمال.
+! The pain is very much.|It's throbbing. / It's a seven.|توصیف دقیق درد.
+
+# 🚙|چانه‌زنی در نمایشگاه ماشین|برای خرید ماشین دست‌دوم چانه می‌زنید.|Salesperson
+A|So, what do you think? She's a beauty, right?|خب، نظرت چیه؟ خوشگله، نه؟
+B|She looks good, but I noticed a few scratches and the tires are pretty worn.|خوبه، ولی چندتا خط و خش دیدم و لاستیک‌ها هم حسابی ساییده‌ن.
+A|Sure, but she's only got sixty thousand miles on her.|درسته، ولی فقط شصت هزار مایل کارکرد داره.
+B|True. Still, eighteen grand is a bit steep. I've seen similar ones for fifteen.|درسته. ولی هجده هزار یه‌کم گرونه. مشابهش رو پونزده دیدم.
+A|I could maybe come down to seventeen.|شاید بتونم تا هفده پایین بیام.
+B|If you throw in new tires, I'd do sixteen and a half, cash.|اگه لاستیک نو هم بندازی روش، شونزده و نیم نقد می‌دم.
+A|Let me talk to my manager.|بذار با مدیرم صحبت کنم.
+B|Take your time. I'm not in a rush.|عجله نکن. من عجله‌ای ندارم.
++ She's a beauty.|خوشگله (برای ماشین)
++ scratches|خط و خش
++ worn tires|لاستیک ساییده
++ miles on it|کارکرد
++ grand|هزار دلار (عامیانه)
++ a bit steep|یه‌کم گرون
++ come down to|پایین اومدن تا (قیمت)
++ throw in|مجانی اضافه کردن
++ I'm not in a rush.|عجله‌ای ندارم.
++ That's my final offer.|این آخرین پیشنهادمه.
++ walk away|کنار کشیدن از معامله
++ Is the price negotiable?|قیمت قابل مذاکره‌ست؟
+! It is very expensive.|It's a bit steep.|steep = گران، محاوره‌ای.
+! Give tires free.|If you throw in new tires...|throw in در چانه‌زنی رایج است.
+
+# 🧑‍🏫|آموزش کار به همکار جدید|روند کار را به همکار تازه‌وارد توضیح می‌دهید.|New hire
+B|Okay, so I'll walk you through how we handle support tickets.|خب، بذار روند رسیدگی به تیکت‌های پشتیبانی رو توضیح بدم.
+A|Great, thanks. I've been a little overwhelmed.|عالیه، ممنون. یه‌کم سردرگم بودم.
+B|Totally normal. So first, you triage — figure out how urgent each one is.|کاملاً طبیعیه. اول اولویت‌بندی می‌کنی — می‌فهمی هرکدوم چقدر فوریه.
+A|Got it. And then?|فهمیدم. بعدش؟
+B|Then you assign it to the right team. If you're ever unsure, just ping me.|بعد به تیم مناسب واگذار می‌کنی. هر وقت مطمئن نبودی، فقط بهم پیام بده.
+A|What's the turnaround time we're aiming for?|زمان پاسخی که هدفمونه چقدره؟
+B|Twenty-four hours for most stuff. Don't sweat it, you'll get the hang of it in a week.|برای بیشترش بیست و چهار ساعت. نگران نباش، ظرف یه هفته دستت میاد.
++ walk you through|قدم به قدم توضیح دادن
++ handle|رسیدگی کردن
++ overwhelmed|سردرگم، زیر فشار
++ triage|اولویت‌بندی
++ figure out|فهمیدن
++ urgent|فوری
++ assign|واگذار کردن
++ ping me|بهم پیام بده
++ turnaround time|زمان پاسخ‌دهی
++ aim for|هدف‌گیری کردن
++ Don't sweat it.|نگرانش نباش.
++ get the hang of it|دست اومدن کار
++ learning curve|منحنی یادگیری
+! I will explain you.|I'll walk you through it.|explain بدون مفعول مستقیم شخص.
+! You will learn it.|You'll get the hang of it.|اصطلاح دلگرم‌کننده.
+
+# 🥗|بحث درباره‌ی سبک زندگی سالم|با دوستتان درباره‌ی رژیم و ورزش حرف می‌زنید.|Olivia
+A|I've been trying intermittent fasting. Have you heard of it?|دارم روزه‌داری متناوب رو امتحان می‌کنم. شنیدی؟
+B|Yeah, my brother swears by it. How's it going for you?|آره، برادرم قسم می‌خوره که جواب می‌ده. برای تو چطور پیش می‌ره؟
+A|The first week was rough, but now I'm kinda used to it.|هفته‌ی اول سخت بود، ولی الان یه‌جورایی عادت کردم.
+B|I tried it once, but I got so hangry by noon.|من یه بار امتحان کردم، ولی تا ظهر از گرسنگی عصبانی می‌شدم.
+A|Ha, that's the worst. Honestly, I think consistency matters more than the diet itself.|ها، بدترینه. راستش فکر می‌کنم ثبات از خود رژیم مهم‌تره.
+B|Totally agree. Whatever you can actually stick with long-term.|کاملاً موافقم. هر چی که بشه واقعاً بلندمدت ادامه‌ش داد.
++ intermittent fasting|روزه‌داری متناوب
++ swear by|قسم خوردن به اثر چیزی
++ How's it going for you?|برای تو چطور پیش می‌ره؟
++ rough|سخت
++ I'm used to it.|عادت کردم.
++ hangry|عصبانی از گرسنگی
++ That's the worst.|بدترینه.
++ consistency|ثبات، مداومت
++ stick with|ادامه دادن
++ long-term|بلندمدت
++ cheat day|روز آزاد رژیم
++ I'm cutting back on sugar.|دارم قند رو کم می‌کنم.
+! I am habit to it.|I'm used to it.|be used to + ing/اسم.
+! He believes it works very much.|He swears by it.|اصطلاح طبیعی.
+
+# 🛡️|ادعای خسارت بیمه|برای خسارت آب‌گرفتگی با بیمه تماس می‌گیرید.|Claims agent
+B|Hi, I need to file a claim. A pipe burst and flooded my kitchen.|سلام، می‌خوام ادعای خسارت ثبت کنم. یه لوله ترکید و آشپزخونه‌م رو آب گرفت.
+A|I'm sorry to hear that. When did this happen?|متأسفم. کی اتفاق افتاد؟
+B|Last night around two a.m. A plumber came out this morning.|دیشب حدود دو صبح. امروز صبح یه لوله‌کش اومد.
+A|Okay. Did you take photos of the damage?|باشه. از خسارت عکس گرفتید؟
+B|Tons. And I've got the plumber's invoice.|کلی. و فاکتور لوله‌کش رو هم دارم.
+A|Perfect. Your policy covers sudden water damage, minus your deductible.|عالیه. بیمه‌نامه‌تون آسیب ناگهانی آب رو پوشش می‌ده، منهای فرانشیز.
+B|Got it. How long does the process usually take?|فهمیدم. روند معمولاً چقدر طول می‌کشه؟
++ file a claim|ادعای خسارت ثبت کردن
++ a pipe burst|لوله ترکید
++ flooded|آب‌گرفته
++ plumber|لوله‌کش
++ damage|خسارت
++ tons|کلی، خیلی زیاد
++ invoice|فاکتور
++ policy|بیمه‌نامه
++ covers|پوشش می‌ده
++ deductible|فرانشیز
++ adjuster|ارزیاب بیمه
++ out of pocket|از جیب خود
+! Water came to my kitchen.|My kitchen flooded.|فعل دقیق.
+! Many photos.|Tons.|tons در محاوره یعنی خیلی زیاد.
+
+# 🏘️|راهنمایی دادن به مهمان برای پیدا کردن خانه|دوستتان پشت تلفن خانه‌تان را پیدا نمی‌کند.|Friend
+A|Hey, I think I'm close, but the GPS is being weird.|سلام، فکر کنم نزدیکم، ولی جی‌پی‌اس قاطی کرده.
+B|No worries. What can you see around you?|نگران نباش. دور و برت چی می‌بینی؟
+A|There's a gas station on my right and a big church up ahead.|یه پمپ بنزین سمت راستمه و یه کلیسای بزرگ جلوتر.
+B|Perfect, you're almost here. Go past the church and hang a left at the second light.|عالیه، تقریباً رسیدی. از کلیسا رد شو و سر چراغ دوم بپیچ چپ.
+A|Okay, done. Now what?|باشه، انجام شد. حالا چی؟
+B|We're the third house on the right — the one with the blue door. You can't miss it.|ما خونه‌ی سوم سمت راستیم — همونی که در آبی داره. حتماً می‌بینیش.
+A|Found it! Where should I park?|پیداش کردم! کجا پارک کنم؟
+B|Just pull into the driveway behind my car. I'll come out and meet you.|فقط بیا توی ورودی پشت ماشین من. میام بیرون استقبالت.
++ The GPS is being weird.|جی‌پی‌اس قاطی کرده.
++ What can you see around you?|دور و برت چی می‌بینی؟
++ up ahead|جلوتر
++ You're almost here.|تقریباً رسیدی.
++ go past|رد شدن از کنار
++ hang a left|بپیچ چپ (عامیانه)
++ Now what?|حالا چی؟
++ the one with the blue door|همونی که در آبی داره
++ You can't miss it.|حتماً می‌بینیش.
++ pull into the driveway|وارد ورودی خونه شدن
++ I'll come out and meet you.|میام بیرون استقبالت.
++ across from|روبروی
++ a dead end|بن‌بست
+! Turn to left.|Hang a left.|hang a left/right محاوره‌ای آمریکایی.
+! Where is the parking?|Where should I park?|سؤال طبیعی.

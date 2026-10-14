@@ -1,0 +1,8 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>زبان‌یار</title><meta http-equiv="refresh" content="0;url=dist/"><link rel="canonical" href="dist/">
+<script>
+// Old v2 app lived at the repo root with its own service worker (cache "zy-v3"). Remove it, then go to the current app.
+(async()=>{try{if("serviceWorker"in navigator){for(const r of await navigator.serviceWorker.getRegistrations()){if(!r.scope.endsWith("/dist/"))await r.unregister();}}
+if(self.caches){for(const k of await caches.keys()){if(k==="zy-v3"||k.startsWith("zy-v")) await caches.delete(k);}}}catch(e){}
+location.replace("dist/");})();
+</script></head><body><p>در حال انتقال به نسخه‌ی جدید زبان‌یار… <a href="dist/">ورود</a></p></body></html>

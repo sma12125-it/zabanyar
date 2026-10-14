@@ -1,0 +1,321 @@
+# 😠|مدیریت مشتری ناراضی|مشتری مهمی از تأخیر پروژه عصبانی است.|Client
+A|Frankly, this delay is unacceptable. We've got a launch riding on this.|راستش این تأخیر قابل قبول نیست. یه راه‌اندازی به این وابسته‌ست.
+B|I completely understand, and I won't sugarcoat it — we dropped the ball on the integration.|کاملاً درک می‌کنم، و ماست‌مالیش نمی‌کنم — توی یکپارچه‌سازی کوتاهی کردیم.
+A|So what's the plan? Because I need something concrete to take back to my board.|خب برنامه چیه؟ چون باید یه چیز مشخص به هیئت‌مدیره‌م ارائه بدم.
+B|We've pulled two senior engineers onto it, and we're committing to delivery by the fifteenth.|دو مهندس ارشد رو روش گذاشتیم و متعهد می‌شیم تا پونزدهم تحویل بدیم.
+A|And if that slips too?|و اگه اونم عقب بیفته؟
+B|Then the next phase is on us. But I'm confident it won't come to that.|اون وقت فاز بعدی با ما. ولی مطمئنم کار به اونجا نمی‌کشه.
+A|Alright. I appreciate the transparency.|باشه. از شفافیتت ممنونم.
++ Frankly,...|راستش، رک بگم...
++ riding on this|وابسته به این
++ I won't sugarcoat it.|ماست‌مالیش نمی‌کنم.
++ drop the ball|کوتاهی کردن
++ something concrete|چیز مشخص و ملموس
++ take back to my board|به هیئت‌مدیره گزارش دادن
++ commit to|متعهد شدن به
++ if that slips|اگه اونم عقب بیفته
++ ...is on us|... با ما / هزینه‌ش با ما
++ it won't come to that|کار به اونجا نمی‌کشه
++ transparency|شفافیت
++ make it right|جبران کردن، درستش کردن
+! It was not our fault, there were problems.|We dropped the ball.|پذیرفتن مسئولیت اعتماد می‌سازد.
+! We will try to finish soon.|We're committing to delivery by the fifteenth.|تعهد مشخص به‌جای وعده‌ی مبهم.
+
+# 🔄|متقاعد کردن تیم به تغییر|تیم در برابر ابزار جدید مقاومت می‌کند.|Team lead
+A|Look, the team's been using the old system for years. Why rock the boat?|ببین، تیم سال‌هاست از سیستم قدیمی استفاده می‌کنه. چرا آرامش رو به هم بزنیم؟
+B|I hear you. Change is never fun. But we're losing about ten hours a week to manual workarounds.|می‌فهمم. تغییر هیچ‌وقت خوشایند نیست. ولی هفته‌ای حدود ده ساعت سر راه‌حل‌های دستی هدر می‌دیم.
+A|Ten hours? Where are you getting that?|ده ساعت؟ این عدد رو از کجا آوردی؟
+B|I tracked it for a month. I'm happy to share the breakdown.|یه ماه ثبتش کردم. با کمال میل جزئیاتش رو به اشتراک می‌ذارم.
+A|Even so, the learning curve could tank productivity.|با این حال، دوره‌ی یادگیری ممکنه بهره‌وری رو نابود کنه.
+B|Which is why I'm proposing a phased rollout — one team first, then we reassess.|برای همینه که پیشنهاد اجرای مرحله‌ای می‌دم — اول یه تیم، بعد دوباره ارزیابی می‌کنیم.
+A|A pilot? Okay, that I can get on board with.|آزمایشی؟ باشه، با این می‌تونم همراه باشم.
++ rock the boat|آرامش رو به هم زدن
++ Change is never fun.|تغییر هیچ‌وقت خوشایند نیست.
++ workaround|راه‌حل موقت/دستی
++ Where are you getting that?|اینو از کجا آوردی؟
++ the breakdown|جزئیات تفکیکی
++ Even so,...|با این حال...
++ tank|سقوط کردن (عامیانه)
++ Which is why...|برای همینه که...
++ phased rollout|اجرای مرحله‌ای
++ reassess|دوباره ارزیابی کردن
++ get on board with|همراه شدن با
++ buy-in|موافقت و همراهی
+! You must accept the new system.|Which is why I'm proposing a phased rollout.|پیشنهاد مرحله‌ای مقاومت را کم می‌کند.
+! The old way wastes time.|We're losing ten hours a week.|داده‌ی مشخص قانع‌کننده‌تر است.
+
+# ⚖️|میانجی‌گری بین دو همکار|بین دو همکار که اختلاف دارند میانجی هستید.|Colleague
+B|Thanks for sitting down, both of you. I think we all want the same outcome here.|ممنون که هر دوتون نشستید. فکر می‌کنم همه‌مون یه نتیجه رو می‌خوایم.
+A|Sure, but Sam keeps changing the specs at the last minute.|درسته، ولی سم مدام دقیقه‌ی آخر مشخصات رو عوض می‌کنه.
+B|Let's try to keep it about the process rather than the person. What would help you plan better?|بیاید درباره‌ی روند حرف بزنیم نه شخص. چی کمکت می‌کنه بهتر برنامه‌ریزی کنی؟
+A|A hard cutoff. No changes after Wednesday.|یه مهلت قطعی. بدون تغییر بعد از چهارشنبه.
+B|That sounds reasonable. Sam's concern was that client feedback sometimes comes in late.|منطقیه. نگرانی سم این بود که بازخورد مشتری گاهی دیر می‌رسه.
+A|Okay, so maybe exceptions only if the client requests it, and in writing?|باشه، پس شاید استثنا فقط اگه مشتری بخواد، و کتبی؟
+B|I think that's a fair compromise. Let's put it in the team guidelines.|فکر می‌کنم سازش منصفانه‌ایه. بذاریمش توی دستورالعمل تیم.
++ we all want the same outcome|همه یه نتیجه رو می‌خوایم
++ at the last minute|دقیقه‌ی آخر
++ specs|مشخصات
++ keep it about the process|درباره‌ی روند بمونیم
++ rather than the person|نه شخص
++ a hard cutoff|مهلت قطعی
++ That sounds reasonable.|منطقیه.
++ concern|نگرانی
++ comes in late|دیر می‌رسه
++ a fair compromise|سازش منصفانه
++ guidelines|دستورالعمل‌ها
++ find common ground|نقطه‌ی مشترک پیدا کردن
+! Sam is wrong.|Let's keep it about the process rather than the person.|تمرکز بر رفتار و روند، نه شخصیت.
+! We should agree on middle.|That's a fair compromise.|عبارت دقیق.
+
+# 🌟|مصاحبه‌ی رفتاری (STAR)|در مصاحبه‌ی ارشد به سؤال رفتاری جواب می‌دهید.|Interviewer
+A|Tell me about a time you had to deal with a major setback.|درباره‌ی زمانی بگو که با یه شکست بزرگ روبرو شدی.
+B|Sure. Last year, two weeks before launch, our main vendor pulled out.|حتماً. پارسال، دو هفته قبل از راه‌اندازی، تأمین‌کننده‌ی اصلیمون کنار کشید.
+A|Ouch. What did you do?|اوه. چی کار کردی؟
+B|I got the team together, we mapped out alternatives, and I personally negotiated with a backup vendor over the weekend.|تیم رو جمع کردم، گزینه‌های جایگزین رو ترسیم کردیم و خودم شخصاً آخر هفته با یه تأمین‌کننده‌ی جایگزین مذاکره کردم.
+A|And the result?|و نتیجه؟
+B|We launched only four days late, and the new vendor actually cut our costs by twelve percent.|فقط چهار روز دیرتر راه‌اندازی کردیم و تأمین‌کننده‌ی جدید در واقع هزینه‌هامون رو دوازده درصد کم کرد.
+A|What would you do differently?|چه کاری رو متفاوت انجام می‌دادی؟
+B|In hindsight, I'd never rely on a single vendor again. Now I always have a plan B.|با نگاه به گذشته، دیگه هیچ‌وقت به یه تأمین‌کننده تکیه نمی‌کنم. الان همیشه یه برنامه‌ی جایگزین دارم.
++ Tell me about a time...|درباره‌ی زمانی بگو که...
++ a major setback|شکست/مانع بزرگ
++ pull out|کنار کشیدن
++ got the team together|تیم رو جمع کردم
++ map out|ترسیم کردن، برنامه‌ریزی
++ alternatives|گزینه‌های جایگزین
++ backup|جایگزین، پشتیبان
++ cut costs|کاهش هزینه
++ In hindsight,...|با نگاه به گذشته...
++ rely on|تکیه کردن به
++ a plan B|برنامه‌ی جایگزین
++ lessons learned|درس‌های آموخته‌شده
+! We solved the problem as a team.|I got the team together and personally negotiated...|در STAR نقش شخصی خود را مشخص کنید.
+! I learned a lot.|In hindsight, I'd never rely on a single vendor again.|درس مشخص و عملی.
+
+# 📣|اطلاع‌رسانی در بحران|به عنوان مدیر، خبر قطعی سرویس را به تیم می‌دهید.|Engineer
+B|Okay everyone, quick update. We're dealing with a major outage affecting about thirty percent of users.|خب همگی، یه به‌روزرسانی سریع. با یه قطعی بزرگ روبروییم که حدود سی درصد کاربران رو تحت تأثیر قرار داده.
+A|Do we know the root cause yet?|علت اصلی رو می‌دونیم؟
+B|Not yet. Our working theory is a bad config push. Let's not speculate publicly until we confirm.|هنوز نه. فرضیه‌ی فعلیمون یه تغییر پیکربندی اشتباهه. تا تأیید نکردیم، علنی گمانه‌زنی نکنیم.
+A|Should we roll back?|برگردونیم به نسخه‌ی قبل؟
+B|Yes, that's priority one. Maya, you own the rollback. Leo, you're on comms.|بله، اولویت اوله. مایا، برگشت به عهده‌ی تو. لئو، ارتباطات با تو.
+A|How often do you want updates?|هر چند وقت به‌روزرسانی می‌خوای؟
+B|Every thirty minutes, even if there's nothing new. Silence breeds panic.|هر سی دقیقه، حتی اگه چیز جدیدی نباشه. سکوت وحشت به بار میاره.
++ quick update|به‌روزرسانی سریع
++ outage|قطعی
++ affecting|تحت تأثیر قرار دادن
++ root cause|علت اصلی
++ working theory|فرضیه‌ی فعلی
++ Let's not speculate.|گمانه‌زنی نکنیم.
++ roll back|برگشت به نسخه‌ی قبل
++ priority one|اولویت اول
++ you own...|... مسئولیتش با توئه
++ on comms|مسئول ارتباطات
++ Silence breeds panic.|سکوت وحشت می‌آفرینه.
++ post-mortem|بررسی پس از حادثه
+! I think it is config problem.|Our working theory is a bad config push.|زبان دقیق و محتاطانه در بحران.
+! Maya do rollback.|Maya, you own the rollback.|own برای واگذاری مسئولیت روشن.
+
+# 🍷|طنز و کنایه در مهمانی شام|در مهمانی شام با میزبان بریتانیایی شوخی می‌کنید.|Host
+A|I must apologize for the weather. We ordered sunshine, but this is what turned up.|باید بابت هوا عذرخواهی کنم. آفتاب سفارش داده بودیم، ولی این رسید.
+B|Oh, not to worry. Coming from Tehran, a bit of rain is a novelty for me.|اوه، نگران نباشید. برای کسی که از تهران میاد، یه‌کم بارون یه چیز تازه‌ست.
+A|Ha! Well, you've come to the right place. We've got plenty to go around.|ها! خب، جای درستی اومدی. به اندازه‌ی کافی داریم که پخش کنیم.
+B|So I've noticed. Your lamb, by the way, is not bad at all.|متوجه شدم. راستی بره‌تون اصلاً بد نیست.
+A|"Not bad at all" — from you, I'll take that as a rave review.|«اصلاً بد نیست» — از تو، اینو یه تعریف تمام‌عیار حساب می‌کنم.
+B|You should. I've clearly spent too long in England.|حتماً. معلومه زیادی توی انگلیس موندم.
++ turned up|رسید، پیدا شد
++ not to worry|نگران نباشید
++ Coming from...|برای کسی که از ... میاد
++ a novelty|یه چیز تازه
++ plenty to go around|به اندازه‌ی کافی برای همه
++ So I've noticed.|متوجه شدم (با طعنه)
++ not bad at all|اصلاً بد نیست (در بریتانیا یعنی خیلی خوبه)
++ a rave review|تعریف تمام‌عیار
++ understatement|کم‌گویی (ویژگی طنز بریتانیایی)
++ tongue-in-cheek|شوخی‌آمیز با ظاهر جدی
++ dry humor|طنز خشک
+! The food is excellent!|Not bad at all.|در فرهنگ بریتانیایی کم‌گویی معمولاً تعریف بزرگی است.
+! It rains a lot here.|We've got plenty to go around.|طنز با کنایه.
+
+# 🧭|بحث اخلاقی|درباره‌ی اخلاق در هوش مصنوعی بحث می‌کنید.|Professor
+A|Should companies be held liable when their AI makes a harmful decision?|آیا شرکت‌ها باید وقتی هوش مصنوعیشون تصمیم مضری می‌گیره مسئول شناخته بشن؟
+B|I'd argue yes, at least to some degree. You can't outsource accountability to an algorithm.|به نظرم بله، حداقل تا حدی. نمی‌شه مسئولیت‌پذیری رو به یه الگوریتم واگذار کرد.
+A|But doesn't that stifle innovation?|ولی این نوآوری رو خفه نمی‌کنه؟
+B|That's the common counterargument. Then again, we regulate cars and medicine, and those industries still innovate.|این استدلال مخالف رایجه. از طرف دیگه، ما خودرو و دارو رو تنظیم مقررات می‌کنیم و اون صنایع هنوز نوآوری می‌کنن.
+A|Fair, though AI moves much faster than regulators can keep up.|منصفانه‌ست، هرچند هوش مصنوعی خیلی سریع‌تر از اونی پیش می‌ره که قانون‌گذارها برسن.
+B|Granted. Which is why I'd favor principles-based rules over rigid, case-by-case legislation.|قبول. برای همین ترجیح می‌دم قوانین مبتنی بر اصول باشه تا قانون‌گذاری خشک و موردی.
++ held liable|مسئول شناخته شدن
++ I'd argue...|استدلال من اینه که...
++ to some degree|تا حدی
++ outsource accountability|واگذاری مسئولیت‌پذیری
++ stifle innovation|خفه کردن نوآوری
++ counterargument|استدلال مخالف
++ Then again,...|از طرف دیگه...
++ keep up|هم‌پا بودن
++ Granted.|قبول (ولی...)
++ I'd favor X over Y|X رو به Y ترجیح می‌دم
++ case-by-case|موردی
++ It's a gray area.|منطقه‌ی خاکستریه.
+! I think yes.|I'd argue yes, at least to some degree.|ادعای سنجیده با قید.
+! You are right but...|Granted. Which is why...|پذیرش و ادامه‌ی استدلال.
+
+# 🧠|ساده توضیح دادن مفهوم پیچیده|به یک دوست غیرمتخصص بلاک‌چین را توضیح می‌دهید.|Friend
+A|Okay, I've nodded along for years, but I genuinely have no idea what blockchain is.|خب، سال‌ها سر تکون دادم، ولی واقعاً نمی‌دونم بلاک‌چین چیه.
+B|Ha, you're not alone. Think of it as a shared notebook that everyone has a copy of.|ها، تنها نیستی. فکر کن یه دفترچه‌ی مشترکه که همه یه نسخه‌ش رو دارن.
+A|Okay... so why's that a big deal?|خب... چرا این مهمه؟
+B|Because if someone tries to change a page, everyone else's copy won't match, so it's basically tamper-proof.|چون اگه کسی بخواد یه صفحه رو عوض کنه، نسخه‌ی بقیه جور درنمیاد، پس عملاً غیرقابل دستکاریه.
+A|Oh, so nobody needs to be in charge of it?|آهان، پس لازم نیست کسی مسئولش باشه؟
+B|Exactly. That's the whole point — no middleman. In a nutshell, that's it.|دقیقاً. کل ماجرا همینه — بدون واسطه. در یک کلام، همینه.
+A|Huh. Why didn't anyone explain it like that before?|عجب. چرا قبلاً کسی این‌طوری توضیح نداد؟
++ nod along|سر تکون دادن (بی‌آنکه بفهمی)
++ I genuinely have no idea.|واقعاً هیچ ایده‌ای ندارم.
++ You're not alone.|تنها نیستی.
++ Think of it as...|فکر کن مثل ... است.
++ a big deal|مهم
++ basically|اساساً، عملاً
++ tamper-proof|غیرقابل دستکاری
++ in charge of|مسئول
++ That's the whole point.|کل ماجرا همینه.
++ middleman|واسطه
++ In a nutshell,...|در یک کلام...
++ Does that make sense?|منطقیه؟ فهمیدی؟
+! Blockchain is a distributed ledger technology.|Think of it as a shared notebook...|استعاره برای توضیح به غیرمتخصص.
+! In summary...|In a nutshell...|عبارت محاوره‌ای.
+
+# 📑|مذاکره‌ی قرارداد|با مشتری درباره‌ی شرایط قرارداد مذاکره می‌کنید.|Procurement manager
+A|We're happy with the scope, but the price is about fifteen percent above our budget.|از دامنه‌ی کار راضی‌ایم، ولی قیمت حدود پونزده درصد بالاتر از بودجه‌مونه.
+B|I appreciate you being upfront. Is the issue the total figure or the payment structure?|ممنون که رک گفتی. مشکل عدد کل هست یا ساختار پرداخت؟
+A|Honestly, mostly the upfront cost.|راستش بیشتر هزینه‌ی اولیه.
+B|Then what if we spread payments over twelve months and lock in the rate for two years?|پس چطوره پرداخت‌ها رو روی دوازده ماه پخش کنیم و نرخ رو برای دو سال ثابت کنیم؟
+A|That could work. Would you be open to a performance clause?|ممکنه جواب بده. با یه بند عملکرد موافقید؟
+B|In principle, yes, as long as the metrics are clearly defined.|اصولاً بله، به شرطی که معیارها واضح تعریف بشن.
+A|Great. Let's get our legal teams to hammer out the details.|عالیه. بذاریم تیم‌های حقوقی جزئیات رو نهایی کنن.
++ scope|دامنه‌ی کار
++ above our budget|بالاتر از بودجه
++ upfront|رک / پیش‌پرداخت
++ the total figure|عدد کل
++ payment structure|ساختار پرداخت
++ spread payments|پخش کردن پرداخت‌ها
++ lock in the rate|ثابت کردن نرخ
++ performance clause|بند عملکرد
++ In principle,...|اصولاً...
++ as long as|به شرطی که
++ metrics|معیارها
++ hammer out the details|نهایی کردن جزئیات
++ a win-win|برد-برد
+! We cannot reduce the price.|What if we spread payments over twelve months?|تغییر متغیر به‌جای تخفیف مستقیم.
+! Yes, if...|In principle, yes, as long as...|موافقت مشروط حرفه‌ای.
+
+# 🥂|سخنرانی کوتاه و نوشیدن به سلامتی|در جشن بازنشستگی همکارتان سخنرانی کوتاهی می‌کنید.|Guest
+B|If I could have everyone's attention for just a moment.|اگه می‌شه یه لحظه توجه همه رو داشته باشم.
+A|Go on, speech!|بگو، سخنرانی!
+B|When I first joined, Linda took me under her wing. Twelve years later, I'm still learning from her.|وقتی تازه اومدم، لیندا هوامو داشت. دوازده سال بعد، هنوز دارم ازش یاد می‌گیرم.
+A|Hear, hear!|درسته، درسته!
+B|She's the kind of person who'd stay late to help you, then pretend it was no big deal.|از اون آدماییه که تا دیروقت می‌موند کمکت کنه، بعد وانمود می‌کرد کار مهمی نکرده.
+A|So true!|خیلی درسته!
+B|So please, raise your glasses. To Linda — we're gonna miss you like crazy.|پس لطفاً گیلاس‌هاتون رو بالا ببرید. به سلامتی لیندا — خیلی دلمون برات تنگ می‌شه.
++ If I could have everyone's attention...|اگه می‌شه توجه همه رو داشته باشم...
++ take someone under your wing|حامی کسی شدن
++ Hear, hear!|درسته! (تأیید در سخنرانی)
++ the kind of person who...|از اون آدماییه که...
++ pretend it was no big deal|وانمود کردن که مهم نبوده
++ raise your glasses|گیلاس‌ها بالا
++ To Linda!|به سلامتی لیندا!
++ miss you like crazy|خیلی دلتنگت شدن
++ Cheers!|به سلامتی!
++ on behalf of...|از طرف...
++ It's been an honor.|افتخار بود.
+! I want to say some words.|If I could have everyone's attention...|شروع کلاسیک سخنرانی.
+! Drink for Linda.|To Linda!|فرمول استاندارد toast.
+
+# 🌍|هویت فرهنگی و مهاجرت|با دوستی درباره‌ی تجربه‌ی مهاجرت حرف می‌زنید.|Friend
+A|Do you ever feel torn between two cultures?|تا حالا احساس کردی بین دو فرهنگ گیر کردی؟
+B|All the time. Back home, I'm "the one who left," and here I'm always a bit of an outsider.|همیشه. توی وطن «اونی که رفته» هستم، و اینجا همیشه یه‌کم غریبه‌ام.
+A|That sounds exhausting.|خیلی خسته‌کننده به نظر میاد.
+B|It can be. But I've come to see it as a strength. I can code-switch depending on who I'm with.|می‌تونه باشه. ولی کم‌کم اونو یه نقطه‌ی قوت دیدم. بسته به اینکه با کی‌ام، می‌تونم رفتارم رو عوض کنم.
+A|Do you think you'll ever move back?|فکر می‌کنی یه روز برگردی؟
+B|Never say never. Home isn't really a place for me anymore — it's more the people.|هیچ‌وقت نگو هیچ‌وقت. خونه دیگه برام یه مکان نیست — بیشتر آدم‌هاست.
++ feel torn|دودل و گیر کرده بودن
++ back home|توی وطن
++ an outsider|غریبه
++ That sounds exhausting.|خیلی خسته‌کننده به نظر میاد.
++ I've come to see it as...|کم‌کم اونو ... دیدم.
++ a strength|نقطه‌ی قوت
++ code-switch|تغییر زبان/رفتار بسته به جمع
++ depending on|بسته به
++ move back|برگشتن
++ Never say never.|هیچ‌وقت نگو هیچ‌وقت.
++ homesick|دلتنگ وطن
++ culture shock|شوک فرهنگی
+! I have two feelings.|I feel torn between two cultures.|اصطلاح دقیق.
+! Maybe I return, maybe no.|Never say never.|پاسخ طبیعی.
+
+# 🙄|درد دل سنجیده درباره‌ی مدیر|با دوستی مورد اعتماد درباره‌ی مدیر سختگیرتان صحبت می‌کنید.|Friend
+A|How's the new boss working out?|رئیس جدید چطوره؟
+B|Let's just say he's... very hands-on.|بذار فقط بگم... خیلی همه‌چی رو خودش کنترل می‌کنه.
+A|Oof, a micromanager?|اوف، از اون ریزمدیرها؟
+B|To put it mildly. He wants to be cc'd on every email. I'm trying not to take it personally.|به زبان ملایم بله. می‌خواد توی همه‌ی ایمیل‌ها رونوشت باشه. سعی می‌کنم به خودم نگیرم.
+A|Have you said anything to him?|چیزی بهش گفتی؟
+B|Not yet. I'm picking my battles. Once he sees we deliver, hopefully he'll ease up.|هنوز نه. دارم دعواهامو انتخاب می‌کنم. وقتی ببینه نتیجه می‌دیم، امیدوارم کوتاه بیاد.
++ How's ... working out?|... چطور پیش می‌ره؟
++ Let's just say...|بذار فقط بگم...
++ hands-on|درگیر جزئیات (گاهی کنایه)
++ micromanager|ریزمدیر
++ To put it mildly.|به زبان ملایم.
++ cc'd|رونوشت‌شده
++ take it personally|به خودت گرفتن
++ pick your battles|دعواهای مهم رو انتخاب کردن
++ deliver|نتیجه دادن
++ ease up|کوتاه اومدن
++ breathing down my neck|بالای سرم وایستاده
++ It is what it is.|همینه که هست.
+! My boss controls everything and I hate him.|Let's just say he's very hands-on.|کم‌گویی دیپلماتیک.
+! I don't fight for small things.|I'm picking my battles.|اصطلاح رایج.
+
+# ☕|کم‌گویی و گپ بریتانیایی|با همکار بریتانیایی در آشپزخانه‌ی اداره گپ می‌زنید.|Charlotte
+A|Morning! Bit grim out there, isn't it?|صبح بخیر! بیرون یه‌کم دلگیره، نه؟
+B|Just a tad. I got absolutely soaked on the way in.|فقط یه ذره. توی راه حسابی خیس شدم.
+A|Oh dear. Fancy a cuppa to warm up?|ای وای. یه چای می‌خوای گرم شی؟
+B|I'd love one, cheers. How was your weekend?|خیلی دوست دارم، مرسی. آخر هفته‌ت چطور بود؟
+A|Not too shabby. Went to a mate's barbecue — in the rain, naturally.|بد نبود. رفتم باربیکیوی یه دوست — زیر بارون، طبیعتاً.
+B|Ha, very British of you. Was it a washout?|ها، خیلی بریتانیایی. خراب شد؟
+A|Bit of a damp squib, to be honest. But the company was lovely.|راستش یه‌کم توی ذوق‌زن بود. ولی جمع خیلی خوب بود.
++ Bit grim out there.|بیرون یه‌کم دلگیره.
++ just a tad|فقط یه ذره
++ absolutely soaked|حسابی خیس
++ Oh dear.|ای وای.
++ Fancy a cuppa?|چای می‌خوای؟
++ cheers|مرسی
++ not too shabby|بد نبود (یعنی خوب بود)
++ a mate|یه دوست
++ naturally|طبیعتاً (با طعنه)
++ a washout|خراب‌شده به خاطر بارون
++ a damp squib|توی ذوق‌زن، ناامیدکننده
++ lovely|خیلی خوب
++ knackered|خیلی خسته (بریتانیایی)
+! It is very bad weather.|Bit grim out there, isn't it?|کم‌گویی بریتانیایی.
+! Do you want tea?|Fancy a cuppa?|کاملاً بریتانیایی.
+~ cuppa|کاپِه|cup of tea → «کاپِه».
+
+# 🎙️|مصاحبه‌ی پادکست|مهمان یک پادکست درباره‌ی کارآفرینی هستید.|Host
+A|Welcome to the show! So, walk us through how it all started.|به برنامه خوش اومدی! خب، بگو همه‌چی چطور شروع شد.
+B|Thanks for having me. Honestly, it started out of sheer frustration. I couldn't find a tool that did what I needed, so I hacked one together.|ممنون که دعوتم کردی. راستش از سر کلافگی محض شروع شد. ابزاری پیدا نمی‌کردم که کار منو انجام بده، پس سرهم یکی ساختم.
+A|And when did you realize it could be a real business?|و کی فهمیدی می‌تونه یه کسب‌وکار واقعی بشه؟
+B|When strangers started emailing me asking to pay for it. That was a lightbulb moment.|وقتی غریبه‌ها شروع کردن به ایمیل زدن که می‌خوان پولش رو بدن. اون لحظه جرقه زد.
+A|What's the biggest misconception about founders?|بزرگترین تصور غلط درباره‌ی بنیان‌گذارها چیه؟
+B|That it's glamorous. Ninety percent of it is unglamorous grunt work and putting out fires.|اینکه پرزرق‌وبرقه. نود درصدش کارهای سخت و بی‌زرق‌وبرق و خاموش کردن آتیشه.
+A|Any advice for listeners on the fence about starting something?|توصیه‌ای برای شنونده‌هایی که برای شروع یه کار دودلن؟
+B|Start small, ship early, and don't wait until you feel ready. You never will.|کوچیک شروع کنید، زود منتشر کنید و منتظر نمونید که احساس آمادگی کنید. هیچ‌وقت نمی‌کنید.
++ walk us through|برامون توضیح بده
++ Thanks for having me.|ممنون که دعوتم کردی.
++ out of sheer frustration|از سر کلافگی محض
++ hack something together|سرهم کردن چیزی
++ a lightbulb moment|لحظه‌ی جرقه
++ misconception|تصور غلط
++ glamorous|پرزرق‌وبرق
++ grunt work|کار سخت و بی‌زرق‌وبرق
++ putting out fires|خاموش کردن آتیش (حل بحران‌های فوری)
++ on the fence|دودل
++ ship early|زود منتشر کردن
++ You never will.|هیچ‌وقت نمی‌شی.
++ bootstrap|بدون سرمایه‌گذار شروع کردن
+! I made a simple tool quickly.|I hacked one together.|اصطلاح رایج فناوری.
+! It suddenly became clear.|That was a lightbulb moment.|اصطلاح تصویری.
