@@ -1,11 +1,8 @@
-<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>زبان‌یار — انگلیسی محاوره‌ای</title><meta name="description" content="یادگیری انگلیسی محاوره‌ای و واقعی با رابط فارسی">
-<link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/icon-192.png">
-<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#4338ca">
-<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"></head><body>
-<header class="top"><div class="brand"><img src="icons/icon.svg" alt=""><div><b>زبان‌یار</b><small>انگلیسی واقعی، محاوره‌ای</small></div></div><div id="stats"></div><button id="theme" class="icon-btn" title="حالت تاریک">🌙</button></header>
-<main id="app"></main>
-<nav class="tabs">
-<button data-v="home"><span>🏠</span>خانه</button><button data-v="map"><span>🗺️</span>مسیر</button><button data-v="review"><span>🧠</span>مرور</button><button data-v="tutor" id="tutorBtn"><span>🤖</span>معلم AI</button><button data-v="settings"><span>⚙️</span>تنظیمات</button></nav>
-<script src="data.js"></script><script src="placement.js"></script><script src="app.js"></script></body></html>
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>زبان‌یار</title><meta http-equiv="refresh" content="0;url=dist/"><link rel="canonical" href="dist/">
+<script>
+// Old v2 app lived at the repo root with its own service worker (cache "zy-v3"). Remove it, then go to the current app.
+(async()=>{try{if("serviceWorker"in navigator){for(const r of await navigator.serviceWorker.getRegistrations()){if(!r.scope.endsWith("/dist/"))await r.unregister();}}
+if(self.caches){for(const k of await caches.keys()){if(k==="zy-v3"||k.startsWith("zy-v")) await caches.delete(k);}}}catch(e){}
+location.replace("dist/");})();
+</script></head><body><p>در حال انتقال به نسخه‌ی جدید زبان‌یار… <a href="dist/">ورود</a></p></body></html>

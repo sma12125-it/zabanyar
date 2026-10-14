@@ -69,7 +69,7 @@ const copy = (s, d) => { for (const f of fs.readdirSync(s)) { const sp = path.jo
 copy(path.join(root, "src"), dist);
 // 6) version + SW precache
 const files = []; const walk = d => { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : files.push(path.relative(dist, p)); } }; walk(dist);
-const h = crypto.createHash("sha256"); for (const f of files.sort()) h.update(f).update(fs.readFileSync(path.join(dist, f)));
+const BUILD_SALT = "v4-parity"; const h = crypto.createHash("sha256").update(BUILD_SALT); for (const f of files.sort()) h.update(f).update(fs.readFileSync(path.join(dist, f)));
 index.version = h.digest("hex").slice(0, 10); index.built = new Date().toISOString();
 fs.writeFileSync(path.join(dist, "content", "index.json"), JSON.stringify(index));
 const pre = files.filter(f => !f.startsWith("splash/") && !path.basename(f).startsWith("_") && f !== "sw.js").concat(["content/index.json"]).filter((v, i, a) => a.indexOf(v) === i);
