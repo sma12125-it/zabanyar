@@ -1,0 +1,17 @@
+window.PLACEMENT=[
+{q:"A: Hey, how's it going?  B: ___",o:["I am fine, thank you, and you?","Pretty good, you?","Yes, it is going."],a:1,l:"A1"},
+{q:"«یه لاته لطفاً» به محاوره‌ی طبیعی:",o:["Can I get a latte?","Give latte me.","I want that you give latte."],a:0,l:"A1"},
+{q:"She ___ a teacher.",o:["is","are","be"],a:0,l:"A1"},
+{q:"I have ___ umbrella.",o:["a","an","the"],a:1,l:"A1"},
+{q:"Yesterday I ___ to the cinema.",o:["go","went","gone"],a:1,l:"A2"},
+{q:"«wanna» مخفف چیست؟",o:["want a / want to","was not","would not"],a:0,l:"A2"},
+{q:"«Let me know» یعنی:",o:["بذار بدونم / خبرم کن","من می‌دونم","بذار برم"],a:0,l:"A2"},
+{q:"I ___ here since 2020.",o:["live","have lived","am living"],a:1,l:"B1"},
+{q:"«We've hit a snag» یعنی:",o:["به مشکل خوردیم","برنده شدیم","تمام کردیم"],a:0,l:"B1"},
+{q:"If it rains, we ___ at home.",o:["stay","will stay","stayed"],a:1,l:"B1"},
+{q:"«I see where you're coming from» یعنی:",o:["می‌بینم از کجا میای","منظورت رو می‌فهمم","کجا بودی؟"],a:1,l:"B2"},
+{q:"If I ___ known, I would have helped.",o:["have","had","would"],a:1,l:"B2"},
+{q:"«Is there any wiggle room?» در مذاکره:",o:["جای انعطاف هست؟","اتاق خالی دارید؟","می‌تونم برقصم؟"],a:0,l:"B2"},
+{q:"«The writing's on the wall» یعنی:",o:["روی دیوار نوشته‌اند","نشانه‌های اتفاقی بد پیداست","نامه رسیده"],a:1,l:"C1"},
+{q:"Choose the most diplomatic: ",o:["Your idea is wrong.","I can see the logic, but I have some reservations.","No way."],a:1,l:"C1"},
+{q:"Hardly ___ arrived when it started raining.",o:["we had","had we","we have"],a:1,l:"C1"}];

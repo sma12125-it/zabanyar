@@ -1,0 +1,7 @@
+name = "zabanyar-proxy"
+main = "cloudflare-worker.js"
+compatibility_date = "2026-10-01"
+[vars]
+ALLOWED_ORIGINS = "https://zabanyar.example.com,https://localhost,capacitor://localhost"
+RATE_PER_MIN = "30"
+# secret: npx wrangler secret put GEMINI_API_KEY

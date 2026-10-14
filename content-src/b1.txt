@@ -1,0 +1,337 @@
+# 🤗|دیدار دوباره با دوست قدیمی|بعد از سال‌ها دوست قدیمی‌تان را می‌بینید.|Megan
+A|Oh my god, is that you? It's been forever!|وای خدای من، تویی؟ چند قرنه همدیگه رو ندیدیم!
+B|Megan! I can't believe it. How long has it been, like five years?|مگان! باورم نمی‌شه. چند وقته، پنج سال؟
+A|At least! You look great. What have you been up to?|حداقل! عالی به نظر میای. این مدت چی کار می‌کردی؟
+B|Oh, you know, same old. I moved to Toronto for work. What about you?|اِ، همون همیشگی. برای کار رفتم تورنتو. تو چی؟
+A|I got married last year, actually!|راستش پارسال ازدواج کردم!
+B|No way, congrats! We have so much to catch up on.|نه بابا، تبریک! کلی حرف داریم که بزنیم.
+A|Totally. Are you free for coffee this week?|کاملاً. این هفته برای قهوه وقت داری؟
+B|For sure. Let's not lose touch again.|حتماً. دیگه از هم بی‌خبر نمونیم.
++ It's been forever!|چند قرنه! (خیلی وقته)
++ How long has it been?|چند وقته؟
++ at least|حداقل
++ What have you been up to?|این مدت چی کار می‌کردی؟
++ same old|همون همیشگی
++ I moved to...|رفتم ... زندگی کنم.
++ I got married.|ازدواج کردم.
++ Congrats!|تبریک!
++ catch up on|از اخبار هم باخبر شدن
++ Are you free...?|... وقت داری؟
++ lose touch|از هم بی‌خبر شدن
++ keep in touch|در ارتباط ماندن
++ Time flies!|زمان چه زود می‌گذره!
+! I didn't see you for a long time.|It's been forever!|خطای رایج: برای مدت از present perfect استفاده کنید.
+! What did you do in these years?|What have you been up to?|سؤال استاندارد بومی.
+~ What have you been up to|واداوْیو بین آپ تو|have ضعیف و «اِو» می‌شود.
+
+# 🙅|کنسل کردن قرار|مجبورید قرارتان را لغو کنید.|Jess
+B|Hey, I'm really sorry, but I'm gonna have to bail on tonight.|هی، واقعاً ببخشید، ولی مجبورم امشب رو کنسل کنم.
+A|Oh no, is everything okay?|ای وای، همه چی مرتبه؟
+B|Yeah, just something came up at work, and I'm stuck here till late.|آره، فقط یه کاری سر کار پیش اومد و تا دیروقت گیر افتادم.
+A|Ugh, that's annoying. Don't worry about it, though.|اَه، اعصاب‌خردکنه. ولی نگرانش نباش.
+B|Can I make it up to you? How about Saturday?|می‌تونم جبران کنم؟ شنبه چطوره؟
+A|Saturday works. But you're not flaking twice!|شنبه خوبه. ولی دوبار نمی‌تونی بپیچونی!
+B|I promise. Rain check, then.|قول می‌دم. پس می‌ذاریمش برای بعد.
++ I'm gonna have to...|مجبورم...
++ bail on|کنسل کردن، پیچوندن (عامیانه)
++ Something came up.|یه کاری پیش اومد.
++ I'm stuck here.|اینجا گیر افتادم.
++ till late|تا دیروقت
++ That's annoying.|اعصاب‌خردکنه.
++ Can I make it up to you?|می‌تونم جبران کنم؟
++ Saturday works.|شنبه خوبه.
++ flake|بدقولی کردن (عامیانه)
++ Rain check?|بذاریم برای یه وقت دیگه؟
++ I hate to do this, but...|خیلی بدم میاد این کارو بکنم، ولی...
+! I cannot come because I have work.|Something came up at work.|بهانه‌ی کوتاه و طبیعی.
+! Let's postpone.|Rain check?|اصطلاح رایج برای به تعویق انداختن.
+
+# 🖥️|پشتیبانی فنی تلفنی|اینترنت خانه‌تان قطع شده.|Support agent
+A|Thanks for calling. How can I help?|ممنون از تماستون. چه کمکی می‌تونم بکنم؟
+B|Hi, my internet's been down since this morning.|سلام، اینترنتم از صبح قطعه.
+A|Sorry about that. Have you tried restarting your router?|متأسفم. روتر رو ری‌استارت کردید؟
+B|Yeah, I've unplugged it twice. The light's still blinking red.|آره، دوبار از برق کشیدم. چراغش هنوز قرمز چشمک می‌زنه.
+A|Okay, let me run a quick test on your line. Bear with me.|باشه، بذارید یه تست سریع روی خطتون بگیرم. یه لحظه تحمل کنید.
+B|Sure, take your time.|حتماً، عجله نکنید.
+A|Looks like there's an outage in your area. It should be back up in a couple of hours.|انگار توی منطقه‌تون قطعی هست. ظرف دو ساعت باید وصل بشه.
+B|Got it. Will I get a credit for the downtime?|فهمیدم. بابت زمان قطعی اعتباری بهم تعلق می‌گیره؟
++ The internet's down.|اینترنت قطعه.
++ Have you tried restarting it?|ری‌استارتش کردید؟
++ unplug it|از برق کشیدن
++ blinking red|قرمز چشمک‌زن
++ run a test|تست گرفتن
++ Bear with me.|یه لحظه تحمل کنید.
++ Take your time.|عجله نکنید.
++ outage|قطعی
++ back up|دوباره وصل
++ It keeps crashing.|مدام کرش می‌کنه.
++ It's frozen.|هنگ کرده.
++ downtime|زمان قطعی
+! The internet is not working from morning.|My internet's been down since this morning.|since + present perfect continuous.
+! Wait please.|Bear with me.|مؤدبانه و رایج پشت تلفن.
+
+# 🤲|درخواست لطف|از همکارتان کمک می‌خواهید.|Kevin
+B|Hey Kevin, can I ask you a favor?|هی کوین، می‌تونم یه لطفی ازت بخوام؟
+A|Sure, what do you need?|حتماً، چی لازم داری؟
+B|I'm moving this weekend. Any chance you could help me with some boxes?|این آخر هفته اسباب‌کشی دارم. احتمالش هست با جعبه‌ها کمکم کنی؟
+A|Hmm, Saturday's tricky, but I could do Sunday morning.|اوم، شنبه سخته، ولی یکشنبه صبح می‌تونم.
+B|That'd be a huge help. I owe you one.|خیلی کمک بزرگیه. یکی طلبت.
+A|Just buy me lunch and we're even.|فقط یه ناهار مهمونم کن، بی‌حساب می‌شیم.
+B|Deal! Pizza's on me.|قبول! پیتزا با من.
++ Can I ask you a favor?|می‌تونم یه لطفی ازت بخوام؟
++ What do you need?|چی لازم داری؟
++ Any chance you could...?|احتمالش هست بتونی...؟
++ ...'s tricky|... یه‌کم سخته
++ I could do Sunday.|یکشنبه می‌تونم.
++ That'd be a huge help.|خیلی کمک بزرگیه.
++ I owe you one.|یکی طلبت.
++ we're even|بی‌حساب شدیم
++ ...'s on me|... با من / مهمون من
++ Would you mind...?|اشکالی نداره اگه...؟
++ No pressure.|اجباری نیست.
+! Please help me.|Any chance you could help me?|درخواست غیرمستقیم مؤدبانه‌تر است.
+! Thank you very much, I will compensate.|I owe you one.|اصطلاح رایج.
+
+# 💡|مشورت دادن به دوست|دوستتان درباره‌ی تغییر شغل مردد است.|Ava
+A|I don't know what to do. I got a job offer in another city.|نمی‌دونم چی کار کنم. یه پیشنهاد کار توی یه شهر دیگه گرفتم.
+B|Oh wow, that's huge! What's holding you back?|وای، خیلی مهمه! چی جلوت رو گرفته؟
+A|I'd be leaving all my friends and family behind.|باید همه‌ی دوستا و خانواده‌م رو بذارم و برم.
+B|I get that. But if I were you, I'd at least think it over.|می‌فهمم. ولی اگه جای تو بودم، حداقل خوب روش فکر می‌کردم.
+A|Yeah. The pay's way better.|آره. حقوقش خیلی بهتره.
+B|Why don't you make a pros and cons list?|چرا یه لیست مزایا و معایب نمی‌نویسی؟
+A|That's actually a good idea.|اتفاقاً فکر خوبیه.
+B|Either way, I've got your back.|در هر صورت، پشتتم.
++ I don't know what to do.|نمی‌دونم چی کار کنم.
++ job offer|پیشنهاد کار
++ That's huge!|خیلی مهمه!
++ What's holding you back?|چی جلوت رو گرفته؟
++ leave ... behind|... رو جا گذاشتن و رفتن
++ If I were you, I'd...|اگه جای تو بودم...
++ think it over|خوب فکر کردن
++ way better|خیلی بهتر
++ Why don't you...?|چرا ... نمی‌کنی؟
++ pros and cons|مزایا و معایب
++ Either way|در هر صورت
++ I've got your back.|پشتتم.
++ Go for it!|برو انجامش بده!
+! If I was you...|If I were you, I'd...|در شرطی دوم, were رایج‌تر است.
+! I support you.|I've got your back.|اصطلاح صمیمی.
+
+# 🏝️|تعریف یک سفر|از سفرتان به ژاپن تعریف می‌کنید.|Noah
+A|So how was Japan? I saw your pics!|خب ژاپن چطور بود؟ عکسات رو دیدم!
+B|Honestly, it was the trip of a lifetime.|راستش سفر عمرم بود.
+A|What was the highlight?|بهترین بخشش چی بود؟
+B|Probably Kyoto. The temples were breathtaking.|احتمالاً کیوتو. معبدها نفس‌گیر بودن.
+A|Was it hard getting around without speaking Japanese?|بدون ژاپنی بلد بودن رفت‌وآمد سخت بود؟
+B|Not really. Everyone was super helpful, and the trains are crazy efficient.|نه زیاد. همه خیلی کمک می‌کردن و قطارها فوق‌العاده منظم‌ان.
+A|I'm so jealous. I've always wanted to go.|خیلی حسودیم می‌شه. همیشه دلم می‌خواست برم.
+B|You totally should. I'll send you my itinerary.|حتماً باید بری. برنامه‌ی سفرم رو برات می‌فرستم.
++ the trip of a lifetime|سفر عمر
++ What was the highlight?|بهترین بخشش چی بود؟
++ breathtaking|نفس‌گیر
++ getting around|رفت‌وآمد کردن در شهر
++ super helpful|خیلی کمک‌کننده
++ crazy efficient|فوق‌العاده کارآمد (عامیانه)
++ I'm so jealous.|خیلی حسودیم می‌شه.
++ I've always wanted to...|همیشه می‌خواستم...
++ You totally should.|حتماً باید.
++ itinerary|برنامه‌ی سفر
++ jet lag|خستگی اختلاف ساعت
++ off the beaten path|دور از مسیرهای توریستی
+! The best part was Kyoto.|The highlight was Kyoto.|highlight واژه‌ی رایج.
+! It was very beautiful.|It was breathtaking.|صفت قوی‌تر و طبیعی‌تر.
+
+# 🔧|خراب شدن ماشین|ماشینتان خراب شده و با تعمیرکار حرف می‌زنید.|Mechanic
+B|Hi, my car's been making this weird noise when I brake.|سلام، ماشینم موقع ترمز یه صدای عجیبی می‌ده.
+A|What kind of noise? Like a squeak or a grind?|چه صدایی؟ جیرجیر یا سایش؟
+B|Kind of a high-pitched squeal.|یه جور صدای جیغ زیر.
+A|Sounds like your brake pads are worn out. Let me take a look.|به نظر لنت‌های ترمز ساییده شدن. بذارید نگاه کنم.
+B|How much is that gonna set me back?|چقدر برام آب می‌خوره؟
+A|Probably around two hundred, parts and labor.|احتمالاً حدود دویست، قطعه و دستمزد.
+B|Ouch. Can you have it done by tomorrow?|اوه. می‌تونید تا فردا تمومش کنید؟
+A|Should be ready by noon.|تا ظهر باید آماده باشه.
++ making a weird noise|صدای عجیب دادن
++ when I brake|موقع ترمز کردن
++ squeak|جیرجیر
++ worn out|ساییده، فرسوده
++ take a look|نگاه کردن
++ set me back|برام آب خوردن (هزینه)
++ parts and labor|قطعه و دستمزد
++ have it done|انجامش دادن
++ flat tire|پنچری
++ The battery died.|باتری خالی شد.
++ It won't start.|روشن نمی‌شه.
+! How much does it cost me?|How much is that gonna set me back?|set back اصطلاح محاوره‌ای هزینه.
+! My car doesn't turn on.|My car won't start.|won't برای خرابی ماشین.
+
+# 💬|چت با کسی در اپ دوستیابی|در اپ با کسی آشنا شده‌اید و پیام می‌دهید.|Sophie
+A|hey! love your travel pics. where was that beach?|سلام! عکسای سفرت خیلی قشنگن. اون ساحل کجا بود؟
+B|haha thanks! that was in Portugal last summer|هاها مرسی! پرتغال بود تابستون پارسال.
+A|so jealous. been dying to go there|خیلی حسودیم شد. خیلی دلم می‌خواد برم اونجا.
+B|you'd love it. the food alone is worth the trip|عاشقش می‌شی. فقط غذاش ارزش سفر رو داره.
+A|ok you're selling me. what are you up to this week?|خب داری قانعم می‌کنی. این هفته چه خبرا؟
+B|not much! wanna grab a drink thursday?|خبر خاصی نیست! پنجشنبه بریم یه چیزی بخوریم؟
+A|i'd like that. let's do it 🙂|خوشم میاد. بریم 🙂
++ love your pics|عکسات خیلی خوبن
++ been dying to...|خیلی دلم می‌خواد...
++ worth the trip|ارزش سفر رو داره
++ You'd love it.|عاشقش می‌شی.
++ You're selling me.|داری قانعم می‌کنی.
++ What are you up to?|چه کار می‌کنی؟ / چه خبر؟
++ not much|خبر خاصی نیست
++ grab a drink|یه نوشیدنی خوردن (قرار سبک)
++ I'd like that.|خوشم میاد.
++ swipe right|پسندیدن (در اپ)
++ ghosting|بی‌خبر غیب شدن
+! I want to see you.|wanna grab a drink thursday?|پیشنهاد سبک و غیرمستقیم بهتر است.
+! I very want to go.|I've been dying to go.|اصطلاح قوی و طبیعی.
+
+# 🧾|لغو اشتراک باشگاه|می‌خواهید عضویت باشگاه را لغو کنید.|Gym staff
+B|Hi, I'd like to cancel my membership.|سلام، می‌خوام عضویتم رو لغو کنم.
+A|Sorry to hear that. Mind if I ask why?|متأسفم. اشکالی نداره بپرسم چرا؟
+B|I'm moving across town, so it's just not convenient anymore.|دارم می‌رم اون سر شهر، دیگه برام راحت نیست.
+A|We've got a location near there. Want me to transfer it?|یه شعبه اون نزدیکی داریم. می‌خواید منتقلش کنم؟
+B|Thanks, but I'd rather just cancel.|ممنون، ولی ترجیح می‌دم فقط لغو کنم.
+A|Okay. There's a thirty-day notice period.|باشه. یه مهلت اطلاع سی‌روزه داره.
+B|That's fine. Can I get that in writing?|اشکال نداره. می‌شه کتبی بدید؟
++ cancel my membership|لغو عضویت
++ Mind if I ask why?|اشکالی نداره بپرسم چرا؟
++ across town|اون سر شهر
++ not convenient anymore|دیگه راحت نیست
++ transfer it|منتقلش کردن
++ I'd rather just...|ترجیح می‌دم فقط...
++ notice period|مهلت اطلاع قبلی
++ in writing|کتبی
++ auto-renew|تمدید خودکار
++ I was charged twice.|دوبار ازم پول کم شد.
+! I don't want to come anymore.|I'd like to cancel my membership.|واضح و مؤدبانه.
+! No, I want cancel.|Thanks, but I'd rather just cancel.|رد مؤدبانه با I'd rather.
+
+# 🗺️|برنامه‌ریزی سفر با دوستان|برای سفر گروهی برنامه می‌ریزید.|Liam
+A|Okay, so are we doing the road trip or flying?|خب، با ماشین می‌ریم یا پرواز؟
+B|Road trip, for sure. It's half the price and way more fun.|حتماً با ماشین. نصف قیمته و خیلی باحال‌تره.
+A|Fair. Who's driving, though?|درسته. ولی کی رانندگی می‌کنه؟
+B|We can take turns. I'm happy to do the first stretch.|نوبتی می‌کنیم. من با کمال میل قسمت اول رو می‌رونم.
+A|Nice. Should we book an Airbnb or just wing it?|خوبه. Airbnb رزرو کنیم یا بداهه بریم؟
+B|Let's book something. I don't wanna end up sleeping in the car.|یه جا رزرو کنیم. نمی‌خوام آخرش توی ماشین بخوابیم.
+A|Ha, good point. I'll set up a group chat.|ها، راست می‌گی. یه گروه چت درست می‌کنم.
++ road trip|سفر جاده‌ای
++ half the price|نصف قیمت
++ way more fun|خیلی باحال‌تر
++ take turns|نوبتی انجام دادن
++ I'm happy to...|با کمال میل...
++ the first stretch|قسمت اول مسیر
++ book|رزرو کردن
++ wing it|بداهه پیش رفتن
++ end up ...ing|آخرش ... شدن
++ good point|راست می‌گی
++ set up a group chat|گروه چت درست کردن
++ split the cost|تقسیم هزینه
+! We go with car or airplane?|Are we driving or flying?|سؤال طبیعی.
+! Finally we sleep in car.|We end up sleeping in the car.|end up برای نتیجه‌ی ناخواسته.
+
+# 📺|حرف زدن درباره‌ی سریال|درباره‌ی قسمت آخر یک سریال حرف می‌زنید.|Chloe
+A|Did you watch the finale last night?|قسمت آخر رو دیشب دیدی؟
+B|Yes! I'm still processing it. That ending, though!|آره! هنوز دارم هضمش می‌کنم. ولی اون پایان!
+A|Right?! I did not see that twist coming.|نه؟! اصلاً انتظار اون پیچش رو نداشتم.
+B|Same. But honestly, I think they rushed the last few episodes.|منم. ولی راستش فکر کنم چند قسمت آخر رو عجله‌ای ساختن.
+A|Totally. The first season was way better.|کاملاً. فصل اول خیلی بهتر بود.
+B|Agreed. Still, I'm gonna miss it.|موافقم. با این حال دلم براش تنگ می‌شه.
++ the finale|قسمت آخر
++ I'm still processing it.|هنوز دارم هضمش می‌کنم.
++ That ending, though!|ولی اون پایان!
++ I didn't see that coming.|انتظارش رو نداشتم.
++ twist|پیچش داستان
++ they rushed it|عجله‌ای ساختنش
++ episode / season|قسمت / فصل
++ Agreed.|موافقم.
++ I'm gonna miss it.|دلم براش تنگ می‌شه.
++ It's overhyped.|بیش از حد تعریفش رو کردن.
++ Don't spoil it!|لوش نده!
+! I didn't expect that.|I did not see that coming.|اصطلاح رایج.
+! The story was fast at the end.|They rushed the ending.|rush در نقد فیلم رایج است.
+
+# 📚|درخواست پیشنهاد در کتاب‌فروشی|در کتاب‌فروشی دنبال کتاب هستید.|Bookseller
+B|Hi, I'm looking for something to read on vacation. Any recommendations?|سلام، دنبال یه چیزی برای خوندن توی تعطیلاتم. پیشنهادی دارید؟
+A|Sure! What kind of stuff are you into?|حتماً! به چه چیزایی علاقه دارید؟
+B|I usually go for thrillers, but nothing too dark.|معمولاً هیجانی می‌خونم، ولی نه خیلی تاریک.
+A|Have you read this one? It's a real page-turner.|اینو خوندید؟ واقعاً نمی‌شه زمین گذاشتش.
+B|Not yet. What's it about?|هنوز نه. درباره‌ی چیه؟
+A|A detective solving a murder on a cruise ship. Super fun.|یه کارآگاه که یه قتل رو روی کشتی تفریحی حل می‌کنه. خیلی سرگرم‌کننده‌ست.
+B|Sounds right up my alley. I'll take it.|دقیقاً سلیقه‌ی منه. برش می‌دارم.
++ something to read|یه چیزی برای خوندن
++ Any recommendations?|پیشنهادی دارید؟
++ What kind of stuff are you into?|به چی علاقه داری؟
++ I usually go for...|معمولاً سراغ ... می‌رم.
++ nothing too dark|نه خیلی تاریک
++ a page-turner|کتاب جذابی که نمی‌شه زمین گذاشت
++ What's it about?|درباره‌ی چیه؟
++ right up my alley|دقیقاً سلیقه‌ی من
++ I couldn't put it down.|نتونستم زمین بذارمش.
++ a light read|یه کتاب سبک
+! What is the subject of this book?|What's it about?|ساده و طبیعی.
+! This is my taste.|It's right up my alley.|اصطلاح محاوره‌ای.
+
+# 😕|رفع سوءتفاهم|سوءتفاهمی با همکار پیش آمده.|Emma
+A|Hey, are you mad at me? You seemed kinda off in the meeting.|هی، از دستم ناراحتی؟ توی جلسه یه‌جوری بودی.
+B|No, not at all! Sorry if it came across that way.|نه، اصلاً! ببخشید اگه این‌طوری به نظر رسید.
+A|Oh, okay. I thought maybe my comment about the budget bugged you.|آهان، باشه. فکر کردم شاید حرفم درباره‌ی بودجه ناراحتت کرده.
+B|Honestly, I was just distracted. I didn't sleep well.|راستش فقط حواسم پرت بود. خوب نخوابیده بودم.
+A|Phew. I was overthinking it.|اوف. داشتم زیادی فکر می‌کردم.
+B|Totally fine. Thanks for checking in, though.|کاملاً اوکیه. ولی ممنون که پرسیدی.
++ Are you mad at me?|از دستم ناراحتی؟
++ You seemed kinda off.|یه‌جوری بودی.
++ Not at all!|اصلاً!
++ It came across that way.|این‌طوری به نظر رسید.
++ It bugged you.|اذیتت کرد.
++ I was distracted.|حواسم پرت بود.
++ I was overthinking it.|زیادی فکر می‌کردم.
++ Thanks for checking in.|ممنون که حالمو پرسیدی.
++ misunderstanding|سوءتفاهم
++ That's not what I meant.|منظورم این نبود.
++ Let me rephrase that.|بذار جور دیگه بگم.
+! Are you angry with me?|Are you mad at me?|mad در آمریکایی = ناراحت/عصبانی.
+! I didn't want that meaning.|That's not what I meant.|جمله‌ی کلیدی.
+
+# 💍|دادن خبر خوب|خبر نامزدی‌تان را به دوستتان می‌دهید.|Grace
+B|Okay, I have some news. You might wanna sit down.|خب، یه خبری دارم. شاید بخوای بشینی.
+A|Oh no, what happened?|ای وای، چی شده؟
+B|Nothing bad! Ali proposed last night. We're engaged!|هیچی بد نیست! علی دیشب خواستگاری کرد. نامزد کردیم!
+A|Shut up! Oh my god, congratulations!|نه بابا! وای خدای من، تبریک می‌گم!
+B|Thank you! I'm still kinda in shock.|مرسی! هنوز یه‌کم شوکه‌ام.
+A|How did he do it? Tell me everything!|چطوری خواستگاری کرد؟ همه چی رو بگو!
+B|On the beach at sunset. It was so cheesy, but I loved it.|کنار ساحل موقع غروب. خیلی کلیشه‌ای بود، ولی عاشقش شدم.
++ I have some news.|یه خبری دارم.
++ You might wanna sit down.|شاید بخوای بشینی.
++ propose|خواستگاری کردن
++ We're engaged!|نامزد کردیم!
++ Shut up!|نه بابا! (از روی ذوق، نه بی‌ادبی)
++ Congratulations!|تبریک!
++ I'm still in shock.|هنوز شوکه‌ام.
++ Tell me everything!|همه چی رو بگو!
++ cheesy|کلیشه‌ای و احساساتی
++ I'm so happy for you!|خیلی برات خوشحالم!
++ I got the job!|کار رو گرفتم!
+! Shut up = be quiet only|Shut up! (excited)|در محاوره‌ی دوستانه Shut up! یعنی «باورم نمی‌شه!»
+! I am very happy for you.|I'm so happy for you!|طبیعی و گرم.
+
+# 💒|گپ در مراسم عروسی|در عروسی با مهمان دیگری گپ می‌زنید.|Guest
+A|Beautiful ceremony, wasn't it?|مراسم قشنگی بود، نه؟
+B|It really was. I teared up during the vows.|واقعاً. موقع عهد بستن اشکم دراومد.
+A|Same! So how do you know the couple?|منم! زوج رو از کجا می‌شناسی؟
+B|I went to school with the bride. You?|با عروس هم‌مدرسه‌ای بودم. تو؟
+A|I'm the groom's cousin.|پسرخاله‌ی دامادم.
+B|Oh nice! Are you gonna hit the dance floor later?|اِ چه خوب! بعداً میای وسط برقصی؟
+A|Ha, maybe after a drink or two.|ها، شاید بعد از یکی دو نوشیدنی.
++ Beautiful ceremony, wasn't it?|مراسم قشنگی بود، نه؟
++ I teared up.|اشکم دراومد.
++ vows|عهد ازدواج
++ How do you know the couple?|زوج رو از کجا می‌شناسی؟
++ the bride / the groom|عروس / داماد
++ cousin|دخترعمو/پسرخاله و...
++ hit the dance floor|رفتن وسط برای رقص
++ a drink or two|یکی دو نوشیدنی
++ They make a great couple.|خیلی به هم میان.
++ reception|جشن بعد از مراسم
+! The wedding was very nice.|Beautiful ceremony, wasn't it?|سؤال تأییدی برای شروع گپ.
+! I cried a little.|I teared up.|tear up یعنی اشک در چشم جمع شدن.

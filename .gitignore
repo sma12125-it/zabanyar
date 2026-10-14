@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.jks
+*.keystore
+google-services.json
+
+# Android / Gradle local config and build outputs
+.gradle/
+build/
+local.properties
+*.apk
+*.aab
+*.ap_
+*.aar
+*.dex
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Capacitor copies and generated Android plugin project (recreated by cap sync)
+android-app/android/capacitor-cordova-android-plugins/
+android-app/android/app/src/main/assets/public/
+android-app/android/app/src/main/assets/capacitor.config.json
+android-app/android/app/src/main/assets/capacitor.plugins.json
+android-app/android/app/src/main/res/xml/config.xml
+
+# dist/ is tracked on purpose so the PWA can be hosted directly (GitHub Pages, etc.)
+
+# Logs, OS, and editor files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
