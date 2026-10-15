@@ -5,7 +5,7 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"], LVNAME = { A1: "مبتدی", A2: 
 const DEFAULT_MODEL = "gemini-3.8-flash";
 const DEF = { v: 3, xp: 0, streak: 0, last: null, level: null, done: {}, steps: {}, cards: {}, days: {}, chats: {}, reviewsToday: {}, lastLesson: null,
   provider: "gemini", gkey: "", gmodel: DEFAULT_MODEL, proxy: "", key: "", api: "https://api.openai.com/v1", model: "gpt-4o-mini",
-  dark: null, accent: "en-US", rate: 1, engine: "record", program: { start: null, tasks: {} }, micOk: false };
+  dark: null, accent: "en-US", rate: 1, engine: "record", audioMode: "ai", deviceTTS: false, ttsModel: "gemini-3.8-flash-tts", tutorTts: "gemini-3.8-flash-tts", tutorVoice: "Aoede", lessonVoice: "Kore", live: true, liveModel: "gemini-3.8-live", liveDirect: false, program: { start: null, tasks: {} }, micOk: false };
 const S = (() => { let s = null; try { s = JSON.parse(localStorage.getItem("zy3")); } catch (e) {}
   if (!s) { s = {}; try { const o = JSON.parse(localStorage.getItem("zy2") || "null"); if (o) for (const k of ["xp", "streak", "last", "level", "gkey", "gmodel", "key", "api", "model", "dark", "accent"]) if (o[k] != null) s[k] = o[k]; if (o && o.provider) s.provider = o.provider; } catch (e) {} }
   if (s.engine === "auto" || s.engine === "gemini") s.engine = "record"; // v3 defaulted to Google-backed recognition, which fails in Iran
@@ -39,9 +39,9 @@ const allMeta = () => LEVELS.flatMap(lv => IDX.levels[lv]);
 const Cap = window.Capacitor?.Plugins || {};
 let voices = []; const loadV = () => voices = window.speechSynthesis ? speechSynthesis.getVoices() : []; if (window.speechSynthesis) { loadV(); speechSynthesis.onvoiceschanged = loadV; }
 let ttsToken = 0;
-function stopTTS() { ttsToken++; try { window.speechSynthesis?.cancel(); Cap.TextToSpeech?.stop(); } catch (e) {} }
-function speak(t, rate = 1, onend) {
-  const tok = ++ttsToken; const done = () => { if (tok === ttsToken) onend && onend(); };
+/** Device text-to-speech — only used when the user explicitly enables it (settings). */
+function deviceSpeak(t, rate = 1, onend, tok = ++ttsToken) {
+  const done = () => { if (tok === ttsToken) onend && onend(); };
   t = String(t).replace(/[\u0600-\u06FF]+/g, " ").trim(); if (!t) return done();
   const r = rate * (S.rate || 1);
   if (Cap.TextToSpeech) { Cap.TextToSpeech.speak({ text: t, lang: S.accent, rate: r, category: "playback" }).then(done, done); return; }
@@ -51,7 +51,6 @@ function speak(t, rate = 1, onend) {
   u.onend = done; u.onerror = done; speechSynthesis.speak(u);
   setTimeout(() => { if (tok === ttsToken && !speechSynthesis.speaking && !speechSynthesis.pending) done(); }, 400 + t.length * 120); // safety for engines that never fire onend
 }
-function speakSeq(lines, rate = 1, i = 0, done) { const tok = ttsToken + 1; if (i >= lines.length) return done && done(); speak(lines[i], rate, () => { if (ttsToken === tok + i) setTimeout(() => speakSeq(lines, rate, i + 1, done), 300); }); }
 document.addEventListener("pointerdown", function unlock() { try { if (window.speechSynthesis) { const u = new SpeechSynthesisUtterance(" "); u.volume = 0; speechSynthesis.speak(u); } } catch (e) {} document.removeEventListener("pointerdown", unlock); }, { once: true });
 
 
@@ -287,9 +286,9 @@ async function callAI(system, msgs, opt = {}) {
   if (!r.ok) throw new Error(aiErr(r.status, j.error?.message)); const t = j.choices?.[0]?.message?.content; if (!t) throw new Error("پاسخ خالی از سرور."); return t;
 }
 
-let seqId = 0;
-function speakSeq(lines, rate = 1, done) { const id = ++seqId; const step = i => { if (id !== seqId) return; if (i >= lines.length) return done && done(); speak(lines[i], rate, () => setTimeout(() => step(i + 1), 300)); }; step(0); }
-const stopAll = () => { seqId++; stopTTS(); stopListening(); };
+/* speak / speakSeq / stopTTS / stopAll live in voice.js (natural Gemini voices). */
+const dv = (l, d) => d.me ? ZYV.learnerVoice(l.partner) : ZYV.partnerVoice(l.partner);
+const dlines = l => l.dialogue.map(d => ({ t: d.en, v: dv(l, d) }));
 
 /* ---------------- Views ---------------- */
 const V = {};
@@ -338,7 +337,7 @@ const nextBtn = (l, k) => { const i = STEPS.findIndex(s => s[0] == k); return i 
 const P = {
   dlg(l, el) { el.innerHTML = `<div class=card><button class="btn p" id=play>▶ پخش کل گفتگو</button><button class=btn id=slow>🐢 آهسته</button><button class=btn id=tg>👁️ ترجمه</button>
     ${l.dialogue.map((d, i) => `<div class="bubble ${d.me ? "me" : "them"}"><div class=who>${d.me ? "شما" : esc(l.partner)}</div><div dir=ltr lang=en>${esc(d.en)} <button class="btn sm" data-say=${i} aria-label="پخش جمله">🔊</button></div><div class="fa tr">${esc(d.fa)}</div></div>`).join("")}</div><div class=card>${nextBtn(l, "dlg")}</div>`;
-    $$("[data-say]").forEach(b => b.onclick = () => speak(l.dialogue[b.dataset.say].en)); $("#play").onclick = () => speakSeq(l.dialogue.map(d => d.en)); $("#slow").onclick = () => speakSeq(l.dialogue.map(d => d.en), .7); $("#tg").onclick = () => $$(".tr").forEach(x => x.classList.toggle("hidden")); },
+    $$("[data-say]").forEach(b => b.onclick = () => speak(l.dialogue[b.dataset.say].en, 1, null, { voice: dv(l, l.dialogue[b.dataset.say]) })); $("#play").onclick = () => speakSeq(dlines(l)); $("#slow").onclick = () => speakSeq(dlines(l), .7); $("#tg").onclick = () => $$(".tr").forEach(x => x.classList.toggle("hidden")); },
   chunks(l, el) { el.innerHTML = `<div class=card><p class=muted>عبارت‌ها را تکه‌تکه (chunk) یاد بگیرید، نه کلمه‌به‌کلمه. همه به کارت‌های مرور اضافه شدند.</p>${l.chunks.map((c, i) => `<div class=chunk><div><div dir=ltr lang=en><b>${esc(c.en)}</b></div><div class=muted>${esc(c.fa)}</div></div><button class="btn sm" data-i=${i} aria-label="پخش">🔊</button></div>`).join("")}</div><div class=card><h3>⚡ تمرین سریع معنی</h3><div id=qz aria-live=polite></div></div><div class=card>${nextBtn(l, "chunks")}</div>`;
     $$("[data-i]").forEach(b => b.onclick = () => speak(l.chunks[b.dataset.i].en)); l.chunks.forEach((c, i) => addCard(l.id + ":" + i, c.en, c.fa, l.id)); save();
     const pool = shuffle(l.chunks).slice(0, 5); let k = 0, score = 0;
@@ -354,27 +353,27 @@ const P = {
     <div class=seg style="max-width:260px;margin:auto"><button data-r=.6 class="${rate < 1 ? "on" : ""}">🐢 آهسته</button><button data-r=1 class="${rate == 1 ? "on" : ""}">🐇 عادی</button></div>
     <p class=big dir=ltr lang=en>${esc(d.en)}</p><p class=muted>${esc(d.fa)}</p><button class="btn p" id=pl>🔊 پخش</button><button class=btn id=rec>🎤 تکرار و ارزیابی</button><div id=fb aria-live=polite></div>
     <div><button class=btn id=pv ${i == 0 ? "disabled" : ""}>→ قبلی</button><button class=btn id=nx ${i == l.dialogue.length - 1 ? "disabled" : ""}>بعدی ←</button></div></div><div class=card>${nextBtn(l, "shadow")}</div>`;
-    $$("[data-r]").forEach(b => b.onclick = () => { rate = +b.dataset.r; r(); speak(d.en, rate); }); $("#pl").onclick = () => speak(d.en, rate);
-    $("#pv").onclick = () => { i--; r(); speak(l.dialogue[i].en, rate); }; $("#nx").onclick = () => { i++; r(); speak(l.dialogue[i].en, rate); }; $("#rec").onclick = () => evalSpeech(d.en, $("#fb")); }; r(); },
+    $$("[data-r]").forEach(b => b.onclick = () => { rate = +b.dataset.r; r(); speak(d.en, rate, null, { voice: dv(l, d) }); }); $("#pl").onclick = () => speak(d.en, rate, null, { voice: dv(l, d) });
+    $("#pv").onclick = () => { i--; r(); speak(l.dialogue[i].en, rate, null, { voice: dv(l, l.dialogue[i]) }); }; $("#nx").onclick = () => { i++; r(); speak(l.dialogue[i].en, rate, null, { voice: dv(l, l.dialogue[i]) }); }; $("#rec").onclick = () => evalSpeech(d.en, $("#fb")); }; r(); },
   role(l, el) { let i = 0, tot = 0, n = 0; const log = [];
     const r = () => { if (!el.isConnected) return; const d = l.dialogue[i];
       el.innerHTML = `<div class=card><p class=muted>🎭 شما نقش «شما» را بازی می‌کنید. جمله‌ی طرف مقابل پخش می‌شود؛ سپس جمله‌ی خود را بگویید (یا تایپ کنید). راهنمای فارسی کمکتان می‌کند. <br>موتور گفتار: ${sttLabel()}</p><div id=rl>${log.join("")}</div><div id=turn></div></div>`;
       const turn = $("#turn");
       if (!d) { const avg = n ? Math.round(tot / n * 100) : 0; turn.innerHTML = `<div class=tip>پایان نقش‌آفرینی! میانگین دقت: <b>${fa(avg)}٪</b></div><button class=btn onclick="lesson('${l.id}','role')">🔁 دوباره</button> ${nextBtn(l, "role")}`; return; }
-      if (!d.me) { log.push(`<div class="bubble them"><div class=who>${esc(l.partner)}</div><div dir=ltr lang=en>${esc(d.en)}</div></div>`); $("#rl").innerHTML = log.join(""); i++; speak(d.en, 1, () => setTimeout(r, 250)); return; }
+      if (!d.me) { log.push(`<div class="bubble them"><div class=who>${esc(l.partner)}</div><div dir=ltr lang=en>${esc(d.en)}</div></div>`); $("#rl").innerHTML = log.join(""); i++; speak(d.en, 1, () => setTimeout(r, 250), { voice: dv(l, d) }); return; }
       turn.innerHTML = `<div class="bubble me"><div class=who>نوبت شما — به انگلیسی بگویید:</div><div>«${esc(d.fa)}»</div><div class="hidden" dir=ltr lang=en id=hint>${esc(d.en)}</div></div>
       <button class="btn p" id=mic ${sttMode() == "none" ? "disabled" : ""}>🎤 بگویید</button><button class=btn id=hb>💡 نمایش جمله</button><div class=row><input id=typ dir=ltr lang=en placeholder="یا تایپ کنید…" aria-label="جمله‌ی خود را تایپ کنید"><button class=btn id=ok>✓</button></div><div id=fb aria-live=polite></div>`;
       const done = said => { const s = sim(said, d.en); tot += s; n++; if (s >= .7) addXP(2); log.push(`<div class="bubble me"><div class=who>شما · <b class=${s >= .7 ? "ok" : "bad"}>${fa(Math.round(s * 100))}٪</b></div><div dir=ltr lang=en>${esc(said)}</div>${s < 1 ? `<div class=fa dir=ltr lang=en>✅ ${esc(d.en)}</div>` : ""}</div>`); i++; r(); };
-      $("#hb").onclick = () => { $("#hint").classList.toggle("hidden"); speak(d.en, .8); }; $("#ok").onclick = () => { const t = $("#typ").value.trim(); if (t) done(t); }; $("#typ").onkeydown = e => { if (e.key == "Enter") $("#ok").click(); };
+      $("#hb").onclick = () => { $("#hint").classList.toggle("hidden"); speak(d.en, .8, null, { voice: dv(l, d) }); }; $("#ok").onclick = () => { const t = $("#typ").value.trim(); if (t) done(t); }; $("#typ").onkeydown = e => { if (e.key == "Enter") $("#ok").click(); };
       $("#mic").onclick = () => listen((t, why, d) => { if (t) done(t); else if ($("#fb")) $("#fb").textContent = whyMsg(why, d) + " (می‌توانید تایپ هم کنید.)"; }, { onState: s => { if ($("#fb")) $("#fb").textContent = s == "listen" ? "⏺ در حال گوش دادن… (پس از مکث خودکار تمام می‌شود)" : s == "think" ? "⏳ در حال تبدیل صدا به متن…" : ""; } }); };
     r(); },
   listen(l, el) { el.innerHTML = `<div class=card><h3>🎧 درک شنیداری</h3><p class=muted>متن پنهان است. گفتگو را گوش دهید (چند بار هم اشکال ندارد) و جواب دهید.</p><button class="btn p" id=p1>▶ پخش عادی</button><button class=btn id=p2>🐢 پخش آهسته</button>
     <div>${l.quiz.map((q, i) => `<div style="margin-top:12px"><b>${fa(i + 1)}. <span ${q.en ? "" : ""}>${esc(q.q)}</span></b><div>${q.o.map((o, j) => `<button class=btn data-q=${i} data-j=${j}>${esc(o)}</button>`).join("")}</div><div id=f${i} aria-live=polite></div></div>`).join("")}</div>
     <div style="margin-top:12px"><b>${fa(l.quiz.length + 1)}. دیکته: جمله‌ای را که می‌شنوید بنویسید</b> <button class="btn sm" id=dp aria-label="پخش">🔊</button><input id=dc dir=ltr lang=en aria-label="دیکته"><button class=btn id=dk>بررسی</button><div id=df aria-live=polite></div></div>
     <button class="btn sm" id=st>📜 نمایش متن</button><div id=tx class=hidden>${l.dialogue.map(d => `<p dir=ltr lang=en>${esc(d.en)}</p>`).join("")}</div></div><div class=card>${nextBtn(l, "listen")}</div>`;
-    const lines = l.dialogue.map(d => d.en); $("#p1").onclick = () => speakSeq(lines, 1); $("#p2").onclick = () => speakSeq(lines, .7); $("#st").onclick = () => $("#tx").classList.toggle("hidden");
+    const lines = dlines(l); $("#p1").onclick = () => speakSeq(lines, 1); $("#p2").onclick = () => speakSeq(lines, .7); $("#st").onclick = () => $("#tx").classList.toggle("hidden");
     $$("[data-q]").forEach(b => b.onclick = () => { const q = l.quiz[b.dataset.q], ok = +b.dataset.j == q.a; $("#f" + b.dataset.q).innerHTML = ok ? "<b class=ok>✔ درست</b>" : `<b class=bad>✘ پاسخ: ${esc(q.o[q.a])}</b>`; if (ok) addXP(2); $$(`[data-q="${b.dataset.q}"]`).forEach(x => x.disabled = true); });
-    const dl = l.dialogue.filter(d => d.me)[0].en; $("#dp").onclick = () => speak(dl, .85); $("#dk").onclick = () => { const s = sim($("#dc").value, dl); $("#df").innerHTML = `<b class=${s >= .8 ? "ok" : "bad"}>${fa(Math.round(s * 100))}٪</b> — <span dir=ltr lang=en>${esc(dl)}</span>`; if (s >= .8) addXP(2); }; }
+    const dd = l.dialogue.filter(d => d.me)[0], dl = dd.en; $("#dp").onclick = () => speak(dl, .85, null, { voice: dv(l, dd) }); $("#dk").onclick = () => { const s = sim($("#dc").value, dl); $("#df").innerHTML = `<b class=${s >= .8 ? "ok" : "bad"}>${fa(Math.round(s * 100))}٪</b> — <span dir=ltr lang=en>${esc(dl)}</span>`; if (s >= .8) addXP(2); }; }
 };
 function evalSpeech(target, fb) { if (["none", "nokey"].includes(sttMode())) { fb.innerHTML = `<p class=muted>تشخیص گفتار در دسترس نیست. برای فعال شدن، از Chrome/Edge استفاده کنید یا در تنظیمات کلید Gemini وارد کنید. فعلاً بلند تکرار کنید و خودتان مقایسه کنید.</p>`; return; }
   listen((t, why, d) => { if (!t) { fb.textContent = whyMsg(why, d); return; } const s = sim(t, target), said = norm(t);
@@ -417,14 +416,15 @@ V.pack = async d => { const p = (await getProgram())[d - 1]; p.chunks.forEach((c
   <div class=card>${p.chunks.map((c, i) => `<div class=chunk><div><b dir=ltr lang=en>${esc(c.en)}</b><div class=muted>${esc(c.fa)}</div><div id=pf${i} aria-live=polite></div></div><span><button class="btn sm" data-s=${i} aria-label="پخش">🔊</button><button class="btn sm" data-m=${i} aria-label="تکرار با میکروفون">🎤</button></span></div>`).join("")}</div>
   <div class=card><button class="btn p" id=pd>یاد گرفتم ✓</button></div>`;
   const clean = s => s.replace(/\(.*?\)|=.*$/g, "").replace(/\.\.\./g, "").trim();
-  $("#pa").onclick = () => speakSeq(p.chunks.map(c => clean(c.en)));
-  $$("[data-s]").forEach(b => b.onclick = () => speak(clean(p.chunks[b.dataset.s].en)));
+  $("#pa").onclick = () => speakSeq(p.chunks.map(c => ZYV.cleanPhrase(c.en)));
+  $$("[data-s]").forEach(b => b.onclick = () => speak(ZYV.cleanPhrase(p.chunks[b.dataset.s].en)));
   $$("[data-m]").forEach(b => b.onclick = () => { const i = b.dataset.m; evalSpeech(clean(p.chunks[i].en), $("#pf" + i)); if (++evals >= 5) { S.program.tasks[d] = { ...(S.program.tasks[d] || {}), shadow: 1 }; save(); } });
   $("#pd").onclick = () => { S.program.tasks[d] = { ...(S.program.tasks[d] || {}), pack: 1, ...(sttMode() === "none" ? { shadow: 1 } : {}) }; addXP(10); V.day(d); }; };
 
 /* ---------------- AI Teacher ---------------- */
 const MODES = { free: ["💬", "گفتگوی آزاد"], roleplay: ["🎭", "نقش‌آفرینی سناریو"], explain: ["📖", "توضیح درس"], drill: ["🎯", "تمرین کلمات ضعیف"], pron: ["🗣️", "مربی تلفظ"], program: ["📅", "گفتگوی برنامه‌ی روزانه"] };
-let T = { mode: "free", lesson: null, day: null }; let voiceOn = false;
+let T = { mode: "free", lesson: null, day: null }; let voiceOn = false, liveOn = false;
+const LIVE_RULES = () => `\n\nVOICE SESSION RULES: This is a live spoken conversation. Speak English only (no Persian audio), ${S.accent === "en-GB" ? "with a natural Southern British (London) accent" : "with a natural General American accent"}, casual native style. Keep each turn short (1–3 sentences), then let the learner talk. Correct at most one important mistake per turn by modelling the natural version. If the learner interrupts, stop and listen.`;
 const chatKey = () => T.mode + ":" + (T.mode === "program" ? T.day : ["roleplay", "explain"].includes(T.mode) ? T.lesson : "");
 async function teacherPrompt() {
   const level = S.level || "A2"; const l = T.lesson ? await getLesson(T.lesson).catch(() => null) : null; const weak = weakCards(12);
@@ -460,21 +460,27 @@ V.tutor = async () => {
   <div id=log style="max-height:52vh;overflow:auto" aria-live=polite></div>
   <div class=row><input id=msg dir=ltr lang=en placeholder="Type or tap the mic…" aria-label="پیام به معلم"><button class=btn id=mic aria-label="صحبت با میکروفون">🎤</button><button class="btn p" id=send>ارسال</button></div>
   <div><button class="btn ${voiceOn ? "p" : ""}" id=voice>🎧 حالت صوتی بدون دست: ${voiceOn ? "روشن" : "خاموش"}</button><button class=btn id=end>🏁 پایان جلسه و خلاصه</button><button class="btn sm" id=clr>شروع دوباره</button></div>
-  <p class=muted>موتور گفتار: ${sttLabel()} · ${S.provider === "proxy" ? "از طریق سرور واسط" : S.provider === "gemini" ? "Gemini " + esc(S.gmodel) : "OpenAI-compatible"}</p></div>`;
+  <p class=muted id=vm aria-live=polite></p><p class=muted>صدای معلم: ${S.audioMode === "device" ? "صدای گوشی" : "Gemini — " + esc(S.tutorVoice)}${liveSupported() ? " · حالت صوتی: گفتگوی زنده (Live)" : ""} · موتور گفتار: ${sttLabel()} · ${S.provider === "proxy" ? "از طریق سرور واسط" : S.provider === "gemini" ? "Gemini " + esc(S.gmodel) : "OpenAI-compatible"}</p></div>`;
   if (T.mode === "program" && !T.day) T.day = programDay() || 1;
   const chat = () => S.chats[chatKey()] = S.chats[chatKey()] || [];
   const setState = s => { const vd = $("#vd"); if (!vd) return; vd.className = "voice-dot " + (s || ""); $("#vs").textContent = { listen: "در حال گوش دادن…", think: "در حال فکر کردن…", speak: "در حال صحبت…" }[s] || ""; };
   const draw = () => { if (!$("#log")) return; $("#log").innerHTML = chat().map((m, i) => `<div class="bubble ${m.role == "user" ? "me" : "them"}"><div class=who>${m.role == "user" ? "شما" : "🤖 معلم"}</div><div style="white-space:pre-wrap" dir=auto>${esc(m.content)}</div>${m.role != "user" ? `<button class="btn sm" data-sp=${i} aria-label="پخش پاسخ">🔊</button>` : ""}</div>`).join(""); $("#log").scrollTop = 1e9;
-    $$("[data-sp]").forEach(b => b.onclick = () => speak(englishPart(chat()[b.dataset.sp].content))); };
+    $$("[data-sp]").forEach(b => b.onclick = () => speak(englishPart(chat()[b.dataset.sp].content), 1, null, { tutor: true })); };
   let busy = false;
   const ask = async () => { busy = true; setState("think"); const m = chat();
     try { const reply = await callAI(await teacherPrompt(), m.length ? m.slice(-20) : [{ role: "user", content: "(Start the session now.)" }]); m.push({ role: "assistant", content: reply }); addXP(3); save(); draw();
-      if (voiceOn) { setState("speak"); speak(englishPart(reply), 1, () => { if (voiceOn && $("#log")) loopListen(); else setState(""); }); } else setState(""); }
+      if (voiceOn) { setState("think"); speak(englishPart(reply), 1, () => { if (voiceOn && $("#log")) loopListen(); else setState(""); }, { tutor: true, onstart: () => setState("speak"), onfail: () => toast("صدای معلم ساخته نشد؛ متن پاسخ را بخوانید.", true) }); } else setState(""); }
     catch (e) { m.push({ role: "assistant", content: "⚠️ " + e.message }); save(); draw(); setState(""); voiceOn && toggleVoice(false); }
     busy = false; };
-  const send = t => { t = (t ?? $("#msg").value).trim(); if (!t || busy) return; chat().push({ role: "user", content: t }); $("#msg").value = ""; save(); draw(); ask(); };
+  const send = t => { t = (t ?? $("#msg").value).trim(); if (!t || busy) return; chat().push({ role: "user", content: t }); $("#msg").value = ""; save(); draw(); if (liveOn) return Live.sendText(t); ask(); };
   let misses = 0; const loopListen = () => listen((t, why, d) => { if (!voiceOn || !$("#log")) return; if (t) { misses = 0; send(t); } else if (why === "nospeech" && ++misses < 4) loopListen(); else { toggleVoice(false); toast(whyMsg(why, d), true); } }, { onState: setState });
-  const toggleVoice = on => { voiceOn = on ?? !voiceOn; const b = $("#voice"); if (b) { b.className = "btn " + (voiceOn ? "p" : ""); b.textContent = "🎧 حالت صوتی بدون دست: " + (voiceOn ? "روشن" : "خاموش"); } if (!voiceOn) { stopAll(); setState(""); } else if (!busy) loopListen(); };
+  const startLive = async () => { const m = chat();
+    try { await Live.start({ system: (await teacherPrompt()) + LIVE_RULES(), onState: setState,
+        onUser: t => { m.push({ role: "user", content: t }); save(); draw(); }, onModel: t => { m.push({ role: "assistant", content: t }); addXP(3); save(); draw(); },
+        onEnd: why => { if (why) toast(why, true); toggleVoice(false); } });
+      liveOn = true; $("#vm") && ($("#vm").textContent = "⚡ گفتگوی زنده (Gemini Live) — هر وقت خواستید وسط حرف معلم صحبت کنید.");
+    } catch (e) { Live.stop(); liveOn = false; if (!voiceOn) return; toast("گفتگوی زنده (Live) در دسترس نبود: " + (e.message || "") + " — حالت جایگزین: ضبط + پاسخ متنی + صدای Gemini.", true); $("#vm") && ($("#vm").textContent = "🔁 حالت جایگزین: ضبط ← پاسخ ← صدای Gemini"); if (!busy) loopListen(); } };
+  const toggleVoice = on => { voiceOn = on ?? !voiceOn; const b = $("#voice"); if (b) { b.className = "btn " + (voiceOn ? "p" : ""); b.textContent = "🎧 حالت صوتی بدون دست: " + (voiceOn ? "روشن" : "خاموش"); } if (!voiceOn) { liveOn = false; stopAll(); setState(""); $("#vm") && ($("#vm").textContent = ""); } else if (liveSupported()) startLive(); else if (!busy) loopListen(); };
   $("#send").onclick = () => send(); $("#msg").onkeydown = e => { if (e.key == "Enter") send(); };
   $("#mic").onclick = () => listen((t, why, d) => t ? send(t) : toast(whyMsg(why, d), true), { onState: setState });
   $("#voice").onclick = async () => { if (!voiceOn && !(await ensureMic())) return; toggleVoice(); };
@@ -516,6 +522,18 @@ V.settings = async () => {
   <button class=btn id=mict>🎤 آزمایش میکروفون (سطح صدا + پخش)</button><div id=mr aria-live=polite></div>
   <label>لهجه‌ی صدا:<select id=acc><option value=en-US>آمریکایی (en-US)</option><option value=en-GB>بریتانیایی (en-GB)</option></select></label>
   <label>سرعت پخش: <input id=rate type=range min=.6 max=1.2 step=.1 value="${S.rate}" aria-label="سرعت پخش"></label></div>
+  <div class=card><h3>🔊 صدای طبیعی (Gemini)</h3>
+  <label>منبع صدای درس‌ها و معلم:<select id=amode><option value=ai>صدای طبیعی هوش مصنوعی (Gemini TTS / Live) — پیشنهادی</option><option value=device>صدای خود گوشی (رباتیک، آفلاین)</option></select></label>
+  <label><input type=checkbox id=dtts ${S.deviceTTS ? "checked" : ""}> اگر صدای Gemini در دسترس نبود، با صدای گوشی پخش شود (پیش‌فرض: خاموش — فقط متن و پیام خطا)</label>
+  <label>صدای معلم:<select id=tvoice>${ZYV.VOICES.map(([n, g, d]) => `<option value=${n}>${n} — ${d}</option>`).join("")}</select></label> <button class="btn sm" id=tvt>🔊 شنیدن نمونه</button>
+  <label>صدای راوی عبارت‌ها:<select id=lvoice>${ZYV.VOICES.map(([n, g, d]) => `<option value=${n}>${n} — ${d}</option>`).join("")}</select></label>
+  <p class=muted>در گفتگوهای درس، هر شخصیت صدای مخصوص خودش را دارد (شما و طرف مقابل با دو صدای متفاوت).</p>
+  <label>مدل صدای درس‌ها:<select id=ttsm>${ZYV.TTS_MODELS.map(m => `<option>${m}</option>`).join("")}</select></label>
+  <label>مدل صدای معلم (flash-lite سریع‌تر و ارزان‌تر است ولی سطح رایگان ندارد):<select id=ttst>${ZYV.TTS_MODELS.map(m => `<option>${m}</option>`).join("")}</select></label>
+  <label><input type=checkbox id=live ${S.live !== false ? "checked" : ""}> حالت صوتی معلم با گفتگوی زنده‌ی Gemini Live (کم‌تأخیر، قطع کردن وسط حرف)</label>
+  <label>مدل Live:<input id=livem dir=ltr value="${esc(S.liveModel || ZYV.LIVE)}"></label>
+  <label class="${S.provider === "proxy" ? "" : "hidden"}"><input type=checkbox id=lived ${S.liveDirect ? "checked" : ""}> Live با توکن موقت از سرور واسط و اتصال مستقیم به Google (فقط اگر Google در دسترس است)</label>
+  <p class=muted id=acache>صداهای ذخیره‌شده: …</p><button class=btn id=pgen>⬇️ ساخت و ذخیره‌ی صدای همه‌ی جمله‌های سطح من (برای آفلاین)</button> <button class="btn sm" id=aclr>🗑️ پاک کردن صداهای ذخیره‌شده</button><div id=pgo aria-live=polite></div></div>
   <div class=card><h3>💾 پشتیبان</h3><button class=btn id=ex>⬇️ دریافت فایل پشتیبان</button><label class=btn style="display:inline-block">⬆️ بازیابی از فایل<input id=im type=file accept="application/json,.json" class=hidden></label><label><input type=checkbox id=exk> کلیدهای API هم در پشتیبان باشد</label></div>
   <div class=card><h3>دیگر</h3><button class=btn data-go=placement>🎯 آزمون تعیین سطح دوباره</button><button class=btn id=rs>🗑️ پاک کردن همه‌ی داده‌ها</button><p class=muted>نسخه: ${esc(IDX.version)} · ${fa(IDX.counts.total.lessons)} سناریو · ${fa(IDX.counts.total.all)} عبارت</p></div>`;
   const pv = () => { const v = $("#prov").value; $("#gem").classList.toggle("hidden", v != "gemini"); $("#prx").classList.toggle("hidden", v != "proxy"); $("#gmod").classList.toggle("hidden", v == "openai"); $("#oai").classList.toggle("hidden", v != "openai"); };
@@ -524,6 +542,17 @@ V.settings = async () => {
   $("#sv").onclick = () => { store(); $("#tr").innerHTML = "<b class=ok>✔ ذخیره شد</b>"; };
   $("#tst").onclick = async () => { store(); $("#tr").textContent = "در حال آزمایش…"; try { const r = await callAI("Reply with just: OK", [{ role: "user", content: "ping" }], { max: 20 }); $("#tr").innerHTML = `<b class=ok>✔ اتصال برقرار است:</b> <span dir=ltr>${esc(r.slice(0, 60))}</span>`; } catch (e) { $("#tr").innerHTML = `<b class=bad>${esc(e.message)}</b>`; } };
   $("#eng").onchange = e => { S.engine = e.target.value; save(); V.settings(); }; $("#acc").onchange = e => { S.accent = e.target.value; save(); }; $("#rate").onchange = e => { S.rate = +e.target.value; save(); speak("This is how fast I'll speak."); };
+  $("#amode").value = S.audioMode || "ai"; $("#tvoice").value = S.tutorVoice; $("#lvoice").value = S.lessonVoice; $("#ttsm").value = S.ttsModel; $("#ttst").value = S.tutorTts;
+  const vset = (id, k, f = e => e.target.value) => $(id).onchange = e => { S[k] = f(e); save(); };
+  vset("#amode", "audioMode"); vset("#dtts", "deviceTTS", e => e.target.checked); vset("#tvoice", "tutorVoice"); vset("#lvoice", "lessonVoice"); vset("#ttsm", "ttsModel"); vset("#ttst", "tutorTts");
+  vset("#live", "live", e => e.target.checked); vset("#livem", "liveModel", e => e.target.value.trim() || ZYV.LIVE); vset("#lived", "liveDirect", e => e.target.checked);
+  $("#tvt").onclick = () => { store(); speak("Hey! I'm your English coach. Ready to practice some real conversation?", 1, null, { tutor: true }); };
+  ADB.count().then(n => $("#acache") && ($("#acache").textContent = `صداهای ذخیره‌شده در این دستگاه: ${fa(n || 0)} جمله`));
+  $("#aclr").onclick = async () => { await ADB.clear(); $("#acache").textContent = "صداهای ذخیره‌شده پاک شد."; };
+  $("#pgen").onclick = async () => { store(); const lv = S.level || "A1"; if (!voiceReady()) return $("#pgo").innerHTML = "<b class=bad>ابتدا کلید Gemini یا سرور واسط را وارد کنید.</b>";
+    if (!confirm(`ساخت صدای همه‌ی جمله‌های سطح ${lv} (حدود ۸۰۰ تا ۱۰۰۰ درخواست به Gemini؛ از سهمیه‌ی کلید شما کم می‌شود). ادامه؟`)) return;
+    $("#pgen").disabled = true; try { const r = await pregenLevel(lv, (n, t, f) => $("#pgo") && ($("#pgo").textContent = `${fa(n)} / ${fa(t)}${f ? " · خطا: " + fa(f) : ""}`)); $("#pgo").innerHTML = `<b class=ok>✔ تمام شد (${fa(r.n)} جمله)</b>`; }
+    catch (e) { $("#pgo").innerHTML = `<b class=bad>${esc(e.message)}</b>`; } finally { $("#pgen") && ($("#pgen").disabled = false); } };
   $("#mict").onclick = () => { store(); micTest(); };
   $("#ex").onclick = () => { const data = { app: "zabanyar", exported: new Date().toISOString(), state: { ...S } }; if (!$("#exk").checked) { data.state.gkey = ""; data.state.key = ""; }
     const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(data)], { type: "application/json" })); a.download = `zabanyar-backup-${today()}.json`; document.body.appendChild(a); a.click(); a.remove(); };

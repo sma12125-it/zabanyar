@@ -67,12 +67,13 @@ index.counts.total = { lessons: totalLessons, phrases: totalPhrases, programChun
 // 5) copy app shell
 const copy = (s, d) => { for (const f of fs.readdirSync(s)) { const sp = path.join(s, f), dp = path.join(d, f); if (fs.statSync(sp).isDirectory()) { fs.mkdirSync(dp, { recursive: true }); copy(sp, dp); } else fs.copyFileSync(sp, dp); } };
 copy(path.join(root, "src"), dist);
+if (fs.existsSync(path.join(root, "audio"))) { fs.mkdirSync(path.join(dist, "audio"), { recursive: true }); copy(path.join(root, "audio"), path.join(dist, "audio")); } // prebuilt lesson audio (scripts/gen-audio.mjs)
 // 6) version + SW precache
 const files = []; const walk = d => { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : files.push(path.relative(dist, p)); } }; walk(dist);
-const BUILD_SALT = "v5-mic"; const h = crypto.createHash("sha256").update(BUILD_SALT); for (const f of files.sort()) h.update(f).update(fs.readFileSync(path.join(dist, f)));
+const BUILD_SALT = "v6-voice"; const h = crypto.createHash("sha256").update(BUILD_SALT); for (const f of files.sort().filter(f => !f.startsWith("audio/") || f.endsWith("manifest.json"))) h.update(f).update(fs.readFileSync(path.join(dist, f)));
 index.version = h.digest("hex").slice(0, 10); index.built = new Date().toISOString();
 fs.writeFileSync(path.join(dist, "content", "index.json"), JSON.stringify(index));
-const pre = files.filter(f => !f.startsWith("splash/") && !path.basename(f).startsWith("_") && f !== "sw.js").concat(["content/index.json"]).filter((v, i, a) => a.indexOf(v) === i);
+const pre = files.filter(f => !f.startsWith("splash/") && !f.startsWith("audio/") && !path.basename(f).startsWith("_") && f !== "sw.js").concat(["content/index.json"]).filter((v, i, a) => a.indexOf(v) === i);
 const sw = fs.readFileSync(path.join(root, "src", "sw.js"), "utf8").replace("__VERSION__", index.version).replace("__PRECACHE__", JSON.stringify(["./", ...pre]));
 fs.writeFileSync(path.join(dist, "sw.js"), sw);
 fs.writeFileSync(path.join(dist, "version.json"), JSON.stringify({ version: index.version, built: index.built }));
