@@ -9,12 +9,17 @@
  *   GEMINI_API_KEY   (secret, required)
  *   ALLOWED_ORIGINS  comma-separated, e.g. "https://zabanyar.example.com,capacitor://localhost,https://localhost"
  *   ALLOWED_MODELS   optional, default: text + TTS + Live models below
+ *   GROQ_API_KEY / OPENROUTER_API_KEY / MISTRAL_API_KEY / CEREBRAS_API_KEY / XAI_API_KEY  (optional secrets) enable
+ *                    POST /p/<provider>/chat/completions | /audio/transcriptions | /audio/speech  (OpenAI-compatible passthrough,
+ *                    used when the app's provider is set to "via proxy"; only providers with a key set are served)
  *   RATE_PER_MIN     optional per-IP requests/minute (best-effort, per isolate), default 60
  */
-const DEFAULT_MODELS = "gemini-3.8-flash,gemini-3.5-flash-lite,gemini-flash-latest,gemini-3.8-flash-tts,gemini-3.8-flash-lite-tts,gemini-3.8-live";
+const DEFAULT_MODELS = "gemini-3.1-flash-lite,gemini-3.5-flash-lite,gemini-2.5-flash-lite,gemini-3.8-flash,gemini-flash-latest,gemini-3.8-flash-tts,gemini-3.8-flash-lite-tts,gemini-3.8-live";
 const LIVE_PATH = "/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent";
 const G = "https://generativelanguage.googleapis.com";
 const hits = new Map();
+const PROV = { groq: ["https://api.groq.com/openai/v1", "GROQ_API_KEY"], openrouter: ["https://openrouter.ai/api/v1", "OPENROUTER_API_KEY"], mistral: ["https://api.mistral.ai/v1", "MISTRAL_API_KEY"], cerebras: ["https://api.cerebras.ai/v1", "CEREBRAS_API_KEY"], xai: ["https://api.x.ai/v1", "XAI_API_KEY"] };
+const PPATHS = ["/chat/completions", "/audio/transcriptions", "/audio/speech"];
 export default {
   async fetch(req, env) {
     const origin = req.headers.get("Origin") || "";
@@ -34,6 +39,11 @@ export default {
       return fetch(new Request(`${G}${LIVE_PATH}?key=${encodeURIComponent(env.GEMINI_API_KEY)}`, req)); // Workers proxy the upgrade and return the 101 + WebSocket pair
     }
     if (req.method !== "POST") return json(405, { error: { message: "Method not allowed" } });
+    const pm = url.pathname.match(/^\/p\/([a-z]+)(\/.*)$/);
+    if (pm) { const pv = PROV[pm[1]]; if (!pv || !env[pv[1]] || !PPATHS.includes(pm[2])) return json(404, { error: { message: "Provider or path not enabled on this proxy" } });
+      if (+(req.headers.get("Content-Length") || 0) > 26_000_000) return json(413, { error: { message: "Payload too large" } });
+      const up = await fetch(pv[0] + pm[2], { method: "POST", headers: { "Content-Type": req.headers.get("Content-Type") || "application/json", Authorization: "Bearer " + env[pv[1]] }, body: req.body });
+      return new Response(up.body, { status: up.status, headers: { ...cors, "Content-Type": up.headers.get("Content-Type") || "application/json" } }); }
     const len = +(req.headers.get("Content-Length") || 0); if (len > 4_000_000) return json(413, { error: { message: "Payload too large" } });
     const body = await req.text(); if (body.length > 4_000_000) return json(413, { error: { message: "Payload too large" } });
     let target;
