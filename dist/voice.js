@@ -82,7 +82,7 @@ function speakSeq(lines, rate = 1, done) { const id = ++seqId; const L = lines.m
 const stopAll = () => { seqId++; stopTTS(); stopListening(); Live.stop(); };
 /** Pre-generate all lines of a level for offline use (costs API quota). */
 async function pregenLevel(lv, onProgress) { const data = await loadLevel(lv); const jobs = [];
-  for (const l of Object.values(data)) { for (const d of l.dialogue) { const v = d.me ? ZYV.learnerVoice(l.partner) : ZYV.partnerVoice(l.partner); jobs.push([d.en, v, false], [d.en, v, true]); } for (const c of l.chunks) jobs.push([c.en, S.lessonVoice || ZYV.NARRATOR, false]); }
+  for (const L of Object.values(data)) for (const l of [L, ...(L.variants || [])]) { for (const d of l.dialogue) { const v = d.me ? ZYV.learnerVoice(l.partner) : ZYV.partnerVoice(l.partner); jobs.push([d.en, v, false], [d.en, v, true]); } for (const c of l.chunks) jobs.push([c.en, S.lessonVoice || ZYV.NARRATOR, false]); }
   let n = 0, fail = 0; const run = async () => { while (jobs.length) { const [t, v, s] = jobs.shift(); try { await getClip(t, v, s); } catch (e) { fail++; if (e.why === "nokey" || e.why === "network") { jobs.length = 0; throw e; } } onProgress?.(++n, n + jobs.length, fail); } };
   await Promise.all([run(), run()]); return { n, fail }; }
 
