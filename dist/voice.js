@@ -7,7 +7,17 @@
 const GAPI = "https://generativelanguage.googleapis.com";
 const apiBase = () => S.provider === "proxy" ? S.proxy.replace(/\/$/, "") : GAPI;
 const apiHeaders = () => { const h = { "Content-Type": "application/json" }; if (S.provider === "gemini") h["x-goog-api-key"] = S.gkey; return h; };
-const voiceReady = () => (S.provider === "gemini" && !!S.gkey) || (S.provider === "proxy" && !!S.proxy);
+const voiceReady = () => geminiReady(); // Gemini audio (TTS + Live)
+/** Which natural-voice engine is usable right now: "gemini" | "groq" | null (→ device voice fallback). */
+const ttsEngine = () => { if (S.audioMode === "device" || S.tts === "device" || navigator.onLine === false || (AIH.down && Date.now() < AIH.until)) return null;
+  if (S.tts === "groq" && providerReady("groq")) return "groq"; if (geminiReady()) return "gemini"; if (providerReady("groq") && S.tts === "groq") return "groq"; return null; };
+const GROQ_VOICES = { f: ["hannah", "diana", "autumn"], m: ["troy", "austin", "daniel"] };
+const groqVoice = v => { const g = (ZYV.VOICES.find(x => x[0] === v) || [, "f"])[1], pool = GROQ_VOICES[g]; let h = 0; for (const c of v) h = (h * 31 + c.charCodeAt(0)) >>> 0; return pool[h % pool.length]; };
+async function ttsGroq(text, voice) {
+  let r; try { r = await fetch(oaBase("groq") + "/audio/speech", { method: "POST", headers: oaHeaders("groq"), body: JSON.stringify({ model: pconf("groq").tts || "canopylabs/orpheus-v1-english", voice: groqVoice(voice), input: text, response_format: "wav" }) }); }
+  catch (e) { throw Object.assign(new Error("اتصال به Groq برقرار نشد."), { why: "network" }); }
+  if (!r.ok) { const j = await r.json().catch(() => ({})); throw Object.assign(new Error("Groq TTS: " + aiErr(r.status, j.error?.message || "")), { why: r.status == 429 ? "quota" : "api" }); }
+  return new Blob([await r.arrayBuffer()], { type: "audio/wav" }); }
 const b64ToBytes = b => { const s = atob(b), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return u; };
 const bytesToB64 = u => { let s = ""; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(s); };
 function pcmToWav(pcm, rate = 24000) { const dv = new DataView(new ArrayBuffer(44)); const w = (o, s) => [...s].forEach((c, i) => dv.setUint8(o + i, c.charCodeAt(0)));
@@ -40,15 +50,15 @@ async function ttsGemini(text, voice, style, model) {
 }
 const inflight = new Map();
 async function getClip(text, voice, slow, { tutor = false, noGen = false } = {}) {
-  text = ZYV.clean(text); const key = ZYV.audioKey(text, voice, slow);
+  text = ZYV.clean(text); const eng = ttsEngine(); const key = eng === "groq" ? ZYV.audioKey(text, "groq:" + groqVoice(voice), false) : ZYV.audioKey(text, voice, slow);
   if (inflight.has(key)) return inflight.get(key);
   const p = (async () => {
     const pb = await loadPrebuilt(); const f = pb.files[key];
     if (f) { try { const r = await fetch("audio/" + f); if (r.ok) return await r.blob(); } catch (e) {} }
-    if (!tutor) { const c = await ADB.get(key); if (c) return c; }
-    if (noGen) return null;
-    const blob = await ttsGemini(text, voice, slow ? ZYV.SLOW : tutor ? "warm, friendly, encouraging teacher; natural conversational pace" : ZYV.NORMAL, tutor ? (S.tutorTts || ZYV.TUTOR_TTS) : (S.ttsModel || ZYV.DEFAULT_TTS));
-    if (!tutor) ADB.put(key, blob); return blob;
+    { const c = await ADB.get(key); if (c) return c; } // tutor replies are cached too (repeated greetings/corrections cost nothing)
+    if (noGen || !eng) return null;
+    const blob = eng === "groq" ? await ttsGroq(text, voice) : await ttsGemini(text, voice, slow ? ZYV.SLOW : tutor ? "warm, friendly, encouraging teacher; natural conversational pace" : ZYV.NORMAL, tutor ? (S.tutorTts || ZYV.TUTOR_TTS) : (S.ttsModel || ZYV.DEFAULT_TTS));
+    ADB.put(key, blob); return blob;
   })();
   inflight.set(key, p); p.finally(() => inflight.delete(key)).catch(() => {}); return p;
 }
@@ -61,7 +71,7 @@ function playBlob(blob) { return new Promise(res => { if (playerURL) URL.revokeO
 function stopTTS() { ttsToken++; try { player.pause(); } catch (e) {} try { window.speechSynthesis?.cancel(); Cap.TextToSpeech?.stop(); } catch (e) {} }
 let lastAudioErr = 0, genToast = null;
 function audioErr(e) { if (Date.now() - lastAudioErr < 8000) return; lastAudioErr = Date.now();
-  toast((e?.message || "صدای طبیعی در دسترس نیست.") + (S.deviceTTS ? "" : " (می‌توانید متن را بخوانید؛ پخش با صدای گوشی در تنظیمات قابل فعال‌سازی است.)"), true); }
+  toast((e?.message || "صدای طبیعی در دسترس نیست.") + (S.deviceTTS !== false ? "" : " (پخش با صدای گوشی در تنظیمات خاموش است.)"), true); }
 /** speak(text, rate, onend, {voice, tutor}) — rate < 1 means "slow" (generated slowly by the voice, not sped down). */
 async function speak(t, rate = 1, onend, o = {}) {
   const tok = ++ttsToken; const done = () => { if (tok === ttsToken) onend && onend(); };
@@ -69,15 +79,20 @@ async function speak(t, rate = 1, onend, o = {}) {
   if (S.audioMode === "device") return deviceSpeak(t, rate, onend, tok);
   try { window.speechSynthesis?.cancel(); player.pause(); } catch (e) {}
   const slow = rate < 1, voice = o.tutor ? (S.tutorVoice || ZYV.TUTOR) : (o.voice || S.lessonVoice || ZYV.NARRATOR);
+  if (!ttsEngine()) { // offline / no AI voice: cached natural audio if we have it, otherwise the device voice
+    const c = await getClip(t, voice, slow, { noGen: true }).catch(() => null); if (tok !== ttsToken) return;
+    if (c) { o.onstart?.(); await playBlob(c); return done(); }
+    if (S.deviceTTS !== false) { o.onstart?.(); return deviceSpeak(t, rate, onend, tok); }
+    audioErr(new Error("صدای طبیعی در دسترس نیست (آفلاین یا بدون سرویس).")); o.onfail?.(); return done(); }
   const slowT = setTimeout(() => { if (tok === ttsToken) genToast = toast("🎙️ در حال ساخت صدای طبیعی…"); }, 600);
   try { const blob = await getClip(t, voice, slow, { tutor: !!o.tutor }); clearTimeout(slowT); if (tok !== ttsToken) return; o.onstart?.(); await playBlob(blob); done(); }
-  catch (e) { clearTimeout(slowT); if (tok !== ttsToken) return; if (S.deviceTTS) return deviceSpeak(t, rate, onend, tok); audioErr(e); o.onfail?.(e); done(); }
+  catch (e) { clearTimeout(slowT); if (tok !== ttsToken) return; if (["network", "timeout"].includes(e.why)) markAI(false, e.why); if (S.deviceTTS !== false) { if (!speak.fbNote || Date.now() - speak.fbNote > 6e4) { speak.fbNote = Date.now(); toast("صدای هوش مصنوعی در دسترس نبود — با صدای گوشی پخش شد."); } return deviceSpeak(t, rate, onend, tok); } audioErr(e); o.onfail?.(e); done(); }
 }
 /** speakSeq(lines, rate, done): lines are strings or {t, v}. Pre-generates the next line while the current one plays. */
 let seqId = 0;
 function speakSeq(lines, rate = 1, done) { const id = ++seqId; const L = lines.map(x => typeof x === "string" ? { t: x } : x);
   const step = i => { if (id !== seqId) return; if (i >= L.length) return done && done();
-    const nx = L[i + 1]; if (nx && S.audioMode !== "device" && voiceReady()) getClip(nx.t, nx.v || S.lessonVoice || ZYV.NARRATOR, rate < 1).catch(() => {});
+    const nx = L[i + 1]; if (nx && ttsEngine()) getClip(nx.t, nx.v || S.lessonVoice || ZYV.NARRATOR, rate < 1).catch(() => {});
     speak(L[i].t, rate, () => setTimeout(() => step(i + 1), 250), { voice: L[i].v }); }; step(0); }
 const stopAll = () => { seqId++; stopTTS(); stopListening(); Live.stop(); };
 /** Pre-generate all lines of a level for offline use (costs API quota). */
@@ -89,7 +104,7 @@ async function pregenLevel(lv, onProgress) { const data = await loadLevel(lv); c
 /* ---------- Gemini Live API: real-time voice tutor ---------- */
 const LIVE_PATH = "/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent";
 const WORKLET = `class P extends AudioWorkletProcessor{process(i){const c=i[0]&&i[0][0];if(c)this.port.postMessage(c.slice(0));return true}}registerProcessor('zy-mic',P);`;
-const liveSupported = () => !!(window.WebSocket && (window.AudioContext || window.webkitAudioContext) && navigator.mediaDevices?.getUserMedia) && voiceReady() && S.live !== false;
+const liveSupported = () => !!(window.WebSocket && (window.AudioContext || window.webkitAudioContext) && navigator.mediaDevices?.getUserMedia) && voiceReady() && S.live !== false && aiUsable() && S.audioMode !== "device";
 const Live = {
   ws: null, on: false,
   async liveUrl() {

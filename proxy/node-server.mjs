@@ -4,11 +4,12 @@
 import http from "node:http"; import https from "node:https"; import fs from "node:fs"; import path from "node:path";
 const KEY = process.env.GEMINI_API_KEY, PORT = +(process.env.PORT || 8787), RATE = +(process.env.RATE_PER_MIN || 60);
 const ALLOWED = (process.env.ALLOWED_ORIGINS || "").split(",").map(s => s.trim()).filter(Boolean);
-const MODELS = (process.env.ALLOWED_MODELS || "gemini-3.8-flash,gemini-3.5-flash-lite,gemini-flash-latest,gemini-3.8-flash-tts,gemini-3.8-flash-lite-tts,gemini-3.8-live").split(",").map(s => s.trim());
+const MODELS = (process.env.ALLOWED_MODELS || "gemini-3.1-flash-lite,gemini-3.5-flash-lite,gemini-2.5-flash-lite,gemini-3.8-flash,gemini-flash-latest,gemini-3.8-flash-tts,gemini-3.8-flash-lite-tts,gemini-3.8-live").split(",").map(s => s.trim());
 const UPSTREAM = new URL(process.env.UPSTREAM || "https://generativelanguage.googleapis.com"); // override only for testing
 const LIVE_PATH = "/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent";
 const STATIC = process.env.STATIC_DIR ? path.resolve(process.env.STATIC_DIR) : null;
-if (!KEY) { console.error("Set GEMINI_API_KEY"); process.exit(1); }
+const PROV = { groq: ["https://api.groq.com/openai/v1", "GROQ_API_KEY"], openrouter: ["https://openrouter.ai/api/v1", "OPENROUTER_API_KEY"], mistral: ["https://api.mistral.ai/v1", "MISTRAL_API_KEY"], cerebras: ["https://api.cerebras.ai/v1", "CEREBRAS_API_KEY"], xai: ["https://api.x.ai/v1", "XAI_API_KEY"] }, PPATHS = ["/chat/completions", "/audio/transcriptions", "/audio/speech"];
+if (!KEY && !Object.values(PROV).some(p => process.env[p[1]])) { console.error("Set GEMINI_API_KEY and/or GROQ_API_KEY, OPENROUTER_API_KEY, MISTRAL_API_KEY, CEREBRAS_API_KEY, XAI_API_KEY"); process.exit(1); }
 const hits = new Map(), TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".png": "image/png", ".svg": "image/svg+xml", ".webmanifest": "application/manifest+json" };
 const server = http.createServer(async (req, res) => {
   const origin = req.headers.origin || ""; const okOrigin = !origin || ALLOWED.includes("*") || ALLOWED.includes(origin);
@@ -19,6 +20,12 @@ const server = http.createServer(async (req, res) => {
     if (!fs.existsSync(p)) return send(404, { error: { message: "not found" } }); res.writeHead(200, { "Content-Type": TYPES[path.extname(p)] || "application/octet-stream", "Cache-Control": p.endsWith("sw.js") || p.endsWith("index.html") ? "no-cache" : "public, max-age=3600" }); return fs.createReadStream(p).pipe(res); }
   if (req.method === "OPTIONS") { res.writeHead(okOrigin ? 204 : 403, cors); return res.end(); }
   if (!okOrigin) return send(403, { error: { message: "Origin not allowed" } });
+  const pm = url.pathname.match(/^\/p\/([a-z]+)(\/.*)$/);
+  if (pm && req.method === "POST") { const pv = PROV[pm[1]], pk = pv && process.env[pv[1]]; if (!pk || !PPATHS.includes(pm[2])) return send(404, { error: { message: "Provider or path not enabled on this proxy" } });
+    const ch = []; let n = 0; for await (const c of req) { n += c.length; if (n > 26_000_000) return send(413, { error: { message: "Payload too large" } }); ch.push(c); }
+    try { const up = await fetch(pv[0] + pm[2], { method: "POST", headers: { "Content-Type": req.headers["content-type"] || "application/json", Authorization: "Bearer " + pk }, body: Buffer.concat(ch) });
+      res.writeHead(up.status, { ...cors, "Content-Type": up.headers.get("content-type") || "application/json" }); return res.end(Buffer.from(await up.arrayBuffer())); } catch (e) { return send(502, { error: { message: "Upstream error" } }); } }
+  if (!KEY && m) return send(404, { error: { message: "Gemini not enabled on this proxy" } });
   if (req.method !== "POST" || !m || (m[1] && !MODELS.includes(m[1]))) return send(404, { error: { message: "Model or path not allowed", status: "NOT_FOUND" } });
   const ip = req.headers["x-forwarded-for"]?.split(",")[0] || req.socket.remoteAddress, now = Date.now(); const h = (hits.get(ip) || []).filter(t => now - t < 60000); h.push(now); hits.set(ip, h);
   if (h.length > RATE) return send(429, { error: { message: "Rate limit exceeded", status: "RESOURCE_EXHAUSTED" } });

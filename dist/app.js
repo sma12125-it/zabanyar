@@ -2,15 +2,19 @@
 "use strict";
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)], app = $("#app");
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"], LVNAME = { A1: "مبتدی", A2: "پایه", B1: "متوسط", B2: "بالاتر از متوسط", C1: "پیشرفته" };
-const DEFAULT_MODEL = "gemini-3.8-flash";
-const DEF = { v: 3, xp: 0, streak: 0, last: null, level: null, done: {}, steps: {}, cards: {}, days: {}, chats: {}, reviewsToday: {}, lastLesson: null,
+const DEFAULT_MODEL = "gemini-3.1-flash-lite"; // v8: Flash-Lite has ~25× the free daily quota of Flash (see providers.js)
+const DEF = { v: 4, chain: ["gemini"], pk: {}, stt: "auto", tts: "gemini", gmodelHeavy: "gemini-3.8-flash", syncKeys: false, _u: 0, xp: 0, streak: 0, last: null, level: null, done: {}, steps: {}, cards: {}, days: {}, chats: {}, reviewsToday: {}, lastLesson: null,
   provider: "gemini", gkey: "", gmodel: DEFAULT_MODEL, proxy: "", key: "", api: "https://api.openai.com/v1", model: "gpt-4o-mini",
-  dark: null, accent: "en-US", rate: 1, engine: "record", audioMode: "ai", deviceTTS: false, ttsModel: "gemini-3.8-flash-tts", tutorTts: "gemini-3.8-flash-tts", tutorVoice: "Aoede", lessonVoice: "Kore", live: true, liveModel: "gemini-3.8-live", liveDirect: false, program: { start: null, tasks: {} }, micOk: false };
+  dark: null, accent: "en-US", rate: 1, engine: "record", audioMode: "ai", deviceTTS: true, ttsModel: "gemini-3.8-flash-tts", tutorTts: "gemini-3.8-flash-tts", tutorVoice: "Aoede", lessonVoice: "Kore", live: true, liveModel: "gemini-3.8-live", liveDirect: false, program: { start: null, tasks: {} }, micOk: false };
 const S = (() => { let s = null; try { s = JSON.parse(localStorage.getItem("zy3")); } catch (e) {}
   if (!s) { s = {}; try { const o = JSON.parse(localStorage.getItem("zy2") || "null"); if (o) for (const k of ["xp", "streak", "last", "level", "gkey", "gmodel", "key", "api", "model", "dark", "accent"]) if (o[k] != null) s[k] = o[k]; if (o && o.provider) s.provider = o.provider; } catch (e) {} }
   if (s.engine === "auto" || s.engine === "gemini") s.engine = "record"; // v3 defaulted to Google-backed recognition, which fails in Iran
-  return Object.assign(structuredClone(DEF), s); })();
-let saveT; const save = () => { try { localStorage.setItem("zy3", JSON.stringify(S)); } catch (e) { toast("ذخیره‌سازی ناموفق بود (فضای مرورگر پر است؟)", true); } stats(); };
+  const r = Object.assign(structuredClone(DEF), s);
+  if (!(s.v >= 4)) { // v3 → v4: device voice becomes the automatic fallback; OpenAI-compatible settings become the "custom" provider; Flash → Flash-Lite (quota)
+    r.deviceTTS = true; if (s.key || s.provider === "openai") { r.pk.custom = { base: s.api || "", model: s.model || "", key: s.key || "" }; if (s.provider === "openai") { r.provider = "gemini"; r.chain = ["custom", "gemini"]; } else r.chain = ["gemini", "custom"]; }
+    if (!s.gmodel || s.gmodel === "gemini-3.8-flash") r.gmodel = DEFAULT_MODEL; r.v = 4; }
+  return r; })();
+let saveT; const save = (local) => { if (!local) S._u = Date.now(); try { localStorage.setItem("zy3", JSON.stringify(S)); window.Sync?.dirty(); } catch (e) { toast("ذخیره‌سازی ناموفق بود (فضای مرورگر پر است؟)", true); } stats(); };
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const today = () => new Date().toLocaleDateString("en-CA");
 const fa = n => Number(n).toLocaleString("fa-IR");
@@ -67,8 +71,6 @@ document.addEventListener("pointerdown", function unlock() { try { if (window.sp
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 const IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 const canRecord = () => !!(navigator.mediaDevices?.getUserMedia && window.MediaRecorder);
-const aiReady = () => S.provider === "gemini" ? !!S.gkey : S.provider === "proxy" ? !!S.proxy : !!S.key;
-const canTranscribe = () => canRecord() && aiReady() && S.provider !== "openai";
 const hasFast = () => !!(Cap.SpeechRecognition || SR);
 function sttMode() {
   if (S.engine === "fast" && hasFast()) return "fast";
@@ -76,7 +78,7 @@ function sttMode() {
   if (hasFast()) return "fast";
   return canRecord() ? "nokey" : "none";
 }
-const sttLabel = () => ({ record: "ضبط صدا + تبدیل به متن با Gemini (پایدار)", fast: (Cap.SpeechRecognition ? "تشخیص سریع گوشی" : "تشخیص سریع مرورگر") + (canTranscribe() ? " — در صورت خطا خودکار: ضبط + Gemini" : " (به سرورهای Google وابسته است؛ برای پایداری کلید Gemini/سرور واسط وارد کنید)"), nokey: "نیاز به کلید Gemini یا سرور واسط", none: "در دسترس نیست — حالت تایپی" })[sttMode()];
+const sttLabel = () => ({ record: `ضبط صدا + تبدیل به متن با ${sttProvider() === "groq" ? "Groq Whisper" : "Gemini"} (پایدار)`, fast: (Cap.SpeechRecognition ? "تشخیص سریع گوشی" : "تشخیص سریع مرورگر") + (canTranscribe() ? " — در صورت خطا خودکار: ضبط + Gemini" : " (به سرورهای Google وابسته است؛ برای پایداری کلید Gemini/سرور واسط وارد کنید)"), nokey: "نیاز به کلید Gemini یا سرور واسط", none: "در دسترس نیست — حالت تایپی" })[sttMode()];
 const WHY = {
   denied: "اجازه‌ی میکروفون داده نشد. از تنظیمات گوشی/مرورگر دسترسی میکروفون را برای زبان‌یار فعال کنید.",
   silent: "میکروفون روشن بود ولی هیچ صدایی ضبط نشد (سطح صدا تقریباً صفر). میکروفون درست را انتخاب کنید، هدفون/بلوتوث را قطع کنید، برنامه‌ی دیگری که میکروفون را گرفته ببندید و نزدیک‌تر صحبت کنید. از «آزمایش میکروفون» در تنظیمات کمک بگیرید.",
@@ -217,21 +219,14 @@ async function toWav(blob) {
   return new Blob([dv], { type: "audio/wav" });
 }
 const geminiMime = t => { t = (t || "").split(";")[0]; return t === "audio/mp4" || t === "audio/x-m4a" ? "audio/aac" : t || "audio/webm"; };
-async function transcribe(blob) {
-  const wav = await toWav(blob).catch(() => null); const use = wav || blob;
-  const data = await blobToB64(use), mimeType = wav ? "audio/wav" : geminiMime(blob.type);
-  const t = await gemini({ systemInstruction: { parts: [{ text: "You are a speech-to-text engine. The speaker is a Persian-speaking learner of English. Transcribe exactly what they say, in English, with natural punctuation; keep their mistakes. If there is no intelligible speech, output an empty string. Output ONLY the transcript." }] },
-    contents: [{ role: "user", parts: [{ inlineData: { mimeType, data } }, { text: "Transcribe this audio." }] }], generationConfig: { temperature: 0, maxOutputTokens: 300 } });
-  return t.replace(/^["'\s]+|["'\s]+$/g, "");
-}
 const EXP = { "gonna": "going to", "wanna": "want to", "gotta": "got to", "kinda": "kind of", "i'm": "i am", "you're": "you are", "it's": "it is", "that's": "that is", "what's": "what is", "don't": "do not", "can't": "cannot", "won't": "will not", "i'll": "i will", "i'd": "i would", "i've": "i have", "we're": "we are", "let's": "let us", "there's": "there is", "isn't": "is not", "didn't": "did not", "doesn't": "does not", "that'd": "that would", "they're": "they are", "we've": "we have", "you've": "you have", "he's": "he is", "she's": "she is", "u": "you", "ya": "you", "ok": "okay" };
 const norm = s => String(s).toLowerCase().replace(/[’]/g, "'").replace(/[^a-z0-9' ]/g, " ").split(/\s+/).filter(Boolean).flatMap(w => (EXP[w] || w).split(" "));
 function sim(said, target) { const a = norm(said), b = norm(target); if (!b.length) return 0; const m = Array.from({ length: a.length + 1 }, () => Array(b.length + 1).fill(0)); for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) m[i][j] = a[i - 1] === b[j - 1] ? m[i - 1][j - 1] + 1 : Math.max(m[i - 1][j], m[i][j - 1]); return m[a.length][b.length] / b.length; }
 
 /* ---------------- SRS (SM-2 variant with lapses) ---------------- */
-function addCard(id, en, fa, src) { if (!S.cards[id]) S.cards[id] = { en, fa, src, ef: 2.5, n: 0, iv: 0, due: Date.now(), lapses: 0 }; }
+function addCard(id, en, fa, src) { if (!S.cards[id]) S.cards[id] = { en, fa, src, ef: 2.5, n: 0, iv: 0, due: Date.now(), lapses: 0, u: Date.now() }; }
 function grade(id, q) { const c = S.cards[id]; if (!c) return; if (q < 3) { c.n = 0; c.iv = 0; c.lapses = (c.lapses || 0) + 1; } else { c.n++; c.iv = c.n == 1 ? 1 : c.n == 2 ? (q == 5 ? 4 : 3) : Math.round(c.iv * c.ef * (q == 5 ? 1.3 : q == 3 ? .8 : 1)); }
-  c.ef = Math.max(1.3, c.ef + .1 - (5 - q) * (.08 + (5 - q) * .02)); c.due = Date.now() + (c.iv ? c.iv * 864e5 : 6e4); S.reviewsToday[today()] = (S.reviewsToday[today()] || 0) + 1; save(); }
+  c.ef = Math.max(1.3, c.ef + .1 - (5 - q) * (.08 + (5 - q) * .02)); c.due = Date.now() + (c.iv ? c.iv * 864e5 : 6e4); c.u = Date.now(); S.reviewsToday[today()] = (S.reviewsToday[today()] || 0) + 1; save(); }
 const dueCards = () => Object.entries(S.cards).filter(([, c]) => c.due <= Date.now()).map(([id, c]) => ({ id, ...c }));
 const weakCards = (n = 15) => Object.values(S.cards).filter(c => c.lapses || c.ef < 2.3).sort((a, b) => (b.lapses || 0) - (a.lapses || 0) || a.ef - b.ef).slice(0, n);
 
@@ -271,29 +266,6 @@ function aiErr(status, msg) { msg = msg || ""; const m = msg.toLowerCase();
   if (status == 403) return "دسترسی رد شد (۴۰۳). ممکن است کلید محدود یا منطقه مسدود باشد.";
   if (status >= 500) return "سرور هوش مصنوعی موقتاً در دسترس نیست. دوباره تلاش کنید.";
   return "خطا (" + status + "): " + msg; }
-async function gemini(body, { json = false } = {}) {
-  if (!aiReady() || S.provider === "openai") throw Object.assign(new Error("ابتدا Gemini یا آدرس سرور واسط را در تنظیمات وارد کنید."), { why: "nokey" });
-  const model = encodeURIComponent(S.gmodel || DEFAULT_MODEL);
-  const url = S.provider === "proxy" ? `${S.proxy.replace(/\/$/, "")}/v1beta/models/${model}:generateContent` : `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
-  const headers = { "Content-Type": "application/json" }; if (S.provider === "gemini") headers["x-goog-api-key"] = S.gkey;
-  if (json) body.generationConfig = { ...(body.generationConfig || {}), responseMimeType: "application/json" };
-  let r, j; const ctl = new AbortController(); const to = setTimeout(() => ctl.abort(), 45000);
-  try { r = await fetch(url, { method: "POST", headers, body: JSON.stringify(body), signal: ctl.signal }); j = await r.json().catch(() => ({})); }
-  catch (e) { throw Object.assign(new Error(e.name === "AbortError" ? "پاسخ هوش مصنوعی خیلی طول کشید. دوباره تلاش کنید." : "اتصال به سرور برقرار نشد. اینترنت را بررسی کنید؛ Gemini از ایران بدون VPN یا سرور واسط در دسترس نیست."), { why: e.name === "AbortError" ? "timeout" : "network" }); }
-  finally { clearTimeout(to); }
-  if (!r.ok) { const m = aiErr(r.status, j.error?.message || j.error?.status || j.error); throw Object.assign(new Error(m), { why: /منطقه|مسدود/.test(m) ? "blocked" : "api" }); }
-  const c = j.candidates?.[0]; if (!c) throw new Error(j.promptFeedback?.blockReason ? "پیام به دلیل سیاست‌های ایمنی مسدود شد." : "پاسخ خالی از Gemini.");
-  const t = (c.content?.parts || []).filter(p => !p.thought).map(p => p.text || "").join("").trim();
-  if (!t && c.finishReason === "SAFETY") throw new Error("پاسخ به دلیل سیاست‌های ایمنی مسدود شد."); return t;
-}
-async function callAI(system, msgs, opt = {}) {
-  if (!aiReady()) throw new Error("ابتدا کلید API را در تنظیمات وارد کنید.");
-  if (S.provider !== "openai") { const m = msgs[0] && msgs[0].role !== "user" ? [{ role: "user", content: "(start)" }, ...msgs] : msgs;
-    return gemini({ systemInstruction: { parts: [{ text: system }] }, contents: m.map(x => ({ role: x.role === "user" ? "user" : "model", parts: [{ text: x.content }] })), generationConfig: { temperature: opt.temp ?? .8, maxOutputTokens: opt.max || 1024 } }, opt); }
-  let r, j; try { r = await fetch(S.api.replace(/\/$/, "") + "/chat/completions", { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + S.key }, body: JSON.stringify({ model: S.model, temperature: opt.temp ?? .8, messages: [{ role: "system", content: system }, ...msgs], ...(opt.json ? { response_format: { type: "json_object" } } : {}) }) }); j = await r.json().catch(() => ({})); }
-  catch (e) { throw new Error("اتصال به سرور برقرار نشد."); }
-  if (!r.ok) throw new Error(aiErr(r.status, j.error?.message)); const t = j.choices?.[0]?.message?.content; if (!t) throw new Error("پاسخ خالی از سرور."); return t;
-}
 
 /* speak / speakSeq / stopTTS / stopAll live in voice.js (natural Gemini voices). */
 const dv = (l, d) => d.me ? ZYV.learnerVoice(l.partner) : ZYV.partnerVoice(l.partner);
@@ -446,25 +418,29 @@ async function teacherPrompt() {
     l ? `Current lesson: "${l.title}" (${l.level}), dialogue ${l.n} of ${1 + (l.variants || []).length} (${l.mood}) — scenario: ${l.scene}. Partner role: ${l.partner}. Key chunks: ${l.chunks.map(c => c.en).join("; ")}.\nThe selected dialogue the learner studied (partner = ${l.partner}, learner = "Me"):\n${l.dialogue.map(d => (d.me ? "Me: " : l.partner + ": ") + d.en).join("\n")}` : "",
     weak.length ? `Learner's weak phrases from spaced-repetition (reuse them naturally): ${weak.map(c => c.en).join("; ")}.` : "",
     day ? `30-day program day ${day.day}, theme chunks: ${day.chunks.map(c => c.en).slice(0, 18).join("; ")}. Task: ${day.ai}` : ""].filter(Boolean).join("\n");
-  const common = `\nSTYLE: Speak like a friendly real native speaker: contractions, phrasal verbs, common idioms, natural fillers (you know, like, kinda, gonna) appropriate to the learner's level. Keep your English turn SHORT (1-3 sentences) and end with a question or prompt so the learner talks more than you.
-CORRECTION: After your English turn, if the learner's last message had a mistake or sounded unnatural/textbook, add ONE line starting with "💡" in Persian: briefly explain the issue and give the natural native version in English. Max one correction per turn; be warm. If the message was good, occasionally add "💡 عالی!" with a short Persian praise. Never put Persian before the English turn.
-Common Persian-speaker issues to watch: missing articles (a/the), word order (verb at end), tense (present perfect), he/she mix-ups, missing third-person -s, prepositions, overly formal phrasing.`;
+  const common = `\nSTYLE: friendly native speaker, casual (contractions, phrasal verbs, light fillers) at the learner's level. Reply in 1-3 short English sentences ending with a question.
+FIX: if the learner's last message had an error or sounded textbook, add ONE line "💡 <Persian explanation> + natural English version". Otherwise sometimes "💡 عالی!". Never start with Persian.`;
   const modeTxt = {
-    free: "MODE: Free conversation. Chat about the learner's life, interests and day. Ask follow-up questions.",
+    free: "MODE: free chat about the learner's life and day; ask follow-ups.",
     roleplay: l ? `MODE: Roleplay. You ARE "${l.partner}" in this scene: ${l.scene}. Stay fully in character. If the chat is empty, open the scene naturally. Steer the learner to use the lesson's key chunks.` : "MODE: Roleplay a realistic everyday situation of your choice; announce the scene briefly first.",
     explain: `MODE: Teacher explanation. Explain in PERSIAN (with English examples) ${l ? `the key chunks and the casual-vs-textbook differences of the lesson "${l.title}"` : "a useful spoken-English topic for this level"}, one small piece at a time. After each piece, ask the learner to make their own sentence in English, then correct it. Here you may write mostly Persian, but English examples must be natural.`,
-    drill: "MODE: Drill. Quiz the learner one item at a time on their weak phrases (or on high-frequency spoken chunks if none): give a Persian meaning or a situation and ask them to say it in natural English. Evaluate briefly, correct with 💡 in Persian, then move to the next item. Keep score.",
+    drill: "MODE: drill weak phrases (or common spoken chunks) one at a time: give Persian meaning/situation, learner says it in English, correct with 💡, next. Keep score.",
     pron: "MODE: Pronunciation coach. Give the learner one short natural sentence at a time to say aloud (their message is a speech transcript). Compare with the target; point out likely issues for Persian speakers (th /θ ð/, w vs v, vowel insertion in clusters like 'street', final consonants, word stress, connected speech like 'wanna', 'gotcha') with tips in Persian. Then give the next sentence.",
     program: day ? `MODE: Daily speaking session for day ${day.day} (${day.theme}). ${day.ai} Use today's chunks and encourage the learner to use them.` : "MODE: Daily speaking session."
   }[T.mode];
   return ctx + "\n" + modeTxt + common;
 }
+/** Token saver: send only the last 8 turns verbatim; older learner messages become a one-line recap (no extra API call). */
+function trimHistory(m, keep = 8) { if (m.length <= keep) return m.map(x => ({ role: x.role, content: x.content.slice(0, 900) }));
+  const old = m.slice(0, -keep).filter(x => x.role === "user").map(x => x.content.slice(0, 60)).slice(-10).join(" | ");
+  let rest = m.slice(-keep); if (rest[0].role !== "user") rest = rest.slice(1);
+  return [{ role: "user", content: `(Earlier in this session the learner said: ${old})` }, { role: "assistant", content: "OK." }, ...rest.map(x => ({ role: x.role, content: x.content.slice(0, 900) }))]; }
 const englishPart = t => t.split("\n").filter(x => !x.trim().startsWith("💡")).join(" ").replace(/[\u0600-\u06FF][\u0600-\u06FF\s،؛؟]*/g, " ").replace(/\s+/g, " ").trim();
 V.tutor = async () => {
   try { const t = JSON.parse(sessionStorage.zyTutor || "null"); if (t) { T = { ...T, ...t }; sessionStorage.removeItem("zyTutor"); } } catch (e) {}
   if (!T.lesson) T.lesson = S.lastLesson || "A1-01";
-  if (!aiReady()) { app.innerHTML = `<div class=card><h2>🤖 معلم هوش مصنوعی</h2><p>معلمی که سطح شما، درس فعلی و کلمات ضعیفتان را می‌شناسد: توضیح می‌دهد، تمرین می‌دهد، نقش بازی می‌کند، تلفظ را بررسی می‌کند و در پایان جلسه خلاصه و اشتباهاتتان را به کارت‌های مرور اضافه می‌کند. حالت صوتی بدون دست هم دارد.</p>
-    <p class=muted>این بخش اختیاری است و به کلید رایگان Google Gemini (یا آدرس سرور واسط) نیاز دارد.</p><button class="btn p" data-go=settings>تنظیم در «تنظیمات»</button></div>`; return; }
+  if (!aiUsable()) return scriptedTutor();
+  TUT_SCRIPTED = false;
   const opts = LEVELS.map(lv => `<optgroup label="${lv}">${IDX.levels[lv].map(l => `<option value=${l.id} ${l.id == parseKey(T.lesson).id ? "selected" : ""}>${l.icon} ${esc(l.title)}</option>`).join("")}</optgroup>`).join("");
   app.innerHTML = `<div class=card><h3>🤖 معلم هوش مصنوعی <span class=voice-dot id=vd aria-hidden=true></span> <small class=muted id=vs></small></h3>
   <div class=modes role=radiogroup aria-label="حالت آموزش">${Object.entries(MODES).map(([k, [ic, n]]) => `<button class="btn ${k == T.mode ? "p" : ""}" role=radio aria-checked=${k == T.mode} data-mode=${k}>${ic} ${n}</button>`).join("")}</div>
@@ -481,7 +457,7 @@ V.tutor = async () => {
     $$("[data-sp]").forEach(b => b.onclick = () => speak(englishPart(chat()[b.dataset.sp].content), 1, null, { tutor: true })); };
   let busy = false;
   const ask = async () => { busy = true; setState("think"); const m = chat();
-    try { const reply = await callAI(await teacherPrompt(), m.length ? m.slice(-20) : [{ role: "user", content: "(Start the session now.)" }]); m.push({ role: "assistant", content: reply }); addXP(3); save(); draw();
+    try { const reply = await callAI(await teacherPrompt(), m.length ? trimHistory(m) : [{ role: "user", content: "(Start the session now.)" }], { max: 350 }); m.push({ role: "assistant", content: reply }); addXP(3); save(); draw();
       if (voiceOn) { setState("think"); speak(englishPart(reply), 1, () => { if (voiceOn && $("#log")) loopListen(); else setState(""); }, { tutor: true, onstart: () => setState("speak"), onfail: () => toast("صدای معلم ساخته نشد؛ متن پاسخ را بخوانید.", true) }); } else setState(""); }
     catch (e) { m.push({ role: "assistant", content: "⚠️ " + e.message }); save(); draw(); setState(""); voiceOn && toggleVoice(false); }
     busy = false; };
@@ -503,13 +479,38 @@ V.tutor = async () => {
   $("#end").onclick = () => endSession(chat());
   draw(); if (!chat().length) ask();
 };
+/* Offline / no-AI tutor: scripted roleplay from the lesson dialogues with device voice; switches back to the AI tutor automatically. */
+let TUT_SCRIPTED = false;
+async function scriptedTutor() {
+  TUT_SCRIPTED = true; stopAll(); const key = T.lesson || S.lastLesson || "A1-01"; const l = await getLesson(key).catch(() => null) || await getLesson("A1-01");
+  const why = navigator.onLine === false ? "آفلاین هستید" : !aiReady() ? "هیچ سرویس هوش مصنوعی تنظیم نشده" : "سرویس هوش مصنوعی در دسترس نیست" + (AIH.why === "blocked" ? " (مسدود)" : "");
+  const opts = LEVELS.map(lv => `<optgroup label="${lv}">${IDX.levels[lv].map(m => `<option value=${m.id} ${m.id == l.id ? "selected" : ""}>${m.icon} ${esc(m.title)}</option>`).join("")}</optgroup>`).join("");
+  let i = 0, tot = 0, n = 0; const log = [], weak = [];
+  app.innerHTML = `<div class=card><h3>🎭 تمرین بدون هوش مصنوعی <span class="pill off">${esc(why)}</span></h3>
+  <p class=muted>معلم هوشمند فعلاً در دسترس نیست؛ گفتگوی آماده‌ی سناریو با صدای گوشی اجرا می‌شود. شما نقش «شما» را بازی کنید. ${aiReady() ? "به‌محض برگشتن اتصال، معلم هوشمند خودکار فعال می‌شود." : `<button class="btn sm" data-go=settings>تنظیم سرویس هوش مصنوعی</button>`}</p>
+  <div class=row><select id=sles aria-label="انتخاب سناریو">${opts}</select><select id=svar aria-label="انتخاب گفتگو">${[...Array(meta(l.id)?.v || 1)].map((_, k) => `<option value=${k + 1} ${k + 1 == l.n ? "selected" : ""}>گفتگو ${FA_N[k + 1]}</option>`).join("")}</select></div>
+  <div id=slog></div><div id=sturn></div></div>`;
+  const pick = () => { T.lesson = vkey($("#sles").value, +$("#svar").value); scriptedTutor(); }; $("#sles").onchange = () => { $("#svar").value = 1; pick(); }; $("#svar").onchange = pick;
+  const r = () => { if (!$("#sturn") || !TUT_SCRIPTED) return; const d = l.dialogue[i]; $("#slog").innerHTML = log.join("");
+    if (!d) { const avg = n ? Math.round(tot / n * 100) : 0; weak.forEach(w => addCard(l.key + ":s" + l.dialogue.indexOf(w), w.en, w.fa, l.key)); if (weak.length) save();
+      $("#sturn").innerHTML = `<div class=tip>پایان! میانگین دقت: <b>${fa(avg)}٪</b>${weak.length ? ` · ${fa(weak.length)} جمله‌ی سخت به مرور اضافه شد` : ""}</div><button class="btn p" id=sagain>🔁 دوباره</button>`; $("#sagain").onclick = scriptedTutor; addXP(5); return; }
+    if (!d.me) { log.push(`<div class="bubble them"><div class=who>${esc(l.partner)}</div><div dir=ltr lang=en>${esc(d.en)}</div><div class="fa">${esc(d.fa)}</div></div>`); $("#slog").innerHTML = log.join(""); i++; speak(d.en, 1, () => setTimeout(r, 250), { voice: dv(l, d) }); return; }
+    $("#sturn").innerHTML = `<div class="bubble me"><div class=who>نوبت شما — به انگلیسی بگویید:</div><div>«${esc(d.fa)}»</div><div class=hidden dir=ltr lang=en id=shint>${esc(d.en)}</div></div>
+      <button class="btn p" id=smic ${["none", "nokey"].includes(sttMode()) ? "disabled" : ""}>🎤 بگویید</button><button class=btn id=shb>💡 راهنما</button><div class=row><input id=styp dir=ltr lang=en placeholder="یا تایپ کنید…" aria-label="جمله‌ی خود را تایپ کنید"><button class=btn id=sok>✓</button></div><div id=sfb aria-live=polite></div>`;
+    const done = said => { const sc = sim(said, d.en); tot += sc; n++; if (sc < .7) weak.push(d); else addXP(2);
+      log.push(`<div class="bubble me"><div class=who>شما · <b class=${sc >= .7 ? "ok" : "bad"}>${fa(Math.round(sc * 100))}٪</b></div><div dir=ltr lang=en>${esc(said)}</div>${sc < 1 ? `<div class=fa dir=ltr lang=en>✅ ${esc(d.en)}</div>` : ""}</div>`); i++; r(); };
+    $("#shb").onclick = () => { $("#shint").classList.toggle("hidden"); speak(d.en, .8, null, { voice: dv(l, d) }); };
+    $("#sok").onclick = () => { const t = $("#styp").value.trim(); if (t) done(t); }; $("#styp").onkeydown = e => { if (e.key == "Enter") $("#sok").click(); };
+    $("#smic").onclick = () => listen((t, w, x) => { if (t) done(t); else if ($("#sfb")) $("#sfb").textContent = whyMsg(w, x) + " (می‌توانید تایپ کنید.)"; }); };
+  r();
+}
 async function endSession(msgs) {
   if (msgs.filter(m => m.role === "user").length < 1) return toast("اول کمی گفتگو کنید.", true);
   stopAll(); voiceOn = false; modal(`<p>⏳ در حال تهیه‌ی خلاصه‌ی جلسه…</p>`);
   const sys = `You are an English teacher for a Persian speaker. Analyse ONLY the learner's (user) messages in this conversation and return strict JSON:
 {"summary_fa": "2-3 sentence summary in Persian of how the session went", "strengths_fa": ["..."], "mistakes": [{"wrong": "learner's phrase", "right": "natural native version", "fa": "short Persian explanation"}], "new_phrases": [{"en": "useful natural phrase from the session", "fa": "Persian meaning"}], "next_step_fa": "one concrete tip in Persian"}
 Max 8 mistakes, max 6 new_phrases. Use [] when none.`;
-  try { const raw = await callAI(sys, [{ role: "user", content: msgs.map(m => (m.role === "user" ? "LEARNER: " : "TEACHER: ") + m.content).join("\n").slice(-12000) }], { json: true, temp: .2, max: 1500 });
+  try { const raw = await callAI(sys, [{ role: "user", content: msgs.map(m => (m.role === "user" ? "LEARNER: " : "TEACHER: ") + m.content).join("\n").slice(-12000) }], { json: true, temp: .2, max: 1200, heavy: true });
     const j = JSON.parse(raw.replace(/^```(json)?|```$/g, "").trim()); let added = 0;
     for (const m of (j.mistakes || []).slice(0, 8)) if (m.right) { const id = "t:" + norm(m.right).join("_").slice(0, 60); if (!S.cards[id]) { addCard(id, m.right, (m.fa || "") + (m.wrong ? ` (به‌جای: ${m.wrong})` : ""), "tutor"); added++; } }
     for (const p of (j.new_phrases || []).slice(0, 6)) if (p.en && p.fa) { const id = "t:" + norm(p.en).join("_").slice(0, 60); if (!S.cards[id]) { addCard(id, p.en, p.fa, "tutor"); added++; } }
@@ -524,20 +525,34 @@ Max 8 mistakes, max 6 new_phrases. Use [] when none.`;
 
 /* ---------------- Settings ---------------- */
 V.settings = async () => {
-  app.innerHTML = `<div class=card><h3>🤖 هوش مصنوعی (معلم + تبدیل صدا به متن)</h3><label>سرویس:<select id=prov><option value=gemini>Google Gemini — کلید شخصی (پیش‌فرض)</option><option value=proxy>Gemini از طریق سرور واسط (بدون کلید در مرورگر)</option><option value=openai>سازگار با OpenAI</option></select></label>
-  <div id=gem><div class=tip>🔑 کلید رایگان Gemini را از <a href="https://aistudio.google.com/apikey" target=_blank rel=noopener>Google AI Studio</a> بگیرید (ورود با حساب گوگل ← Create API key). ⚠️ Gemini از داخل ایران مسدود است؛ VPN یا «سرور واسط» لازم است.</div>
-    <label>کلید Gemini:<input id=gkey dir=ltr type=password autocomplete=off value="${esc(S.gkey)}" placeholder="AIza…"></label></div>
-  <div id=prx><div class=tip>آدرس سرور واسطی که خودتان (یا مدیر سایت) راه‌اندازی کرده‌اید؛ کلید روی سرور نگه داشته می‌شود. راهنما در پوشه‌ی <code>proxy/</code>.</div><label>آدرس سرور واسط:<input id=proxy dir=ltr value="${esc(S.proxy)}" placeholder="https://zabanyar-proxy.example.workers.dev"></label></div>
-  <div id=gmod><label>مدل Gemini:<input id=gmodel dir=ltr list=gm value="${esc(S.gmodel)}"></label><datalist id=gm><option value=gemini-3.8-flash><option value=gemini-3.5-flash-lite><option value=gemini-flash-latest><option value=gemini-3.6-flash><option value=gemini-2.5-flash></datalist><p class=muted>gemini-3.8-flash: هوشمندتر (پیش‌فرض) · gemini-3.5-flash-lite: سریع‌تر و ارزان‌تر</p></div>
-  <div id=oai><label>آدرس API:<input id=api dir=ltr value="${esc(S.api)}"></label><label>مدل:<input id=model dir=ltr value="${esc(S.model)}"></label><label>کلید API:<input id=key dir=ltr type=password autocomplete=off value="${esc(S.key)}"></label><p class=muted>در این حالت تبدیل صدا به متن با Gemini در دسترس نیست.</p></div>
-  <p class=muted>کلیدها فقط در همین دستگاه ذخیره می‌شوند و مستقیم به سرویس انتخاب‌شده فرستاده می‌شوند.</p><button class="btn p" id=sv>ذخیره</button> <button class=btn id=tst>🧪 آزمایش اتصال</button><div id=tr aria-live=polite></div></div>
+  const pOpt = id => { const P = PROVIDERS[id], c = pconf(id); return `<details class=prov data-p=${id}><summary><b>${esc(P.name)}</b> ${providerReady(id) ? "✅" : ""}</summary><div class=tip>💸 ${esc(P.free)} ${P.keyUrl ? `<a href="${P.keyUrl}" target=_blank rel=noopener>دریافت کلید</a>` : ""}</div>
+    ${id === "custom" ? `<label>آدرس API (…/v1):<input data-f=base dir=ltr value="${esc(c.base || "")}" placeholder="https://example.com/v1"></label>` : ""}
+    <label>کلید API:<input data-f=key dir=ltr type=password autocomplete=off value="${esc(c.key || "")}"></label>
+    <label>مدل:<input data-f=model dir=ltr list=dl-${id} value="${esc(c.model || P.def || "")}"></label><datalist id=dl-${id}>${(P.models || []).map(m => `<option value="${m}">`).join("")}</datalist>
+    ${id !== "custom" ? `<label><input type=checkbox data-f=viaProxy ${c.viaProxy ? "checked" : ""}> بدون کلید در مرورگر، از طریق سرور واسط (<code dir=ltr>/p/${id}</code>)</label>` : ""}</details>`; };
+  app.innerHTML = `<div class=card id=acct></div>
+  <div class=card><h3>🤖 سرویس‌های هوش مصنوعی</h3><p class=muted>معلم و خلاصه‌ی جلسه از اولین سرویسِ آماده در این فهرست استفاده می‌کنند؛ اگر سهمیه تمام شد (۴۲۹) یا جواب نداد، خودکار سراغ بعدی می‌رود و پیام می‌دهد.</p>
+  <ol id=chainUI class=chain></ol><label>افزودن به فهرست:<select id=chadd><option value="">— انتخاب —</option></select></label>
+  <details class=prov data-p=gemini open><summary><b>Google Gemini</b> ${geminiReady() ? "✅" : ""}</summary><div class=tip>💸 ${esc(PROVIDERS.gemini.free)} <a href="https://aistudio.google.com/apikey" target=_blank rel=noopener>دریافت کلید</a></div>
+    <label>اتصال:<select id=prov><option value=gemini>کلید شخصی Gemini</option><option value=proxy>از طریق سرور واسط (بدون کلید در مرورگر)</option></select></label>
+    <div id=gem><label>کلید Gemini:<input id=gkey dir=ltr type=password autocomplete=off value="${esc(S.gkey)}" placeholder="AIza…"></label></div>
+    <div id=prx><div class=tip>آدرس سرور واسطی که خودتان راه‌اندازی کرده‌اید؛ کلیدها روی سرور می‌مانند. راهنما در پوشه‌ی <code>proxy/</code>.</div><label>آدرس سرور واسط:<input id=proxy dir=ltr value="${esc(S.proxy)}" placeholder="https://zabanyar-proxy.example.workers.dev"></label></div>
+    <label>مدل گفتگو (معلم):<select id=gmodel>${GEMINI_MODELS.map(([m, d]) => `<option value=${m}>${m} — ${d}</option>`).join("")}${GEMINI_MODELS.some(x => x[0] === S.gmodel) ? "" : `<option value="${esc(S.gmodel)}">${esc(S.gmodel)}</option>`}</select></label>
+    <label>مدل کارهای پیچیده (خلاصه‌ی جلسه):<select id=gmodel2>${GEMINI_MODELS.map(([m]) => `<option value=${m}>${m}</option>`).join("")}</select></label>
+    <p class=muted>💡 پیشنهاد کم‌مصرف: <b dir=ltr>${REC_CHAT}</b> برای گفتگو و <b dir=ltr>${REC_HEAVY}</b> فقط برای خلاصه‌ی پایان جلسه. مدل پیش‌فرض قبلی (gemini-3.8-flash) فقط حدود ۲۰ درخواست رایگان در روز دارد — دلیل اصلی تمام شدن سریع سهمیه.</p></details>
+  ${["groq", "openrouter", "mistral", "cerebras", "xai", "custom"].map(pOpt).join("")}
+  <h4>🎤 تبدیل گفتار به متن</h4><select id=sttp><option value=auto>خودکار (Groq Whisper اگر کلید دارد، وگرنه Gemini)</option><option value=gemini>Gemini</option><option value=groq>Groq Whisper (whisper-large-v3-turbo)</option><option value=device>فقط تشخیص گوشی/مرورگر یا تایپ</option></select>
+  <h4>🔊 صدای طبیعی درس‌ها و معلم</h4><select id=ttsp><option value=gemini>Gemini TTS (طبیعی‌ترین)</option><option value=groq>Groq Orpheus (انگلیسی؛ سقف رایگان کم: ۱۰۰ درخواست در روز)</option><option value=device>صدای گوشی (آفلاین)</option></select>
+  <p class=muted>هر جمله فقط یک بار ساخته و روی دستگاه ذخیره می‌شود. اگر صدای هوش مصنوعی در دسترس نباشد (آفلاین/سهمیه/مسدود)، خودکار صدای گوشی پخش می‌شود و با برگشتن اتصال دوباره صدای طبیعی.</p>
+  <p class=muted>🔐 کلیدها فقط روی همین دستگاه ذخیره می‌شوند و مستقیم به همان سرویس فرستاده می‌شوند (همگام‌سازی حساب کاربری کلیدها را نمی‌فرستد، مگر خودتان رمزگذاری‌شده فعالش کنید).</p>
+  <button class="btn p" id=sv>ذخیره</button> <button class=btn id=tst>🧪 آزمایش همه‌ی سرویس‌ها</button><div id=tr aria-live=polite></div></div>
   <div class=card><h3>🎤 گفتار</h3><label>موتور تشخیص گفتار:<select id=eng><option value=record>پایدار: ضبط صدا + Gemini (پیشنهادی، به‌خصوص در ایران و آیفون)</option><option value=fast>سریع: تشخیص گفتار گوشی/مرورگر (نیازمند Google) + بازگشت خودکار به Gemini</option></select></label><p class=muted>وضعیت فعلی: ${sttLabel()}${hasFast() ? "" : " · تشخیص سریع در این دستگاه نیست"}${canRecord() ? "" : " · ضبط صدا پشتیبانی نمی‌شود"}${location.protocol === "https:" || /localhost|127\.0\.0\.1/.test(location.hostname) || window.Capacitor ? "" : " · ⚠️ برای میکروفون HTTPS لازم است"}</p>
   <button class=btn id=mict>🎤 آزمایش میکروفون (سطح صدا + پخش)</button><div id=mr aria-live=polite></div>
   <label>لهجه‌ی صدا:<select id=acc><option value=en-US>آمریکایی (en-US)</option><option value=en-GB>بریتانیایی (en-GB)</option></select></label>
   <label>سرعت پخش: <input id=rate type=range min=.6 max=1.2 step=.1 value="${S.rate}" aria-label="سرعت پخش"></label></div>
   <div class=card><h3>🔊 صدای طبیعی (Gemini)</h3>
-  <label>منبع صدای درس‌ها و معلم:<select id=amode><option value=ai>صدای طبیعی هوش مصنوعی (Gemini TTS / Live) — پیشنهادی</option><option value=device>صدای خود گوشی (رباتیک، آفلاین)</option></select></label>
-  <label><input type=checkbox id=dtts ${S.deviceTTS ? "checked" : ""}> اگر صدای Gemini در دسترس نبود، با صدای گوشی پخش شود (پیش‌فرض: خاموش — فقط متن و پیام خطا)</label>
+  <label>منبع صدای درس‌ها و معلم:<select id=amode><option value=ai>هوشمند: صدای طبیعی هوش مصنوعی، و در حالت آفلاین صدای گوشی — پیشنهادی</option><option value=device>همیشه صدای گوشی (بدون مصرف سهمیه)</option></select></label>
+  <label><input type=checkbox id=dtts ${S.deviceTTS !== false ? "checked" : ""}> اگر صدای هوش مصنوعی در دسترس نبود (آفلاین، تمام شدن سهمیه، مسدود بودن)، خودکار با صدای گوشی پخش شود — پیشنهادی</label>
   <label>صدای معلم:<select id=tvoice>${ZYV.VOICES.map(([n, g, d]) => `<option value=${n}>${n} — ${d}</option>`).join("")}</select></label> <button class="btn sm" id=tvt>🔊 شنیدن نمونه</button>
   <label>صدای راوی عبارت‌ها:<select id=lvoice>${ZYV.VOICES.map(([n, g, d]) => `<option value=${n}>${n} — ${d}</option>`).join("")}</select></label>
   <p class=muted>در گفتگوهای درس، هر شخصیت صدای مخصوص خودش را دارد (شما و طرف مقابل با دو صدای متفاوت).</p>
@@ -549,11 +564,22 @@ V.settings = async () => {
   <p class=muted id=acache>صداهای ذخیره‌شده: …</p><button class=btn id=pgen>⬇️ ساخت و ذخیره‌ی صدای همه‌ی جمله‌های سطح من (برای آفلاین)</button> <button class="btn sm" id=aclr>🗑️ پاک کردن صداهای ذخیره‌شده</button><div id=pgo aria-live=polite></div></div>
   <div class=card><h3>💾 پشتیبان</h3><button class=btn id=ex>⬇️ دریافت فایل پشتیبان</button><label class=btn style="display:inline-block">⬆️ بازیابی از فایل<input id=im type=file accept="application/json,.json" class=hidden></label><label><input type=checkbox id=exk> کلیدهای API هم در پشتیبان باشد</label></div>
   <div class=card><h3>دیگر</h3><button class=btn data-go=placement>🎯 آزمون تعیین سطح دوباره</button><button class=btn id=rs>🗑️ پاک کردن همه‌ی داده‌ها</button><p class=muted>نسخه: ${esc(IDX.version)} · ${fa(IDX.counts.total.lessons)} سناریو · ${fa(IDX.counts.total.all)} عبارت</p></div>`;
-  const pv = () => { const v = $("#prov").value; $("#gem").classList.toggle("hidden", v != "gemini"); $("#prx").classList.toggle("hidden", v != "proxy"); $("#gmod").classList.toggle("hidden", v == "openai"); $("#oai").classList.toggle("hidden", v != "openai"); };
-  $("#prov").value = S.provider; $("#prov").onchange = pv; pv(); $("#eng").value = S.engine; $("#acc").value = S.accent;
-  const store = () => { S.provider = $("#prov").value; S.gkey = $("#gkey").value.trim(); S.proxy = $("#proxy").value.trim(); S.gmodel = $("#gmodel").value.trim() || DEFAULT_MODEL; S.api = $("#api").value.trim(); S.model = $("#model").value.trim(); S.key = $("#key").value.trim(); save(); };
+  const pv = () => { const v = $("#prov").value; $("#gem").classList.toggle("hidden", v != "gemini"); $("#prx").classList.toggle("hidden", v != "proxy"); };
+  $("#prov").value = S.provider === "proxy" ? "proxy" : "gemini"; $("#prov").onchange = pv; pv(); $("#eng").value = S.engine; $("#acc").value = S.accent;
+  $("#gmodel").value = S.gmodel; $("#gmodel2").value = S.gmodelHeavy || REC_HEAVY; $("#sttp").value = S.stt || "auto"; $("#ttsp").value = S.tts || "gemini";
+  const drawChain = () => { const ch = chainIds(); $("#chainUI").innerHTML = ch.map((id, i) => `<li><b>${esc(PROVIDERS[id].name)}</b> ${providerReady(id) ? "<span class=ok>آماده</span>" : "<span class=muted>(کلید/تنظیم ندارد)</span>"} <button class="btn sm" data-up=${i} ${i ? "" : "disabled"} aria-label="بالا">▲</button><button class="btn sm" data-dn=${i} ${i < ch.length - 1 ? "" : "disabled"} aria-label="پایین">▼</button><button class="btn sm" data-rm=${i} aria-label="حذف">✕</button></li>`).join("") || "<li class=muted>خالی</li>";
+    $("#chadd").innerHTML = `<option value="">— انتخاب —</option>` + Object.keys(PROVIDERS).filter(id => !ch.includes(id)).map(id => `<option value=${id}>${esc(PROVIDERS[id].name)}</option>`).join("");
+    const mv = (i, d) => { const c = chainIds(); [c[i], c[i + d]] = [c[i + d], c[i]]; S.chain = c; save(); drawChain(); };
+    $$("[data-up]").forEach(b => b.onclick = () => mv(+b.dataset.up, -1)); $$("[data-dn]").forEach(b => b.onclick = () => mv(+b.dataset.dn, 1)); $$("[data-rm]").forEach(b => b.onclick = () => { const c = chainIds(); c.splice(+b.dataset.rm, 1); S.chain = c; save(); drawChain(); }); };
+  drawChain(); $("#chadd").onchange = e => { if (!e.target.value) return; S.chain = [...chainIds(), e.target.value]; save(); drawChain(); };
+  const store = () => { S.provider = $("#prov").value; S.gkey = $("#gkey").value.trim(); S.proxy = $("#proxy").value.trim(); S.gmodel = $("#gmodel").value || DEFAULT_MODEL; S.gmodelHeavy = $("#gmodel2").value; S.stt = $("#sttp").value; S.tts = $("#ttsp").value;
+    S.pk = S.pk || {}; $$("details.prov[data-p]").forEach(d => { const id = d.dataset.p; if (id === "gemini") return; const c = {}; d.querySelectorAll("[data-f]").forEach(i => c[i.dataset.f] = i.type === "checkbox" ? i.checked : i.value.trim()); S.pk[id] = c;
+      if ((c.key || c.viaProxy || (id === "custom" && c.base)) && !chainIds().includes(id)) S.chain = [...chainIds(), id]; });
+    markAI(true); save(); drawChain(); };
   $("#sv").onclick = () => { store(); $("#tr").innerHTML = "<b class=ok>✔ ذخیره شد</b>"; };
-  $("#tst").onclick = async () => { store(); $("#tr").textContent = "در حال آزمایش…"; try { const r = await callAI("Reply with just: OK", [{ role: "user", content: "ping" }], { max: 20 }); $("#tr").innerHTML = `<b class=ok>✔ اتصال برقرار است:</b> <span dir=ltr>${esc(r.slice(0, 60))}</span>`; } catch (e) { $("#tr").innerHTML = `<b class=bad>${esc(e.message)}</b>`; } };
+  $("#tst").onclick = async () => { store(); const ids = readyChain(); if (!ids.length) return $("#tr").innerHTML = "<b class=bad>هیچ سرویسی تنظیم نشده.</b>"; $("#tr").textContent = "در حال آزمایش…"; const out = [];
+    for (const id of ids) { const keep = S.chain; S.chain = [id]; try { const r = await callAI("Reply with just: OK", [{ role: "user", content: "ping" }], { max: 20, temp: 0 }); out.push(`<div><b class=ok>✔ ${esc(PROVIDERS[id].name)}</b> <span dir=ltr>${esc(r.slice(0, 40))}</span></div>`); } catch (e) { out.push(`<div><b class=bad>✘ ${esc(PROVIDERS[id].name)}:</b> ${esc(e.message)}</div>`); } finally { S.chain = keep; } }
+    $("#tr").innerHTML = out.join(""); };
   $("#eng").onchange = e => { S.engine = e.target.value; save(); V.settings(); }; $("#acc").onchange = e => { S.accent = e.target.value; save(); }; $("#rate").onchange = e => { S.rate = +e.target.value; save(); speak("This is how fast I'll speak."); };
   $("#amode").value = S.audioMode || "ai"; $("#tvoice").value = S.tutorVoice; $("#lvoice").value = S.lessonVoice; $("#ttsm").value = S.ttsModel; $("#ttst").value = S.tutorTts;
   const vset = (id, k, f = e => e.target.value) => $(id).onchange = e => { S[k] = f(e); save(); };
@@ -567,16 +593,26 @@ V.settings = async () => {
     $("#pgen").disabled = true; try { const r = await pregenLevel(lv, (n, t, f) => $("#pgo") && ($("#pgo").textContent = `${fa(n)} / ${fa(t)}${f ? " · خطا: " + fa(f) : ""}`)); $("#pgo").innerHTML = `<b class=ok>✔ تمام شد (${fa(r.n)} جمله)</b>`; }
     catch (e) { $("#pgo").innerHTML = `<b class=bad>${esc(e.message)}</b>`; } finally { $("#pgen") && ($("#pgen").disabled = false); } };
   $("#mict").onclick = () => { store(); micTest(); };
-  $("#ex").onclick = () => { const data = { app: "zabanyar", exported: new Date().toISOString(), state: { ...S } }; if (!$("#exk").checked) { data.state.gkey = ""; data.state.key = ""; }
+  $("#ex").onclick = () => { const data = { app: "zabanyar", exported: new Date().toISOString(), state: { ...S } }; if (!$("#exk").checked) { data.state.gkey = ""; data.state.pk = Object.fromEntries(Object.entries(S.pk || {}).map(([k, v]) => [k, { ...v, key: "" }])); }
     const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(data)], { type: "application/json" })); a.download = `zabanyar-backup-${today()}.json`; document.body.appendChild(a); a.click(); a.remove(); };
   $("#im").onchange = async e => { const f = e.target.files[0]; if (!f) return; try { const j = JSON.parse(await f.text()); if (j.app !== "zabanyar" || !j.state || typeof j.state.cards !== "object") throw new Error("فایل پشتیبان معتبر نیست.");
-      if (!confirm("داده‌های فعلی با فایل پشتیبان جایگزین شود؟")) return; const keep = { gkey: S.gkey, key: S.key }; const ns = Object.assign(structuredClone(DEF), j.state); if (!ns.gkey) ns.gkey = keep.gkey; if (!ns.key) ns.key = keep.key;
+      if (!confirm("داده‌های فعلی با فایل پشتیبان جایگزین شود؟")) return; const keep = { gkey: S.gkey, pk: S.pk, proxy: S.proxy }; const ns = Object.assign(structuredClone(DEF), j.state); if (!ns.gkey) ns.gkey = keep.gkey; if (!ns.key) ns.key = keep.key;
       localStorage.setItem("zy3", JSON.stringify(ns)); toast("بازیابی شد"); setTimeout(() => location.reload(), 600); } catch (err) { toast(err.message || "خطا در خواندن فایل", true); } };
   $("#rs").onclick = () => { if (confirm("همه‌ی پیشرفت و تنظیمات پاک شود؟")) { localStorage.removeItem("zy3"); location.reload(); } };
+  window.Sync?.card($("#acct"));
 };
 
 /* ---------------- Router & boot ---------------- */
-function go(v, arg) { stopAll(); $$(".tabs button").forEach(b => { const on = b.dataset.v == v; b.classList.toggle("on", on); on ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current"); });
+let CUR = "home";
+function netStatus() { const el = $("#net"); if (!el) return; const on = navigator.onLine !== false, ai = aiUsable();
+  el.textContent = !on ? "⚪ آفلاین" : ai ? "🟢 آنلاین هوشمند" : "🟡 آنلاین · بدون هوش مصنوعی"; el.className = "pill net " + (!on ? "off" : ai ? "on" : "half");
+  el.title = !on ? "صدای گوشی و تمرین آماده‌ی بدون هوش مصنوعی فعال است" : ai ? "معلم هوشمند و صدای طبیعی فعال" : (aiReady() ? "سرویس هوش مصنوعی موقتاً جواب نمی‌دهد" : "سرویس هوش مصنوعی تنظیم نشده"); }
+function aiChanged() { const was = netStatus.last; netStatus(); const now = aiUsable(); netStatus.last = now;
+  if (was === undefined || was === now) return;
+  if (now) toast("🟢 اتصال برگشت — معلم هوشمند و صدای طبیعی دوباره فعال شد."); else toast(navigator.onLine === false ? "⚪ آفلاین شدید — صدای گوشی و تمرین آماده فعال شد." : "🟡 هوش مصنوعی در دسترس نیست — حالت بدون هوش مصنوعی فعال شد.", true);
+  if (CUR === "tutor" && (now ? TUT_SCRIPTED : !TUT_SCRIPTED && !voiceOn)) V.tutor(); }
+window.addEventListener("zy-ai", aiChanged); window.addEventListener("online", () => { markAI(true); aiChanged(); window.Sync?.kick(); }); window.addEventListener("offline", aiChanged); setInterval(aiChanged, 15000);
+function go(v, arg) { CUR = v; if (v !== "tutor") TUT_SCRIPTED = false; stopAll(); $$(".tabs button").forEach(b => { const on = b.dataset.v == v; b.classList.toggle("on", on); on ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current"); });
   Promise.resolve(V[v](arg)).catch(e => { app.innerHTML = `<div class=card><p class=bad>خطا: ${esc(e.message)}</p><button class="btn p" onclick="location.reload()">بارگذاری دوباره</button></div>`; }); window.scrollTo(0, 0); app.focus({ preventScroll: true }); }
 document.addEventListener("click", e => { const b = e.target.closest("[data-go],[data-lesson],[data-day],[data-pack],[data-next]"); if (!b) return;
   if (b.dataset.go) go(b.dataset.go); else if (b.dataset.lesson) lesson(b.dataset.lesson); else if (b.dataset.day) { stopAll(); V.day(+b.dataset.day); } else if (b.dataset.pack) { stopAll(); V.pack(+b.dataset.pack); }
@@ -594,7 +630,9 @@ function registerSW() { if (!("serviceWorker" in navigator) || !/^https?:$/.test
   let reloaded = false; navigator.serviceWorker.addEventListener("controllerchange", () => { if (!reloaded) { reloaded = true; location.reload(); } }); }
 window.addEventListener("online", () => $("#banner").classList.add("hidden"));
 window.addEventListener("offline", () => { const bn = $("#banner"); bn.textContent = "آفلاین هستید — درس‌ها و مرور کار می‌کنند؛ معلم AI به اینترنت نیاز دارد."; bn.classList.remove("hidden"); });
-(async function boot() { stats(); theme();
+(async function boot() { stats(); theme(); netStatus(); netStatus.last = aiUsable();
   try { await loadIndex(); } catch (e) { app.innerHTML = `<div class=card><p class=bad>بارگذاری محتوا ناموفق بود. اتصال اینترنت را بررسی کنید.</p><button class="btn p" onclick="location.reload()">تلاش دوباره</button></div>`; return; }
-  const start = (location.hash || "").slice(1); go(V[start] ? start : "home"); registerSW();
+  await new Promise(r => setTimeout(r)); // sync.js loads after app.js
+  const redir = window.Sync && await Sync.handleRedirect().catch(() => false);
+  const start = redir ? "" : (location.hash || "").slice(1); go(V[start] ? start : "home"); registerSW(); window.Sync?.renderBadge(); window.Sync?.kick();
   if (S.level) loadLevel(S.level).catch(() => {}); })();

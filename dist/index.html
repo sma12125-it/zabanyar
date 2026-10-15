@@ -31,6 +31,8 @@
 <header class="top" role="banner">
   <div class="brand"><img src="icons/icon.svg" alt="" width="36" height="36"><div><b>زبان‌یار</b><small>انگلیسی واقعی، محاوره‌ای</small></div></div>
   <div id="stats" aria-live="polite"></div>
+  <span id="net" class="pill net" role="status" aria-live="polite"></span>
+  <button id="acctBtn" class="icon-btn" aria-label="حساب کاربری" onclick="Sync.configured()&&!Sync.user()?Sync.open('in'):go('settings')">👤</button>
   <button id="theme" class="icon-btn" aria-label="تغییر حالت تاریک/روشن">🌙</button>
 </header>
 <div id="banner" class="banner hidden" role="status"></div>
@@ -48,7 +50,10 @@
 <noscript><p style="padding:20px">برای استفاده از زبان‌یار، جاوااسکریپت را فعال کنید.</p></noscript>
 <script src="placement.js" defer></script>
 <script src="voices.js" defer></script>
+<script src="config.js" defer></script>
+<script src="providers.js" defer></script>
 <script src="app.js" defer></script>
 <script src="voice.js" defer></script>
+<script src="sync.js" defer></script>
 </body>
 </html>

@@ -56,3 +56,7 @@ body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 .meter.big{height:18px;margin:10px 0}
 @media (prefers-reduced-motion:reduce){.recdot{animation:none}.meter i{transition:none}}
 .recbar.hidden{display:none!important}
+
+.pill.net{font-size:.8em;white-space:nowrap}.pill.net.on{background:#16a34a33}.pill.net.half{background:#eab30840}.pill.net.off{background:#64748b55}
+.chain{list-style:none;padding:0;margin:6px 0}.chain li{display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #8882}.chain li b{flex:1}
+details.prov{border:1px solid #8884;border-radius:10px;padding:6px 10px;margin:6px 0}details.prov summary{cursor:pointer;font-weight:600}

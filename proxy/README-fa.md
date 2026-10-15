@@ -38,3 +38,11 @@ GEMINI_API_KEY=AIza... ALLOWED_ORIGINS=https://zabanyar.example.com,https://loca
 - `POST /live-token` — (اختیاری) ساخت توکن موقت یک‌بارمصرف ۳۰ دقیقه‌ای (`/v1beta/auth_tokens`) قفل‌شده روی مدل Live، برای اتصال مستقیم برنامه به Google (فقط وقتی Google در دسترس کاربر است؛ در ایران همان عبور WebSocket از سرور واسط بهتر است).
 - فهرست پیش‌فرض مدل‌های مجاز: `gemini-3.8-flash, gemini-3.5-flash-lite, gemini-flash-latest, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-3.8-live` (با `ALLOWED_MODELS` قابل تغییر). محدودیت پیش‌فرض: ۶۰ درخواست در دقیقه برای هر IP.
 - اگر پشت nginx هستید، برای WebSocket این‌ها را اضافه کنید: `proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection "upgrade"; proxy_read_timeout 3600s;`
+
+## سرویس‌های دیگر از طریق پراکسی (نسخه ۸)
+همه‌ی سرویس‌های OpenAI-سازگار (Groq، OpenRouter، Mistral، Cerebras، xAI) خودشان CORS مرورگر را مجاز کرده‌اند، پس معمولاً پراکسی لازم نیست. پراکسی فقط وقتی لازم است که سرویس از ایران مسدود باشد یا نخواهید کلید روی گوشی کاربر باشد.
+- کلیدها را فقط روی سرور بگذارید: `GROQ_API_KEY`، `OPENROUTER_API_KEY`، `MISTRAL_API_KEY`، `CEREBRAS_API_KEY`، `XAI_API_KEY` (در Cloudflare: `wrangler secret put GROQ_API_KEY` و …).
+- مسیرها: `POST /p/<سرویس>/chat/completions`، `/p/groq/audio/transcriptions` (Whisper) و `/p/groq/audio/speech` (صدای Orpheus). فقط سرویس‌هایی که کلیدشان روی سرور تنظیم شده پاسخ می‌دهند.
+- در برنامه: تنظیمات ← سرویس‌های هوش مصنوعی ← هر سرویس ← «از طریق پراکسی» را تیک بزنید (کلید را خالی بگذارید).
+- `GEMINI_API_KEY` در نسخه‌ی Node اکنون اختیاری است (اگر فقط Groq و … را می‌خواهید).
+- فهرست پیش‌فرض مدل‌های Gemini مجاز اکنون `gemini-3.1-flash-lite` (پیش‌فرض ارزان معلم) را هم دارد.
