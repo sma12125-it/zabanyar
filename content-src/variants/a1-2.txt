@@ -1,0 +1,730 @@
+@ A1-11|2|🤧 سرماخوردگی|برای سرماخوردگی و گلودرد از داروخانه دارو می‌خرید.|Pharmacist
+A|Hi, how can I help?|سلام، چه کمکی از دستم برمیاد؟
+B|Hi. I have a sore throat and a stuffy nose.|سلام. گلودرد دارم و بینی‌ام گرفته.
+A|Sounds like a cold. Any fever?|به نظر سرماخوردگیه. تب هم داری؟
+B|A little, since last night.|یه‌کم، از دیشب.
+A|Try these lozenges and this cold medicine.|این قرص‌های مکیدنی و این داروی سرماخوردگی رو امتحان کن.
+B|How often do I take it?|هر چند وقت یه بار بخورم؟
+A|Twice a day. And drink lots of fluids.|روزی دو بار. و کلی مایعات بخور.
+B|Got it. Thanks so much.|فهمیدم. خیلی ممنون.
++ a sore throat|گلودرد
++ a stuffy nose|بینی گرفته
++ Sounds like a cold.|به نظر سرماخوردگیه.
++ Any fever?|تب داری؟
++ since last night|از دیشب
++ lozenges|قرص مکیدنی گلو
++ twice a day|روزی دو بار
++ drink lots of fluids|کلی مایعات خوردن
+! My nose is closed.|I have a stuffy nose.|برای گرفتگی بینی stuffy nose می‌گویند.
+~ lozenges|لازِنجِز|تکیه روی بخش اول: LOZ-en-jez.
+
+@ A1-11|3|😟 نسخه‌ی گم‌شده|نسخه‌تان را گم کرده‌اید و دارو لازم دارید.|Pharmacist
+A|Next, please. Picking up a prescription?|نفر بعد لطفاً. نسخه تحویل می‌گیرید؟
+B|Yes, but I think I lost the paper.|بله، ولی فکر کنم کاغذشو گم کردم.
+A|That's okay. What's your date of birth?|اشکال نداره. تاریخ تولدتون چیه؟
+B|March fourth, nineteen ninety.|چهارم مارس، هزار و نهصد و نود.
+A|Okay, I see it here. Your doctor sent it over.|خب، این‌جا می‌بینمش. دکترتون فرستاده.
+B|Oh, thank goodness.|آخیش، خدا رو شکر.
+A|It'll be ready in about fifteen minutes.|حدود پونزده دقیقه دیگه آماده می‌شه.
+B|No problem. I'll wait over there.|مشکلی نیست. اون‌جا منتظر می‌مونم.
++ picking up a prescription|تحویل گرفتن دارو با نسخه
++ I lost the paper.|کاغذشو گم کردم.
++ date of birth|تاریخ تولد
++ Your doctor sent it over.|دکترتون فرستاده.
++ Thank goodness.|خدا رو شکر. / آخیش.
++ It'll be ready in...|... دیگه آماده‌ست.
++ I'll wait over there.|اون‌جا منتظر می‌مونم.
+! I want to receive my medicine.|I'm picking up a prescription.|pick up برای «تحویل گرفتن» خیلی رایج است.
+
+@ A1-11|4|🌿 حساسیت فصلی|بهار است و آلرژی شما را اذیت می‌کند.|Pharmacist
+A|Hello! What can I do for you?|سلام! چه کاری از دستم برمیاد؟
+B|My allergies are killing me. My eyes are so itchy.|آلرژی‌ام داره منو می‌کشه. چشمام خیلی می‌خاره.
+A|Ah, pollen season. Do you sneeze a lot?|آه، فصل گرده‌ست. زیاد عطسه می‌کنی؟
+B|All day long.|کل روز.
+A|This antihistamine works well.|این آنتی‌هیستامین خوب جواب می‌ده.
+B|Will it make me sleepy? I have to drive.|خواب‌آلودم می‌کنه؟ باید رانندگی کنم.
+A|This one's non-drowsy, so you're fine.|این یکی خواب‌آور نیست، پس مشکلی نداری.
+B|Perfect. I'll take it.|عالیه. برش می‌دارم.
++ My allergies are killing me.|آلرژی‌ام داره منو می‌کشه.
++ itchy|خارش‌دار
++ pollen season|فصل گرده‌ی گل‌ها
++ sneeze|عطسه کردن
++ all day long|کل روز
++ It works well.|خوب جواب می‌ده.
++ non-drowsy|خواب‌آور نیست
+! It is very bad for me.|It's killing me.|... is killing me یعنی «خیلی اذیتم می‌کنه» (اغراق رایج).
+
+@ A1-11|5|👶 داروی بچه|برای بچه‌ی کوچکتان که تب دارد دارو می‌خرید.|Pharmacist
+A|Hi there. What's going on?|سلام. چی شده؟
+B|My son has a fever. He's only three.|پسرم تب داره. فقط سه سالشه.
+A|Oh, poor thing. How high is it?|آخی، طفلکی. چقدر تبش بالاست؟
+B|About thirty-eight point five.|حدود سی و هشت و نیم.
+A|This children's syrup is good. Use the little cup.|این شربت بچه خوبه. با پیمونه‌ی کوچیکش بدید.
+B|How much should I give him?|چقدر بهش بدم؟
+A|Five milliliters. If it doesn't go down, call your doctor.|پنج میلی‌لیتر. اگه پایین نیومد، به دکترتون زنگ بزنید.
+B|Okay. Thank you, that really helps.|باشه. ممنون، خیلی کمک کرد.
++ What's going on?|چی شده؟
++ He's only three.|فقط سه سالشه.
++ Poor thing.|طفلکی.
++ How high is it?|چقدر بالاست؟
++ children's syrup|شربت بچه
++ How much should I give him?|چقدر بهش بدم؟
++ If it doesn't go down...|اگه پایین نیومد...
++ That really helps.|خیلی کمک کرد.
+! He has hot body.|He has a fever.|برای تب از have a fever استفاده کنید.
+
+@ A1-12|2|🍔 سفارش از اپ با مشکل|سفارش غذایتان دیر شده و به رستوران زنگ می‌زنید.|Restaurant
+A|Burger Barn, how can I help you?|برگر بارن، بفرمایید؟
+B|Hi, I ordered an hour ago and it's not here yet.|سلام، یه ساعت پیش سفارش دادم و هنوز نرسیده.
+A|I'm so sorry. Can I get your name?|خیلی متأسفم. اسمتون؟
+B|Sara Ahmadi.|سارا احمدی.
+A|Okay, the driver just left. It's on its way.|خب، پیک همین الان راه افتاد. داره میاد.
+B|How long will it take?|چقدر طول می‌کشه؟
+A|About ten minutes. We'll add free fries for the wait.|حدود ده دقیقه. بابت معطلی سیب‌زمینی مجانی اضافه می‌کنیم.
+B|Oh, that's nice. Thanks.|اِ، چه خوب. ممنون.
++ I ordered an hour ago.|یه ساعت پیش سفارش دادم.
++ It's not here yet.|هنوز نرسیده.
++ Can I get your name?|اسمتون؟
++ The driver just left.|پیک همین الان راه افتاد.
++ It's on its way.|تو راهه.
++ How long will it take?|چقدر طول می‌کشه؟
++ for the wait|بابت معطلی
+! Where is my food?|It's not here yet.|It's not here yet مؤدبانه‌تر از Where is my food? است.
+
+@ A1-12|3|🥗 سفارش سالم|برای ناهار سالاد و ساندویچ سفارش تلفنی می‌دهید.|Café
+A|Hi, Green Bowl. Pickup or delivery?|سلام، گرین باول. حضوری یا پیک؟
+B|Pickup, please. I'd like a chicken Caesar salad.|حضوری لطفاً. یه سالاد سزار مرغ می‌خوام.
+A|Sure. Dressing on the side?|حتماً. سس جدا باشه؟
+B|Yes, please. And a turkey sandwich, no mayo.|بله لطفاً. یه ساندویچ بوقلمون هم، بدون مایونز.
+A|White or whole grain bread?|نون سفید یا سبوس‌دار؟
+B|Whole grain. When will it be ready?|سبوس‌دار. کِی آماده می‌شه؟
+A|Give us about fifteen minutes.|حدود پونزده دقیقه به ما وقت بدید.
+B|Great. See you soon.|عالیه. تا چند دقیقه‌ی دیگه.
++ I'd like a...|یه ... می‌خوام.
++ dressing on the side|سس جدا
++ no mayo|بدون مایونز
++ white or whole grain|سفید یا سبوس‌دار
++ When will it be ready?|کِی آماده می‌شه؟
++ Give us about...|حدود ... به ما وقت بدید.
++ See you soon.|تا چند دقیقه‌ی دیگه.
+! Please put the sauce separately.|Dressing on the side.|on the side یعنی «جدا، کنار غذا».
+
+@ A1-12|4|🎉 سفارش برای مهمانی|برای جمع دوستانتان چند پیتزا سفارش می‌دهید.|Pizza place
+A|Tony's Pizza, what can I get for you?|پیتزا تونی، چی براتون بیارم؟
+B|Hi! I need pizza for about ten people.|سلام! برای حدود ده نفر پیتزا می‌خوام.
+A|I'd go with four larges.|من بودم چهارتا بزرگ می‌گرفتم.
+B|Okay. Two pepperoni, one veggie, and one cheese.|باشه. دوتا پپرونی، یکی سبزیجات، یکی پنیری.
+A|Want to add garlic knots? They're on special.|نون سیر هم اضافه کنم؟ تخفیف داره.
+B|Sure, why not. Do you have a deal for big orders?|حتماً، چرا که نه. برای سفارش زیاد تخفیف دارید؟
+A|Yep, fifteen percent off over fifty dollars.|آره، بالای پنجاه دلار پونزده درصد تخفیف.
+B|Awesome. That works.|عالیه. خوبه.
++ for about ten people|برای حدود ده نفر
++ I'd go with...|من بودم ... می‌گرفتم.
++ veggie|سبزیجات (گیاهی)
++ on special|تخفیف‌دار / پیشنهاد ویژه
++ Sure, why not.|حتماً، چرا که نه.
++ a deal|تخفیف / معامله‌ی خوب
++ fifteen percent off|پونزده درصد تخفیف
++ That works.|خوبه. / جور درمیاد.
+! I suggest you take four.|I'd go with four.|I'd go with... روش طبیعی پیشنهاد دادن است.
+
+@ A1-12|5|😬 اشتباه در سفارش|پیتزایی که رسیده اشتباه است و زنگ می‌زنید.|Pizza place
+A|Hello, Luigi's.|الو، لوئیجی.
+B|Hi, I just got my order, but it's the wrong pizza.|سلام، الان سفارشم رسید ولی پیتزا اشتباهه.
+A|Oh no. What did you get?|ای وای. چی براتون اومده؟
+B|Mushroom. I ordered pepperoni.|قارچ. من پپرونی سفارش داده بودم.
+A|I'm really sorry about that. We'll send the right one.|واقعاً بابتش متأسفم. درستشو می‌فرستیم.
+B|Do I need to send this one back?|باید اینو برگردونم؟
+A|No, keep it. It's on us.|نه، نگهش دارید. مهمون ما.
+B|Oh, great. Thanks for fixing it.|اِ، عالیه. ممنون که درستش کردید.
++ I just got my order.|الان سفارشم رسید.
++ the wrong pizza|پیتزای اشتباه
++ What did you get?|چی براتون اومده؟
++ We'll send the right one.|درستشو می‌فرستیم.
++ send it back|برگردوندن
++ It's on us.|مهمون ما. (مجانی)
++ Thanks for fixing it.|ممنون که درستش کردید.
+! This pizza is not mine.|It's the wrong pizza.|برای اشتباه بودن سفارش، the wrong ... ساده و رایج است.
+
+@ A1-13|2|🚌 تأخیر اتوبوس|به همکارتان پیام صوتی می‌دهید که اتوبوس دیر کرده.|Chris
+A|Hey, where are you? The meeting starts in five.|سلام، کجایی؟ جلسه پنج دقیقه دیگه شروع می‌شه.
+B|I'm so sorry, the bus is super late.|خیلی ببخشید، اتوبوس خیلی دیر کرده.
+A|Oh no. How far away are you?|ای وای. چقدر دوری؟
+B|About ten minutes. Can you start without me?|حدود ده دقیقه. می‌تونید بدون من شروع کنید؟
+A|Sure. I'll fill you in later.|حتماً. بعداً در جریانت می‌ذارم.
+B|Thanks. Can you tell the boss?|ممنون. می‌شه به رئیس بگی؟
+A|Don't worry, I've got you covered.|نگران نباش، هواتو دارم.
+B|You're the best. See you soon.|تو بهترینی. زود می‌بینمت.
++ The meeting starts in five.|جلسه پنج دقیقه دیگه شروع می‌شه.
++ The bus is super late.|اتوبوس خیلی دیر کرده.
++ How far away are you?|چقدر دوری؟
++ Start without me.|بدون من شروع کنید.
++ fill you in|در جریانت گذاشتن
++ I've got you covered.|هواتو دارم.
++ You're the best.|تو بهترینی.
+! I will tell you the information later.|I'll fill you in later.|fill someone in یعنی «کسی را در جریان گذاشتن».
+
+@ A1-13|3|🙂 زود رسیدن|زودتر از دوستتان به سینما رسیده‌اید.|Leah
+A|Hey! Wow, you're early.|سلام! وای، زود اومدی.
+B|Yeah, traffic was light for once.|آره، برای یه بار هم که شده ترافیک کم بود.
+A|Have you been waiting long?|خیلی وقته منتظری؟
+B|No, just a few minutes.|نه، فقط چند دقیقه.
+A|What time does the movie start?|فیلم ساعت چند شروع می‌شه؟
+B|At seven fifteen. We have twenty minutes.|هفت و ربع. بیست دقیقه وقت داریم.
+A|Perfect. Let's get popcorn.|عالیه. بریم پاپ‌کورن بگیریم.
+B|Good idea. I'm starving.|فکر خوبیه. خیلی گشنمه.
++ You're early.|زود اومدی.
++ for once|برای یه بار هم که شده
++ Traffic was light.|ترافیک کم بود.
++ Have you been waiting long?|خیلی وقته منتظری؟
++ just a few minutes|فقط چند دقیقه
++ seven fifteen|هفت و ربع
++ We have twenty minutes.|بیست دقیقه وقت داریم.
+! There was little traffic.|Traffic was light.|ترافیک را light (کم) یا heavy (سنگین) توصیف می‌کنند.
+
+@ A1-13|4|😰 جا ماندن از قطار|ساعتتان را اشتباه دیده‌اید و قطار رفته.|Station staff
+A|Can I help you? You look worried.|کمکی از دستم برمیاد؟ نگران به نظر می‌رسید.
+B|I think I just missed my train. It was the ten o'clock.|فکر کنم قطارمو از دست دادم. قطار ساعت ده بود.
+A|Yes, it left two minutes ago, I'm afraid.|متأسفانه بله، دو دقیقه پیش رفت.
+B|Oh no. When's the next one?|ای وای. بعدی کِیه؟
+A|There's one at ten forty-five.|یکی ده و چهل و پنج دقیقه هست.
+B|Can I use the same ticket?|می‌تونم از همین بلیت استفاده کنم؟
+A|Yes, it's valid all day.|بله، کل روز معتبره.
+B|Phew, what a relief. Thank you.|اوف، خیالم راحت شد. ممنون.
++ You look worried.|نگران به نظر می‌رسید.
++ I missed my train.|قطارمو از دست دادم.
++ I'm afraid...|متأسفانه...
++ When's the next one?|بعدی کِیه؟
++ ten forty-five|ده و چهل و پنج دقیقه
++ It's valid all day.|کل روز معتبره.
++ What a relief.|خیالم راحت شد.
+! Unfortunately, it left.|It left two minutes ago, I'm afraid.|I'm afraid در این‌جا یعنی «متأسفانه»، نه «می‌ترسم».
+
+@ A1-13|5|⏰ هماهنگی ساعت|با دوستتان برای ساعت قرار هماهنگ می‌کنید.|Omar
+A|So what time works for you tomorrow?|خب فردا چه ساعتی برات خوبه؟
+B|Anytime after three.|هر وقت بعد از سه.
+A|How about four thirty?|چهار و نیم چطوره؟
+B|Hmm, can we make it five? I finish work at four thirty.|هوم، می‌شه بکنیمش پنج؟ چهار و نیم کارم تموم می‌شه.
+A|Sure, five is fine.|حتماً، پنج خوبه.
+B|Great. Let's meet at the station.|عالیه. بیا تو ایستگاه همو ببینیم.
+A|Sounds good. Text me if you're running late.|خوبه. اگه دیرت شد پیام بده.
+B|Will do. See you then!|حتماً. اون موقع می‌بینمت!
++ What time works for you?|چه ساعتی برات خوبه؟
++ anytime after three|هر وقت بعد از سه
++ How about...?|... چطوره؟
++ Can we make it five?|می‌شه بکنیمش پنج؟
++ I finish work at...|ساعت ... کارم تموم می‌شه.
++ Text me.|بهم پیام بده.
++ Will do.|حتماً. / باشه انجام می‌دم.
++ See you then!|اون موقع می‌بینمت!
+! Can we change it to five o'clock?|Can we make it five?|make it + زمان یعنی «زمان قرار را ... بگذاریم».
+
+@ A1-14|2|🧘 کلاس یوگا|اولین بار به کلاس یوگا می‌روید.|Instructor
+A|Welcome! Have you done yoga before?|خوش اومدی! قبلاً یوگا کار کردی؟
+B|Not really. I'm a total beginner.|نه واقعاً. کاملاً مبتدی‌ام.
+A|No problem. Grab a mat and find a spot.|مشکلی نیست. یه زیرانداز بردار و یه جا پیدا کن.
+B|Do I need anything else?|چیز دیگه‌ای لازمه؟
+A|Maybe a water bottle. And go at your own pace.|شاید یه بطری آب. و با سرعت خودت پیش برو.
+B|What if I can't do a pose?|اگه نتونستم یه حرکتو انجام بدم چی؟
+A|Just rest. Listen to your body.|فقط استراحت کن. به بدنت گوش بده.
+B|Okay, sounds good.|باشه، خوبه.
++ Have you done yoga before?|قبلاً یوگا کار کردی؟
++ a total beginner|کاملاً مبتدی
++ grab a mat|یه زیرانداز بردار
++ find a spot|یه جا پیدا کن
++ at your own pace|با سرعت خودت
++ What if...?|اگه ... چی؟
++ Listen to your body.|به بدنت گوش بده.
+! I am very new.|I'm a total beginner.|total beginner یعنی «کاملاً مبتدی».
+
+@ A1-14|3|💪 کمک گرفتن از غریبه|در باشگاه نمی‌دانید دستگاه چطور کار می‌کند.|Gym member
+A|Hey, are you using this machine?|سلام، از این دستگاه استفاده می‌کنی؟
+B|Yeah, but I'm not sure how to set it up.|آره، ولی مطمئن نیستم چطور تنظیمش کنم.
+A|Oh, you just pull this pin and move the seat.|آهان، فقط این پینو بکش و صندلی رو جابه‌جا کن.
+B|Like this?|این‌طوری؟
+A|Yep. Then pick your weight here.|آره. بعد وزنه رو این‌جا انتخاب کن.
+B|Thanks! How many sets do you do?|ممنون! تو چندتا ست می‌زنی؟
+A|Usually three sets of ten.|معمولاً سه ست ده‌تایی.
+B|Cool. Mind if I work in with you?|باحاله. اشکالی نداره بین ست‌هات منم استفاده کنم؟
++ Are you using this machine?|از این دستگاه استفاده می‌کنی؟
++ I'm not sure how to...|مطمئن نیستم چطور...
++ set it up|تنظیمش کردن
++ Like this?|این‌طوری؟
++ pick your weight|وزنه رو انتخاب کن
++ three sets of ten|سه ست ده‌تایی
++ Mind if I work in?|اشکالی نداره بین ست‌هات استفاده کنم؟
+! Can I use the machine between your sets?|Mind if I work in?|work in اصطلاح باشگاهی برای استفاده‌ی نوبتی از دستگاه است.
+
+@ A1-14|4|📋 ثبت‌نام رسمی|در پذیرش باشگاه درباره‌ی عضویت می‌پرسید.|Front desk
+A|Hi there! Are you interested in a membership?|سلام! به عضویت علاقه دارید؟
+B|Yes. How much is it per month?|بله. ماهی چقدره؟
+A|It's forty dollars a month, or four hundred a year.|ماهی چهل دلار، یا سالی چهارصد.
+B|Are classes included?|کلاس‌ها هم شاملش می‌شه؟
+A|Yes, all group classes are included.|بله، همه‌ی کلاس‌های گروهی شاملشه.
+B|Can I try it first?|می‌تونم اول امتحانش کنم؟
+A|Sure, we offer a free one-week pass.|حتماً، یه کارت یک‌هفته‌ای مجانی داریم.
+B|Great. I'll start with that.|عالیه. با اون شروع می‌کنم.
++ Are you interested in...?|به ... علاقه دارید؟
++ a membership|عضویت
++ How much is it per month?|ماهی چقدره؟
++ Are classes included?|کلاس‌ها شاملش می‌شه؟
++ Can I try it first?|می‌تونم اول امتحانش کنم؟
++ a free one-week pass|کارت یک‌هفته‌ای مجانی
++ I'll start with that.|با اون شروع می‌کنم.
+! What is the price for one month?|How much is it per month?|per month ساده‌ترین شکل پرسیدن هزینه‌ی ماهانه است.
+
+@ A1-14|5|🏃 دویدن در پارک|با همسایه‌تان برای اولین بار صبح می‌دوید.|Jen
+A|Ready? Let's start slow.|آماده‌ای؟ بیا آروم شروع کنیم.
+B|Okay. I haven't run in years.|باشه. سال‌هاست ندویدم.
+A|That's fine. We'll jog and walk.|اشکالی نداره. یه‌کم آهسته می‌دویم و یه‌کم راه می‌ریم.
+B|How far are we going?|تا کجا می‌ریم؟
+A|Just around the lake. About two miles.|فقط دور دریاچه. حدود دو مایل.
+B|Phew, I need a break already.|اوف، همین الان استراحت لازم دارم.
+A|Ha, no problem. Let's walk for a bit.|ها، مشکلی نیست. یه‌کم راه بریم.
+B|Thanks. Same time tomorrow?|ممنون. فردا همین ساعت؟
++ Let's start slow.|بیا آروم شروع کنیم.
++ I haven't ... in years.|سال‌هاست ... نکردم.
++ jog|آهسته دویدن
++ How far are we going?|تا کجا می‌ریم؟
++ around the lake|دور دریاچه
++ I need a break.|استراحت لازم دارم.
++ for a bit|یه‌کم / برای مدت کوتاهی
++ Same time tomorrow?|فردا همین ساعت؟
+! I did not run for many years.|I haven't run in years.|in years یعنی «سال‌هاست» و با حال کامل می‌آید.
+
+@ A1-15|2|🎮 بازی ویدیویی|با هم‌کلاسی‌تان درباره‌ی بازی‌های ویدیویی حرف می‌زنید.|Kai
+A|So, do you play any video games?|خب، بازی ویدیویی می‌کنی؟
+B|Yeah, a lot! I'm obsessed with Minecraft.|آره، زیاد! معتاد ماینکرفتم.
+A|No way, me too! Do you play online?|نه بابا، منم! آنلاین بازی می‌کنی؟
+B|Sometimes, with my cousins.|گاهی، با پسرعموهام.
+A|We should play together sometime.|باید یه وقتی با هم بازی کنیم.
+B|Definitely. What's your username?|حتماً. یوزرنیمت چیه؟
+A|It's KaiTheKing. Kinda cheesy, I know.|کای‌دکینگ. یه‌کم لوسه، می‌دونم.
+B|Ha! I love it. I'll add you.|ها! خیلی خوشم اومد. اضافه‌ت می‌کنم.
++ Do you play any video games?|بازی ویدیویی می‌کنی؟
++ I'm obsessed with...|معتاد ... ام. / عاشق ... ام.
++ play online|آنلاین بازی کردن
++ my cousins|پسرعمو/دخترخاله‌هام
++ What's your username?|یوزرنیمت چیه؟
++ cheesy|لوس / کلیشه‌ای
++ I'll add you.|اضافه‌ت می‌کنم.
+! I like it very much.|I'm obsessed with it.|obsessed with در محاوره یعنی «خیلی عاشقشم».
+~ cousins|کازِنز|cousin را «کازِن» بگویید، نه «کوزین».
+
+@ A1-15|3|📚 کتاب‌خوان|در کتابخانه با کسی درباره‌ی کتاب حرف می‌زنید.|Grace
+A|Oh, I love that book! Are you enjoying it?|اوه، عاشق اون کتابم! ازش لذت می‌بری؟
+B|Yes, I can't put it down.|آره، نمی‌تونم زمین بذارمش.
+A|Do you read a lot?|زیاد کتاب می‌خونی؟
+B|Mostly at night, before bed.|بیشتر شب‌ها، قبل از خواب.
+A|What's your favorite genre?|ژانر مورد علاقه‌ت چیه؟
+B|Mystery, for sure. How about you?|قطعاً معمایی. تو چی؟
+A|I'm more of a fantasy person.|من بیشتر اهل فانتزی‌ام.
+B|Any recommendations?|پیشنهادی داری؟
++ Are you enjoying it?|ازش لذت می‌بری؟
++ I can't put it down.|نمی‌تونم زمین بذارمش.
++ before bed|قبل از خواب
++ What's your favorite genre?|ژانر مورد علاقه‌ت چیه؟
++ How about you?|تو چی؟
++ I'm more of a ... person.|من بیشتر اهل ... ام.
++ Any recommendations?|پیشنهادی داری؟
+! I like fantasy more.|I'm more of a fantasy person.|I'm more of a ... person ساختار رایج برای سلیقه است.
+
+@ A1-15|4|🍳 آشپزی|همکارتان می‌پرسد آخر هفته‌ها چه کار می‌کنید.|Mr. Patel
+A|What do you like to do on weekends?|آخر هفته‌ها دوست داری چی کار کنی؟
+B|I love cooking, especially Persian food.|عاشق آشپزی‌ام، مخصوصاً غذای ایرانی.
+A|Oh, really? What's your specialty?|اِ، واقعاً؟ تخصصت چیه؟
+B|Probably ghormeh sabzi. It's a herb stew.|احتمالاً قورمه‌سبزی. یه خورش سبزیه.
+A|That sounds delicious. Is it hard to make?|خوشمزه به نظر میاد. درست کردنش سخته؟
+B|Not really, but it takes a few hours.|نه زیاد، ولی چند ساعت طول می‌کشه.
+A|I'd love to try it someday.|دوست دارم یه روز امتحانش کنم.
+B|I'll bring you some next week!|هفته‌ی بعد یه‌کم برات میارم!
++ on weekends|آخر هفته‌ها
++ especially|مخصوصاً
++ What's your specialty?|تخصصت چیه؟ (غذای مخصوصت)
++ a herb stew|خورش سبزی
++ Is it hard to make?|درست کردنش سخته؟
++ It takes a few hours.|چند ساعت طول می‌کشه.
++ I'd love to try it.|دوست دارم امتحانش کنم.
++ I'll bring you some.|یه‌کم برات میارم.
+! It is a food with vegetables.|It's a herb stew.|برای توضیح غذای ایرانی، توصیف ساده (herb stew) بهترین است.
+
+@ A1-15|5|📸 عکاسی|در یک گروه پیاده‌روی با کسی که دوربین دارد آشنا می‌شوید.|Max
+A|Nice camera! Are you into photography?|دوربین قشنگیه! اهل عکاسی هستی؟
+B|Yeah, it's my favorite hobby.|آره، سرگرمی مورد علاقه‌مه.
+A|What do you usually take pictures of?|معمولاً از چی عکس می‌گیری؟
+B|Mostly nature and street photos.|بیشتر طبیعت و عکاسی خیابونی.
+A|Cool. How long have you been doing it?|باحاله. چند وقته عکاسی می‌کنی؟
+B|About two years. I'm still learning.|حدود دو سال. هنوز دارم یاد می‌گیرم.
+A|Can I see some of your shots?|می‌شه چندتا از عکس‌هاتو ببینم؟
+B|Sure! Check out my Instagram.|حتماً! اینستاگراممو ببین.
++ Are you into...?|اهل ... هستی؟
++ my favorite hobby|سرگرمی مورد علاقه‌م
++ take pictures of...|از ... عکس گرفتن
++ How long have you been doing it?|چند وقته این کارو می‌کنی؟
++ I'm still learning.|هنوز دارم یاد می‌گیرم.
++ shots|عکس‌ها (خودمونی)
++ Check out...|... رو ببین.
+! Do you like photography?|Are you into photography?|be into یعنی «علاقه داشتن» و خیلی رایج است.
+
+@ A1-16|2|💼 کارت ویزیت|در یک رویداد کاری با کسی شماره ردوبدل می‌کنید.|Ms. Rivera
+A|It was a pleasure talking to you.|از صحبت باهاتون خوشحال شدم.
+B|Likewise. Do you have a business card?|همچنین. کارت ویزیت دارید؟
+A|Of course. Here you are.|البته. بفرمایید.
+B|Thanks. I'm afraid I don't have mine with me.|ممنون. متأسفانه کارتم همراهم نیست.
+A|No worries. Could you email me instead?|اشکالی نداره. می‌تونید به‌جاش ایمیل بدید؟
+B|Sure. I'll send you a quick email tonight.|حتماً. امشب یه ایمیل کوتاه می‌فرستم.
+A|Great. Let's stay in touch.|عالیه. در ارتباط باشیم.
+B|Definitely. Have a nice evening.|حتماً. عصر خوبی داشته باشید.
++ It was a pleasure talking to you.|از صحبت باهاتون خوشحال شدم.
++ Likewise.|همچنین.
++ a business card|کارت ویزیت
++ Here you are.|بفرمایید. (رسمی‌تر)
++ I don't have mine with me.|کارتم همراهم نیست.
++ Could you email me?|می‌تونید بهم ایمیل بدید؟
++ Let's stay in touch.|در ارتباط باشیم.
+! Me too.|Likewise.|در موقعیت رسمی Likewise شیک‌تر از Me too است.
+
+@ A1-16|3|📲 اینستاگرام|در یک مهمانی با کسی دوست می‌شوید و صفحه‌ی همدیگر را دنبال می‌کنید.|Zara
+A|Oh my god, you're so funny. Are you on Insta?|وای خدا، خیلی بامزه‌ای. اینستا داری؟
+B|Yeah! What's your handle?|آره! آیدیت چیه؟
+A|It's zara underscore travels.|zara آندرلاین travels.
+B|Got it. I just followed you.|پیدا کردم. الان فالوت کردم.
+A|Followed back! Your pictures are so pretty.|فالو بک دادم! عکسات خیلی قشنگن.
+B|Aw, thanks! We should get brunch sometime.|آخی، ممنون! باید یه وقتی بریم برانچ.
+A|Yes! DM me and we'll set something up.|آره! دایرکت بده یه برنامه می‌چینیم.
+B|Will do!|حتماً!
++ Are you on Insta?|اینستا داری؟
++ What's your handle?|آیدیت چیه؟
++ underscore|آندرلاین (_)
++ I just followed you.|الان فالوت کردم.
++ Followed back!|فالو بک دادم!
++ get brunch|رفتن برای برانچ
++ DM me.|دایرکت بده.
++ set something up|یه برنامه چیدن
+! What is your Instagram ID?|What's your handle?|handle یعنی نام کاربری در شبکه‌های اجتماعی.
+
+@ A1-16|4|😅 شماره‌ی اشتباه|شماره‌ای که گرفته‌اید اشتباه بوده؛ دوباره شماره می‌گیرید.|Ben
+A|Hey, I tried texting you, but it didn't go through.|سلام، سعی کردم بهت پیام بدم ولی نرسید.
+B|Really? What number did you use?|واقعاً؟ کدوم شماره رو زدی؟
+A|Five five five, two three four, six seven eight nine.|پنج پنج پنج، دو سه چهار، شش هفت هشت نه.
+B|Oh, it's six seven eight eight at the end.|آهان، آخرش شش هفت هشت هشته.
+A|Ah, that explains it. Let me fix it.|آه، پس دلیلش اینه. بذار درستش کنم.
+B|Try calling me now.|حالا بهم زنگ بزن.
+A|Is it ringing?|داره زنگ می‌خوره؟
+B|Yep, there it is. Now you've got the right one.|آره، اومد. حالا شماره‌ی درستو داری.
++ It didn't go through.|نرسید. / ارسال نشد.
++ What number did you use?|کدوم شماره رو زدی؟
++ at the end|آخرش
++ That explains it.|پس دلیلش اینه.
++ Let me fix it.|بذار درستش کنم.
++ Is it ringing?|داره زنگ می‌خوره؟
++ There it is.|اومد. / ایناهاش.
+! The message did not arrive.|It didn't go through.|go through برای پیام یا پرداختی که موفق انجام شود به کار می‌رود.
+~ 555|فایو فایو فایو|اعداد تلفن را رقم‌به‌رقم و با مکث بین گروه‌ها می‌خوانند.
+
+@ A1-16|5|👵 همسایه‌ی مسن|همسایه‌ی جدیدتان برای مواقع اضطراری شماره‌تان را می‌خواهد.|Mrs. Kim
+A|Dear, could I have your phone number? Just in case.|عزیزم، می‌شه شماره تلفنتو داشته باشم؟ محض احتیاط.
+B|Of course! Do you have a pen?|البته! خودکار دارید؟
+A|Yes, here. Go ahead.|بله، بیا. بگو.
+B|It's five five five, nine one two, three four five six.|پنج پنج پنج، نه یک دو، سه چهار پنج شش.
+A|Let me read it back to you.|بذار برات دوباره بخونمش.
+B|Sure.|حتماً.
+A|Five five five, nine one two, three four five six?|پنج پنج پنج، نه یک دو، سه چهار پنج شش؟
+B|That's right. Call me anytime.|درسته. هر وقت خواستید زنگ بزنید.
++ Could I have your phone number?|می‌شه شماره‌تو داشته باشم؟
++ just in case|محض احتیاط
++ Do you have a pen?|خودکار داری؟
++ Let me read it back.|بذار دوباره برات بخونمش.
++ That's right.|درسته.
++ Call me anytime.|هر وقت خواستی زنگ بزن.
+! Can you give me your number?|Could I have your phone number?|Could I have... مؤدبانه‌تر است، مخصوصاً با بزرگ‌ترها.
+
+@ A1-17|2|🔄 پس دادن لباس|پیراهنی را که خریده‌اید پس می‌آورید چون اندازه نیست.|Sales assistant
+A|Hi, can I help you?|سلام، کمکی می‌تونم بکنم؟
+B|Yes, I'd like to return this shirt. It doesn't fit.|بله، می‌خوام این پیراهنو پس بدم. اندازه‌م نیست.
+A|Sure. Do you have the receipt?|حتماً. رسید دارید؟
+B|Yes, here it is.|بله، ایناهاش.
+A|Would you like a refund or a different size?|پولتونو برگردونیم یا سایز دیگه می‌خواید؟
+B|Do you have it in a small?|سایز اسمالشو دارید؟
+A|Let me check in the back.|بذار تو انبار نگاه کنم.
+B|Thanks, I'll wait.|ممنون، منتظر می‌مونم.
++ return this shirt|پس دادن این پیراهن
++ It doesn't fit.|اندازه نیست.
++ Here it is.|ایناهاش.
++ a refund|پس گرفتن پول
++ a different size|یه سایز دیگه
++ in a small|سایز اسمال
++ in the back|توی انبار / پشت مغازه
+! It is not my size.|It doesn't fit.|برای اندازه نبودن لباس، It doesn't fit رایج است.
+
+@ A1-17|3|🛍️ خرید با دوست|با دوستتان برای مهمانی لباس انتخاب می‌کنید.|Amy
+A|Ooh, what about this dress?|اوه، این لباس چطوره؟
+B|It's cute, but I'm not sure about the color.|نازه، ولی رنگشو مطمئن نیستم.
+A|Try the blue one. Blue is your color.|آبی رو امتحان کن. آبی بهت میاد.
+B|Okay, wait here. I'll be right out.|باشه، این‌جا صبر کن. الان میام بیرون.
+A|Well? Let me see!|خب؟ بذار ببینم!
+B|What do you think?|چی فکر می‌کنی؟
+A|Wow, it's perfect! You have to get it.|وای، عالیه! حتماً باید بخریش.
+B|Okay, you talked me into it.|باشه، راضیم کردی.
++ What about this...?|این ... چطوره؟
++ I'm not sure about the color.|رنگشو مطمئن نیستم.
++ Blue is your color.|آبی بهت میاد.
++ I'll be right out.|الان میام بیرون.
++ What do you think?|چی فکر می‌کنی؟
++ You have to get it.|حتماً باید بخریش.
++ You talked me into it.|راضیم کردی.
+! Blue color is good for you.|Blue is your color.|X is your color یعنی «این رنگ خیلی بهت میاد».
+
+@ A1-17|4|👞 کفش‌فروشی|در کفش‌فروشی سایز کفش را امتحان می‌کنید.|Clerk
+A|Do you want to try those on?|می‌خواید اینا رو امتحان کنید؟
+B|Yes, please. Size nine.|بله لطفاً. سایز نه.
+A|Here you go. How do they feel?|بفرمایید. چطورن؟
+B|They're a bit tight in the front.|جلوش یه‌کم تنگه.
+A|Let me get you a nine and a half.|بذار نه و نیم براتون بیارم.
+B|Oh, these are much better.|اوه، اینا خیلی بهترن.
+A|Walk around a little to make sure.|یه‌کم راه برید که مطمئن شید.
+B|Yeah, they're really comfortable. I'll take them.|آره، خیلی راحتن. برشون می‌دارم.
++ try those on|اونا رو امتحان کردن
++ How do they feel?|چطورن؟ (به پا)
++ a bit tight|یه‌کم تنگ
++ in the front|جلوش
++ a nine and a half|سایز نه و نیم
++ walk around|راه رفتن (برای امتحان)
++ to make sure|برای اطمینان
++ They're really comfortable.|خیلی راحتن.
+! The shoes are narrow for me.|They're a bit tight.|برای کفش و لباس tight (تنگ) و loose (گشاد) می‌گویند.
+
+@ A1-17|5|💸 قیمت و حراج|قیمت یک کاپشن را می‌پرسید و درباره‌ی تخفیف سؤال می‌کنید.|Sales assistant
+A|That jacket's really popular this season.|اون کاپشن این فصل خیلی پرطرفداره.
+B|I like it. How much is it?|خوشم میاد. چنده؟
+A|It's eighty dollars.|هشتاد دلاره.
+B|Hmm, that's a bit pricey. Any discounts?|هوم، یه‌کم گرونه. تخفیفی هست؟
+A|If you sign up for our newsletter, you get ten percent off.|اگه عضو خبرنامه‌مون بشید، ده درصد تخفیف می‌گیرید.
+B|Okay, let's do that.|باشه، همین کارو بکنیم.
+A|Great. Just enter your email here.|عالیه. فقط ایمیلتونو این‌جا بزنید.
+B|Done. So it's seventy-two now?|انجام شد. پس الان می‌شه هفتاد و دو؟
++ really popular this season|این فصل خیلی پرطرفدار
++ How much is it?|چنده؟
++ a bit pricey|یه‌کم گرون
++ Any discounts?|تخفیفی هست؟
++ sign up for...|عضو ... شدن
++ the newsletter|خبرنامه
++ Enter your email.|ایمیلتو بزن.
++ Done.|انجام شد.
+! It is very expensive.|That's a bit pricey.|pricey نرم‌تر و محاوره‌ای‌تر از expensive است.
+
+@ A1-18|2|🍽️ رستوران دوست|دوستتان شما را به غذای خانگی دعوت کرده و از غذا تعریف می‌کنید.|Marco
+A|So, how's the pasta?|خب، پاستا چطوره؟
+B|Honestly, it's the best pasta I've ever had.|راستش بهترین پاستاییه که تا حالا خوردم.
+A|Come on, you're just being nice.|بی‌خیال، فقط داری تعارف می‌کنی.
+B|No, I mean it! What's in the sauce?|نه، جدی می‌گم! تو سسش چیه؟
+A|Just tomatoes, garlic, and a lot of love.|فقط گوجه، سیر، و یه عالمه عشق.
+B|Ha! Well, it shows.|ها! خب، معلومه.
+A|There's more in the kitchen if you want.|اگه بخوای تو آشپزخونه بازم هست.
+B|Maybe just a little more.|شاید فقط یه‌کم دیگه.
++ How's the...?|... چطوره؟
++ the best ... I've ever had|بهترین ... که تا حالا خوردم
++ You're just being nice.|فقط داری تعارف می‌کنی.
++ I mean it!|جدی می‌گم!
++ What's in the sauce?|تو سسش چیه؟
++ It shows.|معلومه.
++ just a little more|فقط یه‌کم دیگه
+! It is very delicious.|It's the best pasta I've ever had.|برای تعریف از غذا، جمله‌ی the best ... I've ever had خیلی طبیعی است.
+
+@ A1-18|3|👗 تعریف از ظاهر|همکارتان مدل موهایش را عوض کرده است.|Jasmine
+A|Morning, everyone!|صبح بخیر همه!
+B|Jasmine! I love your new haircut!|جاسمین! عاشق مدل موی جدیدتم!
+A|Aw, thank you! I was nervous about it.|آخی، ممنون! نگرانش بودم.
+B|It really suits you.|خیلی بهت میاد.
+A|You think so? It's a lot shorter.|واقعاً؟ خیلی کوتاه‌تره.
+B|Definitely. It makes you look so fresh.|قطعاً. خیلی سرحالت کرده.
+A|That made my day. Thanks!|روزمو ساختی. ممنون!
+B|Of course!|خواهش می‌کنم!
++ I love your new haircut!|عاشق مدل موی جدیدتم!
++ I was nervous about it.|نگرانش بودم.
++ It really suits you.|خیلی بهت میاد.
++ You think so?|واقعاً؟ / این‌طور فکر می‌کنی؟
++ a lot shorter|خیلی کوتاه‌تر
++ It makes you look...|باعث می‌شه ... به نظر برسی.
++ That made my day.|روزمو ساختی.
+! It is good for you.|It really suits you.|برای «بهت میاد» از suits you استفاده کنید.
+
+@ A1-18|4|🏠 خانه‌ی جدید|برای اولین بار به خانه‌ی جدید دوستتان می‌روید.|Nina
+A|Welcome! Come on in.|خوش اومدی! بیا تو.
+B|Wow, your place is gorgeous!|وای، خونه‌ت محشره!
+A|Thanks! We just finished decorating.|ممنون! تازه تزئینشو تموم کردیم.
+B|I love the plants. And so much light!|عاشق گیاه‌هام. و چقدر نور داره!
+A|That's why we picked it.|برای همین انتخابش کردیم.
+B|You have great taste.|خیلی خوش‌سلیقه‌ای.
+A|Thank you! Let me give you the tour.|ممنون! بیا خونه رو نشونت بدم.
+B|Yes, please!|آره، حتماً!
++ Come on in.|بیا تو.
++ your place|خونه‌ت
++ gorgeous|خیلی قشنگ / محشر
++ We just finished decorating.|تازه تزئینشو تموم کردیم.
++ That's why...|برای همین...
++ You have great taste.|خیلی خوش‌سلیقه‌ای.
++ give you the tour|خونه رو نشونت دادن
+! Your house is very beautiful.|Your place is gorgeous!|در محاوره به خانه‌ی کسی your place می‌گویند.
+
+@ A1-18|5|🎤 تشکر رسمی|بعد از یک سخنرانی از سخنران تشکر می‌کنید.|Dr. Hughes
+A|Thank you all for coming tonight.|از همه ممنونم که امشب اومدید.
+B|Dr. Hughes, that was a wonderful talk.|دکتر هیوز، سخنرانی فوق‌العاده‌ای بود.
+A|Oh, thank you. I'm glad you enjoyed it.|اوه، ممنون. خوشحالم که لذت بردید.
+B|I learned so much. Especially about sleep.|خیلی چیز یاد گرفتم. مخصوصاً درباره‌ی خواب.
+A|That's great to hear.|خیلی خوشحالم که اینو می‌شنوم.
+B|Do you have any books on the topic?|درباره‌ی این موضوع کتابی دارید؟
+A|Yes, my new book comes out next month.|بله، کتاب جدیدم ماه بعد منتشر می‌شه.
+B|I'll definitely get a copy.|حتماً یه نسخه می‌گیرم.
++ Thank you all for coming.|از همه ممنون که اومدید.
++ a wonderful talk|سخنرانی فوق‌العاده
++ I'm glad you enjoyed it.|خوشحالم که لذت بردی.
++ I learned so much.|خیلی چیز یاد گرفتم.
++ on the topic|درباره‌ی این موضوع
++ It comes out next month.|ماه بعد منتشر می‌شه.
++ get a copy|یه نسخه گرفتن
+! It was a good speech.|That was a wonderful talk.|برای سخنرانی‌های دانشگاهی talk رایج‌تر از speech است.
+
+@ A1-19|2|🚆 قطار شهری|در ایستگاه قطار از کسی درباره‌ی سکو می‌پرسید.|Commuter
+A|Excuse me, is this the right platform for downtown?|ببخشید، این سکوی درست برای مرکز شهره؟
+B|No, you need the other side. Platform two.|نه، باید بری اون طرف. سکوی دو.
+A|Oh! How do I get there?|اِ! چطور برم اون‌جا؟
+B|Take the stairs down and go through the tunnel.|از پله‌ها برو پایین و از تونل رد شو.
+A|Thanks. How often do the trains come?|ممنون. قطارها هر چند وقت میان؟
+B|Every ten minutes or so.|تقریباً هر ده دقیقه.
+A|Great. I almost went the wrong way!|عالیه. نزدیک بود اشتباه برم!
+B|Happens to everyone. Good luck!|برای همه پیش میاد. موفق باشی!
++ the right platform|سکوی درست
++ You need the other side.|باید بری اون طرف.
++ take the stairs down|از پله‌ها پایین رفتن
++ go through the tunnel|از تونل رد شدن
++ How often do the trains come?|قطارها هر چند وقت میان؟
++ every ten minutes or so|تقریباً هر ده دقیقه
++ Happens to everyone.|برای همه پیش میاد.
+! Is this platform correct?|Is this the right platform?|right در این‌جا یعنی «درست»، نه «راست».
+
+@ A1-19|3|🎫 خرید کارت مترو|از دستگاه فروش بلیت سر در نمی‌آورید و از مأمور کمک می‌خواهید.|Station staff
+A|Need some help with the machine?|برای دستگاه کمک لازم دارید؟
+B|Yes, please. I want a weekly pass.|بله لطفاً. یه کارت هفتگی می‌خوام.
+A|Okay, press "Passes" here, then "Seven Days."|خب، این‌جا «کارت‌ها» رو بزنید، بعد «هفت روز».
+B|And I can pay by card?|و می‌تونم با کارت پرداخت کنم؟
+A|Yes, just insert it below.|بله، فقط بذاریدش پایین.
+B|Does it work on buses too?|برای اتوبوس هم کار می‌کنه؟
+A|Yes, buses and trains.|بله، اتوبوس و قطار.
+B|Perfect. Thanks for your patience.|عالیه. ممنون از حوصله‌تون.
++ Need some help?|کمک لازم داری؟
++ a weekly pass|کارت هفتگی
++ press...|... رو بزن
++ pay by card|با کارت پرداخت کردن
++ insert it below|پایین بذاریدش (کارت)
++ Does it work on buses too?|برای اتوبوس هم کار می‌کنه؟
++ Thanks for your patience.|ممنون از حوصله‌تون.
+! I want a ticket for one week.|I want a weekly pass.|برای کارت مدت‌دار از pass استفاده می‌کنند.
+
+@ A1-19|4|😤 اتوبوس شلوغ|اتوبوس خیلی شلوغ است و باید پیاده شوید.|Passenger
+A|Sorry, coming through!|ببخشید، رد می‌شم!
+B|Oh, sorry. Are you getting off here?|اِ، ببخشید. این‌جا پیاده می‌شید؟
+A|Yes, at this stop.|بله، همین ایستگاه.
+B|Let me move over.|بذارید کنار برم.
+A|Thanks. It's packed today!|ممنون. امروز خیلی شلوغه!
+B|I know. It's always like this at rush hour.|آره. ساعت شلوغی همیشه همین‌طوره.
+A|Have a good day!|روز خوبی داشته باشید!
+B|You too!|همچنین!
++ Coming through!|رد می‌شم! / راه بدید!
++ Are you getting off here?|این‌جا پیاده می‌شید؟
++ at this stop|همین ایستگاه
++ Let me move over.|بذار کنار برم.
++ It's packed.|خیلی شلوغه.
++ rush hour|ساعت شلوغی
++ You too!|همچنین!
+! There are many people.|It's packed!|packed یعنی «خیلی شلوغ، جای سوزن انداختن نیست».
+
+@ A1-19|5|🚲 دوچرخه‌ی اشتراکی|برای اولین بار از دوچرخه‌ی اشتراکی شهر استفاده می‌کنید.|Cyclist
+A|First time using these bikes?|اولین باره از این دوچرخه‌ها استفاده می‌کنی؟
+B|Yeah. How do I unlock it?|آره. چطور قفلشو باز کنم؟
+A|Just scan the QR code with the app.|فقط کیو‌آر کدشو با اپ اسکن کن.
+B|Oh, cool. How much does it cost?|اِ، باحاله. چقدر هزینه داره؟
+A|A dollar to start, then fifteen cents a minute.|یه دلار برای شروع، بعد دقیقه‌ای پونزده سنت.
+B|Not bad. Where do I leave it?|بد نیست. کجا بذارمش؟
+A|At any dock. They're all over the city.|هر ایستگاهی. همه جای شهر هست.
+B|Awesome, thanks!|عالیه، ممنون!
++ How do I unlock it?|چطور قفلشو باز کنم؟
++ scan the QR code|کیو‌آر کد رو اسکن کردن
++ How much does it cost?|چقدر هزینه داره؟
++ a dollar to start|یه دلار برای شروع
++ fifteen cents a minute|دقیقه‌ای پونزده سنت
++ Where do I leave it?|کجا بذارمش؟
++ all over the city|همه جای شهر
+! What is the price?|How much does it cost?|برای پرسیدن هزینه‌ی خدمات، How much does it cost طبیعی است.
+
+@ A1-20|2|☕ ریختن قهوه|در کافه قهوه را روی میز کسی می‌ریزید.|Customer
+A|Whoa!|اوه!
+B|Oh my gosh, I'm so sorry! Did it get on you?|وای خدای من، خیلی ببخشید! روتون ریخت؟
+A|Just a little on my sleeve. It's fine.|فقط یه‌کم روی آستینم. اشکالی نداره.
+B|Let me get you some napkins.|بذارید براتون دستمال بیارم.
+A|Thanks. Really, don't worry.|ممنون. جدی، نگران نباشید.
+B|Can I buy you another coffee?|می‌تونم یه قهوه‌ی دیگه براتون بخرم؟
+A|That's sweet, but I'm good. Accidents happen.|لطف دارید، ولی لازم نیست. اتفاقه دیگه.
+B|Okay. Sorry again!|باشه. بازم ببخشید!
++ Did it get on you?|روت ریخت؟
++ on my sleeve|روی آستینم
++ Let me get you some napkins.|بذار برات دستمال بیارم.
++ Can I buy you another...?|می‌تونم یه ... دیگه برات بخرم؟
++ I'm good.|لازم نیست. / خوبم.
++ Accidents happen.|اتفاقه دیگه.
++ Sorry again!|بازم ببخشید!
+! I don't need it.|I'm good.|I'm good در پاسخ به پیشنهاد یعنی «ممنون، لازم ندارم».
+
+@ A1-20|3|🙏 تشکر از کمک|کسی کیف پولتان را که افتاده بود پیدا کرده است.|Stranger
+A|Excuse me! I think you dropped this.|ببخشید! فکر کنم اینو انداختید.
+B|Oh no, my wallet! Thank you so much!|ای وای، کیف پولم! خیلی ممنون!
+A|It was on the floor by the door.|کف زمین کنار در بود.
+B|I didn't even notice. You saved me.|اصلاً متوجه نشدم. نجاتم دادید.
+A|No problem at all.|اصلاً مشکلی نیست.
+B|Can I give you something as a thank you?|می‌تونم یه چیزی به رسم تشکر بهتون بدم؟
+A|Oh, no need. Just pay it forward.|اوه، لازم نیست. فقط به یکی دیگه خوبی کن.
+B|I will. You're very kind.|حتماً. خیلی مهربونید.
++ I think you dropped this.|فکر کنم اینو انداختی.
++ on the floor|کف زمین
++ I didn't even notice.|اصلاً متوجه نشدم.
++ You saved me.|نجاتم دادی.
++ as a thank you|به رسم تشکر
++ No need.|لازم نیست.
++ Pay it forward.|خوبی رو به نفر بعدی برسون.
+! You fell this.|You dropped this.|برای «انداختن» از drop استفاده کنید، نه fall.
+
+@ A1-20|4|🚪 در و صف|در صف، ناخواسته جلوی کسی می‌ایستید.|Woman in line
+A|Excuse me, I think I was next.|ببخشید، فکر کنم نوبت من بود.
+B|Oh, I'm sorry! I didn't see you there.|اوه، ببخشید! ندیدمتون.
+A|It's okay. It's a confusing line.|اشکالی نداره. صف گیج‌کننده‌ایه.
+B|Please, go ahead.|بفرمایید، شما اول.
+A|Thank you. That's very kind.|ممنون. خیلی لطف دارید.
+B|Not at all. My mistake.|خواهش می‌کنم. اشتباه از من بود.
+A|Have a nice day!|روز خوبی داشته باشید!
+B|You too!|همچنین!
++ I think I was next.|فکر کنم نوبت من بود.
++ I didn't see you there.|ندیدمتون.
++ It's a confusing line.|صف گیج‌کننده‌ایه.
++ Please, go ahead.|بفرمایید، شما اول.
++ That's very kind.|خیلی لطف دارید.
++ Not at all.|خواهش می‌کنم. / اصلاً.
++ My mistake.|اشتباه از من بود.
+! It was my turn.|I think I was next.|با I think... اعتراض در صف مؤدبانه می‌شود.
+
+@ A1-20|5|😬 اسم را اشتباه گفتن|اسم همکار جدیدتان را اشتباه صدا می‌زنید.|Hailey
+A|Hey, Sara! Got a sec?|سلام سارا! یه لحظه وقت داری؟
+B|Sure, Haley. What's up?|حتماً، هِیلی. چی شده؟
+A|Oh, it's actually Hailey. Like "hail."|اوه، راستش هِیلیِ. مثل «هِیل».
+B|Oh, I'm so sorry! Hailey. I'll remember that.|اوه، خیلی ببخشید! هِیلی. یادم می‌مونه.
+A|No worries, people mix it up all the time.|نگران نباش، مردم همیشه قاطیش می‌کنن.
+B|Thanks for correcting me.|ممنون که اصلاحم کردی.
+A|Of course! So, about the meeting...|خواهش! خب، درباره‌ی جلسه...
+B|Yes, go on.|بله، بگو.
++ Got a sec?|یه لحظه وقت داری؟
++ It's actually...|راستش ... ـه.
++ I'll remember that.|یادم می‌مونه.
++ mix it up|قاطی کردن / اشتباه گرفتن
++ Thanks for correcting me.|ممنون که اصلاحم کردی.
++ So, about...|خب، درباره‌ی...
++ Go on.|ادامه بده. / بگو.
+! Sorry, I said your name wrong.|I'm so sorry! Hailey. I'll remember that.|بعد از اشتباه در اسم، اسم درست را تکرار کنید؛ این احترام را نشان می‌دهد.

@@ -30,7 +30,16 @@ let IDX = null; const LV = {}; let PROGRAM = null;
 async function getJSON(u) { const r = await fetch(u); if (!r.ok) throw new Error("HTTP " + r.status + " " + u); return r.json(); }
 async function loadIndex() { IDX = await getJSON("content/index.json"); }
 async function loadLevel(lv) { return LV[lv] || (LV[lv] = await getJSON(`content/${lv.toLowerCase()}.json`)); }
-async function getLesson(id) { const m = await loadLevel(id.split("-")[0]); return m[id]; }
+const NV = 5, FA_N = ["", "۱", "۲", "۳", "۴", "۵"];
+/** Dialogue variants: key "A1-01" = گفتگو ۱ (base, backward-compatible), "A1-01#3" = گفتگو ۳. */
+const parseKey = k => { const [id, n] = String(k).split("#"); return { id, n: Math.min(NV, Math.max(1, +n || 1)) }; };
+const vkey = (id, n) => n > 1 ? id + "#" + n : id;
+function viewOf(L, n) { const v = n > 1 && (L.variants || []).find(x => x.n == n);
+  if (!v) return { ...L, n: 1, key: L.id, mood: "⭐ گفتگوی اصلی" };
+  return { ...L, scene: v.scene, partner: v.partner, dialogue: v.dialogue, chunks: v.chunks, notes: v.notes, sounds: v.sounds, quiz: v.quiz, mood: v.mood, n, key: vkey(L.id, n) }; }
+async function getBase(id) { const m = await loadLevel(id.split("-")[0]); return m[id]; }
+async function getLesson(key) { const { id, n } = parseKey(key); const L = await getBase(id); return L && viewOf(L, n); }
+const varsDone = id => [...Array(NV)].filter((_, i) => S.done[vkey(id, i + 1)]).length;
 async function getProgram() { return PROGRAM || (PROGRAM = await getJSON("content/program.json")); }
 const meta = id => IDX.levels[id.split("-")[0]].find(l => l.id === id);
 const allMeta = () => LEVELS.flatMap(lv => IDX.levels[lv]);
@@ -293,7 +302,7 @@ const dlines = l => l.dialogue.map(d => ({ t: d.en, v: dv(l, d) }));
 /* ---------------- Views ---------------- */
 const V = {};
 V.home = async () => {
-  const done = Object.keys(S.done).length, total = IDX.counts.total.lessons, learned = Object.keys(S.cards).length, due = dueCards().length;
+  const done = Object.keys(S.done).filter(k => !k.includes("#")).length, total = IDX.counts.total.lessons, learned = Object.keys(S.cards).length, due = dueCards().length;
   const rec = allMeta().find(l => !S.done[l.id] && LEVELS.indexOf(l.id.split("-")[0]) >= LEVELS.indexOf(S.level || "A1")) || allMeta().find(l => !S.done[l.id]);
   const week = [...Array(7)].map((_, i) => S.days[new Date(Date.now() - (6 - i) * 864e5).toLocaleDateString("en-CA")] || 0), mx = Math.max(20, ...week);
   const pd = programDay();
@@ -301,7 +310,7 @@ V.home = async () => {
   ${S.level ? `<p>سطح شما: <span class=badge>${S.level}</span> ${LVNAME[S.level]}</p>` : `<button class="btn p" data-go=placement>🎯 آزمون تعیین سطح (۲ دقیقه)</button>`}</div>
   <div class=card><h3>📅 برنامه‌ی فشرده‌ی ۳۰ روزه</h3>${pd ? `<p>امروز: <b>روز ${fa(pd)}</b> از ۳۰</p><div class=bar><i style="width:${pd / 30 * 100}%"></i></div><button class="btn p" data-day=${pd}>برنامه‌ی امروز ▶</button>` : `<p class=muted>هر روز ۳۰ تا ۴۵ دقیقه: سناریوی جدید، عبارت‌های پرکاربرد، مرور، سایه‌روی و گفتگو با معلم AI.</p><button class="btn p" data-go=program>شروع برنامه</button>`}</div>
   ${rec ? `<div class=card><span class=muted>سناریوی پیشنهادی</span><h3>${rec.icon} ${esc(rec.title)} <span class=badge>${rec.id.split("-")[0]}</span></h3><p class=muted>${esc(rec.scene)}</p><button class="btn p" data-lesson=${rec.id}>شروع ▶</button></div>` : ""}
-  <div class="card grid"><div class=stat><b>${fa(done)}/${fa(total)}</b>سناریو</div><div class=stat><b>${fa(learned)}</b>کارت مرور</div><div class=stat><b>${fa(due)}</b>آماده‌ی مرور</div><div class=stat><b>${fa(S.streak)}🔥</b>روز پیاپی</div></div>
+  <div class="card grid"><div class=stat><b>${fa(done)}/${fa(total)}</b>سناریو</div><div class=stat><b>${fa(Object.keys(S.done).length)}/${fa(IDX.counts.total.dialogues || total)}</b>گفتگو</div><div class=stat><b>${fa(learned)}</b>کارت مرور</div><div class=stat><b>${fa(due)}</b>آماده‌ی مرور</div><div class=stat><b>${fa(S.streak)}🔥</b>روز پیاپی</div></div>
   <div class=card><b>فعالیت ۷ روز اخیر (XP)</b><div style="display:flex;align-items:flex-end;gap:6px;height:90px;margin-top:8px" role=img aria-label="نمودار فعالیت هفتگی">${week.map(v => `<div style="flex:1;background:var(--pri2);opacity:${v ? 1 : .2};height:${Math.max(4, v / mx * 85)}px;border-radius:6px 6px 0 0" title="${v}"></div>`).join("")}</div></div>
   <div class=card><b>پیشرفت در هر سطح</b>${LEVELS.map(lv => { const ls = IDX.levels[lv], d = ls.filter(l => S.done[l.id]).length; return `<div style="margin:6px 0"><span class=badge>${lv}</span> <span class=muted>${fa(d)} از ${fa(ls.length)}</span><div class=bar><i style="width:${d / ls.length * 100}%"></i></div></div>`; }).join("")}</div>`;
 };
@@ -311,8 +320,8 @@ V.placement = async () => { let i = 0; const sc = {}; const P = window.PLACEMENT
     const p = P[i]; app.innerHTML = `<div class=card><div class=bar><i style="width:${i / P.length * 100}%"></i></div><p class=muted>سؤال ${fa(i + 1)} از ${fa(P.length)}</p><p class="big" ${isFa(p.q) ? "" : 'dir=ltr lang=en'}>${esc(p.q)}</p>${p.o.map((o, j) => `<button class="btn" style="display:block;width:100%" ${isFa(o) ? "" : "dir=ltr lang=en"} data-j=${j}>${esc(o)}</button>`).join("")}<button class="btn sm" id=skip>نمی‌دانم</button></div>`;
     $$("[data-j]").forEach(b => b.onclick = () => { if (+b.dataset.j == p.a) sc[p.l] = (sc[p.l] || 0) + 1; i++; step(); }); $("#skip").onclick = () => { i++; step(); }; }; step(); };
 V.map = async () => {
-  app.innerHTML = `<div class=card><h2>🗺️ سناریوها</h2><p class=muted>${fa(IDX.counts.total.lessons)} سناریوی واقعی از A1 تا C1 · ${fa(IDX.counts.total.all)} عبارت با ترجمه‌ی فارسی</p><input id=q placeholder="جستجو… (مثلاً قهوه، مصاحبه، phone)" aria-label="جستجوی سناریو"></div><div id=lv></div>`;
-  const draw = (q = "") => { $("#lv").innerHTML = LEVELS.map(lv => { const ls = IDX.levels[lv].filter(l => !q || (l.title + l.scene).toLowerCase().includes(q)); if (!ls.length) return ""; return `<div class=lvl-h><span class=badge>${lv}</span><b>${LVNAME[lv]}</b><span class=muted>${fa(ls.filter(l => S.done[l.id]).length)}/${fa(ls.length)}</span></div><div class=grid>${ls.map(l => `<button class="node ${S.done[l.id] ? "done" : ""} ${S.level == lv && !S.done[l.id] ? "rec" : ""}" data-lesson=${l.id}><div class=ic aria-hidden=true>${l.icon}</div><b>${esc(l.title)}</b><div class=muted>${S.done[l.id] ? "✅ کامل" : fa(Object.keys(S.steps[l.id] || {}).length) + "/۶ بخش"}</div></button>`).join("")}</div>`; }).join("") || `<p class=muted>چیزی پیدا نشد.</p>`; };
+  app.innerHTML = `<div class=card><h2>🗺️ سناریوها</h2><p class=muted>${fa(IDX.counts.total.lessons)} سناریوی واقعی از A1 تا C1 · ${fa(IDX.counts.total.dialogues || IDX.counts.total.lessons)} گفتگو · ${fa(IDX.counts.total.all)} عبارت با ترجمه‌ی فارسی</p><input id=q placeholder="جستجو… (مثلاً قهوه، مصاحبه، phone)" aria-label="جستجوی سناریو"></div><div id=lv></div>`;
+  const draw = (q = "") => { $("#lv").innerHTML = LEVELS.map(lv => { const ls = IDX.levels[lv].filter(l => !q || (l.title + l.scene).toLowerCase().includes(q)); if (!ls.length) return ""; return `<div class=lvl-h><span class=badge>${lv}</span><b>${LVNAME[lv]}</b><span class=muted>${fa(ls.filter(l => S.done[l.id]).length)}/${fa(ls.length)}</span></div><div class=grid>${ls.map(l => `<button class="node ${S.done[l.id] ? "done" : ""} ${S.level == lv && !S.done[l.id] ? "rec" : ""}" data-lesson=${l.id}><div class=ic aria-hidden=true>${l.icon}</div><b>${esc(l.title)}</b><div class=muted>${S.done[l.id] ? "✅ کامل" : fa(Object.keys(S.steps[l.id] || {}).length) + "/۶ بخش"} · 💬 ${fa(varsDone(l.id))}/${fa(l.v || 1)}</div></button>`).join("")}</div>`; }).join("") || `<p class=muted>چیزی پیدا نشد.</p>`; };
   draw(); $("#q").oninput = e => draw(e.target.value.trim().toLowerCase()); };
 V.review = async () => { const q = dueCards();
   if (!q.length) { const n = Object.keys(S.cards).length; app.innerHTML = `<div class=card style=text-align:center><div class=big>🎉</div><h3>فعلاً مروری نمانده</h3><p class=muted>${n ? `${fa(n)} کارت دارید؛ هر کدام در زمان مناسب برمی‌گردد.` : "با باز کردن بخش «عبارت‌ها» در سناریوها یا بسته‌های روزانه، کارت اضافه می‌شود."}</p><p>مرورهای امروز: ${fa(S.reviewsToday[today()] || 0)}</p></div>`; return; }
@@ -324,22 +333,23 @@ V.review = async () => { const q = dueCards();
 
 /* ---------------- Lesson ---------------- */
 const STEPS = [["dlg", "💬 گفتگو"], ["chunks", "🧩 عبارت‌ها"], ["notes", "📚 کتابی/محاوره"], ["shadow", "🔁 سایه‌روی"], ["role", "🎭 نقش‌آفرینی"], ["listen", "🎧 شنیداری"]];
-function markStep(id, k) { S.steps[id] = S.steps[id] || {}; if (!S.steps[id][k]) { S.steps[id][k] = 1; addXP(5); } if (STEPS.every(([s]) => S.steps[id][s]) && !S.done[id]) { S.done[id] = 1; addXP(20); toast("🎉 سناریو کامل شد! +۲۰ XP"); } save(); }
-async function lesson(id, tab = "dlg") { stopAll(); app.innerHTML = `<div class="card loading">در حال بارگذاری…</div>`;
-  let l; try { l = await getLesson(id); } catch (e) { app.innerHTML = `<div class=card><p class=bad>بارگذاری درس ناموفق بود (${esc(e.message)}).</p><button class="btn p" onclick="lesson('${id}','${tab}')">تلاش دوباره</button></div>`; return; }
-  S.lastLesson = id; save();
-  app.innerHTML = `<div class=card><button class="btn sm" data-go=map>→ سناریوها</button><h2>${l.icon} ${esc(l.title)} <span class=badge>${l.level}</span></h2><p class=muted>${esc(l.scene)} · طرف گفتگو: <b dir=ltr lang=en>${esc(l.partner)}</b></p>
-  <div class=seg role=tablist>${STEPS.map(([k, n]) => `<button role=tab aria-selected=${k == tab} data-t=${k} class="${k == tab ? "on" : ""}">${n}${(S.steps[id] || {})[k] ? " ✓" : ""}</button>`).join("")}</div>
+function markStep(id, k) { S.steps[id] = S.steps[id] || {}; if (!S.steps[id][k]) { S.steps[id][k] = 1; addXP(5); } if (STEPS.every(([s]) => S.steps[id][s]) && !S.done[id]) { S.done[id] = 1; addXP(20); toast(id.includes("#") ? `🎉 گفتگو ${FA_N[parseKey(id).n]} کامل شد! +۲۰ XP` : "🎉 سناریو کامل شد! +۲۰ XP"); } save(); }
+async function lesson(key, tab = "dlg") { stopAll(); let { id, n } = parseKey(key); if (!String(key).includes("#")) n = (S.vsel || {})[id] || 1; key = vkey(id, n); app.innerHTML = `<div class="card loading">در حال بارگذاری…</div>`;
+  let l; try { l = await getLesson(key); if (!l) throw new Error("not found " + key); } catch (e) { app.innerHTML = `<div class=card><p class=bad>بارگذاری درس ناموفق بود (${esc(e.message)}).</p><button class="btn p" onclick="lesson('${key}','${tab}')">تلاش دوباره</button></div>`; return; }
+  S.lastLesson = key; S.vsel = { ...(S.vsel || {}), [id]: l.n }; save(); const nv = 1 + (l.variants || []).length;
+  app.innerHTML = `<div class=card><button class="btn sm" data-go=map>→ سناریوها</button><h2>${l.icon} ${esc(l.title)} <span class=badge>${l.level}</span></h2><div class=seg role=tablist aria-label="انتخاب گفتگو" id=vpick>${[...Array(nv)].map((_, i) => `<button role=tab aria-selected=${i + 1 == l.n} data-v=${i + 1} class="${i + 1 == l.n ? "on" : ""}">گفتگو ${FA_N[i + 1]}${S.done[vkey(id, i + 1)] ? " ✓" : ""}</button>`).join("")}</div>
+  <p class=muted><b>${esc(l.mood)}</b> · ${esc(l.scene)} · طرف گفتگو: <b dir=ltr lang=en>${esc(l.partner)}</b></p>
+  <div class=seg role=tablist>${STEPS.map(([k, n]) => `<button role=tab aria-selected=${k == tab} data-t=${k} class="${k == tab ? "on" : ""}">${n}${(S.steps[key] || {})[k] ? " ✓" : ""}</button>`).join("")}</div>
   <button class="btn sm" id=askT>🤖 تمرین این سناریو با معلم AI</button></div><div id=pane></div>`;
-  $$("[data-t]").forEach(b => b.onclick = () => lesson(id, b.dataset.t)); $("#askT").onclick = () => { sessionStorage.zyTutor = JSON.stringify({ mode: "roleplay", lesson: id }); go("tutor"); };
+  $$("[data-t]").forEach(b => b.onclick = () => lesson(key, b.dataset.t)); $$("[data-v]").forEach(b => b.onclick = () => lesson(vkey(id, +b.dataset.v), tab)); $("#askT").onclick = () => { sessionStorage.zyTutor = JSON.stringify({ mode: "roleplay", lesson: key }); go("tutor"); };
   P[tab](l, $("#pane")); window.scrollTo(0, 0); }
-const nextBtn = (l, k) => { const i = STEPS.findIndex(s => s[0] == k); return i < STEPS.length - 1 ? `<button class="btn p" data-next="${l.id}|${k}|${STEPS[i + 1][0]}">ادامه: ${STEPS[i + 1][1]} ←</button>` : `<button class="btn p" data-next="${l.id}|${k}|">پایان ✓</button>`; };
+const nextBtn = (l, k) => { const i = STEPS.findIndex(s => s[0] == k); return i < STEPS.length - 1 ? `<button class="btn p" data-next="${l.key}|${k}|${STEPS[i + 1][0]}">ادامه: ${STEPS[i + 1][1]} ←</button>` : `<button class="btn p" data-next="${l.key}|${k}|">پایان ✓</button>`; };
 const P = {
   dlg(l, el) { el.innerHTML = `<div class=card><button class="btn p" id=play>▶ پخش کل گفتگو</button><button class=btn id=slow>🐢 آهسته</button><button class=btn id=tg>👁️ ترجمه</button>
     ${l.dialogue.map((d, i) => `<div class="bubble ${d.me ? "me" : "them"}"><div class=who>${d.me ? "شما" : esc(l.partner)}</div><div dir=ltr lang=en>${esc(d.en)} <button class="btn sm" data-say=${i} aria-label="پخش جمله">🔊</button></div><div class="fa tr">${esc(d.fa)}</div></div>`).join("")}</div><div class=card>${nextBtn(l, "dlg")}</div>`;
     $$("[data-say]").forEach(b => b.onclick = () => speak(l.dialogue[b.dataset.say].en, 1, null, { voice: dv(l, l.dialogue[b.dataset.say]) })); $("#play").onclick = () => speakSeq(dlines(l)); $("#slow").onclick = () => speakSeq(dlines(l), .7); $("#tg").onclick = () => $$(".tr").forEach(x => x.classList.toggle("hidden")); },
   chunks(l, el) { el.innerHTML = `<div class=card><p class=muted>عبارت‌ها را تکه‌تکه (chunk) یاد بگیرید، نه کلمه‌به‌کلمه. همه به کارت‌های مرور اضافه شدند.</p>${l.chunks.map((c, i) => `<div class=chunk><div><div dir=ltr lang=en><b>${esc(c.en)}</b></div><div class=muted>${esc(c.fa)}</div></div><button class="btn sm" data-i=${i} aria-label="پخش">🔊</button></div>`).join("")}</div><div class=card><h3>⚡ تمرین سریع معنی</h3><div id=qz aria-live=polite></div></div><div class=card>${nextBtn(l, "chunks")}</div>`;
-    $$("[data-i]").forEach(b => b.onclick = () => speak(l.chunks[b.dataset.i].en)); l.chunks.forEach((c, i) => addCard(l.id + ":" + i, c.en, c.fa, l.id)); save();
+    $$("[data-i]").forEach(b => b.onclick = () => speak(l.chunks[b.dataset.i].en)); l.chunks.forEach((c, i) => addCard(l.key + ":" + i, c.en, c.fa, l.key)); save();
     const pool = shuffle(l.chunks).slice(0, 5); let k = 0, score = 0;
     const q = () => { if (!$("#qz")) return; if (k >= pool.length) { $("#qz").innerHTML = `<p>امتیاز: <b>${fa(score)}/${fa(pool.length)}</b></p>`; return; }
       const c = pool[k], opts = shuffle([c, ...shuffle(l.chunks.filter(x => x !== c)).slice(0, 2)]);
@@ -359,7 +369,7 @@ const P = {
     const r = () => { if (!el.isConnected) return; const d = l.dialogue[i];
       el.innerHTML = `<div class=card><p class=muted>🎭 شما نقش «شما» را بازی می‌کنید. جمله‌ی طرف مقابل پخش می‌شود؛ سپس جمله‌ی خود را بگویید (یا تایپ کنید). راهنمای فارسی کمکتان می‌کند. <br>موتور گفتار: ${sttLabel()}</p><div id=rl>${log.join("")}</div><div id=turn></div></div>`;
       const turn = $("#turn");
-      if (!d) { const avg = n ? Math.round(tot / n * 100) : 0; turn.innerHTML = `<div class=tip>پایان نقش‌آفرینی! میانگین دقت: <b>${fa(avg)}٪</b></div><button class=btn onclick="lesson('${l.id}','role')">🔁 دوباره</button> ${nextBtn(l, "role")}`; return; }
+      if (!d) { const avg = n ? Math.round(tot / n * 100) : 0; turn.innerHTML = `<div class=tip>پایان نقش‌آفرینی! میانگین دقت: <b>${fa(avg)}٪</b></div><button class=btn onclick="lesson('${l.key}','role')">🔁 دوباره</button> ${nextBtn(l, "role")}`; return; }
       if (!d.me) { log.push(`<div class="bubble them"><div class=who>${esc(l.partner)}</div><div dir=ltr lang=en>${esc(d.en)}</div></div>`); $("#rl").innerHTML = log.join(""); i++; speak(d.en, 1, () => setTimeout(r, 250), { voice: dv(l, d) }); return; }
       turn.innerHTML = `<div class="bubble me"><div class=who>نوبت شما — به انگلیسی بگویید:</div><div>«${esc(d.fa)}»</div><div class="hidden" dir=ltr lang=en id=hint>${esc(d.en)}</div></div>
       <button class="btn p" id=mic ${sttMode() == "none" ? "disabled" : ""}>🎤 بگویید</button><button class=btn id=hb>💡 نمایش جمله</button><div class=row><input id=typ dir=ltr lang=en placeholder="یا تایپ کنید…" aria-label="جمله‌ی خود را تایپ کنید"><button class=btn id=ok>✓</button></div><div id=fb aria-live=polite></div>`;
@@ -382,9 +392,12 @@ function evalSpeech(target, fb) { if (["none", "nokey"].includes(sttMode())) { f
 
 /* ---------------- 30-day program ---------------- */
 function programDay() { if (!S.program.start) return 0; return Math.min(30, Math.floor((new Date(today()) - new Date(S.program.start)) / 864e5) + 1); }
+/** 30-day program rotates dialogue variants: day d, j-th lesson → گفتگو ((d-1+j) mod 5)+1 (falls back to 1 if missing). */
+const progVar = (d, j, id) => { const n = ((d - 1 + j) % NV) + 1, m = meta(id); return n <= (m?.v || 1) ? n : 1; };
+const progKeys = (p, d) => p.lessons.map((id, j) => vkey(id, progVar(d, j, id)));
 async function dayStatus(d) { const p = (await getProgram())[d - 1], t = S.program.tasks[d] || {};
-  const lessonsDone = p.lessons.every(id => S.done[id]);
-  const shadow = !!t.shadow || p.lessons.some(id => (S.steps[id] || {}).shadow);
+  const keys = progKeys(p, d), lessonsDone = keys.every(k => S.done[k]);
+  const shadow = !!t.shadow || keys.some(k => (S.steps[k] || {}).shadow);
   const review = !!t.review || ((d === programDay()) && ((S.reviewsToday[today()] || 0) >= p.reviewGoal || (Object.keys(S.cards).length > 0 && !dueCards().length)));
   if (review && !t.review && d === programDay()) { S.program.tasks[d] = { ...t, review: 1 }; save(); }
   const r = { p, lessons: lessonsDone, pack: !!t.pack, review, shadow, ai: !!t.ai }; r.all = r.lessons && r.pack && r.review && r.shadow && r.ai; return r; }
@@ -400,9 +413,9 @@ V.program = async () => { const prog = await getProgram();
   ${prog.map((d, i) => `<button class="day ${d.day == pd ? "today" : ""} ${sts[i].all ? "done" : ""}" style="width:100%;text-align:inherit;font:inherit;color:inherit" data-day=${d.day}><span class=n>${sts[i].all ? "✅" : fa(d.day)}</span><span style="flex:1"><b>${esc(d.theme)}</b><br><span class=muted>${d.review ? "🔄 روز مرور" : fa(d.lessons.length) + " سناریو"} · ${fa(d.chunks.length)} عبارت</span></span>${d.day > pd ? "🔒" : ""}</button>`).join("")}`;
   $("#rs").onclick = () => { if (confirm("برنامه از امروز دوباره شروع شود؟")) { S.program = { start: today(), tasks: {} }; save(); V.program(); } }; };
 V.day = async d => { const s = await dayStatus(d), p = s.p; const ck = b => `<span class=ck aria-label="${b ? "انجام شد" : "انجام نشده"}">${b ? "✅" : "⬜"}</span>`;
-  const ls = p.lessons.map(id => meta(id));
+  const ls = progKeys(p, d).map(k => ({ ...meta(parseKey(k).id), key: k, n: parseKey(k).n }));
   app.innerHTML = `<div class=card><button class="btn sm" data-go=program>→ برنامه</button><h2>روز ${fa(d)}: ${esc(p.theme)}</h2>${d > programDay() ? `<p class=muted>🔒 این روز هنوز نرسیده؛ می‌توانید پیش‌نمایش ببینید.</p>` : ""}
-  <div class=task>${ck(s.lessons)}<div><b>🆕 سناریوهای امروز</b>${p.review ? `<div class=muted>روز مرور: یکی از سناریوهای قبلی را دوباره کامل کنید یا بخش نقش‌آفرینی را تکرار کنید.</div>` : ls.map(l => `<div><button class="btn sm" data-lesson=${l.id}>${l.icon} ${esc(l.title)} ${S.done[l.id] ? "✅" : ""}</button></div>`).join("")}</div></div>
+  <div class=task>${ck(s.lessons)}<div><b>🆕 سناریوهای امروز</b>${p.review ? `<div class=muted>روز مرور: یکی از سناریوهای قبلی را دوباره کامل کنید یا بخش نقش‌آفرینی را تکرار کنید.</div>` : ls.map(l => `<div><button class="btn sm" data-lesson="${l.key}">${l.icon} ${esc(l.title)} · گفتگو ${FA_N[l.n]} ${S.done[l.key] ? "✅" : ""}</button></div>`).join("")}</div></div>
   <div class=task>${ck(s.pack)}<div><b>🧩 بسته‌ی عبارت‌ها: ${esc(p.theme)}</b><div class=muted>${fa(p.chunks.length)} عبارت پرکاربرد گفتاری</div></div><button class="btn p" data-pack=${d}>باز کردن</button></div>
   <div class=task>${ck(s.review)}<div><b>🧠 مرور فاصله‌دار</b><div class=muted>هدف: ${fa(p.reviewGoal)} کارت · امروز: ${fa(S.reviewsToday[today()] || 0)}</div></div><button class=btn data-go=review>مرور</button></div>
   <div class=task>${ck(s.shadow)}<div><b>🔁 سایه‌روی</b><div class=muted>بخش سایه‌روی یکی از سناریوها یا ۵ عبارت از بسته را با میکروفون تکرار کنید.</div></div></div>
@@ -430,7 +443,7 @@ async function teacherPrompt() {
   const level = S.level || "A2"; const l = T.lesson ? await getLesson(T.lesson).catch(() => null) : null; const weak = weakCards(12);
   const day = T.mode === "program" && T.day ? (await getProgram())[T.day - 1] : null;
   const ctx = [`Learner: a Persian (Farsi) speaker, CEFR level ${level}. Goal: confident, natural everyday spoken English (casual native American/British), not textbook English.`,
-    l ? `Current lesson: "${l.title}" (${l.level}) — scenario: ${l.scene}. Partner role: ${l.partner}. Key chunks: ${l.chunks.map(c => c.en).join("; ")}.` : "",
+    l ? `Current lesson: "${l.title}" (${l.level}), dialogue ${l.n} of ${1 + (l.variants || []).length} (${l.mood}) — scenario: ${l.scene}. Partner role: ${l.partner}. Key chunks: ${l.chunks.map(c => c.en).join("; ")}.\nThe selected dialogue the learner studied (partner = ${l.partner}, learner = "Me"):\n${l.dialogue.map(d => (d.me ? "Me: " : l.partner + ": ") + d.en).join("\n")}` : "",
     weak.length ? `Learner's weak phrases from spaced-repetition (reuse them naturally): ${weak.map(c => c.en).join("; ")}.` : "",
     day ? `30-day program day ${day.day}, theme chunks: ${day.chunks.map(c => c.en).slice(0, 18).join("; ")}. Task: ${day.ai}` : ""].filter(Boolean).join("\n");
   const common = `\nSTYLE: Speak like a friendly real native speaker: contractions, phrasal verbs, common idioms, natural fillers (you know, like, kinda, gonna) appropriate to the learner's level. Keep your English turn SHORT (1-3 sentences) and end with a question or prompt so the learner talks more than you.
@@ -452,10 +465,10 @@ V.tutor = async () => {
   if (!T.lesson) T.lesson = S.lastLesson || "A1-01";
   if (!aiReady()) { app.innerHTML = `<div class=card><h2>🤖 معلم هوش مصنوعی</h2><p>معلمی که سطح شما، درس فعلی و کلمات ضعیفتان را می‌شناسد: توضیح می‌دهد، تمرین می‌دهد، نقش بازی می‌کند، تلفظ را بررسی می‌کند و در پایان جلسه خلاصه و اشتباهاتتان را به کارت‌های مرور اضافه می‌کند. حالت صوتی بدون دست هم دارد.</p>
     <p class=muted>این بخش اختیاری است و به کلید رایگان Google Gemini (یا آدرس سرور واسط) نیاز دارد.</p><button class="btn p" data-go=settings>تنظیم در «تنظیمات»</button></div>`; return; }
-  const opts = LEVELS.map(lv => `<optgroup label="${lv}">${IDX.levels[lv].map(l => `<option value=${l.id} ${l.id == T.lesson ? "selected" : ""}>${l.icon} ${esc(l.title)}</option>`).join("")}</optgroup>`).join("");
+  const opts = LEVELS.map(lv => `<optgroup label="${lv}">${IDX.levels[lv].map(l => `<option value=${l.id} ${l.id == parseKey(T.lesson).id ? "selected" : ""}>${l.icon} ${esc(l.title)}</option>`).join("")}</optgroup>`).join("");
   app.innerHTML = `<div class=card><h3>🤖 معلم هوش مصنوعی <span class=voice-dot id=vd aria-hidden=true></span> <small class=muted id=vs></small></h3>
   <div class=modes role=radiogroup aria-label="حالت آموزش">${Object.entries(MODES).map(([k, [ic, n]]) => `<button class="btn ${k == T.mode ? "p" : ""}" role=radio aria-checked=${k == T.mode} data-mode=${k}>${ic} ${n}</button>`).join("")}</div>
-  <div id=lsel class="${["roleplay", "explain"].includes(T.mode) ? "" : "hidden"}"><select id=les aria-label="انتخاب سناریو">${opts}</select></div>
+  <div id=lsel class="${["roleplay", "explain"].includes(T.mode) ? "" : "hidden"}"><select id=les aria-label="انتخاب سناریو">${opts}</select><select id=lvar aria-label="انتخاب گفتگو">${[...Array(meta(parseKey(T.lesson).id)?.v || 1)].map((_, i) => `<option value=${i + 1} ${i + 1 == parseKey(T.lesson).n ? "selected" : ""}>گفتگو ${FA_N[i + 1]}</option>`).join("")}</select></div>
   ${T.mode === "program" ? `<p class=muted>روز ${fa(T.day || programDay() || 1)} برنامه</p>` : ""}
   <div id=log style="max-height:52vh;overflow:auto" aria-live=polite></div>
   <div class=row><input id=msg dir=ltr lang=en placeholder="Type or tap the mic…" aria-label="پیام به معلم"><button class=btn id=mic aria-label="صحبت با میکروفون">🎤</button><button class="btn p" id=send>ارسال</button></div>
@@ -485,7 +498,7 @@ V.tutor = async () => {
   $("#mic").onclick = () => listen((t, why, d) => t ? send(t) : toast(whyMsg(why, d), true), { onState: setState });
   $("#voice").onclick = async () => { if (!voiceOn && !(await ensureMic())) return; toggleVoice(); };
   $$("[data-mode]").forEach(b => b.onclick = () => { stopAll(); voiceOn = false; T.mode = b.dataset.mode; V.tutor(); });
-  $("#les").onchange = e => { T.lesson = e.target.value; V.tutor(); };
+  $("#les").onchange = e => { T.lesson = e.target.value; V.tutor(); }; $("#lvar").onchange = e => { T.lesson = vkey(parseKey(T.lesson).id, +e.target.value); V.tutor(); };
   $("#clr").onclick = () => { S.chats[chatKey()] = []; save(); draw(); ask(); };
   $("#end").onclick = () => endSession(chat());
   draw(); if (!chat().length) ask();
@@ -567,7 +580,7 @@ function go(v, arg) { stopAll(); $$(".tabs button").forEach(b => { const on = b.
   Promise.resolve(V[v](arg)).catch(e => { app.innerHTML = `<div class=card><p class=bad>خطا: ${esc(e.message)}</p><button class="btn p" onclick="location.reload()">بارگذاری دوباره</button></div>`; }); window.scrollTo(0, 0); app.focus({ preventScroll: true }); }
 document.addEventListener("click", e => { const b = e.target.closest("[data-go],[data-lesson],[data-day],[data-pack],[data-next]"); if (!b) return;
   if (b.dataset.go) go(b.dataset.go); else if (b.dataset.lesson) lesson(b.dataset.lesson); else if (b.dataset.day) { stopAll(); V.day(+b.dataset.day); } else if (b.dataset.pack) { stopAll(); V.pack(+b.dataset.pack); }
-  else if (b.dataset.next) { const [id, k, nx] = b.dataset.next.split("|"); markStep(id, k); nx ? lesson(id, nx) : go("map"); } });
+  else if (b.dataset.next) { const [id, k, nx] = b.dataset.next.split("|"); markStep(id, k); if (nx) lesson(id, nx); else { const { id: b, n } = parseKey(id); const L = LV[b.split("-")[0]]?.[b]; const nn = n < 1 + (L?.variants || []).length ? n + 1 : 0; nn && !S.done[vkey(b, nn)] ? lesson(vkey(b, nn)) : go("map"); } } });
 $("#modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 function theme() { const dark = S.dark ?? matchMedia("(prefers-color-scheme: dark)").matches; document.documentElement.classList.toggle("dark", dark); $("#theme").textContent = dark ? "☀️" : "🌙"; }

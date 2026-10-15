@@ -17,7 +17,7 @@ const fmt = FORMAT === "wav" || !hasFfmpeg ? "wav" : FORMAT; if (fmt !== FORMAT)
 // 1) collect lines exactly as the app plays them
 const jobs = new Map(); const add = (text, voice, slow) => { text = Z.clean(text); if (!text) return; const k = Z.audioKey(text, voice, slow); if (!jobs.has(k)) jobs.set(k, { k, text, voice, slow }); };
 for (const lv of LEVELS) { const data = JSON.parse(fs.readFileSync(path.join(dist, "content", lv + ".json"), "utf8"));
-  for (const l of Object.values(data)) {
+  for (const L of Object.values(data)) for (const l of [L, ...(L.variants || [])]) { // base dialogue + گفتگو ۲..۵
     for (const d of l.dialogue) { const v = d.me ? Z.learnerVoice(l.partner) : Z.partnerVoice(l.partner); add(d.en, v, false); if (SLOW) add(d.en, v, true); }
     for (const c of l.chunks) add(c.en, Z.NARRATOR, false);
     for (const s of l.sounds || []) { add(s.w, Z.NARRATOR, false); if (SLOW) add(s.w, Z.NARRATOR, true); } } }

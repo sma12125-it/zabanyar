@@ -1,0 +1,515 @@
+@ C1-15|2|🏠 مذاکره‌ی اجاره|با صاحبخانه درباره‌ی افزایش اجاره مذاکره می‌کنید.|Landlord
+A|I'm afraid the rent's going up fifteen percent next year.|متأسفانه اجاره سال دیگه پونزده درصد بالا می‌ره.
+B|I understand costs are rising. Fifteen is a big jump, though.|می‌فهمم هزینه‌ها بالا می‌ره. ولی پونزده جهش بزرگیه.
+A|It's in line with the market.|با بازار هم‌خوانی داره.
+B|Maybe for new tenants. But I've paid on time for three years and never caused problems.|شاید برای مستأجرای جدید. ولی من سه ساله سر وقت پرداخت کردم و هیچ‌وقت مشکلی درست نکردم.
+A|That's true, you've been reliable.|درسته، قابل اعتماد بودی.
+B|And finding a new tenant costs you a month or two of empty rent, plus fees.|و پیدا کردن مستأجر جدید یکی دو ماه اجاره‌ی خالی به‌علاوه‌ی هزینه برات داره.
+A|What are you suggesting?|چی پیشنهاد می‌کنی؟
+B|Eight percent, and I'll sign for two years instead of one.|هشت درصد، و به‌جای یه سال، دو ساله امضا می‌کنم.
+A|Make it ten and you've got a deal.|بکنش ده تا قبوله.
+B|Ten for two years. Agreed.|ده برای دو سال. توافق شد.
++ a big jump|جهش بزرگ
++ in line with the market|هم‌خوان با بازار
++ new tenants|مستأجرای جدید
++ paid on time|سر وقت پرداخت کردم
++ you've been reliable|قابل اعتماد بودی
++ empty rent|اجاره‌ی خالی (ماه‌های بدون مستأجر)
++ sign for two years|دو ساله امضا کردن
++ Make it ten.|بکنش ده.
+! I accept.|Agreed.|Agreed کوتاه و قاطع برای بستن توافق.
+
+@ C1-15|3|🛒 خرید عمده از تأمین‌کننده|با تأمین‌کننده‌ی مواد اولیه سر قیمت و زمان تحویل چانه می‌زنید.|Supplier
+A|Our price is twelve dollars per unit, delivery in four weeks.|قیمت ما واحدی دوازده دلاره، تحویل چهار هفته‌ای.
+B|We're looking at ten thousand units. What can you do on price at that volume?|ما ده هزار واحد در نظر داریم. با این حجم روی قیمت چی کار می‌تونید بکنید؟
+A|We could go to eleven fifty.|می‌تونیم برسیم به یازده و پنجاه.
+B|A competitor's offered ten eighty. I'd rather work with you, but the gap matters.|یه رقیب ده و هشتاد پیشنهاد داده. ترجیح می‌دم با شما کار کنم، ولی این فاصله مهمه.
+A|Do they offer the same quality guarantee?|همین ضمانت کیفیتو می‌دن؟
+B|Not quite, which is why we're still talking.|نه کاملاً، برای همینه که هنوز داریم صحبت می‌کنیم.
+A|What if we met at eleven twenty, with free shipping?|اگه رو یازده و بیست با حمل رایگان به توافق برسیم چی؟
+B|That's closer. Could you also bring delivery down to three weeks?|نزدیک‌تره. می‌تونید تحویلو هم به سه هفته برسونید؟
+A|Three and a half is our limit.|سه و نیم حد ماست.
+B|Then we have a deal. Send over the revised quote.|پس معامله انجام شد. پیش‌فاکتور اصلاح‌شده رو بفرستید.
++ per unit|هر واحد
++ at that volume|با این حجم
++ What can you do on price?|روی قیمت چی کار می‌تونید بکنید؟
++ the gap matters|این فاصله مهمه
++ a quality guarantee|ضمانت کیفیت
++ Not quite.|نه کاملاً.
++ met at|روی ... به توافق رسیدن
++ bring delivery down|زمان تحویلو کم کردن
++ the revised quote|پیش‌فاکتور اصلاح‌شده
+! Can you lower the price?|What can you do on price?|روش غیرمستقیم و حرفه‌ای برای درخواست تخفیف.
+
+@ C1-15|4|🎓 مذاکره‌ی پیشنهاد کاری|پیشنهاد شغلی گرفته‌اید و درباره‌ی شرایط مذاکره می‌کنید.|HR manager
+A|We're delighted to offer you the role. Do you have any questions about the package?|خوشحالیم این نقشو به شما پیشنهاد بدیم. درباره‌ی بسته‌ی مزایا سؤالی دارید؟
+B|Thank you, I'm genuinely excited. I did want to discuss the base salary.|ممنون، واقعاً هیجان‌زده‌ام. می‌خواستم درباره‌ی حقوق پایه صحبت کنم.
+A|Of course. What did you have in mind?|حتماً. چی در نظرتون بود؟
+B|Based on my research and experience, I was expecting something closer to eighty-five.|بر اساس تحقیق و تجربه‌م، انتظار یه چیزی نزدیک‌تر به هشتاد و پنج داشتم.
+A|Our budget for this level tops out at eighty.|بودجه‌ی ما برای این سطح حداکثر هشتاده.
+B|I understand. Is there flexibility elsewhere, such as a signing bonus or extra leave?|متوجهم. جای دیگه انعطاف هست، مثل پاداش امضا یا مرخصی اضافه؟
+A|We could offer a five-thousand signing bonus.|می‌تونیم پنج هزار پاداش امضا پیشنهاد بدیم.
+B|That helps. Could we also agree to a salary review after six months?|کمک می‌کنه. می‌تونیم روی بازبینی حقوق بعد از شش ماه هم توافق کنیم؟
+A|I think that's reasonable. I'll put it in writing.|فکر می‌کنم منطقیه. کتبی‌اش می‌کنم.
+B|Wonderful. Then I'm happy to accept.|عالیه. پس با کمال میل قبول می‌کنم.
++ the package|بسته‌ی مزایا
++ the base salary|حقوق پایه
++ What did you have in mind?|چی در نظرتون بود؟
++ something closer to|یه چیزی نزدیک‌تر به
++ tops out at|حداکثرش ... ـه
++ flexibility elsewhere|انعطاف جای دیگه
++ a signing bonus|پاداش امضای قرارداد
++ a salary review|بازبینی حقوق
++ put it in writing|کتبی کردن
+! The maximum is eighty.|It tops out at eighty.|top out at یعنی به سقف رسیدن.
+
+@ C1-15|5|🚘 خرید ماشین دست‌دوم|از یک فروشنده‌ی خصوصی ماشین دست‌دوم می‌خرید.|Seller
+A|She's in great condition. I'm asking nine thousand.|ماشین وضعش عالیه. نه هزار می‌خوام.
+B|She's lovely. I did notice the tires will need replacing soon.|قشنگه. ولی متوجه شدم لاستیک‌ها به‌زودی باید عوض بشن.
+A|They've got a bit of life left.|یه‌کم عمر دارن هنوز.
+B|Maybe a few months. And the service history has a gap from last year.|شاید چند ماه. و سابقه‌ی سرویس از سال گذشته یه وقفه داره.
+A|I was traveling a lot. Nothing went wrong, though.|زیاد سفر بودم. ولی هیچ مشکلی پیش نیومد.
+B|I believe you, but I'd need to factor in an inspection.|حرفتو باور دارم، ولی باید هزینه‌ی بازرسی رو هم حساب کنم.
+A|So what's your offer?|پس پیشنهادت چیه؟
+B|Eight thousand, cash, and I can collect it this weekend.|هشت هزار، نقد، و می‌تونم این آخر هفته ببرمش.
+A|Eight and a half and it's yours.|هشت و نیم و مال تو.
+B|Let's split the difference: eight two-fifty, and we shake on it now.|اختلافو نصف کنیم: هشت و دویست و پنجاه، و همین الان دست می‌دیم.
++ in great condition|در وضعیت عالی
++ I'm asking...|... می‌خوام (قیمت)
++ will need replacing|باید عوض بشن
++ a bit of life left|یه‌کم عمر باقی‌مونده
++ the service history|سابقه‌ی سرویس
++ factor in|در محاسبه آوردن
++ and it's yours|و مال تو
++ split the difference|اختلافو نصف کردن
++ shake on it|دست دادن (برای توافق)
+! Include in the calculation.|I'd need to factor in an inspection.|factor in یعنی چیزی را در تصمیم یا محاسبه لحاظ کردن.
+
+@ C1-16|2|🎓 سخنرانی فارغ‌التحصیلی|در جشن فارغ‌التحصیلی یک دوست، به افتخارش جام بلند می‌کنید.|Guest
+A|Could I have everyone's attention for a moment?|می‌تونم یه لحظه توجه همه رو داشته باشم؟
+B|Speech! Speech!|سخنرانی! سخنرانی!
+A|Five years ago, Nima told me he'd never finish a thesis. He said it twice a week.|پنج سال پیش، نیما بهم گفت هیچ‌وقت پایان‌نامه‌شو تموم نمی‌کنه. هفته‌ای دو بار می‌گفتش.
+B|Three times, on bad weeks!|هفته‌های بد، سه بار!
+A|And yet, here we are. Dr. Nima, if you please.|و با این حال، این‌جاییم. دکتر نیما، اگه اجازه بدید.
+B|Don't call me that, it's weird.|اینو صدام نکن، عجیبه.
+A|Get used to it. Nima, your stubbornness has finally paid off.|عادت کن. نیما، یکدندگیت بالاخره نتیجه داد.
+B|I'll take that as a compliment.|به‌عنوان تعریف قبولش می‌کنم.
+A|It was meant as one. So, raise your glasses: to Nima, and to never quitting.|همین منظورم بود. پس جام‌ها رو بالا ببرید: به سلامتی نیما، و به سلامتی هیچ‌وقت تسلیم نشدن.
+B|To never quitting!|به سلامتی هیچ‌وقت تسلیم نشدن!
++ Could I have everyone's attention?|می‌تونم توجه همه رو داشته باشم؟
++ And yet, here we are.|و با این حال، این‌جاییم.
++ if you please|اگه اجازه بدید
++ Get used to it.|عادت کن.
++ has finally paid off|بالاخره نتیجه داد
++ I'll take that as a compliment.|به‌عنوان تعریف قبولش می‌کنم.
++ It was meant as one.|همین منظورم بود.
++ never quitting|هیچ‌وقت تسلیم نشدن
+! It gave results.|Your stubbornness has paid off.|pay off یعنی تلاش‌ها به نتیجه رسیدن.
+
+@ C1-16|3|👴 بازنشستگی همکار|در مهمانی بازنشستگی همکار قدیمی سخنرانی کوتاهی می‌کنید.|Colleague
+A|Thirty-two years. I'm told that's longer than some of our servers have existed.|سی و دو سال. شنیدم این از عمر بعضی سرورهامون بیشتره.
+B|Some of them are older than me, actually.|بعضیاشون در واقع از من پیرترن.
+A|When I joined, Mr. Karimi was the one who showed me where everything was, including the good coffee.|وقتی اومدم، آقای کریمی بود که جای همه‌چیو نشونم داد، از جمله قهوه‌ی خوب.
+B|A closely guarded secret.|یه راز شدیداً محافظت‌شده.
+A|He also taught me that patience solves more problems than panic.|بهم یاد داد که صبر از هول کردن مشکلات بیشتری رو حل می‌کنه.
+B|Took me thirty years to learn it myself.|خودم سی سال طول کشید یادش بگیرم.
+A|We'll miss your calm, your stories, and frankly, your spreadsheets.|دلمون برای آرامشت، داستان‌هات و راستش، صفحه‌گسترده‌هات تنگ می‌شه.
+B|They're all on the shared drive. Guard them well.|همه‌شون تو درایو مشترکن. خوب ازشون مراقبت کنید.
+A|We will. Everyone, to Mr. Karimi: may your retirement be long and gloriously unscheduled.|حتماً. همگی، به سلامتی آقای کریمی: امیدوارم بازنشستگیت طولانی و به‌طرز باشکوهی بی‌برنامه باشه.
+B|I'll drink to that.|به سلامتی همین.
++ I'm told that...|شنیدم که...
++ a closely guarded secret|یه راز شدیداً محافظت‌شده
++ patience solves more problems than panic|صبر از هول کردن مشکلات بیشتری حل می‌کنه
++ It took me thirty years.|سی سال طول کشید.
++ We'll miss your...|دلمون برای ... ـت تنگ می‌شه.
++ frankly|راستش / صادقانه
++ Guard them well.|خوب ازشون مراقبت کنید.
++ gloriously unscheduled|به‌طرز باشکوهی بی‌برنامه
++ I'll drink to that.|به سلامتی همین.
+! I agree with that toast.|I'll drink to that.|جمله‌ی رایج برای موافقت با یک آرزو یا حرف خوب.
+
+@ C1-16|4|👶 جشن تولد نوزاد|در جشن تولد اولین فرزند دوستانتان چند کلمه صحبت می‌کنید.|Friend
+A|I promise I'll keep this short, because the guest of honor needs a nap.|قول می‌دم کوتاه بگم، چون مهمون افتخاری باید چرت بزنه.
+B|So do the parents!|پدر مادرش هم همین‌طور!
+A|Sam and Leila, we've watched you become parents this year, and it's been remarkable.|سام و لیلا، امسال دیدیم چطور پدر و مادر شدید و فوق‌العاده بود.
+B|Remarkably sleepless.|به‌طرز فوق‌العاده‌ای بی‌خواب.
+A|You've handled every sleepless night with more grace than I handle a Monday.|هر شب بی‌خوابی رو با وقاری بیشتر از من در برابر دوشنبه مدیریت کردید.
+B|Grace is a generous word for it.|وقار کلمه‌ی سخاوتمندانه‌ایه براش.
+A|And little Darya, you have no idea how lucky you are. You'll figure it out.|و دریا کوچولو، نمی‌دونی چقدر خوش‌شانسی. می‌فهمی بعداً.
+B|Hopefully before she's a teenager.|امیدوارم قبل از نوجوونیش.
+A|So, to Darya, and to the two tired, wonderful people raising her.|پس به سلامتی دریا، و دو آدم خسته و فوق‌العاده‌ای که بزرگش می‌کنن.
+B|To Darya!|به سلامتی دریا!
++ I'll keep this short.|کوتاه می‌گم.
++ needs a nap|باید چرت بزنه
++ it's been remarkable|فوق‌العاده بود
++ sleepless nights|شب‌های بی‌خوابی
++ with more grace|با وقار بیشتر
++ a generous word for it|کلمه‌ی سخاوتمندانه‌ای براش
++ You'll figure it out.|بعداً می‌فهمی.
++ raising her|بزرگ کردنش
+! I will speak briefly.|I promise I'll keep this short.|شروع رایج و دوستانه برای سخنرانی‌های کوتاه.
+
+@ C1-16|5|🏢 افتتاح دفتر جدید|به‌عنوان مدیر، در افتتاح دفتر جدید از تیم تشکر می‌کنید.|Team member
+A|A year ago, this was an empty floor with bad lighting and one very sad plant.|یه سال پیش، این‌جا یه طبقه‌ی خالی با نور بد و یه گیاه خیلی غمگین بود.
+B|The plant is still with us!|گیاه هنوز با ماست!
+A|Against all odds. Much like this team.|برخلاف همه‌ی پیش‌بینی‌ها. خیلی شبیه این تیم.
+B|Ouch, but fair.|آخ، ولی منصفانه.
+A|We grew from six people to forty, and we did it without losing what made us us.|از شش نفر به چهل نفر رسیدیم و این کارو بدون از دست دادن چیزی که ما رو ما می‌کرد انجام دادیم.
+B|The terrible Friday puns?|جناس‌های افتضاح جمعه؟
+A|Especially those. None of this happens without each of you.|مخصوصاً اونا. هیچ‌کدوم از اینا بدون تک‌تک شما اتفاق نمی‌افتاد.
+B|You're going to make us emotional.|داری احساساتیمون می‌کنی.
+A|Then quickly, before anyone cries: to the team, and to the next chapter.|پس سریع، قبل از این‌که کسی گریه کنه: به سلامتی تیم و فصل بعدی.
+B|To the next chapter!|به سلامتی فصل بعدی!
++ an empty floor|یه طبقه‌ی خالی
++ still with us|هنوز با ماست
++ against all odds|برخلاف همه‌ی پیش‌بینی‌ها
++ Ouch, but fair.|آخ، ولی منصفانه.
++ what made us us|چیزی که ما رو ما می‌کرد
++ None of this happens without you.|هیچ‌کدوم از اینا بدون شما اتفاق نمی‌افتاد.
++ make us emotional|احساساتیمون کردن
++ the next chapter|فصل بعدی
+! Despite great difficulty.|against all odds|against all odds یعنی با وجود احتمال کم موفقیت.
+
+@ C1-17|2|🗣️ لهجه و هویت|یک همکار درباره‌ی لهجه‌تان می‌پرسد و درباره‌ی هویت صحبت می‌کنید.|Colleague
+A|Can I ask where your accent's from? I can't quite place it.|می‌تونم بپرسم لهجه‌ت مال کجاست؟ نمی‌تونم دقیق تشخیصش بدم.
+B|I'm from Iran originally, but I lived in Germany for six years.|اصالتاً ایرانی‌ام، ولی شش سال تو آلمان زندگی کردم.
+A|That explains the mix. Do you feel more Iranian or more European now?|این ترکیبو توضیح می‌ده. الان بیشتر حس ایرانی بودن داری یا اروپایی؟
+B|It depends on the day, honestly. And on who's asking.|راستش بستگی به روز داره. و به این‌که کی می‌پرسه.
+A|That sounds complicated.|پیچیده به نظر میاد.
+B|It used to bother me. I felt like a guest everywhere.|قبلاً اذیتم می‌کرد. حس می‌کردم همه‌جا مهمونم.
+A|And now?|و حالا؟
+B|Now I see it as having two homes rather than none.|حالا به‌عنوان داشتن دو خونه می‌بینمش، به‌جای هیچی.
+A|That's a beautiful way to put it.|طرز بیان قشنگیه.
+B|It took a while to get there. Accents are just the part people can hear.|یه مدت طول کشید تا به این برسم. لهجه فقط بخشیه که آدما می‌تونن بشنون.
++ I can't quite place it.|نمی‌تونم دقیق تشخیصش بدم.
++ originally|اصالتاً
++ That explains the mix.|این ترکیبو توضیح می‌ده.
++ It depends on the day.|بستگی به روز داره.
++ It used to bother me.|قبلاً اذیتم می‌کرد.
++ a guest everywhere|همه‌جا مهمون
++ two homes rather than none|دو خونه به‌جای هیچی
++ a beautiful way to put it|طرز بیان قشنگ
+! I can't identify it.|I can't quite place it.|place در این‌جا یعنی تشخیص دادن منشأ چیزی.
+
+@ C1-17|3|🍲 غذای مادری|با دوستی مهاجر درباره‌ی نقش غذا در حفظ هویت صحبت می‌کنید.|Friend
+A|Every Friday, I still cook ghormeh sabzi, even if I'm alone.|هر جمعه هنوز قورمه‌سبزی می‌پزم، حتی اگه تنها باشم.
+B|That's lovely. Is it about taste, or something deeper?|قشنگه. موضوع طعمه یا یه چیز عمیق‌تر؟
+A|Deeper, I think. The smell takes me straight back to my mother's kitchen.|فکر کنم عمیق‌تر. بوش منو مستقیم برمی‌گردونه به آشپزخونه‌ی مادرم.
+B|Food is memory in a way nothing else is.|غذا به شکلی حافظه‌ست که هیچ چیز دیگه نیست.
+A|Exactly. Finding the right herbs here was a mission, though.|دقیقاً. ولی پیدا کردن سبزی مناسب این‌جا یه مأموریت بود.
+B|Did you ever find them?|بالاخره پیدا کردی؟
+A|In a tiny shop run by an Afghan family. Now we're practically related.|تو یه مغازه‌ی کوچیک که یه خانواده‌ی افغان می‌چرخوندنش. حالا عملاً فامیلیم.
+B|So the dish built you a new community, too.|پس این غذا یه جامعه‌ی جدید هم برات ساخت.
+A|I hadn't thought of it that way, but yes.|این‌طوری بهش فکر نکرده بودم، ولی بله.
+B|Next Friday, I'm inviting myself.|جمعه‌ی بعد، خودمو دعوت می‌کنم.
++ even if I'm alone|حتی اگه تنها باشم
++ something deeper|یه چیز عمیق‌تر
++ takes me straight back|منو مستقیم برمی‌گردونه
++ Food is memory.|غذا حافظه‌ست.
++ a mission|یه مأموریت
++ run by|که ... می‌چرخوننش
++ practically related|عملاً فامیل
++ I'm inviting myself.|خودمو دعوت می‌کنم.
+! We are almost family.|Now we're practically related.|practically یعنی «تقریباً / عملاً».
+
+@ C1-17|4|👧 فرزند دوزبانه|با پدر یا مادر دیگری درباره‌ی دوزبانه بزرگ کردن بچه صحبت می‌کنید.|Parent
+A|My daughter answers me in English even when I speak Persian.|دخترم حتی وقتی فارسی حرف می‌زنم، به انگلیسی جوابمو می‌ده.
+B|Very common. School wins most of the time.|خیلی رایجه. معمولاً مدرسه برنده می‌شه.
+A|I worry she'll lose the language completely.|نگرانم زبانو کاملاً از دست بده.
+B|She still understands you, which is a huge foundation.|هنوز حرفتو می‌فهمه، که یه پایه‌ی بزرگه.
+A|True. But I want her to feel it's hers, not just mine.|درسته. ولی می‌خوام حس کنه زبان مال خودشه، نه فقط مال من.
+B|We found that stories and music worked better than rules.|ما فهمیدیم داستان و موسیقی بهتر از قانون جواب می‌ده.
+A|Rules made it a chore, didn't they?|قانون‌ها کارو به یه وظیفه تبدیل کرد، نه؟
+B|Completely. Once it felt like fun, our son started using it on his own.|کاملاً. وقتی حس سرگرمی داد، پسرمون خودش شروع کرد به استفاده.
+A|Maybe I'll try Persian cartoons this weekend.|شاید این آخر هفته کارتون فارسی امتحان کنم.
+B|Good idea. Pressure is the enemy; curiosity is the cure.|ایده‌ی خوبیه. فشار دشمنه؛ کنجکاوی درمانه.
++ even when I speak Persian|حتی وقتی فارسی حرف می‌زنم
++ School wins.|مدرسه برنده می‌شه.
++ lose the language|زبانو از دست دادن
++ a huge foundation|یه پایه‌ی بزرگ
++ it's hers, not just mine|مال خودشه، نه فقط مال من
++ worked better than rules|بهتر از قانون جواب داد
++ a chore|یه وظیفه‌ی خسته‌کننده
++ on his own|خودش / بدون کمک
+! An annoying task.|It became a chore.|chore کار روزمره و معمولاً خسته‌کننده است.
+
+@ C1-17|5|✈️ بازگشت به وطن|بعد از سال‌ها به ایران برگشته‌اید و با دوست قدیمی درباره‌ی احساس غریبگی حرف می‌زنید.|Old friend
+A|You've been back a month. Does it feel like home again?|یه ماهه برگشتی. دوباره حس خونه می‌ده؟
+B|Strangely, not quite. The streets are the same, but I'm not.|عجیبه، نه کاملاً. خیابونا همونن، ولی من همون نیستم.
+A|What's changed most?|بیشتر از همه چی عوض شده؟
+B|My sense of humor, maybe. Half my jokes don't land anymore.|شاید شوخ‌طبعیم. نصف شوخی‌هام دیگه نمی‌گیره.
+A|Ha, we noticed. You laugh at things none of us find funny.|ها، فهمیدیم. به چیزایی می‌خندی که هیچ‌کدوممون خنده‌دار نمی‌دونیم.
+B|There's a word for it: reverse culture shock.|یه اسم داره: شوک فرهنگی معکوس.
+A|I didn't know that was a thing.|نمی‌دونستم همچین چیزی وجود داره.
+B|It caught me off guard. You expect to struggle abroad, not at home.|غافلگیرم کرد. انتظار داری تو خارج سختی بکشی، نه تو خونه.
+A|Give it time. We'll get your old jokes working again.|بهش زمان بده. شوخی‌های قدیمیتو دوباره راه می‌ندازیم.
+B|Or you'll learn my new ones. Either way, I'm glad to be back.|یا شما شوخی‌های جدیدمو یاد می‌گیرید. در هر صورت، خوشحالم که برگشتم.
++ I'm not the same.|من همون نیستم.
++ Jokes don't land.|شوخی‌ها نمی‌گیره.
++ reverse culture shock|شوک فرهنگی معکوس
++ I didn't know that was a thing.|نمی‌دونستم همچین چیزی وجود داره.
++ It caught me off guard.|غافلگیرم کرد.
++ struggle abroad|تو خارج سختی کشیدن
++ Give it time.|بهش زمان بده.
++ either way|در هر صورت
+! The joke was not successful.|The joke didn't land.|land برای شوخی یعنی خنداندن و اثر گذاشتن.
+
+@ C1-18|2|😤 همکار پرحرف در جلسه|دوستتان از همکاری که همیشه وسط حرف می‌پرد شکایت می‌کند.|Friend
+A|He interrupted me four times in one meeting. Four!|تو یه جلسه چهار بار وسط حرفم پرید. چهار بار!
+B|That's maddening. Did anyone else notice?|دیوونه‌کننده‌ست. کس دیگه‌ای متوجه شد؟
+A|Everyone noticed. Nobody said anything.|همه متوجه شدن. هیچ‌کس چیزی نگفت.
+B|Classic. Everyone's relieved it's not them.|کلاسیک. همه خیالشون راحته که خودشون نیستن.
+A|I'm tempted to just talk over him next time.|وسوسه شدم دفعه‌ی بعد صدامو روی صداش ببرم.
+B|Satisfying, but it might make you look like the problem.|رضایت‌بخشه، ولی ممکنه تو رو مشکل‌ساز جلوه بده.
+A|So what, I just let him?|خب که چی، بذارم ادامه بده؟
+B|No. Try "I'd like to finish my point," calmly, then carry on.|نه. با آرامش بگو «می‌خوام حرفمو تموم کنم» و ادامه بده.
+A|Calm and immovable. I like that.|آروم و تزلزل‌ناپذیر. خوشم میاد.
+B|And if it keeps happening, mention it to your manager privately.|و اگه ادامه پیدا کرد، خصوصی به مدیرت بگو.
++ That's maddening.|دیوونه‌کننده‌ست.
++ Nobody said anything.|هیچ‌کس چیزی نگفت.
++ Classic.|کلاسیک. (همیشه همینه)
++ I'm tempted to...|وسوسه شدم...
++ talk over him|صدامو روی صداش بردن
++ I'd like to finish my point.|می‌خوام حرفمو تموم کنم.
++ carry on|ادامه دادن
++ calm and immovable|آروم و تزلزل‌ناپذیر
++ mention it privately|خصوصی مطرحش کردن
+! You stopped me while speaking.|He kept interrupting me.|interrupt رسمی‌تر است؛ cut me off محاوره‌ای‌تر.
+
+@ C1-18|3|📧 ایمیل‌های نیمه‌شب|دوستتان از مدیری که شب‌ها ایمیل فوری می‌فرستد گلایه دارد.|Friend
+A|My boss sent me an "urgent" email at midnight. About font sizes.|رئیسم نصف‌شب یه ایمیل «فوری» فرستاد. درباره‌ی اندازه‌ی فونت.
+B|Font sizes. At midnight. Truly a matter of life and death.|اندازه‌ی فونت. نصف‌شب. واقعاً مسئله‌ی مرگ و زندگی.
+A|And he followed up at seven asking why I hadn't replied.|و ساعت هفت پیگیری کرد که چرا جواب ندادم.
+B|Wow. Has he always been like this?|وای. همیشه همین‌طور بوده؟
+A|Since the reorganization. I think he's under pressure himself.|از وقت تجدید ساختار. فکر کنم خودش زیر فشاره.
+B|That might explain it, but it doesn't excuse it.|ممکنه توضیحش بده، ولی توجیهش نمی‌کنه.
+A|Exactly. I'm exhausted.|دقیقاً. خسته‌ام.
+B|Could you agree on what counts as truly urgent?|می‌تونید روی این‌که چی واقعاً فوریه توافق کنید؟
+A|Maybe. If I frame it as being more productive for him.|شاید. اگه مطرحش کنم به‌عنوان بهره‌وری بیشتر برای خودش.
+B|Smart. Make it his idea, and you might get your evenings back.|زیرکانه‌ست. بذار ایده‌ی خودش به نظر بیاد، شاید عصرهاتو پس بگیری.
++ a matter of life and death|مسئله‌ی مرگ و زندگی
++ followed up|پیگیری کرد
++ Has he always been like this?|همیشه همین‌طور بوده؟
++ the reorganization|تجدید ساختار
++ under pressure himself|خودش زیر فشاره
++ It doesn't excuse it.|توجیهش نمی‌کنه.
++ what counts as urgent|چی فوری حساب می‌شه
++ Make it his idea.|بذار ایده‌ی خودش به نظر بیاد.
++ get your evenings back|عصرهاتو پس گرفتن
+! The reason is clear but still wrong.|It explains it, but it doesn't excuse it.|تمایز explain و excuse در بحث‌های اخلاقی رایج است.
+
+@ C1-18|4|🏆 دزدیدن اعتبار کار|کسی اعتبار ایده‌ی دوستتان را به نام خودش زده است.|Friend
+A|She presented my idea to the director as if it were hers.|ایده‌ی منو به مدیر ارشد طوری ارائه داد انگار مال خودشه.
+B|Seriously? Word for word?|جدی؟ کلمه‌به‌کلمه؟
+A|Practically. Same slides, new name on the front.|تقریباً. همون اسلایدها، اسم جدید روی صفحه‌ی اول.
+B|That's beyond frustrating. Do you have proof it was yours?|فراتر از ناامیدکننده‌ست. مدرکی داری که مال تو بوده؟
+A|My original email to her, with the draft attached.|ایمیل اصلیم بهش، با پیش‌نویس پیوست.
+B|Good. Don't go in all guns blazing, though.|خوبه. ولی با تمام قوا حمله نکن.
+A|Why not? She deserves it.|چرا نه؟ حقشه.
+B|Maybe, but you want to look like the professional in the room.|شاید، ولی می‌خوای حرفه‌ای‌ترین آدم جمع به نظر بیای.
+A|So, what, a calm conversation first?|خب، یعنی اول یه گفتگوی آروم؟
+B|Yes, and in future, share ideas in group threads, so there's a record.|بله، و در آینده ایده‌ها رو تو گفتگوهای گروهی به اشتراک بذار که سابقه بمونه.
++ as if it were hers|انگار مال خودشه
++ word for word|کلمه‌به‌کلمه
++ beyond frustrating|فراتر از ناامیدکننده
++ proof it was yours|مدرک این‌که مال تو بوده
++ with the draft attached|با پیش‌نویس پیوست
++ all guns blazing|با تمام قوا / پرخاشگرانه
++ She deserves it.|حقشه.
++ the professional in the room|حرفه‌ای‌ترین آدم جمع
++ so there's a record|که سابقه بمونه
+! Don't attack aggressively.|Don't go in all guns blazing.|all guns blazing یعنی با شدت و بدون ملاحظه وارد شدن.
+
+@ C1-18|5|🔄 تغییرات بی‌پایان|دوستتان از مدیری که مدام اولویت‌ها را عوض می‌کند خسته است.|Friend
+A|We changed direction three times this month. Three.|این ماه سه بار مسیرو عوض کردیم. سه بار.
+B|That's exhausting. Does he explain why?|خسته‌کننده‌ست. توضیح می‌ده چرا؟
+A|Something about "staying agile." It feels more like chaos.|یه چیزی درباره‌ی «چابک موندن». بیشتر شبیه هرج‌ومرجه.
+B|Agile and chaotic are easy to confuse from the top.|از بالا، چابک و آشفته راحت با هم اشتباه گرفته می‌شن.
+A|Ha. Half the team's stopped caring. Why finish anything?|ها. نصف تیم دیگه براشون مهم نیست. چرا چیزیو تموم کنیم؟
+B|That's the real cost. Morale, not time.|هزینه‌ی واقعی همینه. روحیه، نه زمان.
+A|Should I say something?|باید چیزی بگم؟
+B|I would, framed around results: what you've lost to the changes.|من می‌گفتم، با محوریت نتایج: چی رو به‌خاطر تغییرات از دست دادید.
+A|With numbers, so it's not just me complaining.|با عدد، که فقط غر زدن من نباشه.
+B|Exactly. Data is harder to dismiss than frustration.|دقیقاً. نادیده گرفتن داده سخت‌تر از ناامیدیه.
++ changed direction|مسیرو عوض کردیم
++ staying agile|چابک موندن
++ It feels more like chaos.|بیشتر شبیه هرج‌ومرجه.
++ from the top|از بالا (مدیریت)
++ stopped caring|دیگه براشون مهم نیست
++ the real cost|هزینه‌ی واقعی
++ morale|روحیه
++ framed around results|با محوریت نتایج
++ harder to dismiss|نادیده گرفتنش سخت‌تر
+! Don't just complain.|Data is harder to dismiss than frustration.|dismiss یعنی رد کردن یا جدی نگرفتن.
+
+@ C1-19|2|☔ تعطیلات بارانی|همکار انگلیسی از سفرش که خراب شده با کم‌گویی تعریف می‌کند.|British colleague
+A|How was the camping trip?|سفر کمپینگ چطور بود؟
+B|Bit damp.|یه‌کم نمناک.
+A|Damp? I saw the news. There was a flood!|نمناک؟ خبرو دیدم. سیل اومد!
+B|Well, the tent did float for a while. Rather peacefully, actually.|خب، چادر یه مدت شناور بود. در واقع نسبتاً آروم.
+A|You're joking. Were you okay?|شوخی می‌کنی. حالت خوب بود؟
+B|Perfectly fine. Lost a shoe. And most of my dignity.|کاملاً خوب. یه لنگه کفش گم کردم. و بیشتر آبرومو.
+A|Would you go again?|دوباره می‌ری؟
+B|I might give it a year or two.|شاید یکی دو سال بهش فرصت بدم.
+A|In Iran we'd call that a disaster.|ما تو ایران به اون می‌گیم فاجعه.
+B|We call it "not ideal." Same thing, really.|ما بهش می‌گیم «نه چندان ایده‌آل». در واقع همون چیزه.
++ a bit damp|یه‌کم نمناک (کم‌گویی)
++ for a while|یه مدت
++ rather peacefully|نسبتاً آروم
++ most of my dignity|بیشتر آبروم
++ I might give it a year or two.|شاید یکی دو سال بهش فرصت بدم.
++ not ideal|نه چندان ایده‌آل
++ Same thing, really.|در واقع همون چیزه.
++ Were you okay?|حالت خوب بود؟
+! It was a disaster.|It was not ideal.|کم‌گویی بریتانیایی: بیان فاجعه با کلمات بسیار ملایم.
+
+@ C1-19|3|🍽️ رستوران بد|با دوست انگلیسی‌تان از یک رستوران افتضاح بیرون می‌آیید.|British friend
+A|So, what did you think of the food?|خب، نظرت درباره‌ی غذا چی بود؟
+B|It was... interesting.|...جالب بود.
+A|"Interesting" sounds bad.|«جالب» بد به نظر میاد.
+B|Very perceptive. The soup was certainly a bold choice.|خیلی تیزبینی. سوپ قطعاً یه انتخاب جسورانه بود.
+A|Bold how?|جسورانه چطور؟
+B|I'm fairly sure it was cold on purpose. Possibly not.|تقریباً مطمئنم عمداً سرد بود. شایدم نه.
+A|And the waiter forgot us twice.|و پیشخدمت دو بار ما رو فراموش کرد.
+B|He was clearly on a spiritual journey. I didn't like to interrupt.|معلوم بود تو یه سفر معنوی بود. دلم نیومد مزاحم بشم.
+A|So we're never coming back.|پس دیگه برنمی‌گردیم.
+B|I wouldn't rush back, no.|عجله‌ای برای برگشتن ندارم، نه.
++ It was... interesting.|...جالب بود. (یعنی بد)
++ very perceptive|خیلی تیزبین
++ a bold choice|یه انتخاب جسورانه
++ on purpose|عمداً
++ possibly not|شایدم نه
++ a spiritual journey|سفر معنوی (طنز)
++ I didn't like to...|دلم نیومد...
++ I wouldn't rush back.|عجله‌ای برای برگشتن ندارم.
+! It was bad.|It was... interesting.|در انگلیسی بریتانیایی، interesting با مکث اغلب یعنی «بد».
+
+@ C1-19|4|📊 ارائه‌ی ناموفق|بعد از ارائه‌ای که خوب پیش نرفت، مدیر انگلیسی‌تان بازخورد می‌دهد.|British manager
+A|How do you think the presentation went?|فکر می‌کنی ارائه چطور پیش رفت؟
+B|Honestly? I thought it went well.|راستش؟ فکر کردم خوب پیش رفت.
+A|There were some good moments. Perhaps one or two areas to look at.|لحظات خوبی داشت. شاید یکی دو بخش که باید بررسی بشه.
+B|Oh. Which areas?|اوه. کدوم بخش‌ها؟
+A|The numbers section was a touch long. People drifted a little.|بخش اعداد یه ذره طولانی بود. آدما یه‌کم حواسشون پرت شد.
+B|Drifted? Like, a few people?|حواسشون پرت شد؟ یعنی چند نفر؟
+A|The director may have checked his phone once or twice. Or eleven times.|شاید مدیر ارشد یکی دو بار گوشیشو چک کرد. یا یازده بار.
+B|Ah. So it was quite bad, then.|آهان. پس خیلی بد بود.
+A|I wouldn't say bad. Let's say there's room for improvement.|نمی‌گم بد. بگیم جای پیشرفت داره.
+B|I'm learning to translate. That means "please fix it before Friday."|دارم ترجمه کردن یاد می‌گیرم. یعنی «لطفاً تا جمعه درستش کن».
++ one or two areas to look at|یکی دو بخش برای بررسی
++ a touch long|یه ذره طولانی
++ drifted|حواسشون پرت شد
++ checked his phone|گوشیشو چک کرد
++ So it was quite bad, then.|پس خیلی بد بود.
++ I wouldn't say...|نمی‌گم...
++ room for improvement|جای پیشرفت
++ I'm learning to translate.|دارم ترجمه کردن یاد می‌گیرم.
+! It was bad.|There's room for improvement.|بازخورد ملایم بریتانیایی؛ معنای واقعی اغلب جدی‌تر است.
+
+@ C1-19|5|🌡️ موج گرما|در یک روز بسیار گرم، همسایه‌ی انگلیسی‌تان درباره‌ی هوا حرف می‌زند.|British neighbor
+A|Bit warm today, isn't it?|امروز یه‌کم گرمه، نه؟
+B|It's forty degrees! My car door burned my hand.|چهل درجه‌ست! در ماشینم دستمو سوزوند.
+A|Gosh. Well, it's certainly warmer than usual.|ای بابا. خب، قطعاً گرم‌تر از معموله.
+B|You're very calm about this.|خیلی درباره‌ش آرومی.
+A|Not at all. Inside, I'm melting. I just don't like to make a fuss.|اصلاً. از درون دارم آب می‌شم. فقط دوست ندارم شلوغش کنم.
+B|In Tehran, we'd all be complaining loudly together.|تو تهران همه با هم بلند غر می‌زدیم.
+A|That sounds rather therapeutic, actually.|راستش نسبتاً درمانی به نظر میاد.
+B|Want to try? Say "This heat is unbearable."|می‌خوای امتحان کنی؟ بگو «این گرما غیرقابل تحمله».
+A|This heat is... somewhat trying.|این گرما... تا حدی آزارنده‌ست.
+B|Close enough. We'll work on it.|کافیه. روش کار می‌کنیم.
++ Bit warm today, isn't it?|امروز یه‌کم گرمه، نه؟
++ warmer than usual|گرم‌تر از معمول
++ Inside, I'm melting.|از درون دارم آب می‌شم.
++ make a fuss|شلوغش کردن
++ complaining loudly|بلند غر زدن
++ rather therapeutic|نسبتاً درمانی
++ unbearable|غیرقابل تحمل
++ somewhat trying|تا حدی آزارنده
++ Close enough.|کافیه / همین بسه.
+! It's extremely hot.|It's a bit warm.|کم‌گویی درباره‌ی آب‌وهوا از ویژگی‌های فرهنگ بریتانیاست.
+
+@ C1-20|2|🎧 پادکست کتاب|در پادکست درباره‌ی کتابی که اخیراً خوانده‌اید صحبت می‌کنید.|Host
+A|Welcome back. Today, we're discussing a book you've been raving about.|خوش برگشتید. امروز درباره‌ی کتابی حرف می‌زنیم که کلی ازش تعریف کردی.
+B|Thanks for having me. I've been recommending it to anyone who'll listen.|ممنون که دعوتم کردی. به هر کی گوش بده توصیه‌ش کردم.
+A|For listeners who haven't read it, what's it about?|برای شنونده‌هایی که نخوندنش، درباره‌ی چیه؟
+B|On the surface, a family running a hotel. Underneath, it's about memory and regret.|در ظاهر، خانواده‌ای که یه هتل رو اداره می‌کنن. در عمق، درباره‌ی حافظه و پشیمونیه.
+A|What struck you most?|چی بیشتر از همه روت اثر گذاشت؟
+B|How little happens, and yet how gripping it is.|این‌که چقدر کم اتفاق می‌افته و با این حال چقدر میخکوب‌کننده‌ست.
+A|Some readers call it slow.|بعضی خواننده‌ها می‌گن کنده.
+B|Fair, but I'd say it's patient. It rewards attention.|منصفانه‌ست، ولی من می‌گم صبوره. به توجه پاداش می‌ده.
+A|Who would you recommend it to?|به کی توصیه‌ش می‌کنی؟
+B|Anyone who's ever wondered what their life might have been.|هر کسی که تا حالا فکر کرده زندگیش چی می‌تونست باشه.
++ raving about|کلی تعریف کردن از
++ I've been recommending it.|همه‌جا توصیه‌ش کردم.
++ anyone who'll listen|هر کی گوش بده
++ on the surface|در ظاهر
++ underneath|در عمق / در باطن
++ What struck you most?|چی بیشتر از همه روت اثر گذاشت؟
++ gripping|میخکوب‌کننده
++ It rewards attention.|به توجه پاداش می‌ده.
++ what their life might have been|زندگیشون چی می‌تونست باشه
+! It's slow.|It's patient.|جایگزین مثبت برای یک ویژگی که دیگران منفی می‌دانند.
+
+@ C1-20|3|💼 پادکست کارآفرینی|در پادکست کسب‌وکار درباره‌ی شکست استارتاپ قبلی‌تان صحبت می‌کنید.|Host
+A|Your first startup failed. Can you talk about that?|اولین استارتاپت شکست خورد. می‌تونی درباره‌ش حرف بزنی؟
+B|Happily, now. Two years ago, I couldn't have.|الان با کمال میل. دو سال پیش نمی‌تونستم.
+A|What went wrong?|چی اشتباه پیش رفت؟
+B|We built something brilliant that nobody actually needed.|یه چیز درخشان ساختیم که در واقع هیچ‌کس بهش نیاز نداشت.
+A|Ouch. How did you realize?|آخ. چطور فهمیدید؟
+B|Too late. We spent eighteen months building before talking to a single customer.|خیلی دیر. هجده ماه ساختیم قبل از این‌که با حتی یه مشتری حرف بزنیم.
+A|What's different this time?|این دفعه چی فرق داره؟
+B|We sold the product before we built it. If no one paid, we'd move on.|محصولو قبل از ساختنش فروختیم. اگه کسی پول نمی‌داد، می‌رفتیم سراغ بعدی.
+A|That takes humility.|فروتنی می‌خواد.
+B|Failure is an excellent teacher. Expensive, but excellent.|شکست معلم فوق‌العاده‌ایه. گرون، ولی فوق‌العاده.
++ Can you talk about that?|می‌تونی درباره‌ش حرف بزنی؟
++ I couldn't have.|نمی‌تونستم.
++ What went wrong?|چی اشتباه پیش رفت؟
++ nobody actually needed|در واقع هیچ‌کس نیاز نداشت
++ a single customer|حتی یه مشتری
++ we'd move on|می‌رفتیم سراغ بعدی
++ That takes humility.|فروتنی می‌خواد.
++ an excellent teacher|معلم فوق‌العاده
+! It failed.|It went wrong.|go wrong برای بیان اشتباه پیش رفتن کار.
+
+@ C1-20|4|🌍 پادکست سفر|مهمان پادکست سفر هستید و از یک تجربه‌ی تحول‌آفرین می‌گویید.|Host
+A|You've traveled to over forty countries. Which one changed you most?|به بیشتر از چهل کشور سفر کردی. کدوم بیشتر از همه تغییرت داد؟
+B|Surprisingly, it wasn't the most exotic. It was a small village in Portugal.|با کمال تعجب، عجیب‌ترینش نبود. یه روستای کوچیک تو پرتغال بود.
+A|Why there?|چرا اون‌جا؟
+B|I missed my bus and got stuck for three days with no Wi-Fi.|اتوبوسمو از دست دادم و سه روز بدون وای‌فای گیر افتادم.
+A|That sounds like a nightmare for most people.|برای بیشتر آدما شبیه کابوسه.
+B|At first, I was furious. Then an old fisherman invited me for dinner.|اولش عصبانی بودم. بعد یه ماهیگیر پیر برای شام دعوتم کرد.
+A|And that's when things shifted?|و اون موقع بود که اوضاع عوض شد؟
+B|Completely. We barely shared a language, but we talked for hours.|کاملاً. به‌زور یه زبان مشترک داشتیم، ولی ساعت‌ها حرف زدیم.
+A|What did you take away from it?|چی ازش یاد گرفتی؟
+B|That the best moments usually aren't on the itinerary.|این‌که بهترین لحظه‌ها معمولاً تو برنامه‌ی سفر نیستن.
++ changed you most|بیشتر از همه تغییرت داد
++ the most exotic|عجیب‌ترین / غریب‌ترین
++ got stuck|گیر افتادم
++ a nightmare|کابوس
++ At first, I was furious.|اولش عصبانی بودم.
++ things shifted|اوضاع عوض شد
++ barely shared a language|به‌زور یه زبان مشترک داشتیم
++ What did you take away from it?|چی ازش یاد گرفتی؟
++ on the itinerary|تو برنامه‌ی سفر
+! What did you learn?|What did you take away from it?|take away یعنی درس یا برداشت ماندگار.
+
+@ C1-20|5|🧘 پادکست سلامت روان|در پادکستی درباره‌ی فرسودگی شغلی و بهبودی خودتان صحبت می‌کنید.|Host
+A|You've spoken openly about burnout. What were the first signs?|درباره‌ی فرسودگی شغلی آشکارا حرف زدی. اولین نشونه‌ها چی بودن؟
+B|I stopped enjoying things I used to love. Even music felt like noise.|دیگه از چیزایی که قبلاً دوست داشتم لذت نمی‌بردم. حتی موسیقی مثل سروصدا بود.
+A|Did you recognize it at the time?|اون موقع تشخیصش دادی؟
+B|Not at all. I thought I just needed to push harder.|اصلاً. فکر می‌کردم فقط باید بیشتر تلاش کنم.
+A|What made you stop?|چی باعث شد متوقف بشی؟
+B|My sister sat me down and said, "You're not okay." It hit hard.|خواهرم منو نشوند و گفت «حالت خوب نیست». سخت بهم خورد.
+A|What helped most in recovery?|تو بهبودی چی بیشتر کمک کرد؟
+B|Therapy, and learning that rest isn't a reward. It's a requirement.|درمان، و یاد گرفتن این‌که استراحت پاداش نیست. یه ضرورته.
+A|What would you tell someone listening who feels the same?|به کسی که داره گوش می‌ده و همین حسو داره چی می‌گی؟
+B|You're not weak. You've just been strong for too long. Talk to someone.|ضعیف نیستی. فقط خیلی وقته قوی بودی. با یکی حرف بزن.
++ spoken openly about|آشکارا حرف زدن درباره‌ی
++ burnout|فرسودگی شغلی
++ felt like noise|مثل سروصدا بود
++ push harder|بیشتر تلاش کردن / فشار آوردن
++ sat me down|منو نشوند (برای حرف جدی)
++ It hit hard.|سخت بهم خورد.
++ Rest isn't a reward.|استراحت پاداش نیست.
++ It's a requirement.|یه ضرورته.
++ strong for too long|خیلی وقته قوی
+! It affected me deeply.|It hit hard.|hit hard یعنی تأثیر عاطفی شدید گذاشتن.

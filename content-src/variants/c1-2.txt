@@ -1,0 +1,507 @@
+@ C1-09|2|🎨 طراح در برابر توسعه‌دهنده|طراح و توسعه‌دهنده سر جزئیات بصری دعوا دارند و شما میانجی هستید.|Designer
+A|He keeps changing my designs without asking. It's disrespectful.|بدون پرسیدن طراحی‌هامو عوض می‌کنه. بی‌احترامیه.
+B|I hear you. Before we go further, can I ask what specifically changed?|می‌فهمم. قبل از این‌که جلوتر بریم، می‌تونم بپرسم دقیقاً چی عوض شد؟
+A|The spacing, the animations, half the colors.|فاصله‌ها، انیمیشن‌ها، نصف رنگ‌ها.
+B|Okay. And from his side, I understand some of those were hard to build in time.|باشه. و از طرف اون، فهمیدم بعضیاشون برای ساخت به‌موقع سخت بودن.
+A|Then he should say so, not just quietly change things.|پس باید بگه، نه این‌که بی‌سروصدا چیزا رو عوض کنه.
+B|That's fair. The real issue sounds like communication, not the designs themselves.|منصفانه‌ست. به نظر می‌رسه مشکل اصلی ارتباطه، نه خود طراحی‌ها.
+A|I suppose that's true.|فکر کنم درسته.
+B|What if any change to a design required a quick message to you first?|اگه هر تغییری تو طراحی اول یه پیام کوتاه به تو لازم داشته باشه چی؟
+A|That would solve most of it, honestly.|راستش بیشترشو حل می‌کنه.
+B|Great. Let's bring him in and agree on that together.|عالیه. بیاریمش و با هم روی این توافق کنیم.
++ It's disrespectful.|بی‌احترامیه.
++ Before we go further|قبل از این‌که جلوتر بریم
++ what specifically changed|دقیقاً چی عوض شد
++ from his side|از طرف اون
++ hard to build in time|ساختش به‌موقع سخته
++ quietly change things|بی‌سروصدا چیزا رو عوض کردن
++ the real issue|مشکل اصلی
++ the designs themselves|خود طراحی‌ها
++ bring him in|آوردنش (به جلسه)
+! The problem is not the designs.|The real issue sounds like communication.|میانجی مسئله را از افراد به فرایند منتقل می‌کند.
+
+@ C1-09|3|🕐 اختلاف سر ساعات کاری|یک همکار صبح‌زود کار می‌کند و دیگری شب‌ها؛ تنش پیش آمده.|Colleague
+A|She messages me at eleven p.m. and expects answers by eight a.m.|ساعت یازده شب بهم پیام می‌ده و انتظار داره تا هشت صبح جواب بدم.
+B|That sounds draining. Have you two talked about working hours?|خیلی خسته‌کننده به نظر میاد. شما دوتا درباره‌ی ساعات کاری حرف زدید؟
+A|Not directly. I didn't want to seem lazy.|نه مستقیم. نمی‌خواستم تنبل به نظر برسم.
+B|Setting boundaries isn't lazy. It's sustainable.|مرز گذاشتن تنبلی نیست. پایداریه.
+A|But she's a night owl, and I'm up at six. Neither of us is wrong.|ولی اون شب‌زنده‌داره و من ساعت شش بیدارم. هیچ‌کدوممون اشتباه نمی‌کنیم.
+B|Exactly. So it's about finding an overlap, not changing who you are.|دقیقاً. پس موضوع پیدا کردن هم‌پوشانیه، نه عوض کردن خودتون.
+A|An overlap?|هم‌پوشانی؟
+B|Say, ten to four, when you're both expected to respond. Outside that, messages can wait.|مثلاً ده تا چهار، که از هر دوتون انتظار پاسخ می‌ره. بیرون از اون، پیام‌ها می‌تونن صبر کنن.
+A|That's simple. Why didn't we think of that?|ساده‌ست. چرا به فکرمون نرسید؟
+B|Because you were both too busy being polite. Let's put it to her together.|چون هر دوتون سرگرم مؤدب بودن بودید. بیاید با هم بهش پیشنهاد بدیم.
++ That sounds draining.|خیلی خسته‌کننده به نظر میاد.
++ seem lazy|تنبل به نظر رسیدن
++ setting boundaries|مرز گذاشتن
++ It's sustainable.|پایداریه.
++ I'm up at six.|ساعت شش بیدارم.
++ finding an overlap|پیدا کردن هم‌پوشانی
++ messages can wait|پیام‌ها می‌تونن صبر کنن
++ put it to her|بهش پیشنهاد دادن
+! Make limits.|Set boundaries.|set boundaries یعنی مشخص کردن حد و مرزهای شخصی یا کاری.
+
+@ C1-09|4|💬 شایعه در تیم|دو همکار به‌خاطر یک شایعه از هم دلخورند و شما گفتگو را هدایت می‌کنید.|Colleague
+A|Thanks for sitting down with both of us. This has gotten awkward.|ممنون که با هر دومون نشستی. اوضاع معذب‌کننده شده.
+B|I appreciate you both being willing. Let's start with what each of you heard.|ممنونم که هر دو تمایل دارید. با چیزی که هر کدوم شنیدید شروع کنیم.
+A|I heard he told the manager I wasn't pulling my weight.|شنیدم به مدیر گفته من سهمم رو انجام نمی‌دم.
+B|And Ali, I understand you never actually said that?|و علی، فهمیدم تو هیچ‌وقت همچین چیزی نگفتی؟
+A|He says he didn't, but where did it come from, then?|می‌گه نگفته، ولی پس از کجا اومده؟
+B|Rumors tend to grow as they travel. What matters is what's true now.|شایعه‌ها معمولاً وقتی دهن‌به‌دهن می‌شن بزرگ‌تر می‌شن. مهم اینه که الان چی درسته.
+A|I just want to know he's not working against me.|فقط می‌خوام بدونم بر علیه من کار نمی‌کنه.
+B|That's a fair need. Ali, would you be willing to say that directly?|نیاز منصفانه‌ایه. علی، حاضری مستقیم اینو بگی؟
+A|If he does, I'm happy to move past it.|اگه بگه، خوشحال می‌شم ازش بگذرم.
+B|Good. In future, let's agree to raise concerns face to face, not through others.|خوبه. در آینده، توافق کنیم نگرانی‌ها رو رودررو مطرح کنیم، نه از طریق دیگران.
++ sitting down with both of us|با هر دومون نشستن
++ It's gotten awkward.|اوضاع معذب‌کننده شده.
++ pulling my weight|سهم خودمو انجام دادن
++ Rumors grow as they travel.|شایعه‌ها دهن‌به‌دهن بزرگ‌تر می‌شن.
++ working against me|بر علیه من کار کردن
++ a fair need|نیاز منصفانه
++ move past it|ازش گذشتن
++ face to face|رودررو
+! He does not do his part.|He isn't pulling his weight.|pull one's weight یعنی سهم خود را در کار گروهی انجام دادن.
+
+@ C1-09|5|💰 تقسیم پاداش|دو عضو تیم سر تقسیم پاداش پروژه اختلاف دارند.|Colleague
+A|I did seventy percent of the work. A fifty-fifty split isn't fair.|من هفتاد درصد کارو انجام دادم. تقسیم پنجاه‌پنجاه منصفانه نیست.
+B|I understand why that feels unbalanced. Can I ask how you measured that?|می‌فهمم چرا نامتوازن به نظر میاد. می‌تونم بپرسم چطور اندازه‌ش گرفتی؟
+A|Hours. I logged nearly twice as many.|ساعت‌ها. تقریباً دو برابر ثبت کردم.
+B|That's useful data. But Sara brought in the client in the first place, right?|داده‌ی مفیدیه. ولی سارا از اول مشتری رو آورد، درسته؟
+A|True. Without that, there's no project.|درسته. بدون اون، پروژه‌ای نبود.
+B|So there are two kinds of contribution here: effort and opportunity.|پس این‌جا دو نوع سهم هست: تلاش و فرصت.
+A|I hadn't thought of it like that.|این‌طوری بهش فکر نکرده بودم.
+B|What if hours counted for most of it, with a set share for securing the client?|اگه ساعت‌ها بیشترشو تعیین کنن، با یه سهم ثابت برای جذب مشتری چی؟
+A|Something like sixty-forty? I could accept that.|یه چیزی مثل شصت‌چهل؟ می‌تونم قبولش کنم.
+B|Let's check with her, then write it down so it's clear for next time.|بیاید با اونم چک کنیم، بعد بنویسیمش که دفعه‌ی بعد روشن باشه.
++ a fifty-fifty split|تقسیم پنجاه‌پنجاه
++ feels unbalanced|نامتوازن به نظر میاد
++ how you measured that|چطور اندازه‌ش گرفتی
++ logged|ثبت کردم
++ in the first place|از اول
++ effort and opportunity|تلاش و فرصت
++ securing the client|جذب مشتری
++ write it down|نوشتنش
+! In the beginning.|in the first place|in the first place یعنی «اصلاً از اول».
+
+@ C1-10|2|🤝 تعارض با همکار (STAR)|مصاحبه‌گر درباره‌ی موقعیتی می‌پرسد که با همکاری اختلاف داشتید.|Interviewer
+A|Tell me about a time you disagreed with a colleague.|درباره‌ی زمانی بگو که با یه همکار اختلاف نظر داشتی.
+B|Sure. In my last role, a senior engineer wanted to rebuild our app from scratch.|حتماً. تو شغل قبلیم، یه مهندس ارشد می‌خواست اپمونو از صفر بسازه.
+A|And you disagreed?|و تو مخالف بودی؟
+B|I did. We had a major release in six weeks, and a rebuild would've derailed it.|بودم. شش هفته بعد یه عرضه‌ی بزرگ داشتیم و بازسازی کامل از مسیر خارجش می‌کرد.
+A|How did you handle it?|چطور مدیریتش کردی؟
+B|I asked to understand his reasoning first. His concern was technical debt, which was valid.|اول خواستم منطقشو بفهمم. نگرانیش بدهی فنی بود که به‌جا بود.
+A|So what did you propose?|پس چی پیشنهاد دادی؟
+B|We shipped on time, then refactored the worst parts over two sprints.|به‌موقع عرضه کردیم، بعد بدترین بخش‌ها رو طی دو اسپرینت بازنویسی کردیم.
+A|And the outcome?|و نتیجه؟
+B|Release went smoothly, and crash rates dropped thirty percent after the refactor.|عرضه بی‌دردسر انجام شد و بعد از بازنویسی، نرخ خرابی سی درصد کم شد.
++ disagreed with a colleague|با یه همکار اختلاف نظر داشتن
++ from scratch|از صفر
++ derailed|از مسیر خارج کرد
++ How did you handle it?|چطور مدیریتش کردی؟
++ understand his reasoning|منطقشو فهمیدن
++ technical debt|بدهی فنی
++ refactored|بازنویسی کردیم (کد)
++ went smoothly|بی‌دردسر پیش رفت
+! From zero.|from scratch|from scratch یعنی از ابتدا، بدون استفاده از کار قبلی.
+
+@ C1-10|3|🏆 بزرگ‌ترین دستاورد|مصاحبه‌گر درباره‌ی دستاوردی که به آن افتخار می‌کنید می‌پرسد.|Interviewer
+A|What's an achievement you're particularly proud of?|دستاوردی که به‌طور خاص بهش افتخار می‌کنی چیه؟
+B|Turning around a project that was three months behind schedule.|برگردوندن پروژه‌ای که سه ماه از برنامه عقب بود.
+A|What was your role?|نقشت چی بود؟
+B|I was brought in as project lead after the previous lead left.|بعد از رفتن مدیر قبلی، به‌عنوان مدیر پروژه آورده شدم.
+A|What did you do first?|اول چی کار کردی؟
+B|I spoke to every team member individually to find out where things were stuck.|با تک‌تک اعضای تیم جداگانه حرف زدم تا بفهمم کجا گیر کرده.
+A|What did you discover?|چی کشف کردی؟
+B|Unclear priorities. Everyone was busy, but on different things.|اولویت‌های نامشخص. همه سرشون شلوغ بود، ولی روی چیزای متفاوت.
+A|And how did it end?|و چطور تموم شد؟
+B|We cut the scope by a third, aligned on one goal, and delivered just two weeks late.|دامنه رو یک‌سوم کم کردیم، روی یه هدف هم‌سو شدیم و فقط دو هفته دیرتر تحویل دادیم.
++ particularly proud of|به‌طور خاص بهش افتخار می‌کنم
++ turning around|برگردوندن (از وضعیت بد)
++ behind schedule|عقب از برنامه
++ was brought in|آورده شدم
++ individually|جداگانه / تک‌تک
++ where things were stuck|کجا گیر کرده بود
++ unclear priorities|اولویت‌های نامشخص
++ cut the scope by a third|دامنه رو یک‌سوم کم کردن
++ aligned on one goal|روی یه هدف هم‌سو شدن
+! Fixing a failing project.|turning around a project|turn around یعنی چیزی را از شکست به موفقیت رساندن.
+
+@ C1-10|4|😓 اشتباه بزرگ|مصاحبه‌گر می‌پرسد بزرگ‌ترین اشتباه کاری‌تان چه بوده.|Interviewer
+A|Tell me about a mistake you made and what you learned.|درباره‌ی اشتباهی که کردی و چیزی که یاد گرفتی بگو.
+B|Early in my career, I promised a client a feature without checking with engineering.|اوایل کارم، بدون هماهنگی با تیم فنی به یه مشتری یه ویژگی رو قول دادم.
+A|What happened?|چی شد؟
+B|It turned out to be three times harder than I'd assumed. We missed the deadline.|معلوم شد سه برابر سخت‌تر از چیزیه که فرض کرده بودم. مهلتو از دست دادیم.
+A|How did you respond?|چطور واکنش نشون دادی؟
+B|I called the client myself, took full responsibility, and offered a revised timeline.|خودم به مشتری زنگ زدم، مسئولیت کاملو پذیرفتم و یه زمان‌بندی اصلاح‌شده پیشنهاد دادم.
+A|Did you keep the client?|مشتری رو نگه داشتی؟
+B|We did, surprisingly. They said they valued the honesty.|بله، با کمال تعجب. گفتن صداقتو ارزشمند می‌دونن.
+A|And the lesson?|و درسش؟
+B|Never commit on someone else's behalf. Now I always loop in the team before promising anything.|هیچ‌وقت از طرف کس دیگه‌ای تعهد نده. الان همیشه قبل از قول دادن تیمو در جریان می‌ذارم.
++ early in my career|اوایل کارم
++ without checking with|بدون هماهنگی با
++ It turned out to be...|معلوم شد ...
++ took full responsibility|مسئولیت کاملو پذیرفتم
++ a revised timeline|زمان‌بندی اصلاح‌شده
++ They valued the honesty.|صداقتو ارزشمند دونستن.
++ on someone else's behalf|از طرف کس دیگه
++ loop in the team|تیمو در جریان گذاشتن
+! It became clear that...|It turned out to be three times harder.|turn out یعنی بعداً معلوم شدن.
+
+@ C1-10|5|🚀 ابتکار شخصی|مصاحبه‌گر می‌پرسد چه زمانی فراتر از وظیفه‌تان کار کردید.|Interviewer
+A|Give me an example of when you went beyond your job description.|یه مثال از وقتی که فراتر از شرح وظایفت کار کردی بزن.
+B|At my last company, onboarding new hires took almost a month.|تو شرکت قبلیم، آشناسازی نیروهای جدید تقریباً یه ماه طول می‌کشید.
+A|And that wasn't your responsibility?|و این مسئولیت تو نبود؟
+B|Not at all. I was in sales. But I noticed new colleagues were struggling.|اصلاً. من تو فروش بودم. ولی متوجه شدم همکارای جدید دارن سختی می‌کشن.
+A|So what did you do?|پس چی کار کردی؟
+B|I wrote a short guide in my own time, covering the questions I wish someone had answered for me.|تو وقت آزادم یه راهنمای کوتاه نوشتم که سؤالاتی رو پوشش می‌داد که کاش کسی جوابشونو بهم داده بود.
+A|How was it received?|چطور استقبال شد؟
+B|HR adopted it officially. Onboarding time dropped to about ten days.|منابع انسانی رسماً پذیرفتش. زمان آشناسازی به حدود ده روز رسید.
+A|That's impressive initiative.|ابتکار قابل‌توجهیه.
+B|Thank you. I just can't walk past a problem I know how to fix.|ممنون. فقط نمی‌تونم از کنار مشکلی که بلدم حلش کنم بی‌تفاوت رد بشم.
++ beyond your job description|فراتر از شرح وظایف
++ new hires|نیروهای جدید
++ in my own time|تو وقت آزادم
++ I wish someone had...|کاش کسی ... بود
++ How was it received?|چطور استقبال شد؟
++ adopted it officially|رسماً پذیرفتش
++ impressive initiative|ابتکار قابل‌توجه
++ walk past a problem|بی‌تفاوت از کنار مشکل رد شدن
+! Outside my tasks.|beyond my job description|job description شرح رسمی وظایف شغلی است.
+
+@ C1-11|2|📢 تماس با مشتری در بحران|به یک مشتری مهم درباره‌ی قطعی سرویس اطلاع می‌دهید.|Client
+A|Our checkout's been down for an hour. What's going on?|سیستم پرداختمون یه ساعته از کار افتاده. چی شده؟
+B|I'm sorry. We're aware, and it's our top priority right now.|متأسفم. خبر داریم و الان اولویت اول ماست.
+A|Do you know the cause?|علتشو می‌دونید؟
+B|We've traced it to a database issue. A fix is being deployed as we speak.|ردشو تا یه مشکل پایگاه داده گرفتیم. همین حالا که داریم حرف می‌زنیم راه‌حل داره اعمال می‌شه.
+A|How long until it's back?|چقدر طول می‌کشه تا برگرده؟
+B|We're estimating thirty minutes, but I'd rather under-promise. I'll update you every fifteen.|حدود سی دقیقه تخمین می‌زنیم، ولی ترجیح می‌دم کمتر قول بدم. هر پونزده دقیقه خبرتون می‌کنم.
+A|We're losing sales every minute.|هر دقیقه داریم فروش از دست می‌دیم.
+B|I understand. Once we're stable, we'll discuss service credits for the downtime.|می‌فهمم. وقتی پایدار شدیم، درباره‌ی اعتبار خدمات برای زمان قطعی صحبت می‌کنیم.
+A|Okay. Just keep me posted.|باشه. فقط منو در جریان بذار.
+B|You'll hear from me before you have to ask.|قبل از این‌که مجبور شید بپرسید، از من می‌شنوید.
++ It's our top priority.|اولویت اول ماست.
++ traced it to|ردشو تا ... گرفتیم
++ as we speak|همین حالا
++ under-promise|کمتر قول دادن
++ losing sales|فروش از دست دادن
++ once we're stable|وقتی پایدار شدیم
++ service credits|اعتبار خدمات
++ before you have to ask|قبل از این‌که مجبور شی بپرسی
+! I don't want to promise too much.|I'd rather under-promise.|under-promise, over-deliver اصلی در مدیریت انتظارات است.
+
+@ C1-11|3|🎙️ صحبت با رسانه|خبرنگاری درباره‌ی حادثه‌ی امنیتی سؤال می‌کند و شما سخنگو هستید.|Journalist
+A|Can you confirm that customer data was stolen?|می‌تونید تأیید کنید اطلاعات مشتری‌ها دزدیده شده؟
+B|What I can confirm is that we detected unauthorized access on Monday.|چیزی که می‌تونم تأیید کنم اینه که دوشنبه دسترسی غیرمجاز رو شناسایی کردیم.
+A|That's not a yes or no.|این بله یا نه نیست.
+B|Our investigation is ongoing, and I won't speculate before we have facts.|تحقیقات ما ادامه داره و قبل از داشتن حقایق گمانه‌زنی نمی‌کنم.
+A|How many customers could be affected?|چند مشتری ممکنه تحت تأثیر قرار گرفته باشن؟
+B|We're notifying everyone who may have been, as a precaution.|به‌عنوان احتیاط، به همه‌ی کسانی که ممکنه تحت تأثیر باشن اطلاع می‌دیم.
+A|Critics say you were slow to respond.|منتقدها می‌گن دیر واکنش نشون دادید.
+B|We acted within hours of detection. I understand why people want answers faster.|ظرف چند ساعت بعد از شناسایی اقدام کردیم. می‌فهمم چرا مردم جواب سریع‌تر می‌خوان.
+A|When will you know more?|کِی بیشتر می‌دونید؟
+B|We'll publish an update by Friday, and every week after until it's resolved.|تا جمعه یه به‌روزرسانی منتشر می‌کنیم و بعد از اون هر هفته تا وقتی حل بشه.
++ What I can confirm is...|چیزی که می‌تونم تأیید کنم اینه که...
++ a yes or no|بله یا نه
++ ongoing|در جریان
++ I won't speculate.|گمانه‌زنی نمی‌کنم.
++ as a precaution|به‌عنوان احتیاط
++ slow to respond|کند در واکنش
++ within hours of detection|ظرف چند ساعت بعد از شناسایی
++ until it's resolved|تا وقتی حل بشه
+! I don't guess.|I won't speculate before we have facts.|سخنگوی حرفه‌ای فقط آنچه را تأییدشده است می‌گوید.
+
+@ C1-11|4|🏭 بحران تولید|در کارخانه یک خط تولید متوقف شده و به مدیرعامل گزارش می‌دهید.|CEO
+A|I'm hearing Line Three is down. Give me the short version.|می‌شنوم خط سه متوقف شده. نسخه‌ی کوتاهشو بگو.
+B|A key machine failed at six a.m. No injuries.|یه دستگاه کلیدی ساعت شش صبح خراب شد. کسی آسیب ندیده.
+A|Good. What's the impact on orders?|خوبه. تأثیرش روی سفارش‌ها چیه؟
+B|About two days of output for our largest customer.|حدود دو روز تولید برای بزرگ‌ترین مشتری‌مون.
+A|Can we make that up elsewhere?|می‌تونیم جای دیگه جبرانش کنیم؟
+B|Partially. Line One can run an extra shift over the weekend.|تا حدی. خط یک می‌تونه آخر هفته یه شیفت اضافه کار کنه.
+A|And the repair?|و تعمیر؟
+B|The part arrives tomorrow. Best case, we're back up Thursday.|قطعه فردا می‌رسه. در بهترین حالت، پنجشنبه دوباره راه می‌افتیم.
+A|Worst case?|بدترین حالت؟
+B|Monday. I've already briefed the customer on both scenarios.|دوشنبه. از قبل مشتری رو درباره‌ی هر دو سناریو توجیه کردم.
++ Give me the short version.|نسخه‌ی کوتاهشو بگو.
++ No injuries.|کسی آسیب ندیده.
++ the impact on orders|تأثیر روی سفارش‌ها
++ two days of output|دو روز تولید
++ make that up elsewhere|جای دیگه جبرانش کردن
++ best case|در بهترین حالت
++ worst case|در بدترین حالت
++ briefed the customer|مشتری رو توجیه کردم
+! In the best situation.|Best case, we're back Thursday.|best case / worst case برای بیان سناریوها بسیار رایج است.
+
+@ C1-11|5|📣 اطلاع‌رسانی داخلی|در جلسه‌ی کل شرکت درباره‌ی تعدیل‌های اخیر صحبت می‌کنید.|Employee
+A|People are scared. Are more layoffs coming?|آدما ترسیدن. تعدیل‌های بیشتری در راهه؟
+B|I can't promise anything about the future. But there are no further cuts planned.|نمی‌تونم درباره‌ی آینده قولی بدم. ولی کاهش بیشتری برنامه‌ریزی نشده.
+A|Why didn't leadership warn us earlier?|چرا مدیریت زودتر بهمون هشدار نداد؟
+B|That's a fair criticism. We waited until plans were final, and I regret how that felt.|انتقاد منصفانه‌ایه. صبر کردیم تا برنامه‌ها قطعی بشه و از حسی که ایجاد کرد پشیمونم.
+A|What happens to the work they left behind?|کارهایی که جا گذاشتن چی می‌شه؟
+B|We're reprioritizing. Some projects will pause so no one's workload doubles.|داریم اولویت‌ها رو دوباره تعیین می‌کنیم. بعضی پروژه‌ها متوقف می‌شن که حجم کار کسی دو برابر نشه.
+A|And the people who left, are they being supported?|و کسایی که رفتن، حمایت می‌شن؟
+B|Yes. Four months' severance, healthcare through the end of the year, and job placement help.|بله. چهار ماه حقوق پایان کار، بیمه‌ی درمانی تا آخر سال و کمک برای کاریابی.
+A|Thank you for being straight with us.|ممنون که باهامون رک بودی.
+B|You deserve nothing less. My door is open, literally and figuratively.|حق شما کمتر از این نیست. درِ اتاقم بازه، هم واقعی هم مجازی.
++ no further cuts planned|کاهش بیشتری برنامه‌ریزی نشده
++ a fair criticism|انتقاد منصفانه
++ I regret how that felt.|از حسی که ایجاد کرد پشیمونم.
++ reprioritizing|دوباره اولویت‌بندی کردن
++ no one's workload doubles|حجم کار کسی دو برابر نشه
++ severance|حقوق پایان کار
++ job placement help|کمک برای کاریابی
++ literally and figuratively|هم واقعی هم مجازی
+! Honest with us.|Thank you for being straight with us.|straight with someone یعنی رک و صادق بودن.
+
+@ C1-12|2|🍷 میزبان خودستا|میزبان از غذای خودش زیادی تعریف می‌کند و شما با ظرافت شوخی می‌کنید.|Host
+A|I'll be honest, this risotto might be my finest work.|راستشو بخوای، این ریزوتو ممکنه بهترین کارم باشه.
+B|High praise, coming from the chef himself.|تعریف بزرگیه، اونم از زبون خود سرآشپز.
+A|Someone has to say it.|یکی باید بگه.
+B|And who better than you, clearly.|و چه کسی بهتر از تو، معلومه.
+A|Go on, try it, and tell me I'm wrong.|بفرما، امتحانش کن و بگو اشتباه می‌کنم.
+B|Hmm. Annoyingly, you might have a point.|هوم. متأسفانه شاید حق با تو باشه.
+A|"Annoyingly"? I'll take it.|«متأسفانه»؟ قبوله.
+B|Don't let it go to your head. The bread was store-bought, wasn't it?|نذار مغرورت کنه. نون‌ها از مغازه خریده شده بودن، نه؟
+A|We don't talk about the bread.|درباره‌ی نون حرف نمی‌زنیم.
+B|Noted. The risotto carries the evening.|یادم موند. ریزوتو کل شبو نجات می‌ده.
++ my finest work|بهترین کارم
++ high praise|تعریف بزرگ
++ who better than you|چه کسی بهتر از تو
++ Annoyingly...|متأسفانه... (با شوخی)
++ I'll take it.|قبوله.
++ Don't let it go to your head.|نذار مغرورت کنه.
++ store-bought|از مغازه خریده‌شده
++ carries the evening|کل شبو نجات می‌ده
+! Don't become arrogant.|Don't let it go to your head.|go to one's head یعنی تعریف باعث غرور شدن.
+
+@ C1-12|3|🙃 مهمان دیررس|یکی از مهمانان خیلی دیر رسیده و جمع با کنایه‌ی دوستانه استقبال می‌کند.|Host
+A|Ah, the guest of honor finally graces us with his presence.|آه، مهمان افتخاری بالاخره به ما افتخار حضور داد.
+B|Traffic was apocalyptic, I swear.|قسم می‌خورم ترافیک آخرالزمانی بود.
+A|Of course it was. It always is, for you specifically.|معلومه که بود. همیشه هست، مخصوصاً برای تو.
+B|The universe conspires against my punctuality.|کائنات علیه وقت‌شناسی من توطئه می‌کنه.
+A|We saved you some dessert, by which I mean crumbs.|برات یه‌کم دسر نگه داشتیم، منظورم خرده‌هاشه.
+B|Crumbs are underrated. I'll treasure them.|خرده‌ها دست‌کم گرفته شدن. قدرشونو می‌دونم.
+A|Sit down before we give your chair away.|بشین قبل از این‌که صندلیتو به کس دیگه بدیم.
+B|Very gracious. I brought wine, if that buys forgiveness.|خیلی بزرگوارانه. شراب آوردم، اگه بخشش می‌خره.
+A|It buys you a seat. Forgiveness depends on the vintage.|برات یه صندلی می‌خره. بخشش بستگی به سال تولیدش داره.
+B|Fair. I'll take what I can get.|منصفانه‌ست. هر چی گیرم بیاد قبول دارم.
++ graces us with his presence|به ما افتخار حضور داد (طعنه)
++ apocalyptic|آخرالزمانی
++ conspires against|علیه ... توطئه می‌کنه
++ by which I mean...|منظورم ... ـه
++ underrated|دست‌کم گرفته‌شده
++ very gracious|خیلی بزرگوارانه (طعنه)
++ buys forgiveness|بخشش می‌خره
++ I'll take what I can get.|هر چی گیرم بیاد قبول دارم.
+! You finally came.|The guest of honor finally graces us with his presence.|اغراق رسمی و تشریفاتی برای کنایه‌ی دوستانه.
+
+@ C1-12|4|📚 بحث روشنفکرانه|در شام، یکی از مهمانان زیادی فلسفه‌بافی می‌کند.|Guest
+A|Of course, if you've read Nietzsche, you'll know that dinner is merely a construct.|البته، اگه نیچه خونده باشید، می‌دونید شام صرفاً یه برساخته‌ست.
+B|A delicious construct, though. Pass the potatoes?|ولی یه برساخته‌ی خوشمزه. سیب‌زمینی‌ها رو می‌دید؟
+A|You jest, but there's a profound point here.|شوخی می‌کنید، ولی این‌جا یه نکته‌ی عمیق هست.
+B|I'm sure there is. I just tend to find my profundity after dessert.|مطمئنم هست. فقط معمولاً عمق فکریمو بعد از دسر پیدا می‌کنم.
+A|Ha. Fair enough. Philosophy on an empty stomach is risky.|ها. منطقیه. فلسفه با شکم خالی ریسکیه.
+B|As is driving, operating machinery, and arguing with my mother.|همین‌طور رانندگی، کار با ماشین‌آلات و بحث با مادرم.
+A|Now that's a philosophy I can get behind.|حالا این فلسفه‌ایه که قبولش دارم.
+B|See? We found common ground after all.|دیدی؟ بالاخره نقطه‌ی مشترک پیدا کردیم.
+A|Over potatoes, no less.|اونم سر سیب‌زمینی.
+B|The great philosophers would be proud.|فیلسوفای بزرگ افتخار می‌کردن.
++ merely a construct|صرفاً یه برساخته
++ You jest.|شوخی می‌کنید. (ادبی)
++ a profound point|نکته‌ی عمیق
++ on an empty stomach|با شکم خالی
++ operating machinery|کار با ماشین‌آلات
++ a philosophy I can get behind|فلسفه‌ای که قبولش دارم
++ after all|بالاخره
++ no less|اونم (برای تأکید طنزآمیز)
+! You are joking.|You jest.|jest واژه‌ای ادبی و قدیمی است؛ معمولاً با طنز به کار می‌رود.
+
+@ C1-12|5|🎲 بازی بعد از شام|بعد از شام بازی می‌کنید و رقابت با کنایه گرم می‌شود.|Host
+A|And that's three wins in a row. Try not to cry.|و این سه برد پشت سر همه. سعی کن گریه نکنی.
+B|I'm simply letting you win. It's called hospitality.|من فقط دارم می‌ذارم ببری. اسمش مهمون‌نوازیه.
+A|How generous. You must be exhausted from all that generosity.|چه سخاوتمند. حتماً از این‌همه سخاوت خسته شدی.
+B|Utterly drained. It takes real skill to lose this convincingly.|کاملاً تخلیه. باختن به این قانع‌کنندگی مهارت واقعی می‌خواد.
+A|Rematch, then? Or are you too "generous"?|پس دوباره؟ یا زیادی «سخاوتمندی»؟
+B|Deal the cards. Hospitality is officially over.|کارتا رو پخش کن. مهمون‌نوازی رسماً تمومه.
+A|Ooh, the gloves are off.|اوه، دستکش‌ها دراومد.
+B|You've awoken something, and you'll regret it.|یه چیزیو بیدار کردی و پشیمون می‌شی.
+A|Big talk from a man with zero points.|حرف بزرگ از کسی که صفر امتیاز داره.
+B|Zero points, infinite potential.|صفر امتیاز، پتانسیل بی‌نهایت.
++ three wins in a row|سه برد پشت سر هم
++ Try not to cry.|سعی کن گریه نکنی. (شوخی)
++ It's called hospitality.|اسمش مهمون‌نوازیه.
++ utterly drained|کاملاً تخلیه
++ a rematch|بازی دوباره
++ The gloves are off.|دستکش‌ها دراومد. (جدی شد)
++ Big talk from...|حرف بزرگ از...
++ infinite potential|پتانسیل بی‌نهایت
+! Now it's serious.|The gloves are off.|یعنی رقابت دیگر دوستانه و ملایم نیست.
+
+@ C1-13|2|🏥 داده‌های پزشکی|با استادتان درباره‌ی فروش داده‌های پزشکی ناشناس‌شده بحث می‌کنید.|Professor
+A|Should hospitals be allowed to sell anonymized patient data to tech companies?|بیمارستان‌ها باید اجازه داشته باشن داده‌های ناشناس‌شده‌ی بیماران رو به شرکت‌های فناوری بفروشن؟
+B|I'd say it depends heavily on how "anonymized" it really is.|من می‌گم خیلی بستگی داره که چقدر واقعاً «ناشناس» شده باشه.
+A|Go on.|ادامه بده.
+B|Studies have shown people can be re-identified from just a few data points.|مطالعات نشون دادن آدما رو می‌شه فقط از چند نقطه‌ی داده دوباره شناسایی کرد.
+A|True. But the research benefits could be enormous.|درسته. ولی فواید پژوهشی می‌تونه عظیم باشه.
+B|Absolutely. My objection isn't to research, it's to profit without consent.|قطعاً. اعتراض من به پژوهش نیست، به سود بدون رضایته.
+A|So consent is your line in the sand?|پس رضایت خط قرمز توئه؟
+B|Largely, yes. Patients should be able to opt in, and share in the benefits.|عمدتاً، بله. بیماران باید بتونن انتخاب کنن که شرکت کنن، و در منافع سهیم باشن.
+A|That's an elegant position, but would anyone opt in?|موضع ظریفیه، ولی کسی انتخاب می‌کنه شرکت کنه؟
+B|More than you'd think, if the purpose is clear and trust is earned.|بیشتر از چیزی که فکر می‌کنید، اگه هدف روشن باشه و اعتماد به دست بیاد.
++ anonymized patient data|داده‌های ناشناس‌شده‌ی بیماران
++ depends heavily on|خیلی بستگی داره به
++ re-identified|دوباره شناسایی‌شده
++ a few data points|چند نقطه‌ی داده
++ profit without consent|سود بدون رضایت
++ a line in the sand|خط قرمز
++ opt in|انتخاب کردن برای شرکت
++ trust is earned|اعتماد به دست میاد
+! My red line.|my line in the sand|line in the sand مرزی است که از آن عقب‌نشینی نمی‌کنیم.
+
+@ C1-13|3|🚗 ماشین خودران|درباره‌ی تصمیم اخلاقی ماشین‌های خودران در تصادف بحث می‌کنید.|Professor
+A|A self-driving car must choose between hitting a pedestrian or swerving and harming its passenger. What should it do?|یه ماشین خودران باید بین زدن یه عابر یا منحرف شدن و آسیب زدن به سرنشینش انتخاب کنه. چی کار باید بکنه؟
+B|I find the framing a bit misleading, to be honest.|راستش این نوع طرح مسئله رو یه‌کم گمراه‌کننده می‌دونم.
+A|In what sense?|به چه معنا؟
+B|These dilemmas are extremely rare. The real ethical question is whether these cars reduce total accidents.|این معضلات خیلی نادرن. سؤال اخلاقی واقعی اینه که آیا این ماشین‌ها تعداد کل تصادف‌ها رو کم می‌کنن.
+A|Interesting. So you'd judge them on overall outcomes?|جالبه. پس بر اساس نتایج کلی قضاوتشون می‌کنی؟
+B|Primarily. If they save thousands of lives a year, rare edge cases shouldn't block them.|عمدتاً. اگه سالی هزاران جون رو نجات بدن، موارد نادر مرزی نباید مانعشون بشه.
+A|But someone still has to program that edge case.|ولی بالاخره یکی باید اون مورد مرزی رو برنامه‌نویسی کنه.
+B|True, and I'd want those rules made public and debated, not hidden in code.|درسته، و من می‌خوام اون قوانین عمومی بشن و درباره‌شون بحث بشه، نه این‌که تو کد پنهان باشن.
+A|Transparency as the ethical safeguard, then.|پس شفافیت به‌عنوان محافظ اخلاقی.
+B|Exactly. We can live with hard choices if we've agreed on them openly.|دقیقاً. می‌تونیم با انتخاب‌های سخت کنار بیایم اگه آشکارا روشون توافق کرده باشیم.
++ swerving|منحرف شدن (فرمان)
++ the framing|نحوه‌ی طرح مسئله
++ In what sense?|به چه معنا؟
++ overall outcomes|نتایج کلی
++ edge cases|موارد مرزی / استثنایی
++ made public and debated|عمومی و مورد بحث
++ an ethical safeguard|محافظ اخلاقی
++ agreed on them openly|آشکارا روشون توافق کردن
+! Unusual situations.|edge cases|edge case اصطلاح فنی برای موقعیت‌های نادر و حدی است.
+
+@ C1-13|4|🐄 خوردن گوشت|با یک دوست گیاهخوار درباره‌ی اخلاق گوشت‌خواری بحث محترمانه دارید.|Friend
+A|Do you ever think about the ethics of eating meat?|تا حالا به اخلاقیات خوردن گوشت فکر کردی؟
+B|Honestly, more than I'd like to admit. And I still eat it.|راستش بیشتر از اونی که دوست دارم اعتراف کنم. و هنوز می‌خورمش.
+A|So you see the contradiction?|پس تناقضو می‌بینی؟
+B|I do. I think most people live with some moral inconsistency.|می‌بینم. فکر می‌کنم بیشتر آدما با یه‌کم ناهمخوانی اخلاقی زندگی می‌کنن.
+A|That's a bit of a cop-out, isn't it?|این یه‌کم شونه خالی کردن نیست؟
+B|Maybe. But I've cut it down to twice a week and buy from local farms.|شاید. ولی به هفته‌ای دو بار کمش کردم و از مزارع محلی می‌خرم.
+A|That's a meaningful step. Not zero, but meaningful.|قدم معناداریه. صفر نیست، ولی معناداره.
+B|I'd rather make a change I can sustain than an all-or-nothing vow I'll break.|ترجیح می‌دم یه تغییری بدم که بتونم ادامه‌ش بدم تا یه عهد همه یا هیچ که بشکنمش.
+A|I can respect that. Perfection shouldn't be the enemy of progress.|به این احترام می‌ذارم. کمال‌گرایی نباید دشمن پیشرفت باشه.
+B|Well put. Now, are you judging my lunch or not?|خوب گفتی. حالا، داری ناهارمو قضاوت می‌کنی یا نه؟
++ more than I'd like to admit|بیشتر از اونی که دوست دارم اعتراف کنم
++ moral inconsistency|ناهمخوانی اخلاقی
++ a cop-out|شونه خالی کردن / بهانه
++ cut it down to|کمش کردم به
++ a meaningful step|قدم معنادار
++ all-or-nothing|همه یا هیچ
++ Perfection shouldn't be the enemy of progress.|کمال‌گرایی نباید دشمن پیشرفت باشه.
++ Well put.|خوب گفتی.
+! An excuse to avoid responsibility.|That's a cop-out.|cop-out یعنی طفره رفتن از مسئولیت با یک توجیه.
+
+@ C1-13|5|🧬 ویرایش ژنتیکی|درباره‌ی ویرایش ژن جنین‌ها در یک سمینار بحث می‌کنید.|Professor
+A|If we could edit embryos to eliminate a fatal disease, should we?|اگه بتونیم جنین‌ها رو برای حذف یه بیماری کشنده ویرایش کنیم، باید این کارو بکنیم؟
+B|For a clearly fatal disease, I lean toward yes, with strict oversight.|برای یه بیماری قطعاً کشنده، به «بله» متمایلم، با نظارت سخت‌گیرانه.
+A|And where would you draw the line?|و خط رو کجا می‌کشی؟
+B|At enhancement. Curing disease is one thing; designing "better" children is another.|در ارتقا. درمان بیماری یه چیزه؛ طراحی بچه‌های «بهتر» یه چیز دیگه.
+A|But the boundary isn't always clear. Is poor eyesight a disease?|ولی مرز همیشه روشن نیست. ضعف بینایی بیماریه؟
+B|That's precisely the hard part. It's a spectrum, not a switch.|دقیقاً بخش سختش همینه. یه طیفه، نه یه کلید روشن‌خاموش.
+A|And who decides?|و کی تصمیم می‌گیره؟
+B|Ideally, an international body, not individual clinics chasing profit.|ایده‌آل اینه که یه نهاد بین‌المللی، نه کلینیک‌های منفرد که دنبال سودن.
+A|Some would call that paternalistic.|بعضیا اینو قیم‌مآبانه می‌دونن.
+B|Perhaps, but the risks are irreversible, and they're inherited by future generations.|شاید، ولی ریسک‌ها برگشت‌ناپذیرن و به نسل‌های آینده به ارث می‌رسن.
++ a fatal disease|بیماری کشنده
++ I lean toward...|به ... متمایلم.
++ strict oversight|نظارت سخت‌گیرانه
++ draw the line|خط کشیدن / حد تعیین کردن
++ a spectrum, not a switch|یه طیف، نه یه کلید
++ chasing profit|دنبال سود
++ paternalistic|قیم‌مآبانه
++ irreversible|برگشت‌ناپذیر
+! I prefer yes a little.|I lean toward yes.|lean toward یعنی تمایل داشتن به نظری بدون قطعیت کامل.
+
+@ C1-14|2|📈 تورم ساده|به مادربزرگتان توضیح می‌دهید تورم چیست.|Grandma
+A|Why does everything cost more every year? It's madness.|چرا هر سال همه‌چی گرون‌تر می‌شه؟ دیوونگیه.
+B|That's inflation. Think of money like juice in a glass.|اسمش تورمه. پولو مثل آبمیوه تو لیوان در نظر بگیر.
+A|Juice in a glass?|آبمیوه تو لیوان؟
+B|If the government prints more money, it's like adding water to the juice. Each sip has less flavor.|اگه دولت پول بیشتری چاپ کنه، مثل اینه که به آبمیوه آب اضافه کنی. هر جرعه طعم کمتری داره.
+A|So each rial buys less.|پس هر ریال چیز کمتری می‌خره.
+B|Exactly. The bread hasn't changed. The money has gotten weaker.|دقیقاً. نون عوض نشده. پول ضعیف‌تر شده.
+A|Then why don't they just stop printing it?|پس چرا فقط چاپشو متوقف نمی‌کنن؟
+B|Good question. It's complicated, but sometimes they use it to pay debts quickly.|سؤال خوبیه. پیچیده‌ست، ولی گاهی ازش برای پرداخت سریع بدهی‌ها استفاده می‌کنن.
+A|Hmm. So the bill comes to us in the end.|هوم. پس آخرش صورت‌حساب به ما می‌رسه.
+B|You've summed up economics better than most professors.|اقتصادو بهتر از بیشتر استادا خلاصه کردی.
++ cost more every year|هر سال گرون‌تر شدن
++ inflation|تورم
++ prints more money|پول بیشتری چاپ می‌کنه
++ each sip|هر جرعه
++ buys less|چیز کمتری می‌خره
++ gotten weaker|ضعیف‌تر شده
++ The bill comes to us.|صورت‌حساب به ما می‌رسه.
++ summed up|خلاصه کردی
+! You explained it short and well.|You've summed it up.|sum up یعنی خلاصه کردن نکته‌ی اصلی.
+
+@ C1-14|3|☁️ فضای ابری|به پدرتان توضیح می‌دهید «کلود» یا فضای ابری چیست.|Dad
+A|Everyone says "it's in the cloud." What cloud? Where is it?|همه می‌گن «تو ابره». کدوم ابر؟ کجاست؟
+B|Ha, fair question. The "cloud" is really just someone else's computer.|ها، سؤال منطقیه. «ابر» در واقع فقط کامپیوتر یه نفر دیگه‌ست.
+A|Someone else's computer? That doesn't sound safe.|کامپیوتر یه نفر دیگه؟ امن به نظر نمیاد.
+B|Think of it like a bank for your files. You don't keep cash under the mattress.|مثل یه بانک برای فایل‌هات در نظرش بگیر. پولتو زیر تشک نگه نمی‌داری.
+A|So my photos are in a building somewhere?|پس عکسام یه جایی تو یه ساختمونن؟
+B|Yes, in huge buildings full of computers called data centers.|بله، تو ساختمون‌های عظیم پر از کامپیوتر به اسم مراکز داده.
+A|And if my phone breaks?|و اگه گوشیم بشکنه؟
+B|That's the big advantage. Your photos are still safe, and you can get them on a new phone.|مزیت اصلیش همینه. عکسات هنوز امنن و می‌تونی رو گوشی جدید داشته باشیشون.
+A|Ah. So it's a backup, really.|آهان. پس در واقع یه نسخه‌ی پشتیبانه.
+B|Pretty much. A very big, very organized backup.|تقریباً. یه نسخه‌ی پشتیبان خیلی بزرگ و خیلی منظم.
++ someone else's computer|کامپیوتر یه نفر دیگه
++ That doesn't sound safe.|امن به نظر نمیاد.
++ a bank for your files|یه بانک برای فایل‌هات
++ under the mattress|زیر تشک
++ data centers|مراکز داده
++ the big advantage|مزیت اصلی
++ get them on a new phone|روی گوشی جدید داشتنشون
++ very organized|خیلی منظم
+! It is a copy.|It's a backup, really.|really در پایان جمله یعنی «در واقع».
+
+@ C1-14|4|🧠 یادگیری ماشین|به دوستی که هنرمند است توضیح می‌دهید یادگیری ماشین چطور کار می‌کند.|Artist friend
+A|How does AI "learn"? It's a computer. It doesn't have a brain.|هوش مصنوعی چطور «یاد می‌گیره»؟ یه کامپیوتره. مغز نداره.
+B|Right. It's less like learning and more like spotting patterns.|درسته. کمتر شبیه یادگیریه و بیشتر شبیه پیدا کردن الگوها.
+A|Patterns how?|الگوها چطوری؟
+B|Imagine showing a child ten thousand photos of cats. Eventually they just know a cat when they see one.|تصور کن ده هزار عکس گربه به یه بچه نشون بدی. بالاخره هر وقت گربه ببینه می‌شناسه.
+A|Without anyone explaining whiskers and ears?|بدون این‌که کسی سبیل و گوشو توضیح بده؟
+B|Exactly. The computer adjusts millions of tiny settings until its guesses get better.|دقیقاً. کامپیوتر میلیون‌ها تنظیم کوچیکو تغییر می‌ده تا حدس‌هاش بهتر بشن.
+A|So it doesn't understand what a cat is.|پس نمی‌فهمه گربه چیه.
+B|Not the way you do. It just becomes very good at predicting "cat."|نه اون‌طور که تو می‌فهمی. فقط تو پیش‌بینی «گربه» خیلی خوب می‌شه.
+A|That's both less magical and more impressive than I thought.|هم کمتر جادوییه و هم تأثیرگذارتر از چیزی که فکر می‌کردم.
+B|That's the best summary of AI I've heard all year.|این بهترین خلاصه‌ی هوش مصنوعیه که امسال شنیدم.
++ It doesn't have a brain.|مغز نداره.
++ less like... more like...|کمتر شبیه... بیشتر شبیه...
++ spotting patterns|پیدا کردن الگوها
++ Imagine...|تصور کن...
++ eventually|بالاخره / در نهایت
++ tiny settings|تنظیمات کوچیک
++ Not the way you do.|نه اون‌طور که تو.
++ predicting|پیش‌بینی کردن
++ less magical|کمتر جادویی
+! It finds patterns.|It's more like spotting patterns.|ساختار less like... more like... برای تصحیح برداشت.
+
+@ C1-14|5|🏦 نرخ بهره|به خواهر نوجوانتان توضیح می‌دهید چرا پس‌انداز در بانک بهره می‌گیرد.|Sister
+A|Why does the bank pay me just for keeping my money there?|چرا بانک فقط بابت نگه داشتن پولم اون‌جا بهم پول می‌ده؟
+B|Because they're not just keeping it. They're lending it to other people.|چون فقط نگهش نمی‌دارن. دارن به آدمای دیگه قرضش می‌دن.
+A|Wait, they lend out MY money?|صبر کن، پول منو قرض می‌دن؟
+B|Kind of. They lend to people buying houses or starting businesses, and charge them interest.|یه جورایی. به کسایی که خونه می‌خرن یا کسب‌وکار راه می‌ندازن قرض می‌دن و ازشون بهره می‌گیرن.
+A|And they give me some of that?|و یه‌کمشو به من می‌دن؟
+B|Exactly. A small slice, as a thank-you for letting them use it.|دقیقاً. یه سهم کوچیک، به‌عنوان تشکر بابت این‌که اجازه دادی ازش استفاده کنن.
+A|So the bank is a kind of go-between for money.|پس بانک یه جور واسطه‌ی پوله.
+B|You got it. They earn the difference between what they charge and what they pay you.|درست فهمیدی. سودشون اختلاف بین چیزیه که می‌گیرن و چیزی که به تو می‌دن.
+A|That's kind of genius, honestly.|راستش یه جورایی نابغه‌واره.
+B|It is. And that's why your savings grow, slowly, while you sleep.|هست. و برای همینه که پس‌اندازت آروم‌آروم، وقتی خوابی، رشد می‌کنه.
++ just for keeping my money|فقط بابت نگه داشتن پولم
++ lending it|قرض دادنش
++ starting businesses|راه‌اندازی کسب‌وکار
++ charge them interest|ازشون بهره گرفتن
++ a small slice|یه سهم کوچیک
++ a go-between|واسطه
++ You got it.|درست فهمیدی.
++ the difference between|اختلاف بین
++ while you sleep|وقتی خوابی
+! You understood correctly.|You got it.|You got it برای تأیید درک درست طرف مقابل.
